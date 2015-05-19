@@ -1,40 +1,4 @@
 <?php
-/*
- * Copyright 2015 狂奔的蜗牛.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * MicroPHP
- *
- * An open source application development framework for PHP 5.2.0 or newer
- *
- * @package       MicroPHP
- * @author        狂奔的蜗牛
- * @email         672308444@163.com
- * @copyright     Copyright (c) 2013 - 2015, 狂奔的蜗牛, Inc.
- * @link          http://git.oschina.net/snail/microphp
- * @since         Version 2.3.2
- * @createdtime   2015-05-15 15:49:19
- */
- 
-
-define('IN_WONIU_APP', TRUE);
-define('WDS', DIRECTORY_SEPARATOR);
-/**
- * --------------------系统配置-------------------------
- */
 
 
 /**
@@ -247,9 +211,9 @@ $system['log_error'] = FALSE;
  * /blob/development/tests/app/library/ErrorHandle.class.php
  */
 $system['log_error_handle'] = array(
-	'error' => '', //array('ErrorHandle' => 'error_handle'),
-	'exception' => '', //array('ErrorHandle' => 'exception_handle'),
-	'db_error' => '', //array('ErrorHandle' => 'db_error_handle')
+    'error' => '', //array('ErrorHandle' => 'error_handle'),
+    'exception' => '', //array('ErrorHandle' => 'exception_handle'),
+    'db_error' => '', //array('ErrorHandle' => 'db_error_handle')
 );
 /**
  * 默认时区,PRC是中国
@@ -274,8 +238,8 @@ $system['default_timezone'] = 'PRC';
  *  4.系统使用的url路由就是最后替换后的路由字符串
  */
 $system['route'] = array(
-	//'|^([^/]+)/(.+)$|u' => '$1.$2',//index.php/home/index路由支持
-	//'|^([^/]+)/([^/]+)/(.+)$|u' => '$1.$2.$3',//index.php/user/home/index路由支持
+    //'|^([^/]+)/(.+)$|u' => '$1.$2',//index.php/home/index路由支持
+    //'|^([^/]+)/([^/]+)/(.+)$|u' => '$1.$2.$3',//index.php/user/home/index路由支持
 );
 /**
  * ---------------------缓存配置-----------------------
@@ -294,111 +258,111 @@ $system['cache_drivers'] = array();
  * 缓存配置项
  */
 $system['cache_config'] = array(
-	/*
-	 * 默认存储方式
-	 * 可用的方式有：auto,apc,files,sqlite,memcached,redis,wincache,xcache,memcache
-	 * auto自动模式寻找的顺序是 : apc,files,sqlite,memcached,redis,wincache,xcache,memcache
-	 */
-	"storage" => "auto",
-	/*
-	 * 默认缓存文件存储的路径
-	 * 使用绝对全路径，比如： /home/username/cache
-	 * 留空，系统自己选择
-	 */
-	"path" => $system['application_folder'] . "/cache", // 缓存文件存储默认路径,使用files、sqlite缓存的时候确保文件夹存在而且可写
-	/*
-	 * 第二驱动
-	 * 比如：当你现在在代码中使用的是memcached, apc等等，然后你的代码转移到了一个新的服务器而且不支持memcached 或 apc
-	 * 这时候怎么办呢？设置第二驱动即可，当你设置的驱动不支持的时候，系统就使用第二驱动。
-	 * $key是你设置的驱动，当设置的“storage”=$key不可用时，就使用$key对应的$value驱动
-	 */
-	"fallback" => array(
-		"memcache" => "files",
-		"memcached" => "files",
-		"redis" => "files",
-		"wincache" => "files",
-		"xcache" => "files",
-		"apc" => "files",
-		"sqlite" => "files",
-	),
-	/*
-	 * Memcache服务器地址;
-	 */
-	"server" => array(
-		array("127.0.0.1", 11211, 1),
-	),
-	/*
-	 * Redis服务器地址;
-	 */
-	"redis" => array(
-		'type' => 'tcp', //sock,tcp;连接类型，tcp：使用host port连接，sock：本地sock文件连接
-		'prefix' => @$_SERVER['HTTP_HOST'], //key的前缀，便于管理查看，在set和get的时候会自动加上和去除前缀，无前缀请保持null
-		'sock' => '', //sock的完整路径
-		'host' => '127.0.0.1',
-		'port' => 6379,
-		'password' => NULL, //密码，如果没有,保持null
-		'timeout' => 0, //0意味着没有超时限制，单位秒
-		'retry' => 100, //连接失败后的重试时间间隔，单位毫秒
-		'db' => 0, // 数据库序号，默认0, 参考 http://redis.io/commands/select
-	),
+    /*
+     * 默认存储方式
+     * 可用的方式有：auto,apc,files,sqlite,memcached,redis,wincache,xcache,memcache
+     * auto自动模式寻找的顺序是 : apc,files,sqlite,memcached,redis,wincache,xcache,memcache
+     */
+    "storage" => "auto",
+    /*
+     * 默认缓存文件存储的路径
+     * 使用绝对全路径，比如： /home/username/cache
+     * 留空，系统自己选择
+     */
+    "path" => $system['application_folder'] . "/cache", // 缓存文件存储默认路径,使用files、sqlite缓存的时候确保文件夹存在而且可写
+    /*
+     * 第二驱动
+     * 比如：当你现在在代码中使用的是memcached, apc等等，然后你的代码转移到了一个新的服务器而且不支持memcached 或 apc
+     * 这时候怎么办呢？设置第二驱动即可，当你设置的驱动不支持的时候，系统就使用第二驱动。
+     * $key是你设置的驱动，当设置的“storage”=$key不可用时，就使用$key对应的$value驱动
+     */
+    "fallback" => array(
+        "memcache" => "files",
+        "memcached" => "files",
+        "redis" => "files",
+        "wincache" => "files",
+        "xcache" => "files",
+        "apc" => "files",
+        "sqlite" => "files",
+    ),
+    /*
+     * Memcache服务器地址;
+     */
+    "server" => array(
+        array("127.0.0.1", 11211, 1),
+    ),
+    /*
+     * Redis服务器地址;
+     */
+    "redis" => array(
+        'type' => 'tcp', //sock,tcp;连接类型，tcp：使用host port连接，sock：本地sock文件连接
+        'prefix' => @$_SERVER['HTTP_HOST'], //key的前缀，便于管理查看，在set和get的时候会自动加上和去除前缀，无前缀请保持null
+        'sock' => '', //sock的完整路径
+        'host' => '127.0.0.1',
+        'port' => 6379,
+        'password' => NULL, //密码，如果没有,保持null
+        'timeout' => 0, //0意味着没有超时限制，单位秒
+        'retry' => 100, //连接失败后的重试时间间隔，单位毫秒
+        'db' => 0, // 数据库序号，默认0, 参考 http://redis.io/commands/select
+    ),
 );
 /**
  * -----------------------SESSION管理配置---------------------------
  */
 $system['session_handle'] = array(
-	'handle' => '', //支持的管理类型：mongodb,mysql,memcache,memcached,redis。留空则不管理，使用默认
-	'common' => array(//SESSION公共配置，无论是否使用handle托管session，common配置都会起作用。
-		'autostart' => false, //是否自动session_start()
-		'cookie_path' => '/',
-		'cookie_domain' => empty($_SERVER['HTTP_HOST']) ? null : $_SERVER['HTTP_HOST'],
-		'session_name' => 'MICROPHP',
-		'lifetime' => 3600, // session lifetime in seconds
-	),
-	'mongodb' => array(
-		'host' => '127.0.0.1',
-		'port' => 27017,
-		'user' => 'root',
-		'password' => 'local',
-		'database' => 'local', // name of MongoDB database
-		'collection' => 'session', // name of MongoDB collection
-		'persistent' => false, // persistent connection to DB?
-		'persistentId' => 'MongoSession', // name of persistent connection
-		'replicaSet' => false,
-	),
-	/**
-	 * mysql表结构
-	 *   CREATE TABLE `session_handler_table` (
-	  `id` varchar(255) NOT NULL,
-	  `data` mediumtext NOT NULL,
-	  `timestamp` int(255) NOT NULL,
-	  PRIMARY KEY (`id`),
-	  UNIQUE KEY `id` (`id`,`timestamp`),
-	  KEY `timestamp` (`timestamp`)
-	  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-	 */
-	'mysql' => array(
-		'host' => '127.0.0.1',
-		'port' => 3306,
-		'user' => 'root',
-		'password' => 'admin',
-		'database' => 'test',
-		'table' => 'session_handler_table',
-	),
-	/**
-	 * memcached采用的是session.save_handler管理机制
-	 * 需要php安装memcached拓展支持
-	 */
-	'memcached' => "127.0.0.1:11211",
-	/**
-	 * memcache采用的是session.save_handler管理机制
-	 * 需要php安装memcache拓展支持
-	 */
-	'memcache' => "tcp://127.0.0.1:11211",
-	/**
-	 * redis采用的是session.save_handler管理机制
-	 * 需要php安装redis拓展支持,你可以在https://github.com/nicolasff/phpredis 找到该拓展。
-	 */
-	'redis' => "tcp://127.0.0.1:6379",
+    'handle' => '', //支持的管理类型：mongodb,mysql,memcache,memcached,redis。留空则不管理，使用默认
+    'common' => array(//SESSION公共配置，无论是否使用handle托管session，common配置都会起作用。
+        'autostart' => false, //是否自动session_start()
+        'cookie_path' => '/',
+        'cookie_domain' => empty($_SERVER['HTTP_HOST']) ? null : $_SERVER['HTTP_HOST'],
+        'session_name' => 'MICROPHP',
+        'lifetime' => 3600, // session lifetime in seconds
+    ),
+    'mongodb' => array(
+        'host' => '127.0.0.1',
+        'port' => 27017,
+        'user' => 'root',
+        'password' => 'local',
+        'database' => 'local', // name of MongoDB database
+        'collection' => 'session', // name of MongoDB collection
+        'persistent' => false, // persistent connection to DB?
+        'persistentId' => 'MongoSession', // name of persistent connection
+        'replicaSet' => false,
+    ),
+    /**
+     * mysql表结构
+     *   CREATE TABLE `session_handler_table` (
+    `id` varchar(255) NOT NULL,
+    `data` mediumtext NOT NULL,
+    `timestamp` int(255) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `id` (`id`,`timestamp`),
+    KEY `timestamp` (`timestamp`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+     */
+    'mysql' => array(
+        'host' => '127.0.0.1',
+        'port' => 3306,
+        'user' => 'root',
+        'password' => 'admin',
+        'database' => 'test',
+        'table' => 'session_handler_table',
+    ),
+    /**
+     * memcached采用的是session.save_handler管理机制
+     * 需要php安装memcached拓展支持
+     */
+    'memcached' => "127.0.0.1:11211",
+    /**
+     * memcache采用的是session.save_handler管理机制
+     * 需要php安装memcache拓展支持
+     */
+    'memcache' => "tcp://127.0.0.1:11211",
+    /**
+     * redis采用的是session.save_handler管理机制
+     * 需要php安装redis拓展支持,你可以在https://github.com/nicolasff/phpredis 找到该拓展。
+     */
+    'redis' => "tcp://127.0.0.1:6379",
 );
 /**
  * ------------------------数据库配置----------------------------
@@ -463,8 +427,3 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
 /**
  * -------------------------数据库配置结束--------------------------
  */
-/* End of file index.php */
-include('MicroPHP.php');
-
-MpRouter::setConfig($system);
-MpRouter::loadClass();
