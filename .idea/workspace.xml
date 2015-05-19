@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Config.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\application\modules\hmvc_demo\controllers\welcome.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/index.php" afterPath="$PROJECT_DIR$/Disk/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/controllers/welcome.php" afterPath="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/views/welcome.view.php" afterPath="$PROJECT_DIR$/Disk/application/views/welcome.view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Faster_Center.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,18 +39,7 @@
     <favorites_list name="Faster_Center" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Disk/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2002398" vertical-offset="9769" max-vertical-offset="10603">
-              <caret line="446" column="3" selection-start-line="446" selection-start-column="3" selection-end-line="446" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +50,19 @@
         <option value="$PROJECT_DIR$/Disk/Mc/Config/Config.php" />
         <option value="$PROJECT_DIR$/Disk/Mc/Fun.php" />
         <option value="$PROJECT_DIR$/Disk/MicroPHP.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_sham/hmvc.php" />
+        <option value="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/main/index.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/login/index.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/login.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php" />
         <option value="$PROJECT_DIR$/Disk/index.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/seter.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Seter.php" />
       </list>
     </option>
   </component>
@@ -91,6 +99,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -123,27 +132,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,6 +141,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\main" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\www\Faster_Center\Disk\Mc" />
       <recent name="E:\www\Faster_Center\Disk" />
@@ -171,10 +166,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -191,7 +191,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -199,8 +199,8 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26091588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15335463" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15495208" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2630458" sideWeight="0.5005549" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2874584" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -237,18 +237,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19008264" vertical-offset="0" max-vertical-offset="847">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="575" max-vertical-offset="5152">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Config.php">
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4916067" vertical-offset="9043" max-vertical-offset="9982">
-          <caret line="411" column="43" selection-start-line="411" selection-start-column="43" selection-end-line="411" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2024">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -257,61 +257,100 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48878396" vertical-offset="0" max-vertical-offset="847">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778" vertical-offset="0" max-vertical-offset="529">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/library/netbeans-tip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72845334" vertical-offset="510" max-vertical-offset="1357">
+          <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/MicroPHP.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33093524" vertical-offset="130410" max-vertical-offset="226182">
-          <caret line="5696" column="28" selection-start-line="5696" selection-start-column="28" selection-end-line="5696" selection-end-column="28" />
-          <folding>
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="select count..table..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT TOP 1..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT * FRO.._this_escape_table_table LIMIT..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="drop table i..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..caching..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="drop table i..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..balancing..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT MAX(`..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="SELECT data ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1432005947605" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-          </folding>
+        <state vertical-scroll-proportion="-24.925926" vertical-offset="225348" max-vertical-offset="226182">
+          <caret line="9841" column="1" selection-start-line="9841" selection-start-column="1" selection-end-line="9841" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/helper/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027154664" vertical-offset="0" max-vertical-offset="847">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.777778" vertical-offset="4999" max-vertical-offset="25185">
+          <caret line="230" column="9" selection-start-line="230" selection-start-column="9" selection-end-line="230" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.148148" vertical-offset="0" max-vertical-offset="805">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46162927" vertical-offset="0" max-vertical-offset="897">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.703703" vertical-offset="3638" max-vertical-offset="5520">
+          <caret line="197" column="46" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2002398" vertical-offset="9769" max-vertical-offset="10603">
-          <caret line="446" column="3" selection-start-line="446" selection-start-column="3" selection-end-line="446" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.3329208" vertical-offset="4101" max-vertical-offset="10971">
+          <caret line="190" column="31" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="31" />
+          <folding>
+            <element signature="e#6#596#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5689046" vertical-offset="0" max-vertical-offset="989">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24381626" vertical-offset="0" max-vertical-offset="2024">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="575" max-vertical-offset="5152">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding />
         </state>
       </provider>

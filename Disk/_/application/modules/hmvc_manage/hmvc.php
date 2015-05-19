@@ -58,44 +58,28 @@ $system['helper_folder'] = $system['application_folder'] . '/helper';
 
 //$system['message_page_view'] = '';
 
-$system['default_controller'] = 'home';
-
+$system['default_controller']       = 'home';
 $system['default_controller_method'] = 'index';
 
 $system['controller_method_prefix'] = 'do';
-
-$system['controller_file_subfix'] = '.php';
-
-$system['model_file_subfix'] = '.model.php';
-
-$system['view_file_subfix'] = '.view.php';
-
-$system['library_file_subfix'] = '.class.php';
-
-$system['helper_file_subfix'] = '.php';
-
-$system['helper_file_autoload'] = array();
-
-$system['library_file_autoload'] = array();
-
-$system['models_file_autoload'] = array();
-
+$system['controller_file_subfix']   = '.php';
+$system['model_file_subfix']        = '.model.php';
+$system['view_file_subfix']         = '.view.php';
+$system['library_file_subfix']      = '.class.php';
+$system['helper_file_subfix']       = '.php';
+$system['helper_file_autoload']     = array();
+$system['library_file_autoload']    = array();
+$system['models_file_autoload']     = array();
 //$system['controller_method_ucfirst'] = TRUE;
-
 //$system['autoload_db'] = FALSE;
-
 $system['debug'] = false;
-
 //$system['error_manage'] = FALSE;
-
 //$system['log_error'] = FALSE;
-
 //$system['log_error_handle'] = array(
 //    'error' => '',
 //    'exception' => '',
 //    'db_error' => '',
 //);
-
 //$system['default_timezone'] = 'PRC';
 
 
@@ -185,12 +169,11 @@ $system['session_handle'] = array(
 /**
  * mysql数据库配置示例
  */
-
 $system['db']['default']['dbdriver'] = "mysql";
 $system['db']['default']['hostname'] = '127.0.0.1';
 $system['db']['default']['port'] = '3306';
 $system['db']['default']['username'] = 'root';
-$system['db']['default']['password'] = 'root3306';
+$system['db']['default']['password'] = 'root123';
 $system['db']['default']['database'] = 'ns';
 $system['db']['default']['dbprefix'] = '';
 $system['db']['default']['pconnect'] = TRUE;
@@ -200,7 +183,8 @@ $system['db']['default']['dbcollat'] = 'utf8_general_ci';
 $system['db']['default']['swap_pre'] = '';
 $system['db']['default']['autoinit'] = TRUE;
 $system['db']['default']['stricton'] = FALSE;
-/**/
+/*
+*/
 
 /*
  * PDO database config demo

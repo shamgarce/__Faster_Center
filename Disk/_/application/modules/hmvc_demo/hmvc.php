@@ -185,13 +185,13 @@ $system['session_handle'] = array(
 /**
  * mysql数据库配置示例
  */
-
+/*
 $system['db']['default']['dbdriver'] = "mysql";
 $system['db']['default']['hostname'] = '127.0.0.1';
 $system['db']['default']['port'] = '3306';
 $system['db']['default']['username'] = 'root';
-$system['db']['default']['password'] = 'root3306';
-$system['db']['default']['database'] = 'ns';
+$system['db']['default']['password'] = 'admin';
+$system['db']['default']['database'] = 'test';
 $system['db']['default']['dbprefix'] = '';
 $system['db']['default']['pconnect'] = TRUE;
 $system['db']['default']['db_debug'] = TRUE;
@@ -200,7 +200,7 @@ $system['db']['default']['dbcollat'] = 'utf8_general_ci';
 $system['db']['default']['swap_pre'] = '';
 $system['db']['default']['autoinit'] = TRUE;
 $system['db']['default']['stricton'] = FALSE;
-/**/
+*/
 
 /*
  * PDO database config demo

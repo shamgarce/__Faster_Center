@@ -39,7 +39,7 @@ define('WDS', DIRECTORY_SEPARATOR);
  * 如果开启了URL Rewrite 功能，请在这里设置为TRUE，没有开启请设置为FALSE
  * 该配置会影响url()函数生成的链接
  */
-$system['url_rewrite'] = true;
+$system['url_rewrite'] = FALSE;
 /**
  * 程序文件夹路径名称，也就是所有的程序文件比如控制器文件夹，
  * 模型文件夹，视图文件夹等所在的文件夹名称。
@@ -76,11 +76,7 @@ $system['hmvc_folder'] = $system['application_folder'] . '/modules';
 /**
  * 注册HMVC模块，这里填写模块名称关联数组,键是url中的模块别名，值是模块文件夹名称
  */
-$system['hmvc_modules'] = array(
-	'demo' => 'hmvc_demo',
-	'manage' => 'hmvc_manage'
-
-);
+$system['hmvc_modules'] = array('demo' => 'hmvc_demo');
 /**
  * 404错误文件的路径,该文件会在系统找不到相关内容时显示,
  * 文件里面可以使用$msg变量获取出错提示内容
@@ -184,7 +180,6 @@ $system['models_file_autoload'] = array();
  * 控制器方法名称是否首字母大写,默认true
  */
 $system['controller_method_ucfirst'] = TRUE;
-$system['controller_method_ucfirst'] = TRUE;
 /**
  * 是否自动连接数据库,默认FALSE
  */
@@ -194,7 +189,7 @@ $system['autoload_db'] = FALSE;
  * true：显示错误信息,
  * false：所有错误将不显示
  */
-$system['debug'] = false;
+$system['debug'] = TRUE;
 /**
  * 是否接管错误信息显示
  * true：所有错误信息将由系统格式化输出
@@ -469,4 +464,3 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
 /* End of file index.php */
 include('MicroPHP.min.php');
 MpRouter::setConfig($system);
-MpRouter::loadClass();
