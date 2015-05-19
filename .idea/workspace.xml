@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Seter.php" afterPath="$PROJECT_DIR$/Disk/Seter/Seter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/index.php" afterPath="$PROJECT_DIR$/Disk/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/controllers/welcome.php" afterPath="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="" />
     <ignored path="Faster_Center.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -50,8 +44,8 @@
       <file leaf-file-name="Seter.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6207303" vertical-offset="5729" max-vertical-offset="6854">
-              <caret line="272" column="39" selection-start-line="272" selection-start-column="39" selection-end-line="272" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.6749117" vertical-offset="5729" max-vertical-offset="6854">
+              <caret line="274" column="47" selection-start-line="274" selection-start-column="47" selection-end-line="274" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -528,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6207303" vertical-offset="5729" max-vertical-offset="6854">
-          <caret line="272" column="39" selection-start-line="272" selection-start-column="39" selection-end-line="272" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.6749117" vertical-offset="5729" max-vertical-offset="6854">
+          <caret line="274" column="47" selection-start-line="274" selection-start-column="47" selection-end-line="274" selection-end-column="47" />
           <folding />
         </state>
       </provider>
