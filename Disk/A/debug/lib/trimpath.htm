@@ -1,0 +1,113 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>{var yihui = '一回'}<br />
+${yihui} // 一回</td>
+    <td><p>1）<strong>变量声明</strong></p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td><p>Trimpath的变量调节器是可以扩展的，在使用上和Smarty几乎看不出区别：<br />
+      {var yihui = '&lt;hr /&gt;'}<br />
+      ${yihui|escape|capitalize} // &amp;LT;HR /&amp;GT;</p>
+      <p>Trimpath默认支持以下调节器：capitalize，escape（h），default，eat。同时支持表达式的调节，如：<br />
+        ${new Date()|toFormat:'YYYY-MM-DD'}<br />
+    你也可以根据自己的需要进行扩展，上面的toFormat就是自定义的。</p></td>
+    <td>2）<strong>变量<br />
+      （表达式）<br />
+    调节器</strong></td>
+  </tr>
+  <tr>
+    <td><p>{var yihui = 'b'}<br />
+      {if yihui == 'a'}<br />
+      ${yihui}等于a<br />
+      {else}</p>
+      <p>{elseif}<br />
+        ${yihui}不等于a<br />
+    {/if}</p></td>
+    <td>3）<strong>条件控制</strong></td>
+  </tr>
+  <tr>
+    <td><p>假设数据为：<br />
+      var datas = [<br />
+      {'type' : 'market', 'name' : '市场基金', 'value' : 102.44},<br />
+      {'type' : 'channel', 'name' : '渠道基金', 'value' : 54},<br />
+      {'type' : 'customer', 'name' : '客服考核', 'value' : 98}<br />
+      ];</p>
+      <p>模板可以这样写：<br />
+  &lt;table width=&quot;400&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;1&quot;&gt;<br />
+        {for x in datas}<br />
+        &lt;tr&gt;<br />
+        &lt;td&gt;${x.type}&lt;/td&gt;<br />
+        &lt;td&gt;${x.name}&lt;/td&gt;<br />
+        &lt;td&gt;${x.value}&lt;/td&gt;<br />
+        &lt;/tr&gt;<br />
+        {forelse}<br />
+        &lt;tr&gt;<br />
+        &lt;td&gt;没有数据&lt;/td&gt;<br />
+        &lt;/tr&gt;<br />
+        {/for}<br />
+  &lt;/table&gt;<br />
+    这样书写，是不是要比字符串拼接更直观，维护也方便呢？</p></td>
+    <td>4）<strong>循环控制</strong></td>
+  </tr>
+  <tr>
+    <td>宏可以理解为能够完成一定功能的函数，将通用的功能组织起来，有利于代码复用：<br />
+{macro htmlList(list, optionalListType)}<br />
+    {var listType = optionalListType != null ? optionalListType : &quot;ul&quot;}<br />
+    &lt;${listType}&gt;<br />
+      {for item in list}<br />
+        &lt;li&gt;${item}&lt;/li&gt;<br />
+      {/for}<br />
+    &lt;/${listType}&gt;<br />
+{/macro}<br />
+<br />
+${htmlList([1,2,3], 'ol')}</td>
+    <td>5）<strong>支持宏定义</strong></td>
+  </tr>
+  <tr>
+    <td>CDATA区域的内容将不被Trimpath解析，会原样输出<br />
+{cdata}hello,${yihui}{/cdata}</td>
+    <td>6）<strong>CDATA<br />
+    区域</strong></td>
+  </tr>
+  <tr>
+    <td>eval区域内可以直接书写JS代码：<br />
+&lt;select onchange=&quot;sel_onchange()&quot;&gt;<br />
+    &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;<br />
+    &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;<br />
+&lt;/select&gt;<br />
+{eval}<br />
+   sel_onchange = function() {<br />
+      alert('我不小心被change了');<br />
+   }<br />
+{/eval}</td>
+    <td>7）<strong>内联<br />
+    JS代码</strong></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>var nrs = TrimPath.parseTemplate(tplnr).process(datas);</td>
+    <td>内容<br />
+    数据<br />
+    解析</td>
+  </tr>
+  <tr>
+    <td>dt<br />
+    dts<br />
+    today<br />
+    se<br />
+    eat<br />
+    escape<br />
+capitalize<br />
+    default
+    <br /></td>
+    <td>变量调节器</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.cnblogs.com/mrray/archive/2011/12/26/2301775.html" target="_blank">参考</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>

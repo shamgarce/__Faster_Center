@@ -1,0 +1,111 @@
+<a class="_debug_open" style="COLOR:gray;position:fixed;top:0;right:0;z-index:9999;width:20px;cursor:pointer;margin:10px 0 5px 0;">
+<span class="glyphicon glyphicon-plus"></span>
+</a>
+
+<div id="__pageOverlay" style="padding:10px;padding-top:35px;position:fixed; top:0;right:-500px;z-index:1987; width:500px; height:100%; background:#000; filter:alpha(opacity=70); opacity:1;">
+
+<a class="_debug_close" style="position:fixed;top:0;z-index:9999;width:40px;cursor:pointer;margin:10px 0 10px 0px;">
+<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+</a>
+
+<a class="_debug_set" style="position:fixed;top:0;z-index:9999;width:40px;cursor:pointer;margin:10px 0 10px 23px;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+</a>
+
+
+
+<!-- 容器内 -->
+<div  style="background:#FFF;height:100%;padding:5px;">
+<div class="_nav">    
+<button class="btn btn-default __mem">记忆</button>
+<button class="btn btn-primary __model">model</button>
+<button class="btn btn-success __moth">moth</button>
+<button class="btn btn-info __fun">fun</button>
+<button class="btn btn-warning __about">about</button>
+<button class="btn btn-danger __other">other</button>
+</div>    
+<div class="__container">
+</div>
+
+    </div>
+</div>
+
+<script language="javascript">
+
+
+
+$("._debug_set").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/set/index.html",
+		js 		: ""
+	});
+});
+
+
+$(".__mem").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/mem/index.html",
+		js 		: ""
+	});
+});
+
+$(".__model").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/model/index.html",
+		js 		: ""
+	});
+});
+$(".__moth").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/moth/index.html",
+		js 		: ""
+	});
+});
+
+$(".__fun").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/fun/index.html",
+		js 		: ""
+	});
+});
+$(".__about").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/about/index.html",
+		js 		: ""
+	});
+});
+$(".__other").click(function(){
+	$(".__container").CkFill({
+		url 	: "/A/DE/other/index.html",
+		js 		: ""
+	});
+});
+
+
+
+
+$(".__container").CkFill({
+	url 	: "/A/DE/index.html",
+	js 		: ""
+});
+
+<!-- 锁进 伸出动作 -->
+$("._debug_close").click(function(){
+	$("._debug_open").show();
+	$("._debug_close").hide();
+	$("._debug_set").hide();
+	$("#__pageOverlay").animate({
+		right:'-500px'
+	},100);
+});
+
+$("._debug_open").click(function(){
+	$("#__pageOverlay").animate({
+		right:'0px'
+	},100,function(){
+		$("._debug_open").hide();
+		$("._debug_set").show();
+		$("._debug_close").show();
+	});
+});
+</script>

@@ -1,0 +1,229 @@
+<div class="panel panel-default" style="width:800px">
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+<li class="active"><a data-toggle="tab" role="tab" href="#vsmarty1">语法</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsmarty2">环境变量</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsmarty3">循环</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsmarty4">调节器</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsmarty5">函数</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsmarty6">引入文件</a></li>
+</ul>  
+<div id="myTabContent" class="tab-content panel-body">
+<div id="vsmarty1" class="tab-pane fade active in">
+  <table class="table table-hover table-condensed">
+    <tr>
+      <td>&lt;%if $rc[loop].u_delete==1%&gt; <br />
+&lt;%elseif $rc[loop].u_delete==0%&gt; <br />
+&lt;%/if%&gt;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><p>&lt;%$english_word|upper|spacify|truncate:30:&quot;...&quot;%&gt;<br />
+  &lt;%if $r[loop].id|in_array:$ry%&gt;checked&lt;%/if%&gt;<br />
+  &lt;%'now'|date_format:'%Y-%m-%d'%&gt;<br />
+  &lt;%$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'%&gt;</p></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><p>&lt;select name=customer_id&gt; <br />
+  &lt;%html_options options=$cust_options selected=$customer_id%&gt; <br />
+  &lt;/select&gt;</p></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td> Hello &lt;%$name%&gt;&lt;%*变量*%&gt; <br />
+        &lt;%html_select_date display_days=yes%&gt; <br />
+        &lt;%$member.fax%&gt; <br />
+        &lt;%$member.phone.home%&gt; <br />
+        &lt;%$tempmember.member%&gt; <br />
+        &lt;%$tempmember.phone.home%&gt;&lt;%*多维数组*%&gt;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&lt;%#error_message#%&gt;</td>
+      <td>&lt;%*配置文件属性*%&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;%insert name=&quot;top&quot; lid=&quot;toplid&quot; sid=&quot;topsid&quot;%&gt;</td>
+      <td>&lt;%*调用insert_top PHP函数,函数参数为lid和sid的值*%&gt;</td>
+    </tr>
+</table>
+</div>
+<div id="vsmarty2" class="tab-pane fade">
+  <p>&lt;%$smarty.get.page%&gt; <br />
+&lt;%$smarty.post.page%&gt; <br />
+&lt;%$smarty.cookies.name%&gt; <br />
+&lt;%$smarty.server.SERVER_NAME%&gt; <br />
+&lt;%$smarty.env.PATH%&gt; <br />
+&lt;%$smarty.session.id%&gt; <br />
+&lt;%$smarty.request.username%&gt;<br />
+&lt;%$smarty.const.PAGETITLE%&gt;&lt;%*常量*%&gt;</p>
+</div>
+
+<div id="vsmarty3" class="tab-pane fade">
+  section / foreach / if
+    <hr>
+  section 
+  <pre>
+&lt;%section name=loop loop=$count%&gt; <br />      id: &lt;%$smarty.section.loop.index%&gt; <br />&lt;%/section%&gt; <br />
+&lt;%section name=member loop=$contacts3 show=true%&gt;&lt;%*while循环 show是否SHOW section中的循环内容*%&gt; <br />　　id: &lt;%$smarty.section.loop.index%&gt; <br />　　&lt;%if $smarty.section.member.first%&gt; 　　first 　&lt;%/if%&gt; <br />　　&lt;%if $smarty.section.member.last%&gt; 　　　last 　&lt;%/if%&gt; <br />　　current loop rownum:&lt;%$smarty.section.member.rownum%&gt;&lt;br/&gt; <br />　　current loop iteration:&lt;%$smarty.section.member.iteration%&gt;&lt;br/&gt; <br />　　index:&lt;%$smarty.section.member.index%&gt; <br />　　index_prev:&lt;%$contacts3[member.index_prev]%&gt; <br />　　index_next:&lt;%$contacts3[member.index_next]%&gt;<br />　　index:&lt;%$contacts3[member.index]%&gt; member:&lt;%$contacts3[member]%&gt;<br />　　　　&lt;%section name=memberchild loop=$contacts4[member] max=2%&gt; <br />　　　　　　memberchild:&lt;%$contacts4[member][memberchild]%&gt; <br />　　　　&lt;%/section%&gt; <br />　　total:&lt;%$smarty.section.member.total%&gt;&lt;%*数据长度或总记录数*%&gt; <br />&lt;%/section%&gt;</pre>
+  foreach
+  <pre>&lt;%foreach from=$myArray item=i name=foo%&gt; 
+　　&lt;%$smarty.foreach.foo.index%&gt;|&lt;%$smarty.foreach.foo.iteration%&gt;
+　　&lt;%if $smarty.foreach.foo.index % 5 == 0%&gt; OK &lt;%/if%&gt;
+&lt;%/foreach%&gt;</pre>
+  <p>if  </p>
+  <pre>&lt;%*条件判断语句*%&gt;<br />&lt;%if 1 eq 1%&gt;<br />　　1=1 <br />　　&lt;%elseif 1 ne 1%&gt; <br />　　1!=1 <br />　　&lt;%elseif 1 gt 1%&gt; <br />　　1&gt;1 <br />　　&lt;%elseif 1 lt 1%&gt; <br />　　1&lt;1 <br />　　&lt;%elseif 1 gte 1%&gt; <br />　　1&gt;=1 <br />　　&lt;%elseif 1 lte 1%&gt; <br />　　1&lt;=1 <br />　　&lt;%elseif not 1 eq 1%&gt; <br />　　not 1=1 <br />　　&lt;%elseif (1 mod 1) eq 1%&gt; <br />　　&lt;font color=&quot;red&quot;&gt;1%1=1&lt;/font&gt; <br />&lt;%else%&gt; <br />　　你的人品真不好 <br />&lt;%/if%&gt; </pre>
+</div>
+<div id="vsmarty4" class="tab-pane fade">
+  <table class="table table-hover table-condensed">
+    <tr>
+      <td>lower</td>
+      <td>&lt;%$name|lower%&gt;</td>
+      <td>&lt;%*smarty字符串函数*%&gt;</td>
+    </tr>
+    <tr>
+      <td>upper</td>
+      <td>&lt;%$name|upper%&gt;</td>
+      <td>&lt;%*smarty字符串函数*%&gt; </td>
+    </tr>
+    <tr>
+      <td>date_format</td>
+      <td>&lt;%'now'|date_format:'%Y-%m-%d'%&gt;<br />
+        &lt;%$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'%&gt;</td>
+      <td>&lt;%*smarty日期函数*%&gt; </td>
+    </tr>
+    <tr>
+      <td>truncate</td>
+      <td>&lt;%$title|truncate:11:&quot;...&quot;%&gt;</td>
+      <td>&lt;%*截断字符串超长加...*%&gt;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&lt;%mailto|lower address=&quot;mailto:linux@admin.com%22%7D%7B*mailto邮件*%&gt; </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>mailto:%7B$tempmember%7C@count%&gt;</td>
+      <td>&lt;%*数据的总和*%&gt; </td>
+    </tr>
+    <tr>
+      <td>capitalize</td>
+      <td>&lt;%$english_word|capitalize%&gt;<br />
+        &lt;%$english_word|capitalize:true%&gt;</td>
+      <td>&lt;%*首字母大写*%&gt; <br />
+        &lt;%*每个单词的首字母大写*%&gt; </td>
+    </tr>
+    <tr>
+      <td>count_characters</td>
+      <td>&lt;%$title|count_characters:true%&gt;</td>
+      <td>&lt;%*字符串的长度加true字符空格,不加true不计算空格*%&gt; </td>
+    </tr>
+    <tr>
+      <td>cat</td>
+      <td>&lt;%$title|cat:'字符串后加入字符'%&gt;</td>
+      <td>&lt;%*拼接字符串*%&gt; </td>
+    </tr>
+    <tr>
+      <td>count_words</td>
+      <td>&lt;%$title|count_words%&gt;</td>
+      <td>&lt;%*计算字符数量*%&gt; </td>
+    </tr>
+    <tr>
+      <td>default</td>
+      <td>&lt;%$title2|default:&quot;dsgadsgds&quot;%&gt;;</td>
+      <td>&lt;%*如果变量不存在就输出默认值*%&gt; </td>
+    </tr>
+    <tr>
+      <td>escape</td>
+      <td>&lt;%$english_word|escape:html%&gt;<br />
+        &lt;%$english_word|escape:htmlall%&gt;<br />
+        &lt;%$english_word|escape:url%&gt;<br />
+        &lt;%$english_word|escape:quotes%&gt;</td>
+      <td>&lt;%*将字符串中的HTML转换为HTML编码方式*%&gt; <br />        &lt;%*转换为HTML编码方式*%&gt; <br />        &lt;%*转换为URL编码方式*%&gt; <br />        
+        &lt;%*转换为HTML编码方式*%&gt; </td>
+    </tr>
+    <tr>
+      <td>indent</td>
+      <td>&lt;%$title|indent:100%&gt;</td>
+      <td>&lt;%*缩进指定宽度*%&gt; </td>
+    </tr>
+    <tr>
+      <td>regex_replace</td>
+      <td>&lt;%$title|regex_replace:&quot;/要/&quot;:&quot;爱&quot;%&gt;</td>
+      <td>&lt;%*正则表达式替换字符*%&gt; </td>
+    </tr>
+    <tr>
+      <td>replace</td>
+      <td>&lt;%$title|replace:&quot;要&quot;:&quot;爱&quot;%&gt;</td>
+      <td>&lt;%*Replace替换字符*%&gt; </td>
+    </tr>
+    <tr>
+      <td>spacify</td>
+      <td>&lt;%$english_word|spacify:&quot;||&quot;%&gt;</td>
+      <td>&lt;%*分隔字符串*%&gt; </td>
+    </tr>
+    <tr>
+      <td>string_format</td>
+      <td>&lt;%$money|string_format:&quot;%.2f&quot;%&gt;<br />
+        &lt;%$money|string_format:&quot;%d&quot;%&gt;</td>
+      <td>&lt;%*格式化数字为Float数*%&gt; <br />
+        &lt;%*格式化数字为INT数*%&gt; </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>strip</td>
+      <td>&lt;%$english_word|strip:&quot; &quot;%&gt;</td>
+      <td>&lt;%*替换空格*%&gt; </td>
+    </tr>
+    <tr>
+      <td>strip_tags</td>
+      <td>&lt;%$english_word|strip_tags:false%&gt;</td>
+      <td>&lt;%*替换标签*%&gt; </td>
+    </tr>
+    <tr>
+      <td>truncate</td>
+      <td>&lt;%$english_word|truncate:10:&quot;...&quot;%&gt;</td>
+      <td>&lt;%*截取指定长度字符,默认截取80字符长度*%&gt; </td>
+    </tr>
+    <tr>
+      <td>wordwrap</td>
+      <td>&lt;%$english_word|wordwrap:10%&gt;</td>
+      <td>&lt;%*多长后字符串换行,默认换行长度为80*%&gt; </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&lt;%$english_word|upper|spacify|truncate:30:&quot;...&quot;%&gt;</td>
+      <td>&lt;%*Smarty支持多个函数的组合,此组合为字符串先大写然后分隔然后截取指定长度*%&gt; </td>
+    </tr>
+    <tr>
+      <td>in_array</td>
+      <td>&lt;%if $id|in_array:$ry%&gt;checked&lt;%/if%&gt;</td>
+      <td>&nbsp;</td>
+    </tr>
+    </table>
+</div>
+<div id="vsmarty5" class="tab-pane fade">
+  <pre id="best-content-1294540511" accuse="aContent"> {$var=...}<br />{assign}函数的缩写。你可以在模板内对变量进行赋值，或者对数组元素进行赋值。<br />● {append}<br />{append}可以在运行时为数组变量增加或者创建值。<br />● {assign}<br />{assign}用于在模板运行期间赋值给变量。<br />● {block}<br />{block}可在模板上定义一块区域，以进行模板继承。<br />● {call}<br />{call}可以调用一个通过 {function} 标签来定义的模板函数，如同调用插件函数一样。<br />● {capture}<br />{capture}可以捕获标记范围内的输出内容，存到变量中而不显示。<br />● {config_load}<br />{config_load}用于从配置文件中 加载配置变量#variables#。<br />● {debug}<br />{debug}会在页面上显示调试控制台。<br />● {extends}<br />模板继承中，你可以在子模板内使用{extends}标签来扩展父模板。<br />● {for}<br />{for}{forelse}用于创建一个简单的循环。<br />● {foreach},{foreachelse}<br />{foreach}用于循环数组。{foreach}的语法比{section}循环要更简单和清晰，并且可以使用非数字下标的数组。<br />@index<br />index是当前数组索引，从0开始计算。<br />@iteration<br />iteration是当前循环的次数，和index不同，iteration是从1开始。iteration在每次循环的时候都会加一。<br />@first<br />当循环{foreach}是首次循环时，first将为TRUE。<br />@last<br />当{foreach}循环到了最后一次时，last将为TRUE。<br />@show<br />show属性是在{foreach}循环执行之后，检测循环是否显示数据的判断。show是一个布尔值。<br />@total<br />total是整个{foreach}循环的次数。 total可以在{foreach}内部，或者之后使用。<br />{break}<br />{break}停止循环。<br />{continue}<br />{continue}将跳过当前本次循环并进入下一次循环。<br />● {function}<br />{function}用于在模板内创建函数，这些函数可以像插件函数一样调用。 用这个方式来代替写插件来显示内容，更具有可管理性。这也可以简化数据的复杂度，如多层结构的菜单。<br />● {if},{elseif},{else}<br />Smarty的{if}条件判断和PHP的if 非常相似，只是增加了一些特性。每个{if}必须有一个配对的{/if}. 也可以使用{else} 和 {elseif}. 全部的PHP条件表达式和函数都可以在if内使用，如||, or, &amp;&amp;, and, is_array(), 等等。<br />● {include}<br />{include}用于载入其他模板到当前模板中。 在包含模板中可用的变量，载入后在当前模板仍然可用。<br />● {include_php}<br />重要提示:{include_php}是废弃的函数，用注册插件的方式来将程序代码和显示分离，是更好的选择。在Smarty 3.1，{include_php}仅在SmartyBC中可用。<br />● {insert}<br />重要提示:{insert}是废弃的函数，不应该再使用。将你的PHP逻辑放到PHP脚本中或者通过插件来代替。<br />● {ldelim},{rdelim}<br />{ldelim}和{rdelim}用于避免解析模板定界符，默认是 { and }。同时你也可以用{literal}{/literal}来避免解析区域的字符，如javascript或者css。<br />● {literal}<br />{literal}可以让一个模板区域的字符原样输出。这经常用于保护页面上的Javascript或css样式表，避免因为Smarty的定界符{语法}而错被解析。在{literal}{/literal}内的任何标签都不会被解析，原样输出。所以如果你有需要放到{literal}内的标签，首先可以考虑是否用{ldelim}{rdelim}来代替定界符在页面上的显示（不用{literal}）。<br />● {nocache}<br />{nocache}用于关闭模板区块的缓存。{nocache}都必须和一个{/nocache}匹配。<br />● {php}<br />重要说明:Smarty已经废弃{php}标签，强烈建议不要使用。请把你的PHP逻辑放到PHP程序或者插件函数中实现。<br />● {section},{sectionelse}<br />{section}可以循环遍历连续数字索引的数组, 区别于{foreach}可以循环任意关联数组. 每个{section}标签都必须有一个匹配的{/section}关闭标签。<br />.index<br />index是当前数组的索引值，从0开始，或者从设定的start值开始。它将每次循环增加1或者增加指定的step值。<br />.index_prev<br />index_prev上一次循环的索引值。在第一次循环的时候，它是-1.<br />.index_next<br />index_next是下一次循环的索引值。在最后一次循环时，它会比当前索引加1，或者加上指定的step属性值。<br />.iteration<br />iteration是当前的循环次数，从1开始。<br />.first<br />如果当前的循环是第一次，first将被设成TRUE。<br />.last<br />如果当前的循环是最后一次，那么last将为TRUE。<br />.rownum<br />rownum是当前循环的次数，从1开始。它是iteration 的别名。<br />.loop<br />loop是最后一次{section}循环的下标。它可以在{section}循环中或者循环后使用。<br />.show<br />show是一个布尔值参数。如果设置为FALSE，section将不会被显示。如果有{sectionelse}显示，它们将被交替显示。<br />.total<br />total是{section}的总数。 它可以在{section}循环中或者循环后使用。<br />● {setfilter}<br />{setfilter}...{/setfilter}块标签可以使用模板定义的变量过滤器。<br />● {strip}<br />很多时候，页面设计师会遇到模板上的空格和回车影响到页面输出HTML的情况（浏览器&ldquo;特性&rdquo;），所以你可以把你的标签都放到一起，以取得想要的结果。但这很容易最终导致模板无法阅读和管理。<br />任何在{strip}{/strip}中的标签都会被过滤掉多余的空格和回车， 并把全部标签放在同一行内显示。这样你的模板还是可读的，而且也不需要担心多余的空格问题。<br />● {while}<br />Smarty的{while}循环和PHP的while 在灵活性方面是几乎一样的，只是增加了少许特性。 每个{while}必须有相应的{/while}. 任何的PHP条件或者函数表达式都是可用的，如||, or, &amp;&amp;, and, is_array(), 等等。<br />下面是可用的运算符列表，使用中都会放到元素的中间并且用空格分隔。 注意列表中[方括号]的是可选的，而且还会列出对应PHP的表达式。</pre>
+  <p>&nbsp;</p>
+</div>
+<div id="vsmarty6" class="tab-pane fade">
+  <p>&lt;%include_php file=&quot;function.php&quot;%&gt; &lt;%*包含指定的PHP文件*%&gt;<br />
+    &lt;%capture name=banner%&gt; &lt;%*注释掉中间显示内容*%&gt; <br />
+&lt;%include file=&quot;banner.tpl&quot;%&gt; <br />
+&lt;%/capture%&gt; <br />
+&lt;%include file=&quot;banner.tpl&quot; title=&quot;Smarty学习&quot;%&gt; </p>
+</div>
+
+
+</div>  
+</div>
+<script type="text/dialog">
+$(document).ready(function() {
+
+});
+</script>

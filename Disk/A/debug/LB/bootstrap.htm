@@ -1,0 +1,496 @@
+<link rel="stylesheet" href="/A/Font-Awesome-3.2.1/css/font-awesome.css">
+<style>
+ .bs-glyphicons{margin:0 -10px 20px;overflow:hidden}
+ .bs-glyphicons-list{padding-left:0;list-style:none}
+ .bs-glyphicons li{font-size:14px;float:left;width:95px;height:55px;padding:10px;line-height:1.4;text-align:center;background-color:#f9f9f9;border:1px solid #fff}
+ 
+ .bs-color-list{padding-left:0;list-style:none}
+ .bs-color a{font-size:14px;float:left;width:95px;height:55px;padding:10px;line-height:1.4;text-align:center;border:1px solid #fff}
+ 
+ .bs-glyphicons .glyphicon{margin-top:5px;margin-bottom:10px;font-size:24px}
+ .bs-glyphicons .glyphicon-class{display:block;text-align:center;word-wrap:break-word}
+/* .bs-glyphicons li:hover{color:#fff;background-color:#563d7c}*/
+ .bs-glyphicons li:hover{background-color:#563d7c}
+ .bs-glyphicons li a:hover{color:#fff;}
+ .bs-glyphicons li a{color:#000;}
+</style>
+<div class="panel panel-default" style="width:800px">
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+<li class="active"><a data-toggle="tab" role="tab" href="#vsbootstrap1">常用</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap2">布局</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap3">栅格</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap4">表格</a></li>
+
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap5">pancel</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap6">屏幕响应</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap7">排版</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap8">按钮</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap9">图片</a></li>
+
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap11">辅助</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap12">导航</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap13">分页</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap14">标签</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap15">徽章</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap16">页头</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap17">缩略图</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap18">警告框</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap19">进度条</a></li>
+
+
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap21">列表组</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap22">面版</a></li>
+<li class=""><a>|</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap23">对话框</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap24">下拉菜单</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap25">滚动监听</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap26">过渡效果</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap27">标签页</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap28">工具提示</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap29">弹出</a></li>
+
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap31">警告</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap32">按钮</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap33">抽屉</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap34">全屏焦点图</a></li>
+
+
+
+
+</ul>  
+<div id="myTabContent" class="tab-content panel-body">
+<div id="vsbootstrap1" class="tab-pane fade">
+    <p>常用</p>
+</div>
+
+<div id="vsbootstrap2" class="tab-pane fade active in">
+  
+  
+  <table class="table table-hover table-condensed">
+  <tr>
+    <td>布局</td>
+    <td><pre id="line1">&lt;div class=&quot;container-fluid&quot;&gt;
+　&lt;div class=&quot;row&quot;&gt;
+　　&lt;div class=&quot;col-xs-12 col-sm-6 col-md-8&quot;&gt;.col-xs-12 .col-sm-6 .col-md-8&lt;/div&gt;
+　　&lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+　&lt;/div&gt;
+　&lt;div class=&quot;row&quot;&gt;
+　　&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+　　&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+　　&lt;div class=&quot;clearfix visible-xs-block&quot;&gt;&lt;/div&gt;
+　　&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+　&lt;/div&gt;
+&lt;/div&gt;</pre></td>
+    </tr>
+  <tr>
+    <td>列偏移</td>
+    <td>使用 .col-md-offset-* 类可以将列向右侧偏移。</td>
+    </tr>
+  </table>
+<p>
+自适应说明 : 
+</p>
+<table class="table table-hover table-condensed  table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th> 超小屏幕              <br />
+          手机 <br />
+          (&lt;768px) </th>
+        <th> 小屏幕              <br />
+          平板<br />
+(≥768px) </th>
+        <th> 中等屏幕              <br />
+          桌面显示器 <br />
+          (≥992px) </th>
+        <th> 大屏幕              <br />
+          大桌面显示器<br />
+(≥1200px) </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>栅格系统行为</th>
+        <td>总是水平排列</td>
+        <td colspan="3">开始是堆叠在一起的，当大于这些阈值时将变为水平排列C</td>
+      </tr>
+      <tr>
+        <th>.container 最大宽度</th>
+        <td>None （自动）</td>
+        <td>750px</td>
+        <td>970px</td>
+        <td>1170px</td>
+      </tr>
+      <tr>
+        <th>类前缀</th>
+        <td>.col-xs-</td>
+        <td>.col-sm-</td>
+        <td>.col-md-</td>
+        <td>.col-lg-</td>
+      </tr>
+      <tr>
+        <th>列（column）数</th>
+        <td colspan="4">12</td>
+      </tr>
+      <tr>
+        <th>最大列（column）宽</th>
+        <td>自动</td>
+        <td>~62px</td>
+        <td>~81px</td>
+        <td>~97px</td>
+      </tr>
+      <tr>
+        <th>槽（gutter）宽</th>
+        <td colspan="4">30px （每列左右均有 15px）</td>
+      </tr>
+      <tr>
+        <th>可嵌套</th>
+        <td colspan="4">是</td>
+      </tr>
+      <tr>
+        <th>偏移（Offsets）</th>
+        <td colspan="4">是</td>
+      </tr>
+      <tr>
+        <th>列排序</th>
+        <td colspan="4">是</td>
+      </tr>
+    </tbody>
+  </table>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th></th>
+      <th> 超小屏幕              手机 (&lt;768px) </th>
+      <th> 小屏幕              平板 (≥768px) </th>
+      <th> 中等屏幕              桌面 (≥992px) </th>
+      <th> 大屏幕              桌面 (≥1200px) </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>.visible-xs-*</th>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+      <td>隐藏</td>
+      <td>隐藏</td>
+    </tr>
+    <tr>
+      <th>.visible-sm-*</th>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+      <td>隐藏</td>
+    </tr>
+    <tr>
+      <th>.visible-md-*</th>
+      <td>隐藏</td>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+    </tr>
+    <tr>
+      <th>.visible-lg-*</th>
+      <td>隐藏</td>
+      <td>隐藏</td>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th>.hidden-xs</th>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+    </tr>
+    <tr>
+      <th>.hidden-sm</th>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+    </tr>
+    <tr>
+      <th>.hidden-md</th>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+      <td class="danger">可见</td>
+    </tr>
+    <tr>
+      <th>.hidden-lg</th>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+      <td class="danger">可见</td>
+      <td>隐藏</td>
+    </tr>
+  </tbody>
+</table>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<div id="vsbootstrap3" class="tab-pane fade">
+
+
+</div>
+<div id="vsbootstrap4" class="tab-pane fade">
+  <p>表格
+</p>
+  <pre>&lt;table class=&quot;table table-striped table-hover table-condensed table-bordered&quot;&gt;  
+　&lt;tr&gt;  
+　　&lt;td&gt;&lt;/td&gt;  
+　　&lt;td&gt;&lt;/td&gt;  
+　&lt;/tr&gt;  
+&lt;/table&gt;</pre>
+  <table class="table table-striped table-hover table-condensed table-bordered">
+    
+    <tr>
+      <td width="40">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    </table>
+  <br />
+
+<table class="table table-striped table-condensed">  
+  
+  <tr>
+    <td width="40">&nbsp;</td>
+    <td class="active"> class=&quot;active&quot;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="success"> class=&quot;success&quot;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="warning"> class=&quot;warning&quot;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="danger"> class=&quot;danger&quot;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="info"> class=&quot;info&quot;</td>
+  </tr>
+</table>
+</div>
+<div id="vsbootstrap5" class="tab-pane fade">
+  <p>5自适应</p>
+</div>
+
+<div id="vsbootstrap6" class="tab-pane fade">
+  <p>6自适应</p>
+</div>
+
+<div id="vsbootstrap7" class="tab-pane fade">
+  <p>7自适应</p>
+</div>
+
+<div id="vsbootstrap8" class="tab-pane fade">
+
+<p>按钮</p>
+<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>  
+<br /><br />
+<pre>&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;  <br />
+</pre>
+
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p>
+<pre>&lt;p&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Large button&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;Large button&lt;/button&gt;<br />&lt;/p&gt;<br />&lt;p&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Default button&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default button&lt;/button&gt;<br />&lt;/p&gt;<br />&lt;p&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Small button&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Small button&lt;/button&gt;<br />&lt;/p&gt;<br />&lt;p&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-xs&quot;&gt;Extra small button&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;Extra small button&lt;/button&gt;<br />&lt;/p&gt;</pre>
+
+
+通过给按钮添加 .btn-block 类可以将其拉伸至父元素100%的宽度，而且按钮也变为了块级（block）元素。
+<br />
+
+<button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+<button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+<pre>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg btn-block&quot;&gt;Block level button&lt;/button&gt;<br />&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-block&quot;&gt;Block level button&lt;/button&gt;</pre>
+:active disabled 
+<br />
+为 &lt;a&gt;、&lt;button&gt; 或 &lt;input&gt; 元素应用按钮类 <br />
+<a class="btn btn-default" href="#" role="button">Link</a>
+<button class="btn btn-default" type="submit">Button</button>
+<input class="btn btn-default" type="button" value="Input">
+<input class="btn btn-default" type="submit" value="Submit">
+
+<br />
+<br />
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div><br /><br />
+
+
+<pre>&lt;div class=&quot;btn-group&quot;&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Left&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Middle&lt;/button&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Right&lt;/button&gt;<br />&lt;/div&gt;</pre>
+
+<pre>&lt;div class=&quot;btn-toolbar&quot; role=&quot;toolbar&quot;&gt;    
+ &lt;div class=&quot;btn-group&quot;&gt;...&lt;/div&gt;    
+ &lt;div class=&quot;btn-group&quot;&gt;...&lt;/div&gt;    
+ &lt;div class=&quot;btn-group&quot;&gt;...&lt;/div&gt;  
+&lt;/div&gt;</pre>
+
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div><br />
+<br />
+
+
+<pre>&lt;div class=&quot;btn-group&quot;&gt;<br />  &lt;button type=&quot;button&quot; class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;<br />    Action &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;<br />  &lt;/button&gt;<br />  &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;<br />    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;<br />    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;<br />    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;<br />    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;<br />    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;<br />  &lt;/ul&gt;<br />&lt;/div&gt;</pre>
+
+</div>
+
+<div id="vsbootstrap9" class="tab-pane fade">
+  <p>9自适应</p>
+</div>
+
+<div id="vsbootstrap11" class="tab-pane fade">
+  <p>11自适应</p>
+</div>
+
+<div id="vsbootstrap12" class="tab-pane fade">
+  <p>12自适应</p>
+</div>
+
+<div id="vsbootstrap13" class="tab-pane fade">
+  <p>13自适应</p>
+</div>
+
+<div id="vsbootstrap14" class="tab-pane fade">
+  <p>14自适应</p>
+</div>
+
+<div id="vsbootstrap15" class="tab-pane fade">
+  <p>15自适应</p>
+</div>
+
+<div id="vsbootstrap16" class="tab-pane fade">
+  <p>16自适应</p>
+</div>
+
+<div id="vsbootstrap17" class="tab-pane fade">
+  <p>17自适应</p>
+</div>
+
+<div id="vsbootstrap18" class="tab-pane fade">
+  <p>18自适应</p>
+</div>
+
+<div id="vsbootstrap19" class="tab-pane fade">
+  <p>19自适应</p>
+</div>
+
+
+<div id="vsbootstrap21" class="tab-pane fade">
+  <p>21自适应</p>
+</div>
+
+<div id="vsbootstrap22" class="tab-pane fade">
+  <p>22自适应</p>
+</div>
+
+<div id="vsbootstrap23" class="tab-pane fade">
+  <p>23自适应</p>
+</div>
+
+<div id="vsbootstrap24" class="tab-pane fade">
+  <p>24自适应</p>
+</div>
+
+<div id="vsbootstrap25" class="tab-pane fade">
+  <p>25自适应</p>
+</div>
+
+<div id="vsbootstrap26" class="tab-pane fade">
+  <p>26自适应</p>
+</div>
+
+<div id="vsbootstrap27" class="tab-pane fade">
+  <p>27自适应</p>
+</div>
+
+<div id="vsbootstrap28" class="tab-pane fade">
+  <p>28自适应</p>
+</div>
+
+<div id="vsbootstrap29" class="tab-pane fade">
+  <p>29自适应</p>
+</div>
+
+<div id="vsbootstrap31" class="tab-pane fade">
+  <p>31自适应</p>
+</div>
+
+<div id="vsbootstrap32" class="tab-pane fade">
+  <p>32自适应</p>
+</div>
+
+<div id="vsbootstrap33" class="tab-pane fade">
+  <p>33自适应</p>
+</div>
+
+<div id="vsbootstrap34" class="tab-pane fade">
+  <p>34自适应</p>
+</div>
+
+
+
+</div>  
+</div>
+<script type="text/dialog">
+
+
+$(document).ready(function() {
+
+
+});
+</script>

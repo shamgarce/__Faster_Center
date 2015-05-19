@@ -1,0 +1,207 @@
+ 
+<div class="panel panel-default" style="width:700px">
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+<li class="active"><a data-toggle="tab" role="tab" href="#vfun1">常用函数</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vfun2">数组</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vfun3">时间</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vfun4">其他</a></li>
+</ul>  
+<div id="myTabContent" class="tab-content panel-body">
+<div id="vfun1" class="tab-pane fade active in">
+  <p>serialize(); //序列化<br />
+    unserialize();				//反序列化 <br />
+    array_merge($keys,$task);	//数组合并 <br />
+    array_unique($result);	//排重 <br />
+    array_diff($task,$tasko);	//想减 <br />
+     implode(',',$arr); <br />
+    explode(',',$string); <br />
+    shuffle($rc);				//打乱数组 <br />
+    array_flip()				//键值反转 <br />
+    $arr 	= !empty($urllist)?array_unique($urllist):'';//排重 </p>
+  <p>&nbsp;</p>
+</div>
+<div id="vfun2" class="tab-pane fade">
+  <p>//熟悉和了解 <br />
+    array_diff() 		返回两个数组的差集数组。 <br />
+    array_unique() 		删除数组中重复的值。 <br />
+    array_count_values() 	用于统计数组中所有值出现的次数。 <br />
+    array_intersect() 	计算数组的交集。 <br />
+    array_rand() 		从数组中随机选出一个或多个元素，并返回。 <br />
+    in_array() 		检查数组中是否存在指定的值。 <br />
+    array_search() 		在数组中搜索给定的值，如果成功则返回相应的键名。 <br />
+    arsort() 		对数组进行逆向排序并保持索引关系。 <br />
+    asort() 		对数组进行排序并保持索引关系。 <br />
+    krsort() 		对数组按照键名逆向排序。 <br />
+    ksort() 		对数组按照键名排序。 <br />
+    rsort() 		对数组逆向排序。 <br />
+    sort() 			对数组排序。 </p>
+  <p>array() 		创建数组。 <br />
+    array_change_key_case() 返回其键均为大写或小写的数组。 <br />
+    array_chunk() 		把一个数组分割为新的数组块。 <br />
+    array_combine() 	通过合并两个数组来创建一个新数组。 <br />
+    array_diff_assoc() 	比较键名和键值，并返回两个数组的差集数组。 <br />
+    array_diff_key() 	比较键名，并返回两个数组的差集数组。 <br />
+    array_diff_uassoc() 	通过用户提供的回调函数做索引检查来计算数组的差集。 <br />
+    array_diff_ukey() 	用回调函数对键名比较计算数组的差集。 <br />
+    array_fill() 		用给定的值填充数组。 <br />
+    array_filter() 		用回调函数过滤数组中的元素。 <br />
+    array_flip() 		交换数组中的键和值。 <br />
+    array_intersect_assoc() 比较键名和键值，并返回两个数组的交集数组。 <br />
+    array_intersect_key() 	使用键名比较计算数组的交集。 <br />
+    array_intersect_uassoc()带索引检查计算数组的交集，用回调函数比较索引。 <br />
+    array_intersect_ukey() 	用回调函数比较键名来计算数组的交集。 <br />
+    array_key_exists() 	检查给定的键名或索引是否存在于数组中。 <br />
+    array_keys() 		返回数组中所有的键名。 <br />
+    array_map() 		将回调函数作用到给定数组的单元上。 <br />
+    array_merge() 		把一个或多个数组合并为一个数组。 <br />
+    array_merge_recursive() 递归地合并一个或多个数组。 <br />
+    array_multisort() 	对多个数组或多维数组进行排序。 <br />
+    array_pad() 		用值将数组填补到指定长度。 <br />
+    array_pop() 		将数组最后一个单元弹出（出栈）。 <br />
+    array_product() 	计算数组中所有值的乘积。 <br />
+    array_push() 		将一个或多个单元（元素）压入数组的末尾（入栈）。 <br />
+    array_reduce() 		用回调函数迭代地将数组简化为单一的值。 <br />
+    array_reverse() 	将原数组中的元素顺序翻转，创建新的数组并返回。 <br />
+    array_shift() 		删除数组中的第一个元素，并返回被删除元素的值。 <br />
+    array_slice() 		在数组中根据条件取出一段值，并返回。 <br />
+    array_splice() 		把数组中的一部分去掉并用其它值取代。 <br />
+    array_sum() 		计算数组中所有值的和。 <br />
+    array_udiff() 		用回调函数比较数据来计算数组的差集。 <br />
+    array_udiff_assoc() 	带索引检查计算数组的差集，用回调函数比较数据。 <br />
+    array_udiff_uassoc() 	带索引检查计算数组的差集，用回调函数比较数据和索引。 <br />
+    array_uintersect() 	计算数组的交集，用回调函数比较数据。 <br />
+    array_uintersect_assoc() 带索引检查计算数组的交集，用回调函数比较数据。 <br />
+    array_uintersect_uassoc()带索引检查计算数组的交集，用回调函数比较数据和索引。 <br />
+    array_unshift() 	在数组开头插入一个或多个元素。 <br />
+    array_values() 		返回数组中所有的值。 <br />
+    array_walk() 		对数组中的每个成员应用用户函数。 <br />
+    array_walk_recursive()	对数组中的每个成员递归地应用用户函数。</p>
+  <p>//其他 <br />
+    compact() 	建立一个数组，包括变量名和它们的值。 <br />
+    count() 	计算数组中的元素数目或对象中的属性个数。 <br />
+    current() 	返回数组中的当前元素。 <br />
+    each() 		返回数组中当前的键／值对并将数组指针向前移动一步。 <br />
+    end() 		将数组的内部指针指向最后一个元素。 <br />
+    extract() 	从数组中将变量导入到当前的符号表。 <br />
+    key() 		从关联数组中取得键名。 <br />
+    list() 		把数组中的值赋给一些变量。 <br />
+    natcasesort()	用&ldquo;自然排序&rdquo;算法对数组进行不区分大小写字母的排序。 <br />
+    natsort() 	用&ldquo;自然排序&rdquo;算法对数组排序。 <br />
+    next() 		将数组中的内部指针向前移动一位。 <br />
+    pos() 		current()的别名。 <br />
+    prev() 		将数组的内部指针倒回一位。 <br />
+    range() 	建立一个包含指定范围的元素的数组。 <br />
+    reset() 	将数组的内部指针指向第一个元素。 <br />
+    shuffle() 	把数组中的元素按随机顺序重新排列。 <br />
+    sizeof() 	count() 的别名。 <br />
+    uasort() 	使用用户自定义的比较函数对数组中的值进行排序并保持索引关联。 <br />
+    uksort() 	使用用户自定义的比较函数对数组中的键名进行排序。 <br />
+    usort() 	使用用户自定义的比较函数对数组中的值进行排序</p>
+</div>
+<div id="vfun3" class="tab-pane fade">
+date / mktime / strtotime / time / microtime / getdate / checkdate / set_time_limit<hr />
+
+date(格式,[时间]);  
+<blockquote>
+print(date(&quot;Y年m月d日&quot;);//输出当前,年月日.<br />
+print(date(&quot;Y年m月d日&quot;,60*60*24*365*10); //1979年12月30日.
+<br />
+print(date(&quot;Y-m-d h:i:s&quot;,60*60*24*365*10));//输出 1979-12-30 12:00:00</blockquote>
+
+    mktime(小时数,分数,秒数,月,日,年);<br />
+mktime(integer hour,integer minutes,integer seconds,integer month, integer day,integer year) 
+<blockquote>  
+echo(date(&quot;M-d-Y&quot;,mktime(0,0,0,12,36,2001)));<br />
+echo(date(&quot;M-d-Y&quot;,mktime(0,0,0,14,1,2001)));<br />
+echo(date(&quot;M-d-Y&quot;,mktime(0,0,0,1,1,2001)));<br />
+echo(date(&quot;M-d-Y&quot;,mktime(0,0,0,1,1,99)));
+<br />
+$currenthour=date(&quot;H&quot;);<br />
+print(&quot;50个小时后为:&quot;);<br />
+print(date(&quot;h:i A l F dS,Y&quot;,mktime($currenthour+50)));<br />
+print(&quot;&lt;br&gt;end&quot;);<br />
+</blockquote>
+    
+    strtotime($nowdate); 
+<blockquote>
+  <p>$nowdate=&quot;2019-08-05&quot; ;<br />
+    echo strtotime($nowdate);</p>
+</blockquote>
+<p>time(); </p> 
+<blockquote>print(time()); //输出1409651656</blockquote>
+    microtime();<br />
+    <blockquote>print(&quot;start:&quot;.microtime());<br />
+for($index=0;$index&lt;1000;$index++)<br />
+print(&quot;good!&quot;);<br />
+print(&quot;&lt;br&gt;stop:&quot;.microtime());<br />
+ print(microtime()); //输出0.84375200 1409651974<br />
+      list($usec, $sec) = explode(&quot; &quot;,microtime()); <br />
+$num = ((float)$usec + (float)$sec);<br />
+echo $num;    </blockquote>
+    set_time_limit(秒数); <br />
+    <br />
+    <blockquote>set_time_limit (0) <br />
+  set_time_limit (1) <br />
+  set_time_limit (20) </blockquote>
+    getdate(integer timestamp)<br />
+    <blockquote>
+      <p><span id="function.getdate"><span id="refsect1-function.getdate-unknown">$current_date=getdate();<br />
+print($current_date(&quot;hours&quot;));<br />
+print($current_date(&quot;minutes&quot;);<br />
+print($current_date(&quot;seconds&quot;);<br />
+$today = getdate();<br />
+        print_r($today);</span></span></p>
+      <p>输出</p>
+      <pre><span id="function.getdate2">Array  ( 
+     [seconds] =&gt; 40
+     [minutes] =&gt; 58
+     [hours]   =&gt; 21
+     [mday]    =&gt; 17 
+     [wday]    =&gt; 2 
+     [mon]     =&gt; 6 
+     [year]    =&gt; 2003
+     [yday]    =&gt; 167
+     [weekday] =&gt; Tuesday
+     [month]   =&gt; June
+     [0]       =&gt; 1055901520
+  )</span></pre>
+      <p>&nbsp;</p>
+    </blockquote>
+    checkdate(integer month,integer day,integer year)<br />
+    <blockquote> if(checkdate(2,29,1980)) 
+print(&quot;日期合法!n&quot;);</blockquote>
+  <hr />
+  <p>如果没有时间参数,则使用当前时间. 格式是一个字符串,其中以下字符有特殊意义:<br />
+U 替换成从一个起始时间(好象是1970年1月1日)以来的秒数<br />
+Y 替换成4位的年号.<br />
+y 替换成2位的年号.<br />
+F 替换成月份的英文全称.<br />
+M 替换成月份的英文简称.<br />
+m 替换成月份数.<br />
+z 替换成从当年1月1日以来的天数.<br />
+d 替换成日数.<br />
+l 替换成星期几的英文全称.<br />
+D 替换成星期几的英文简称.<br />
+w 替换成星期几(数字).<br />
+H 替换成小时数(24小时制).<br />
+h 替换成小时数(12小时制).<br />
+i 替换成分钟数.<br />
+s 替换成秒数.<br />
+A 替换成&quot;AM&quot;或&quot;PM&quot;.<br />
+a 替换成&quot;am&quot;或&quot;pm&quot;.<br />
+S 替换成序数字后缀,例如:&quot;st&quot;,&quot;nd&quot;,&quot;rd&quot;,&quot;th&quot;.<br />
+函数返回作过了替换的格式串.</p>
+  <p>&nbsp;</p>
+</div>
+<div id="vfun4" class="tab-pane fade">
+其他函数<hr>
+=
+</div>
+
+</div>  
+</div>
+<script type="text/dialog">
+$(document).ready(function() {
+
+});
+</script>

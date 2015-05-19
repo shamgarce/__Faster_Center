@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>悬浮层效果-测试展示</title>
+    <!-- Bootstrap -->
+    <link href="/app/bootstrap-3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/app/jquery-1.7.2.min.js"></script>
+    <script src="/app/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="/app/artDialog4.1.7/artDialog.js?skin=default"></script>
+    <script src="/app/W.js"></script>
+	<link rel="stylesheet" href="/app/jquery-powerFloat/css/powerFloat.css" type="text/css" />
+    <script src="/app/jquery-powerFloat/js/jquery-powerFloat.js"></script>
+    <script src="/app/jquery.insetborder.js"></script>
+    
+    
+<script language="javascript">
+$(document).ready(function(e) {
+	
+	$('.pinglun').hover(//注1
+			function(){
+			$(this).find('div.comment-act').fadeIn(100);
+		},function(){
+			$(this).find('div.comment-act').fadeOut(100);
+		});
+		
+	$(".pinglun a").click(function(){
+		alert($(this).attr('rel'));
+	})
+
+	$('a.sample-border1').borderEffect();
+	$('a.sample-border2').borderEffect({borderColor : '#ffffff'});
+	$('a.sample-border3').borderEffect({borderColor : '#cccccc', speed : 100, borderWidth: 10});
+
+
+});
+</script>
+<style> .comment-act{display:none;}</style>
+  </head>
+  <body>
+<div class="container">
+
+
+
+
+
+  <table width="600" class="table table-striped table-hover table-condensed">
+    <tr>
+      <td width="300">
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right"><a href="#respond">回复</a> | <a href="#respond" rel="v1">引用</a></div> end
+</div>
+
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v2">引用</a></div> end
+</div>       
+        
+        
+        
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td> 
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v3">引用</a></div> end
+</div>      
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v4">引用</a></div> end
+</div>      
+      
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>代码<br>
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v3">引用</a></div> end
+</div>
+
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v3">引用</a></div> end
+</div>
+
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v3">引用</a></div> end
+</div>
+
+<div class="pinglun">
+<div style="float:left">评论</div>
+<div style="float:right" class="comment-act"><a href="#respond">回复</a> | <a href="#respond" rel="v3">引用</a></div> end
+</div>
+
+
+</td>
+      <td><strong>css代码：</strong>
+      <blockquote>
+        <pre id="line3">.comment-act{display:none;}</pre>
+      </blockquote>
+      <strong>HTML代码：</strong>
+      <blockquote>
+        <pre id="line2">&lt;li class="comment"&gt;
+&lt;div style="float:left"&gt;悬停测试5&lt;/div&gt;
+&lt;div style="float:right;padding-right:30px" class="comment-act"&gt;
+&lt;a href="#respond"&gt;回复&lt;/a&gt; | &lt;a rel="#respond5" class="btas"&gt;引用&lt;/a&gt;&lt;/div&gt;&lt;/li&gt; </pre>
+      </blockquote>
+      <strong>JS代码：</strong>
+      <blockquote><pre id="line1">
+$(document).ready(function(e) {<br>    $('a.sample-border1').borderEffect();<br>    $('a.sample-border2').borderEffect({borderColor : '#ffffff'});<br>    $('a.sample-border3').borderEffect({borderColor : '#cccccc', speed : 100, borderWidth: 10});<br>});</pre>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="600" class="table table-striped table-hover table-condensed">
+    <tr>
+      <td width="300">选中图片</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+     
+     
+<style>
+ul {list-style: none;margin: 0;padding: 0;}
+ul li {float: left;display: inline-block;margin: 0 15px 0 0;}
+ul li a {display: block;}
+ul li a img {width: 130px;height: 130px;}
+</style> 
+
+
+<ul>
+			<li>
+				<a href="#" class="sample-border1">
+					<img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/>
+			</a></li>
+			<li>
+				<a href="#" class="sample-border2">
+					<img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="sample-border3">
+					<img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/>
+				</a>
+			</li>
+		</ul> 
+      
+      </td>
+      <td><strong>css代码：</strong>
+        <blockquote>
+          <pre id="line4">&lt;style&gt;<br>ul {list-style: none;margin: 0;padding: 0;}<br>ul li {float: left;display: inline-block;margin: 0 15px 0 0;}<br>ul li a {display: block;}<br>ul li a img {width: 130px;height: 130px;}<br>&lt;/style&gt; </pre>
+        </blockquote>
+        <strong>HTML代码：</strong>
+        <blockquote>
+          <pre id="line16">&lt;ul&gt;
+  <span id="line50"> </span>	&lt;li&gt;
+  <span id="line51"> </span>		&lt;a href="#" class="sample-border1"&gt;
+  <span id="line52"> </span>			&lt;img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/&gt;
+  <span id="line53"> </span>		&lt;/a&gt;
+  <span id="line54"> </span>	&lt;/li&gt;
+  <span id="line55"> </span>	&lt;li&gt;
+  <span id="line56"> </span>		&lt;a href="#" class="sample-border2"&gt;
+  <span id="line57"> </span>			&lt;img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/&gt;
+  <span id="line58"> </span>		&lt;/a&gt;
+  <span id="line59"> </span>	&lt;/li&gt;
+  <span id="line60"> </span>	&lt;li&gt;
+  <span id="line61"> </span>		&lt;a href="#" class="sample-border3"&gt;
+  <span id="line62"> </span>			&lt;img src="http://icons.iconarchive.com/icons/danleech/simple/1024/github-icon.png"/&gt;
+  <span id="line63"> </span>		&lt;/a&gt;
+  <span id="line64"> </span>	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+          
+        </blockquote>
+        <strong>JS代码：</strong>
+        <blockquote>
+          <pre id="line6">$('li.comment').hover(//注1
+  <span id="line7"> </span>function(){ 
+ <span id="line8"> </span>     $(this).find('div.comment-act').fadeIn(100);
+  <span id="line9"> </span>},
+  <span id="line10"> </span>function(){
+  <span id="line11">     </span>$(this).find('div.comment-act').fadeOut(100);
+  <span id="line12"> </span>});
+  <span id="line13"> </span>$(".btas").click(function(){ 
+ <span id="line14"> </span>     alert($(this).attr('rel'));  <span id="line15"> </span>
+})</pre>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+
+  </body>
+</html>

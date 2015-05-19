@@ -1,0 +1,96 @@
+<table class="table table-hover">
+  <tr>
+    <td>&nbsp;</td>
+    <td>HTML Table JS PhpFun Mysql</td>
+  </tr>
+  <tr>
+    <td>HTML</td>
+    <td><pre id="line1">&lt;!doctype html&gt;<span id="line2">
+</span>&lt;html&gt;<span id="line3">
+</span>&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;<span id="line5"></span>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;
+&lt;title&gt;EASY平台&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/A/CSS/normalize-min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/A/bootstrap-3.2.0/css/bootstrap.css&quot;&gt;<span id="line11"></span>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/A/bootstrap-3.2.0/css/bootstrap-theme.css&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/A/jquery-1.10.2.min.js&quot;&gt; &lt;/script&gt;<span id="line8">
+</span>&lt;script type=&quot;text/javascript&quot; src=&quot;/A/bootstrap-3.2.0/js/bootstrap.js&quot;&gt; &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/A/artDialog4.1.7/artDialog.js?skin=default&quot; charset=&quot;utf-8&quot;&gt; &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/A/CommonIni.js&quot;&gt; &lt;/script&gt;<span id="line15"></span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;/A/CK.js&quot;&gt; &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/A/debug/debug.js&quot;&gt; &lt;/script&gt;<span id="line17">
+</span>&lt;/head&gt;<span id="line18"></span>
+&lt;body&gt;
+&lt;div class=&quot;container-fluid&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-xs-12 col-sm-6 col-md-8&quot;&gt;.col-xs-12 .col-sm-6 .col-md-8&lt;/div&gt;
+&lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;.col-xs-6 .col-md-4&lt;/div&gt;
+&lt;/div&gt;  
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+&lt;div class=&quot;clearfix visible-xs-block&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;col-xs-6 col-sm-4&quot;&gt;.col-xs-6 .col-sm-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+<span id="line84"></span>&lt;/body&gt;<span id="line85">
+</span>&lt;/html&gt;</pre></td></tr>  
+  <tr>
+    <td>Table</td>
+    <td><pre>&lt;table class=&quot;table table-striped table-hover table-condensed&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre></td>
+  </tr>
+  <tr>
+    <td>JS</td>
+    <td><pre>&lt;script type=&quot;text/dialog&quot;&gt;
+$(document).ready(function() {
+});
+&lt;/script&gt;
+<br>
+&lt;script language=&quot;javascript&quot;&gt;<br />$(document).ready(function(){
+    $.ajax({<br />        type: &quot;GET&quot;,<br />        url: url,<br />        cache: false,<br />        dataType: 'html',<br />		data: JSON.stringify(data),<br />        beforeSend: function() {<br />            loading('open');<br />        },<br />        error: function() {<br />        	loading('请求失败!');<br />        },<br />        success: function(result) {<br />            $(container).html(result);<br />        },<br />        complete: function() {<br />            loading('close');<br />        }<br />    });
+
+    $.get(&quot;get1.php&quot;, {                           
+        username :  $(&quot;#username&quot;).val() , //传入参数 
+        content :  $(&quot;#content&quot;).val() 
+        }, function (data, textStatus){ 
+            $(&quot;#resText&quot;).html(data); // 把返回的数据添加到页面上  
+        }              
+    );
+<br />});  <br />&lt;/script&gt;<br />
+    </pre></td>
+  </tr>
+  <tr>
+    <td>PHP</td>
+    <td><pre>echo strtotime(&quot;2010-7-18 9:9:9&quot;);<br />echo date(&quot;Y-m-d H:i:s&quot;,time());
+
+getarr($str,$flit='0',$bl = &quot;\r\n&quot;)
+getstr($arr,$flit='0',$bl = &quot;\r\n&quot;)
+
+Fs($fileName, $text) 
+Fr($filename)
+
+Cr($file, $dir = '') 
+Cw($file, $array, $dir = '')
+Cd($file, $dir = '')
+
+saddslashes($string)
+stripslashes($string)
+
+strexists($haystack, $needle)    </pre></td>
+  </tr>
+  <tr>
+    <td>Mysql</td>
+    <td><pre>select FROM_UNIXTIME(pubdate) from article
+select UNIX_TIMESTAMP('2007-11-20') from article</pre></td>
+  </tr>
+  <tr>
+    <td>==</td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>

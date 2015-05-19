@@ -1,0 +1,94 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td><pre id="line1">&lt;link rel=&quot;stylesheet&quot; href=&quot;/app/ColorPicker/ColorPicker/colorpicker.css&quot;&gt; <br />&lt;script charset=&quot;utf-8&quot; src=&quot;/app/ColorPicker/ColorPicker/ColorPicker.js&quot;&gt;&lt;/script&gt;</pre></td>
+    <td>
+     加载</td>
+  </tr>
+  <tr>
+    <td><table>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td><h2>介绍</h2>
+            <p>一个简单的组件来选择色彩在你选择的颜色一样Adobe Photoshop</p>
+            <h3> </h3></td>
+          <td colspan="2"> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td colspan="3"><h3>特征</h3>
+            <ul>
+              <li>在页面元素平面模式</li>
+              <li>颜色选择功能强大的控件</li>
+              <li>容易定制通过改变一些图像的外观</li>
+              <li>可视选择器颜色变化</li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td colspan="3"><div>
+            <div>
+              <h2> </h2>
+              <h3>例子</h3>
+              <p>平面模式              </p>
+              <p>&nbsp;</p>
+              <div class="clear"></div>
+<div id ="colorpickerHolder"></div>
+              <pre>$('#colorpickerHolder').ColorPicker({flat: true});</pre>
+              <p>自定义皮肤，并使用平面模式显示在一个自定义的颜色选择器部件。</p>
+              <p>附加到一个文本字段，并使用回调函数来更新字段的值的颜色，并提交颜色设置在该领域的值。</p>
+              <p>
+                <input maxlength="6" size="6" id="colorpickerField1" value="00ff00" type="text" />
+              </p>
+              <p>
+                <input maxlength="6" size="6" id="colorpickerField2" value="0000ff" type="text" />
+              </p>
+              <p>
+                <input maxlength="6" size="6" id="colorpickerField3" value="ff0000" type="text" />
+              </p>
+              <pre>$('#colorpickerField1, #colorpickerField2, #colorpickerField3').ColorPicker({  	      
+onSubmit: function(hsb, hex, rgb, el) {  		          
+$(el).val(hex);  		          
+$(el).ColorPickerHide();  	      
+},  	      
+onBeforeShow: function () {  		          
+$(this).ColorPickerSetColor(this.value);  	     
+ }    
+})    
+.bind('keyup', function(){  	      
+$(this).ColorPickerSetColor(this.value);    
+});            </pre>
+              <p>使用回调的实现预览的颜色和添加颜色动画。</p>
+              <div id="colorSelector"><div></div>
+              </div>
+              <pre>$('#colorSelector').ColorPicker({  	      
+color: '#0000ff',  	      
+onShow: function (colpkr) {  		          
+$(colpkr).fadeIn(500);  		          
+return false;  	      
+},  	     
+ onHide: function (colpkr) {  		          
+$(colpkr).fadeOut(500);  		         
+ return false;  	      
+},  	      
+onChange: function (hsb, hex, rgb) {  		          
+$('#colorSelector div').css('backgroundColor', '#' + hex);  	      
+}    
+});    </pre>
+            </div>
+          </div></td>
+        </tr>
+      </tbody>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> <a href="http://s.so/demo/example/vc/default/js/ColorPicker.html" target="_blank">参考</a></td>
+    <td>&nbsp;</td>
+  </tr>
+
+  </table>

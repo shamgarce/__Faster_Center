@@ -1,0 +1,172 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td><p>      用法: date(格式,[时间]);<br />
+      如果没有时间参数,则使用当前时间. 格式是一个字符串,其中以下字符有特殊意义:<br />
+      U 替换成从一个起始时间(好象是1970年1月1日)以来的秒数<br />
+      Y 替换成4位的年号.<br />
+        y 替换成2位的年号.<br />
+        F 替换成月份的英文全称.<br />
+        M 替换成月份的英文简称.<br />
+        m 替换成月份数.<br />
+        z 替换成从当年1月1日以来的天数.<br />
+        d 替换成日数.<br />
+        l 替换成星期几的英文全称.<br />
+        D 替换成星期几的英文简称.<br />
+        w 替换成星期几(数字).<br />
+        H 替换成小时数(24小时制).<br />
+        h 替换成小时数(12小时制).<br />
+        i 替换成分钟数.<br />
+        s 替换成秒数.<br />
+        A 替换成&quot;AM&quot;或&quot;PM&quot;.<br />
+        a 替换成&quot;am&quot;或&quot;pm&quot;.<br />
+        S 替换成序数字后缀,例如:&quot;st&quot;,&quot;nd&quot;,&quot;rd&quot;,&quot;th&quot;.<br />
+    函数返回作过了替换的格式串.</p></td>
+    <td>(1)date</td>
+  </tr>
+  <tr>
+    <td>返回一个哈希表,各下标是:<br />
+      &quot;seconds&quot; -- 秒数<br />
+      &quot;minutes&quot; -- 分数<br />
+      &quot;hours&quot; -- 小时数<br />
+      &quot;mday&quot; -- 日数<br />
+      &quot;mon&quot; -- 月份数<br />
+      &quot;year&quot; -- 年号<br />
+      &quot;yday&quot; -- 1月1日以来的天数<br />
+      &quot;weekday&quot; -- 星期几,英文全称<br />
+    &quot;month&quot; -- 月份,英文全名</td>
+    <td>(2)getdate</td>
+  </tr>
+  <tr>
+    <td> 与date类似,但先将时间转换成格林威治标准时.</td>
+    <td>(3)gmdate</td>
+  </tr>
+  <tr>
+    <td> 用法:<br />
+mktime(小时数,分数,秒数,月,日,年); 返回一个时间值,可用于其他函数.</td>
+    <td>(4)mktime</td>
+  </tr>
+  <tr>
+    <td>      用法:<br />
+    time(); 返回1970年1月1日零点以来的秒数.</td>
+    <td>(5)time()</td>
+  </tr>
+  <tr>
+    <td><br />
+      用法:<br />
+      <u>microtime(); 返回一个字符串,用空格分成两部分,后一部分相当于time()<br />
+    </u>的返回值,前一部分是微秒数.</td>
+    <td>(6)microtime()</td>
+  </tr>
+  <tr>
+    <td><p>checkdate(月,日,年); 返回逻辑真或逻辑假. 如果:<br />
+      年在1900和32767之间(包括1900与32767);<br />
+      月在1到12之间;<br />
+    日在该月的允许日数范围内(考虑了闰年);<br />
+    则返回逻辑真.</p></td>
+    <td><br />
+    (7)checkdate</td>
+  </tr>
+  <tr>
+    <td>      用法:<br />
+      set_time_limit(秒数);<br />
+    规定从该句运行时起程序必须在指定秒数内运行结束, 超时则程序出错退出.</td>
+    <td><br />
+    (8)set_time_limit</td>
+  </tr>
+  <tr>
+    <td><p>1. string date(string format,inieger timestamp)<br />
+      该函数返回一个表示时间的字符串，是由string format 控制的。<br />
+        如：<br />        &lt;?<br />
+        print(date(&quot;Y年 m月d日&quot;);//输出当前,年月日.<br />
+        print(date(&quot;Y年 m月d日&quot;,60*60*24*365*10);//输出1980年1月1日.<br />
+        ?&gt;<br />
+        也许你会问,怎麽没有timestamp呢?若timestamp为空时,或不写时,表示使用当前时间一刻timestamp.<br />
+        表示年份的控制符： Y---四位的年份 y---两位的年份<br />
+        表示月份的控制符： m---从1-12的月份 F---英文月份名 M---简写的月份名<br />
+        表示日号的控制符： d---前面有0的月份中日期 j--前面没有0的日号<br />
+        表示星期的控制符： l--英文星期 D--简写的星期<br />
+        表示小时的控制符： h--从1到12小时 H---从0到23的小时<br />
+        表示上下午的控制符 a ---am或pm A---AM或PM<br />
+    表示分钟的控制符： i---取值00-59<br />
+    另外的 z--一年中的日期</p></td>
+    <td>1 date</td>
+  </tr>
+  <tr>
+    <td><p>2. array getdate(integer timestamp)<br />
+      该函数返回一个矩阵.<br />
+      如:<br />      &lt;?<br />
+      $current_date=getdate();<br />
+      print($current_date(&quot;hours&quot;));<br />
+      print($current_date(&quot;minutes&quot;);<br />
+      print($current_date(&quot;seconds&quot;);<br />
+      ?&gt;<br />
+      说明:<br />
+      元素 描述<br />
+      hours 24小时格式的小时<br />
+      mday 月份中日期<br />
+      minutes 分钟<br />
+      mon 数字形式的月份<br />
+      month 月份全称<br />
+      seconds 秒数<br />
+wday 从0到6的数字形式的星期几<br />
+weekday 星期几的名称<br />
+year 年份<br />
+0 时间戳即从1970年1月1日到现在的秒数<br />
+yday 一年中数字形式的日期</p></td>
+    <td>2 getdate</td>
+  </tr>
+  <tr>
+    <td><p>3. boolean checkdate(integer month,integer day,integer year)<br />
+      该函数检查日期是否合法.如:<br />      &lt;?<br />
+      if(checkdate(2,29,1980))<br />
+    print(&quot;日期合法!n&quot;);<br />
+    ?&gt;</p></td>
+    <td>3.  checkdate</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+      <p>该函数获得当前时间戳.如:<br />        &lt;?<br />
+    print(time());//输出一大串整数<br />
+    ?&gt;</p></td>
+    <td><p>4.  time()</p></td>
+  </tr>
+  <tr>
+    <td><p>5. integer mktime(integer hour,integer minutes,integer seconds,integer month, integer day,integer year)<br />
+      该函数返回给出日期的时间戳,即从1970年1月1日到现在的秒数.<br />
+      如某参数超出范围,该函数也可以解释它,如13月即为第二年的一月.<br />
+      如:<br />      &lt;?<br />
+      $currenthour=date(&quot;H&quot;);<br />
+      print(&quot;50个小时后为:&quot;);<br />
+      print(date(&quot;h:i A l F dS,Y&quot;,mktime($currenthour+50)));<br />
+    print(&quot;&lt;br&gt;n&quot;);<br />
+    ?&gt;</p></td>
+    <td>5.  mktime</td>
+  </tr>
+  <tr>
+    <td><p>6. string microtime()<br />
+      该函数返回一个字符串,由当前时间的毫秒数+空格+从1970年开始的秒数<br />      &lt;?<br />
+      print(&quot;start:microtime()&lt;br&gt;n&quot;);<br />
+      for($index=0;$index&lt;1000;$index++)<br />
+      print(&quot;good!&quot;);<br />
+    print(&quot;stop:microtime()&lt;br&gt;n&quot;);<br />
+    ?&gt;</p></td>
+    <td>6.  microtime()</td>
+  </tr>
+  <tr>
+    <td>常用示例</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>$nowdate=&quot;1999-08-05&quot; ;<br />
+      $aa=strtotime($nowdate);<br />
+      $year=date(&quot;Y&quot;,$aa);<br />
+      $month=date(&quot;n&quot;,$aa);<br />
+    echo $year.&quot;&lt;/br&gt;&quot;;<br />
+    echo $month;</p></td>
+    <td>strtotime</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>

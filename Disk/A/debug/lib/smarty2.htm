@@ -1,0 +1,158 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&lt;%$name|lower%&gt;</td>
+    <td>&lt;%*smarty字符串函数*%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%$name|upper%&gt;</td>
+    <td>&lt;%*smarty字符串函数*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%'now'|date_format:'%Y-%m-%d'%&gt;</td>
+    <td>&lt;%*smarty日期函数*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|truncate:11:&quot;...&quot;%&gt;</td>
+    <td>&lt;%*截断字符串超长加...*%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%mailto|lower address=&quot;mailto:linux@admin.com%22%7D%7B*mailto邮件*%&gt; </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>mailto:%7B$tempmember%7C@count%&gt;</td>
+    <td>&lt;%*数据的总和*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|capitalize%&gt;</td>
+    <td>&lt;%*首字母大写*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|capitalize:true%&gt;</td>
+    <td>&lt;%*每个单词的首字母大写*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|count_characters:true%&gt;</td>
+    <td>&lt;%*字符串的长度加true字符空格,不加true不计算空格*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|cat:'字符串后加入字符'%&gt;</td>
+    <td>&lt;%*拼接字符串*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|count_words%&gt;</td>
+    <td>&lt;%*计算字符数量*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title2|default:&quot;dsgadsgds&quot;%&gt;;</td>
+    <td>&lt;%*如果变量不存在就输出默认值*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|escape:html%&gt;</td>
+    <td>&lt;%*将字符串中的HTML转换为HTML编码方式*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|escape:htmlall%&gt;</td>
+    <td>&lt;%*将字符串中的HTML转换为HTML编码方式*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|escape:url%&gt;</td>
+    <td>&lt;%*将字符串中的HTML转换为URL编码方式*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|escape:quotes%&gt;</td>
+    <td>&lt;%*将字符串中的HTML转换为HTML编码方式*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|indent:100%&gt;</td>
+    <td>&lt;%*缩进指定宽度*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|regex_replace:&quot;/要/&quot;:&quot;爱&quot;%&gt;</td>
+    <td>&lt;%*正则表达式替换字符*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$title|replace:&quot;要&quot;:&quot;爱&quot;%&gt;</td>
+    <td>&lt;%*Replace替换字符*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|spacify:&quot;||&quot;%&gt;</td>
+    <td>&lt;%*分隔字符串*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$money|string_format:&quot;%.2f&quot;%&gt;</td>
+    <td>&lt;%*格式化数字为Float数*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$money|string_format:&quot;%d&quot;%&gt;</td>
+    <td>&lt;%*格式化数字为INT数*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|strip:&quot; &quot;%&gt;</td>
+    <td>&lt;%*替换空格*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|strip_tags:false%&gt;</td>
+    <td>&lt;%*替换标签*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|truncate:10:&quot;...&quot;%&gt;</td>
+    <td>&lt;%*截取指定长度字符,默认截取80字符长度*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|wordwrap:10%&gt;</td>
+    <td>&lt;%*多长后字符串换行,默认换行长度为80*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$english_word|upper|spacify|truncate:30:&quot;...&quot;%&gt;</td>
+    <td>&lt;%*Smarty支持多个函数的组合,此组合为字符串先大写然后分隔然后截取指定长度*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%if $r[loop].id|in_array:$ry%&gt;checked&lt;%/if%&gt;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&lt;%$rc[loop].last_logtm|date_format:&quot;%Y-%m-%d %H:%M:%S&quot;%&gt; </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&lt;%$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'%&gt;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&lt;%capture name=banner%&gt;&lt;%*注释掉中间显示内容*%&gt; <br />
+&lt;%include file=&quot;banner.tpl&quot;%&gt; <br />
+&lt;%/capture%&gt; <br />
+&lt;%include file=&quot;banner.tpl&quot; title=&quot;Smarty学习&quot;%&gt; <br />
+Hello &lt;%$name%&gt;&lt;%*变量*%&gt; <br />
+&lt;%html_select_date display_days=yes%&gt; <br />
+&lt;%$member.fax%&gt; <br />
+&lt;%$member.phone.home%&gt; <br />
+&lt;%$tempmember.member%&gt; <br />
+&lt;%$tempmember.phone.home%&gt;&lt;%*多维数组*%&gt;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&lt;%#error_message#%&gt;</td>
+    <td>&lt;%*配置文件属性*%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%include_php file=&quot;function.php&quot;%&gt;</td>
+    <td>&lt;%*包含指定的PHP文件*%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%insert name=&quot;top&quot; lid=&quot;toplid&quot; sid=&quot;topsid&quot;%&gt;</td>
+    <td>&lt;%*调用insert_top PHP函数,函数参数为lid和sid的值*%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%$smarty.get.page%&gt; <br />
+&lt;%$smarty.post.page%&gt; <br />
+&lt;%$smarty.cookies.name%&gt; <br />
+&lt;%$smarty.server.SERVER_NAME%&gt; <br />
+&lt;%$smarty.env.PATH%&gt; <br />
+&lt;%$smarty.session.id%&gt; <br />
+&lt;%$smarty.request.username%&gt;<br />
+&lt;%$smarty.const.PAGETITLE%&gt;&lt;%*常量*%&gt; </td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>

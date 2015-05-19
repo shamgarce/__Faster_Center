@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>悬浮层效果-测试展示</title>
+    <!-- Bootstrap -->
+    <link href="/app/bootstrap-3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/app/jquery-1.7.2.min.js"></script>
+    <script src="/app/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="/app/artDialog4.1.7/artDialog.js?skin=default"></script>
+    <script src="/app/W.js"></script>
+	<link rel="stylesheet" href="/app/jquery-powerFloat/css/powerFloat.css" type="text/css" />
+    <script src="/app/jquery-powerFloat/js/jquery-powerFloat.js"></script>
+<script language="javascript">
+$(document).ready(function(e) {
+	$("#trigger2").powerFloat({ target: $("#targetBox") });
+	$("#trigger1").powerFloat();
+	$("#trigger3").powerFloat({ target: ".target_box" });
+	$("#trigger4").powerFloat({ targetMode: "ajax" });
+	$("#trigger5").powerFloat({ target: "http://image.zhangxinxu.com/image/study/s/s512/mm2.jpg", targetMode: "ajax" });
+	$("#trigger6").powerFloat({ eventType: "click", target: "/study/201009/html-load.html", targetMode: "ajax" });
+	$("#trigger7").powerFloat({ eventType: "click", target: "http://www.3158.com/", targetMode: "ajax" });
+$("#trigger8").powerFloat({ width: "inherit", eventType: "click", target: ["唐丽霞", "徐栋梁", "成霞", "王庆花", "王腊梅", "朱小丽", "束方娟", "吉回秀", "陈阳", "<a href='##'>更多 >></a>"], targetMode: "list" });
+$("#trigger9").powerFloat({ width: 250, target: [ { href: "##", text: "这是文章1的说" }, { href: "##", text: "啊，看，文章2" }, { href: "##", text: "啊啦，不好，我把文章3忘家里了！" }, { href: "##", text: "马萨噶，这就是传说中的...文章4..." }, { href: "##", text: "什么嘛，就是文章5，害我白期待一场" } ], targetMode: "list" });
+	$("#trigger10").powerFloat({ targetMode: "list" });
+	$(".pwdTrigger").powerFloat({ eventType: "focus", targetMode: "remind", targetAttr: "placeholder", position: "1-4" });
+
+//确定部门
+var fnPosTri = function() { 
+var oPosTri = $("#posTrigger1"), 
+vPosTri = $.trim(oPosTri.val()); 
+if (vPosTri === "") { 
+	oPosTri.powerFloat({ 
+	eventType: null, 
+	targetMode: "remind", 
+	target: "输入内容不能为空！", 
+	position: "1-4" }).focus(); 
+	} else if (/\W/g.test(vPosTri)) { 
+		oPosTri.powerFloat({ 
+		eventType: null, 
+		targetMode: "remind", 
+		target: "只能输入英文字符、数字和下划线", 
+		position: "1-4" }).focus(); 
+	} else { 
+		$.powerFloat.hide(); 
+	} 
+}; 
+$("#trigger11").bind("click", fnPosTri); $("#posTrigger1").bind("blur", fnPosTri);
+$(".tipTrigger").powerFloat({ 
+	offsets: { x: -10, y: 22 }, 
+	showDelay: 200, 
+	hoverHold: false, 
+	targetMode: "tip", 
+	targetAttr: "tip", 
+	position: "3-4" 
+});
+$(".operateTrigger").click(function() {
+var txt = $(this).text();
+//IE6位置
+if (!window.XMLHttpRequest) {
+	$("#targetFixed").css("top", $(document).scrollTop() + 2);	
+}
+//创建半透明遮罩层
+if (!$("#overLay").size()) {
+	$('<div id="overLay"></div>').prependTo($("body"));
+	$("#overLay").css({
+		width: "100%",
+		backgroundColor: "#000",
+		opacity: 0.2,
+		position: "absolute",
+		left: 0,
+		top: 0,
+		zIndex: 99
+	}).height($(document).height());
+}
+//显示操作提示，最关键核心代码
+$("#targetFixed").powerFloat({
+	eventType: null,
+	targetMode: "doing",	
+	target: "正在" + txt + "中...",
+	position: "1-2"
+});
+//定时关闭，测试用
+setTimeout(function() {
+	$("#overLay").remove();
+	$.powerFloat.hide();
+}, 2000);
+});
+
+$("#trigger12").powerFloat({ eventType: "click", targetMode: "ajax", targetAttr: "src", container: $("#customContainer"), reverseSharp: true });
+$("#trigger13").powerFloat({ eventType: "click", targetMode: null, targetAttr: "src", container: $("#customContainer") });
+$("#trigger14").powerFloat({ targetMode: "ajax", targetAttr: "href", hoverFollow: "y", position: "6-8" });
+$("#trigger15").powerFloat({ targetMode: "ajax", targetAttr: "href", hoverFollow: "x", hoverHold: false, position: "5-7" });
+$(".triggerImage").powerFloat({ targetMode: "ajax", target: function() { return $(this).attr("href"); }, hoverHold: false, position: "5-7" });
+
+});
+</script>
+    
+  </head>
+  <body>
+<div class="container">
+
+<table width="600" class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+<a id="trigger1" href="javascript:;" rel="targetBox">默认rel加载</a></td>
+    <td>
+    
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger1" href="javascript:;" rel="targetBox"&gt;默认rel加载&lt;/a&gt;</pre></blockquote>
+
+<strong>JS代码：</strong><blockquote><pre>$("#trigger1").powerFloat();</pre></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="trigger2" href="#">target参数加载</a></td>
+    <td>
+    
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger2" href="###"&gt;target参数加载&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger2").powerFloat({
+      target: $("#targetBox")	  
+});</pre>
+</blockquote>
+
+  </td>
+  </tr>
+  <tr>
+    <td><a id="trigger3" href="#">target参数为选择器</a>
+
+    </td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger3" href="###"&gt;target参数为选择器&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger3").powerFloat({ 
+     target: ".target_box"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="trigger4" href="javascript:;" rel="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">rel属性显示图片</a></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger4" href="javascript:;" rel="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"&gt;rel属性显示图片&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger4").powerFloat({
+      targetMode: "ajax"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a id="trigger5" href="javascript:;">target参数为图片地址</a></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger5" href="javascript:;"&gt;target参数为图片地址&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger5").powerFloat({
+      target: "http://tp3.sinaimg.cn/2305056670/180/5608200132/0",
+      targetMode: "ajax"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><button id="trigger6">点击切换显示</button></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;button id="trigger6"&gt;点击切换显示&lt;/button&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger6").powerFloat({ 
+     eventType: "click",
+     target: "/study/201009/html-load.html", 
+     targetMode: "ajax"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><button id="trigger7">点击测试</button></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;button id="trigger7"&gt;点击测试&lt;/button&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger7").powerFloat({
+      eventType: "click",
+      target: "http://www.baidu.com/",
+      targetMode: "ajax"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><button id="trigger8">点击显示姓名列表▼</button></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;button id="trigger8"&gt;点击显示姓名列表▼&lt;/button&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger8").powerFloat({
+      width: "inherit",
+      eventType: "click", 
+     target: ["唐丽霞", "徐栋梁", "成霞", "王庆花", "王腊梅", "陈阳", "&lt;a href='##'&gt;更多 &gt;&gt;&lt;/a&gt;"], 
+     targetMode: "list"	  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a id="trigger9" href="/wordpress/">更多文章▼</a></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger9" href="/wordpress/"&gt;更多文章▼&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger9").powerFloat({
+      width: 250, 
+      target: [{
+              href: "##", 
+             text: "这是文章1的说"
+	          }, 
+         {
+              href: "##", 
+             text: "啊，看，文章2"
+	          }, 
+         {
+              href: "##",
+              text: "啊啦，不好，我把文章3忘家里了！"
+	          },
+          {
+              href: "##",
+              text: "马萨噶，这就是传说中的...文章4..."
+	          }, 
+         {
+              href: "##",
+              text: "什么嘛，就是文章5，害我白期待一场"
+	          }],
+      targetMode: "list"
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a id="trigger10" href="#">无列表数据显示</a></td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;a id="trigger10" href="#"&gt;无列表数据显示&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger10").powerFloat({ 
+     targetMode: "list"	  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>输入密码：
+      <input class="pwdTrigger" type="password" placeholder="6~20个字符" />
+      <br>
+      再次输入：
+<input class="pwdTrigger" type="password" placeholder="输入与上面一样的密码" /></td>
+    <td>
+<strong>HTML代码：</strong><blockquote>
+  <pre>输入密码：&lt;input class="pwdTrigger" type="password" placeholder="6~20个字符" /&gt;  
+再次输入：&lt;input class="pwdTrigger" type="password" placeholder="输入与上面一样的密码" /&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$(".pwdTrigger").powerFloat({ 
+     eventType: "focus", 
+     targetMode: "remind", 
+     targetAttr: "placeholder", 
+     position: "1-4"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><input id="posTrigger1" type="text" />
+    <button id="trigger11">确定</button></td>
+    <td>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;input id="posTrigger1" type="text" /&gt; 
+&lt;button id="trigger11"&gt;确定&lt;/button&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>var fnPosTri = function() { 
+     var oPosTri = $("#posTrigger1"), 
+vPosTri = $.trim(oPosTri.val()); 
+     if (vPosTri === "") {
+          oPosTri.powerFloat({ 
+             eventType: null, 
+             targetMode: "remind", 
+             target: "输入内容不能为空！", 
+             position: "1-4"
+          }).focus();
+      } else if (/\W/g.test(vPosTri)) {
+          oPosTri.powerFloat({
+              eventType: null,
+              targetMode: "remind", 
+             target: "只能输入英文字符、数字和下划线", 
+             position: "1-4" 
+          }).focus();
+	      } else {
+          $.powerFloat.hide(); 
+     }  
+};  
+$("#trigger11").bind("click", fnPosTri);  
+$("#posTrigger1").bind("blur", fnPosTri);</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a class="tipTrigger" href="#" tip="摸我">摸我</a> <a class="tipTrigger" href="#" tip="我也要">我也要</a> <a class="tipTrigger" href="#" tip="还有我">还有我</a></td>
+    <td>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;a class="tipTrigger" href="###" tip="摸我"&gt;摸我&lt;/a&gt;  
+&lt;a class="tipTrigger" href="###" tip="我也要"&gt;我也要&lt;/a&gt;  
+&lt;a class="tipTrigger" href="###" tip="还有我"&gt;还有我&lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$(".tipTrigger").powerFloat({
+      offsets: {
+          x: -10,
+          y: 22
+      },
+      showDelay: 200, 
+           hoverHold: false, 
+           targetMode: "tip",
+      targetAttr: "tip",
+      position: "3-4"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><style>
+    .target_fixed { height:25px; padding:1px; position:fixed; _position:absolute; top:0; right:0; }
+    </style>
+      <span id="targetFixed" class="target_fixed"></span>
+      <button class="operateTrigger">登录</button>
+      <button class="operateTrigger">提交</button>
+    <button class="operateTrigger">刷新</button></td>
+    <td>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;span id="targetFixed" class="target_fixed"&gt;&lt;/span&gt;  
+&lt;button class="operateTrigger"&gt;登录&lt;/button&gt;  
+&lt;button class="operateTrigger"&gt;提交&lt;/button&gt;  
+&lt;button class="operateTrigger"&gt;刷新&lt;/button&gt;</pre>
+</blockquote>
+<strong>css代码：</strong><blockquote><pre>.target_fixed { height:25px; padding:1px; position:fixed; _position:absolute; top:0; right:0; }</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$(".operateTrigger").click(function() { 
+     var txt = $(this).text();
+      //IE6位置
+      if (!window.XMLHttpRequest) {
+          $("#targetFixed").css("top", $(document).scrollTop() + 2);
+	      } 
+     //创建半透明遮罩层
+      if (!$("#overLay").size()) {
+          $('&lt;div id="overLay"&gt;&lt;/div&gt;').prependTo($("body"));
+          $("#overLay").css({
+              width: "100%",
+              backgroundColor: "#000",
+              opacity: 0.2,
+              position: "absolute", 
+             left: 0,
+              top: 0,
+              zIndex: 99
+          }).height($(document).height());
+      }
+      //显示操作提示，最关键核心代码
+      $("#targetFixed").powerFloat({ 
+         eventType: null,
+          targetMode: "doing",
+	          target: "正在" + txt + "中...",
+          position: "1-2"
+      });
+      //定时关闭，测试用
+      setTimeout(function() { 
+         $("#overLay").remove(); 
+         $.powerFloat.hide();
+      }, 2000);  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><style>
+.custom_container{position:absolute; background-color:rgba(0, 0, 0, .5); background-color:#999\9;}
+.custom_container img{padding:0; position:relative; top:-5px; left:-5px;}
+    </style>
+      <div id="customContainer" class="custom_container"></div>
+    <input id="trigger12" type="button" src="http://image.zhangxinxu.com/image/study/s/s256/mm10.jpg" value="点击我" /></td>
+    <td>
+<strong>css代码：</strong><blockquote>
+  <pre>.custom_container{position:absolute; background-color:rgba(0, 0, 0, .5); background-color:#999\9;} 
+.custom_container img{padding:0; position:relative; top:-5px; left:-5px;}</pre>
+</blockquote>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;div id="customContainer" class="custom_container"&gt;&lt;/div&gt;  
+&lt;input id="trigger12" type="button" src="http://image.zhangxinxu.com/image/study/s/s256/mm10.jpg" value="点击我" /&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger12").powerFloat({
+      eventType: "click", 
+      targetMode: "ajax", 
+      targetAttr: "src",
+      container: $("#customContainer"),
+      reverseSharp: true  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><input id="trigger13" type="button" src="targetBox" value="点击我" />
+</td>
+    <td>
+<strong>HTML代码：</strong><blockquote><pre>&lt;input id="trigger13" type="button" src="targetBox" value="点击我" /&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger13").powerFloat({
+      eventType: "click", 
+      targetMode: null,
+      targetAttr: "src",
+      container: $("#customContainer")  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><style>.dib { display: inline-block; }</style>
+<a class="dib" id="trigger14" href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"> 
+<img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" /> </a></td>
+    <td>
+<strong>css代码：</strong><blockquote><pre>.dib { display: inline-block; }</pre>
+</blockquote>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;a class="dib" id="trigger14" href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"&gt;      
+&lt;img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" /&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger14").powerFloat({
+      targetMode: "ajax", 
+     targetAttr: "href",
+      hoverFollow: "y",
+      position: "6-8"  
+});</pre>
+</blockquote>
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a class="dib" id="trigger15" href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"> <img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" /></a></td>
+    <td>
+<strong>css代码：</strong><blockquote><pre>.dib { display: inline-block; }</pre>
+</blockquote>
+<strong>HTML代码：</strong><blockquote>
+  <pre>&lt;a class="dib" id="trigger15" href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg"&gt;      
+&lt;img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" /&gt;  &lt;/a&gt;</pre>
+</blockquote>
+<strong>JS代码：</strong><blockquote>
+  <pre>$("#trigger15").powerFloat({
+      targetMode: "ajax", 
+     targetAttr: "href",
+      hoverFollow: "x", 
+     hoverHold: false, 
+     position: "5-7"  
+});</pre>
+</blockquote>
+    
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" class="dib triggerImage"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" /></a> <a href="/image/study/s/s256/mm2.jpg" class="dib triggerImage"><img src="/image/study/s/s128/mm2.jpg" /></a> <a href="/image/study/s/s256/mm3.jpg" class="dib triggerImage"><img src="/image/study/s/s128/mm3.jpg" /></a> </td>
+    <td><strong>css代码：</strong>
+      <blockquote>
+        <pre>.dib { display: inline-block; }</pre>
+      </blockquote>
+      <strong>HTML代码：</strong>
+      <blockquote>
+        <pre>&lt;a href="/image/study/s/s256/mm1.jpg" class="dib triggerImage"&gt;&lt;img src="/image/study/s/s128/mm1.jpg" /&gt;&lt;/a&gt;  
+&lt;a href="/image/study/s/s256/mm2.jpg" class="dib triggerImage"&gt;&lt;img src="/image/study/s/s128/mm2.jpg" /&gt;&lt;/a&gt;  
+&lt;a href="/image/study/s/s256/mm3.jpg" class="dib triggerImage"&gt;&lt;img src="/image/study/s/s128/mm3.jpg" /&gt;&lt;/a&gt;</pre>
+      </blockquote>
+      <strong>JS代码：</strong>
+      <blockquote>
+        <pre>$(".triggerImage").powerFloat({
+      targetMode: "ajax",
+      target: function() { 
+          return $(this).attr("href");
+	      },
+      hoverHold: false,
+      position: "5-7"  
+});</pre>
+    </blockquote></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>
+<h3>&nbsp;</h3>
+<table width="600" class="table table-striped table-hover table-condensed">
+  <caption>
+    jQuery powerFloat插件API参数<br>
+  </caption>
+  <tbody>
+    <tr>
+      <th scope="col">参数名</th>
+      <th scope="col">默认值</th>
+      <th scope="col">释义说明 参考</th>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>"auto"</td>
+      <td>其他可选参数："inherit"，数值(px)(百分比等)，"auto"表宽度自动，"inherit"表宽度与方法触发元素宽度一样</td>
+    </tr>
+    <tr>
+      <td>offsets</td>
+      <td>{x:0, y:0}</td>
+      <td>浮动层的偏移值。可正可负。如果为正值，右下方元素右下方偏移，左上方元素左上方偏移。偏移方向为扩散状</td>
+    </tr>
+    <tr>
+      <td>zIndex</td>
+      <td>999</td>
+      <td>浮动框层级。插件自带小三角层级为999+1，数值上总是大1</td>
+    </tr>
+    <tr>
+      <td>eventType</td>
+      <td>"hover"</td>
+      <td>其他可选参数："click", "focus"，如果参数为其他，则绑定触发浮动层的显示与定位</td>
+    </tr>
+    <tr>
+      <td>showDelay</td>
+      <td>0</td>
+      <td>事件类型(eventType)为"hover"时浮动层显示的延迟时间，单位毫秒</td>
+    </tr>
+    <tr>
+      <td>hideDelay</td>
+      <td>0</td>
+      <td>鼠标移出对象时浮动层隐藏延迟时间</td>
+    </tr>
+    <tr>
+      <td>hoverHold</td>
+      <td>true</td>
+      <td>布尔型，浮动层是否鼠标悬停。如果为false，只要鼠标移出触发元素，浮动层即隐藏</td>
+    </tr>
+    <tr>
+      <td>hoverFollow</td>
+      <td>false</td>
+      <td>其他可选参数：true, "x", "y"。是否鼠标跟随。"x"表示仅水平方向跟随，"y"为垂直方向，true或其他参数为任意方向跟随</td>
+    </tr>
+    <tr>
+      <td>targetMode</td>
+      <td>"common"</td>
+      <td>字符串，关键字参数还有："ajax", "list", "remind"。表示浮动层的类型</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>null</td>
+      <td>浮动层内容来源，优先选取来源，根据targetMode的不同，这里的参数类型也有所不同。支持function类似，可实现动态数据效果。</td>
+    </tr>
+    <tr>
+      <td>targetAttr</td>
+      <td>"rel"</td>
+      <td>自定义的标签属性。也是浮动层内容来源，可用作元素id，或是字符串</td>
+    </tr>
+    <tr>
+      <td>container</td>
+      <td>null</td>
+      <td>jQuery对象，转载浮动层的容器，如果targetMode自定义，可以使用"plugin"关键字，表示使用插件自带容器</td>
+    </tr>
+    <tr>
+      <td>reverseSharp</td>
+      <td>false</td>
+      <td>布尔型。尖角显示是否反转。默认ajax, remind是显示三角的，其他如list和自定义形式是不显示的</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>"4-1"</td>
+      <td>浮动层显示的位置。此规则稍微复杂，下面有详解</td>
+    </tr>
+    <tr>
+      <td>edgeAdjust</td>
+      <td>true</td>
+      <td>布尔型。如果浮动层在显示屏之外，是否调整浮动层位置</td>
+    </tr>
+    <tr>
+      <td>showCall</td>
+      <td>$.noop</td>
+      <td>浮动层显示时候的回调函数。其中，上下文this为触发元素，支持一个参数，为浮动对象元素。但，多交互时候，该元素可能会丢失。</td>
+    </tr>
+
+    <tr>
+      <td>hideCall</td>
+      <td>$.noop</td>
+      <td>浮动层隐藏时候的回调函数。其中，上下文this为触发元素</td>
+    </tr>
+    <tr>
+      <td colspan="3"><a href="http://www.zhangxinxu.com/wordpress/2010/12/jquery-powerfloat%E4%B8%87%E8%83%BD%E6%B5%AE%E5%8A%A8%E5%B1%82%E4%B8%8B%E6%8B%89%E5%B1%82%E6%8F%92%E4%BB%B6/" target="_blank">http://www.zhangxinxu.com/wordpress/2010/12/jquery-powerfloat%E4%B8%87%E8%83%BD%E6%B5%AE%E5%8A%A8%E5%B1%82%E4%B8%8B%E6%8B%89%E5%B1%82%E6%8F%92%E4%BB%B6/</a></td>
+    </tr>  </tbody>
+</table>
+
+
+
+<div id="targetBox" style="display:none;">id引用的测试浮层</div>
+<div class="target_box" style="display:none;">class引用的测试浮层</div>
+
+  </body>
+</html>

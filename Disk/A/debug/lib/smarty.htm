@@ -1,0 +1,94 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&lt;%if 1 eq 1%&gt;&lt;%*条件判断语句*%&gt; <br />
+1=1 <br />
+&lt;%elseif 1 ne 1%&gt; <br />
+1!=1 <br />
+&lt;%elseif 1 gt 1%&gt; <br />
+1&gt;1 <br />
+&lt;%elseif 1 lt 1%&gt; <br />
+1&lt;1 <br />
+&lt;%elseif 1 gte 1%&gt; <br />
+1&gt;=1 <br />
+&lt;%elseif 1 lte 1%&gt; <br />
+1&lt;=1 <br />
+&lt;%elseif not 1 eq 1%&gt; <br />
+not 1=1 <br />
+&lt;%elseif (1 mod 1) eq 1%&gt; <br />
+&lt;font color=&quot;red&quot;&gt;1%1=1&lt;/font&gt; <br />
+&lt;%else%&gt; <br />
+你的人品真不好 <br />
+&lt;%/if%&gt; </td>
+    <td rowspan="2">if语句</td>
+  </tr>
+  <tr>
+    <td>&lt;%if $rc[loop].u_delete==1%&gt; <br />
+  &lt;%elseif $rc[loop].u_delete==0%&gt; <br />
+  &lt;%/if%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%section name=loop loop=$count%&gt; <br />
+id: &lt;%$smarty.section.loop.index%&gt; <br />
+&lt;%/section%&gt; </td>
+    <td rowspan="3">section循环</td>
+  </tr>
+  <tr>
+    <td>&lt;%section name=member loop=$contacts3 show=true%&gt;&lt;%*while循环 show是否SHOW section中的循环内容*%&gt; <br />
+  &lt;%if $smarty.section.member.first%&gt; <br />
+      first <br />
+  &lt;%/if%&gt; <br />
+  &lt;%if $smarty.section.member.last%&gt; <br />
+      last <br />
+  &lt;%/if%&gt; <br />
+      current loop rownum:&lt;%$smarty.section.member.rownum%&gt;&lt;br/&gt; <br />
+      current loop iteration:&lt;%$smarty.section.member.iteration%&gt;&lt;br/&gt; <br />
+      index:&lt;%$smarty.section.member.index%&gt; <br />
+      index_prev:&lt;%$contacts3[member.index_prev]%&gt; <br />
+      index_next:&lt;%$contacts3[member.index_next]%&gt;<br />
+      index:&lt;%$contacts3[member.index]%&gt; member:&lt;%$contacts3[member]%&gt; <br />
+  &lt;%section name=memberchild loop=$contacts4[member] max=2%&gt; <br />
+      memberchild:&lt;%$contacts4[member][memberchild]%&gt; <br />
+  &lt;%/section%&gt; <br />
+      total:&lt;%$smarty.section.member.total%&gt;&lt;%*数据长度或总记录数*%&gt; <br />
+  &lt;%/section%&gt; </td>
+  </tr>
+  <tr>
+    <td>&lt;%$smarty.section.loop.index%&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;%foreach from=$myArray item=i name=foo%&gt; <br />
+&lt;%$smarty.foreach.foo.index%&gt;|&lt;%$smarty.foreach.foo.iteration%&gt;, <br />
+&lt;%/foreach%&gt;</td>
+    <td rowspan="3">foreach循环</td>
+  </tr>
+  <tr>
+    <td>&lt;%foreach name=outer item=contact from=$contacts%&gt;&lt;%*foreach循环数组*%&gt; <br />
+&lt;%foreach key=key item=item from=$contact%&gt; <br />
+&lt;%$key%&gt;:&lt;%$item%&gt; <br />
+&lt;%/foreach%&gt; <br />
+&lt;%/foreach%&gt; <br />
+&lt;%foreach name=outer item=contact2 from=$contacts2%&gt; <br />
+&lt;%foreach key=key item=item from=$contact2%&gt; <br />
+&lt;%$key%&gt;:&lt;%$item%&gt; <br />
+&lt;%/foreach%&gt; <br />
+&lt;%/foreach%&gt; </td>
+  </tr>
+  <tr>
+    <td><p>&lt;%foreach from=$items key=myId item=i name=foo%&gt; <br />
+      &lt;%if $smarty.foreach.foo.index % 5 == 0%&gt; <br />
+      &lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;/tr&gt; <br />
+      &lt;%/if%&gt; <br />
+      &lt;tr&gt;&lt;td&gt;&lt;%$i.label%&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+      &lt;%/foreach%&gt;</p></td>
+  </tr>
+  <tr>
+    <td><p>&lt;select name=customer_id&gt; <br />
+  &lt;%html_options options=$cust_options selected=$customer_id%&gt; <br />
+  &lt;/select&gt;</p></td>
+    <td>select</td>
+  </tr>
+  <tr>
+    <td>&lt;%include file='./innnnn.htm'%&gt; <br /></td>
+    <td>include</td>
+  </tr>
+  </table>
