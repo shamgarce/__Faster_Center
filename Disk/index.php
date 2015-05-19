@@ -190,12 +190,6 @@ $system['controller_method_ucfirst'] = TRUE;
  */
 $system['autoload_db'] = FALSE;
 /**
- * 是否开启调试模式
- * true：显示错误信息,
- * false：所有错误将不显示
- */
-$system['debug'] = false;
-/**
  * 是否接管错误信息显示
  * true：所有错误信息将由系统格式化输出
  * false：所有错误信息将原样输出
@@ -466,7 +460,19 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
 /**
  * -------------------------数据库配置结束--------------------------
  */
+//Sham Seter
+include('Seter/Seter.php');
+
+
 /* End of file index.php */
 include('MicroPHP.min.php');
+
+/**
+ * 是否开启调试模式
+ * true：显示错误信息,
+ * false：所有错误将不显示
+ */
+$system['debug'] = false;
+
 MpRouter::setConfig($system);
 MpRouter::loadClass();

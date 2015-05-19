@@ -15,23 +15,14 @@
 
 /**
  * MicroPHP HMVC 配置文件
- * 
  * 配置说明:
- * 
  *     1.该配置文件和入口文件里面的主配置一样。
- * 
  *     2.如果HMVC模块有自己的配置，这里就可以覆盖主配置。
- * 
  *     3.下面已经配置了一些必要的配置项目。
- * 
  *     4.如果HMVC模块需要其它不同于主配置的配置，那么取消配置前面的注释,然后配置即可。
- * 
  * 提醒：
- * 
  * 1.$system['my_loader']，$system['hmvc_folder']，$system['hmvc_modules']这三个配置项在HMVC配置中无效。
- * 
  * 2.HMVC模块共享主配置的：模型，helper和类库。当有重名时，优先使用HMVC模块的。
- * 
  */
 
 $system['autoload_db'] = true;
@@ -39,28 +30,17 @@ $system['autoload_db'] = true;
  * --------------------系统配置-------------------------
  */
 $system['application_folder'] = dirname(__FILE__);
-
 $system['controller_folder'] = $system['application_folder'] . '/controllers';
-
 $system['model_folder'] = $system['application_folder'] . '/models';
-
 $system['view_folder'] = $system['application_folder'] . '/views';
-
 $system['library_folder'] = $system['application_folder'] . '/library';
-
 $system['helper_folder'] = $system['application_folder'] . '/helper';
-
 //$system['error_page_404'] = 'application/error/error_404.php';
-
 //$system['error_page_50x'] = 'application/error/error_50x.php';
-
 //$system['error_page_db'] = 'application/error/error_db.php';
-
 //$system['message_page_view'] = '';
-
 $system['default_controller']       = 'home';
 $system['default_controller_method'] = 'index';
-
 $system['controller_method_prefix'] = 'do';
 $system['controller_file_subfix']   = '.php';
 $system['model_file_subfix']        = '.model.php';
@@ -72,7 +52,7 @@ $system['library_file_autoload']    = array();
 $system['models_file_autoload']     = array();
 //$system['controller_method_ucfirst'] = TRUE;
 //$system['autoload_db'] = FALSE;
-$system['debug'] = false;
+$system['debug'] = true;
 //$system['error_manage'] = FALSE;
 //$system['log_error'] = FALSE;
 //$system['log_error_handle'] = array(
