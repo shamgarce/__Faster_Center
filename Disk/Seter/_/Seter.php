@@ -1,7 +1,10 @@
 <?php
 namespace Seter;
 
-include(__DIR__.'\Fun.php');
+use Seter\Sham\Object;
+use \Sham\Sham;             //可以直接访问sham命名空间
+
+include(__DIR__.'\Sham.php');
 include(__DIR__.'\Sham\SeterBase.php');
 
 class Seter extends \Seter\Sham\SeterBase{
@@ -55,15 +58,64 @@ class Seter extends \Seter\Sham\SeterBase{
     {
         spl_autoload_register(__NAMESPACE__ . "\\Seter::autoload");
     }
+
+
+
 }
+
 \Seter\Seter::registerAutoloader();     //PSR-0
 
+/*
+ * //use \Sham\BaseYii as Sham;
+Sham::test();
+ * */
+//Sham::test();
+//$seter = new Seter();
+//var_dump($seter->set);
+
+//说明
+//Sham是可以访问的静态方法空间
+
+
+
+//include(__DIR__.'\Interface\ActiveRecordInterface.php');
+//include(__DIR__.'\Interface\Arrayable.php');
+//include(__DIR__.'\Interface\ArrayableTrait.php');
+//include(__DIR__.'\Sham\Object.php');
+//include(__DIR__.'\Sham\Component.php');
+//include(__DIR__.'\Sham\Event.php');
+//include(__DIR__.'\Sham\Model.php');
+//include(__DIR__.'\Base\BaseActiveRecord.php');
+//include(__DIR__.'\Base\ActiveRecord.php');
+//include(__DIR__.'\Model\User.php');
+
+
+
+//Model
+//
+
+//$user = new \Seter\Base\ActiveRecord();
+//$user = new \Seter\Model\User();
+
+//$user = \Seter\Model\User::findOne(42);
+//$user->test();
+//var_dump($user);
+//
+//Object::className();
+//
+//
+//
+//
 
 
 
 
 
 
-//echo Sham::T();
-//echo 'mark';
-//exit;
+
+
+
+
+
+echo 'mark';
+exit;
