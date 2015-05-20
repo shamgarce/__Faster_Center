@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\ActiveQueryInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\QueryInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\QueryTrait.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Seter.php" afterPath="$PROJECT_DIR$/Disk/Seter/Seter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" afterPath="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="" />
     <ignored path="Faster_Center.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,18 +34,28 @@
       <file leaf-file-name="Seter.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6666665" vertical-offset="0" max-vertical-offset="2645">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2300">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disk/Seter/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4876325" vertical-offset="0" max-vertical-offset="849">
+            <state vertical-scroll-proportion="-12.857142" vertical-offset="0" max-vertical-offset="480">
               <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="complser.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/complser.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6917293" vertical-offset="0" max-vertical-offset="665">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -61,64 +64,9 @@
       <file leaf-file-name="rb.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5555556" vertical-offset="0" max-vertical-offset="281957">
+            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="245180">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <marker date="1432123545194" expanded="true" signature="127255:127382" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="127652:127693" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="130014:130045" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="130698:130715" placeholder="UPDATE :_tab..." />
-                <marker date="1432123545194" expanded="true" signature="132410:132465" placeholder="SELECT :_fie..." />
-                <marker date="1432123545194" expanded="true" signature="132472:132485" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="132893:132925" placeholder="SELECT :_tab..." />
-                <marker date="1432123545194" expanded="true" signature="133942:134369" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="134382:134395" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="134474:134708" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="134721:134734" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="135549:135702" placeholder="SELECT :_lin..." />
-                <marker date="1432123545194" expanded="true" signature="135703:135716" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="135832:135933" placeholder="SELECT :_lin..." />
-                <marker date="1432123545194" expanded="true" signature="135934:135947" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="136538:136794" placeholder="SELECT :_tab.._table_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="137339:137369" placeholder="SELECT COUNT..table_..." />
-                <marker date="1432123545194" expanded="true" signature="137376:137389" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="137878:138114" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="138127:138140" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="138238:138388" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="138401:138414" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="138865:138886" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139250:139332" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139426:139477" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139861:139903" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="143910:145135" placeholder="SELECT infor..." />
-                <marker date="1432123545194" expanded="true" signature="147262:147424" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="150285:150368" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="151959:152101" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="152162:152169" placeholder="UPDATE :_isD..." />
-                <marker date="1432123545194" expanded="true" signature="152897:152922" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="155492:155523" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="155763:155808" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="155786:155799" placeholder="SELECT * FRO..." />
-                <marker date="1432123545194" expanded="true" signature="155859:155878" placeholder="DROP TABLE `..." />
-                <marker date="1432123545194" expanded="true" signature="156771:156791" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="156792:156816" placeholder="SELECT * FRO..tmp_backup..." />
-                <marker date="1432123545194" expanded="true" signature="156830:156851" placeholder="DROP TABLE t..." />
-                <marker date="1432123545194" expanded="true" signature="161299:161334" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="161930:162010" placeholder="SELECT name ..sqlite_master..." />
-                <marker date="1432123545194" expanded="true" signature="162152:162212" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="163962:163974" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="164409:164434" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="164514:164539" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="166523:168546" placeholder="SELECT infor..key_column_usage..." />
-                <marker date="1432123545194" expanded="true" signature="170256:170357" placeholder="SELECT table..tables..." />
-                <marker date="1432123545194" expanded="true" signature="170512:170555" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="170733:170820" placeholder="SELECT colum..columns..." />
-                <marker date="1432123545194" expanded="true" signature="173218:173268" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="173717:173816" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="175240:175344" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="175366:175394" placeholder="UPDATE :_del..." />
-                <marker date="1432123545194" expanded="true" signature="175697:175728" placeholder="DROP TABLE I..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +74,7 @@
       <file leaf-file-name="mysql_N.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.37037" vertical-offset="0" max-vertical-offset="874">
+            <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="760">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding />
             </state>
@@ -135,75 +83,27 @@
       </file>
     </leaf>
   </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+    <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Disk/Mc/Fun.php" />
-        <option value="$PROJECT_DIR$/Disk/MicroPHP.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_sham/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/main/index.view.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/login/index.view.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/login.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/seter.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Model/Set.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/Base_Fun.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/Base.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/B.php" />
-        <option value="$PROJECT_DIR$/Disk/index.php" />
-        <option value="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/BaseSeter.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/BaseFun.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/Model.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Interface/Object.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Sham.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/ShamSeter.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Component.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Model/db.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Interface/ActiveRecordInterface.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Interface/Arrayable.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Interface/ArrayableTrait.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Object.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Model.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/BaseActiveRecord.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/EVENT.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Event.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Model/User.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/ActiveRecord.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Fun.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Db/DbUser.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/DbBase.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Config/mysql.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Result.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/Base.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Library/NewDb.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Library/Db.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Library/Sham_Db.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Seter.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/test.php" />
+        <option value="$PROJECT_DIR$/complser.json" />
       </list>
     </option>
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -214,6 +114,9 @@
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -228,6 +131,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,111 +150,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RedBean" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Faster_Center" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Disk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,15 +189,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
-      <pass-parent-envs>true</pass-parent-envs>
+      <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -412,30 +213,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25985092" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2631579" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18051118" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18035944" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2630458" sideWeight="0.5005549" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2874584" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40066594" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.77691454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -463,6 +264,38 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2300">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="245180">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="760">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="2001">
           <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
           <folding />
@@ -473,7 +306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="7429">
           <caret line="128" column="22" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13545348" vertical-offset="0" max-vertical-offset="4922">
           <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,7 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32508835" vertical-offset="0" max-vertical-offset="1495">
           <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9533492" vertical-offset="2024" max-vertical-offset="80385">
           <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.481482" vertical-offset="0" max-vertical-offset="552">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59090906" vertical-offset="14594" max-vertical-offset="20677">
           <caret line="656" column="0" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29799765" vertical-offset="0" max-vertical-offset="7475">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4605418" vertical-offset="0" max-vertical-offset="5543">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,12 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5777512" vertical-offset="0" max-vertical-offset="12903">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="SELECT COUNT.._table WHERE..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,18 +538,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74282295" vertical-offset="0" max-vertical-offset="12903">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="SELECT COUNT.._table WHERE..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.37037" vertical-offset="0" max-vertical-offset="874">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="760">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
@@ -738,70 +551,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5555556" vertical-offset="0" max-vertical-offset="281957">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="245180">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1432123545194" expanded="true" signature="127255:127382" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="127652:127693" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="130014:130045" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="130698:130715" placeholder="UPDATE :_tab..." />
-            <marker date="1432123545194" expanded="true" signature="132410:132465" placeholder="SELECT :_fie..." />
-            <marker date="1432123545194" expanded="true" signature="132472:132485" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="132893:132925" placeholder="SELECT :_tab..." />
-            <marker date="1432123545194" expanded="true" signature="133942:134369" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="134382:134395" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="134474:134708" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="134721:134734" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="135549:135702" placeholder="SELECT :_lin..." />
-            <marker date="1432123545194" expanded="true" signature="135703:135716" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="135832:135933" placeholder="SELECT :_lin..." />
-            <marker date="1432123545194" expanded="true" signature="135934:135947" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="136538:136794" placeholder="SELECT :_tab.._table_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="137339:137369" placeholder="SELECT COUNT..table_..." />
-            <marker date="1432123545194" expanded="true" signature="137376:137389" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="137878:138114" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="138127:138140" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="138238:138388" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="138401:138414" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="138865:138886" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139250:139332" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139426:139477" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139861:139903" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="143910:145135" placeholder="SELECT infor..." />
-            <marker date="1432123545194" expanded="true" signature="147262:147424" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="150285:150368" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="151959:152101" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="152162:152169" placeholder="UPDATE :_isD..." />
-            <marker date="1432123545194" expanded="true" signature="152897:152922" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="155492:155523" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="155763:155808" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="155786:155799" placeholder="SELECT * FRO..." />
-            <marker date="1432123545194" expanded="true" signature="155859:155878" placeholder="DROP TABLE `..." />
-            <marker date="1432123545194" expanded="true" signature="156771:156791" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="156792:156816" placeholder="SELECT * FRO..tmp_backup..." />
-            <marker date="1432123545194" expanded="true" signature="156830:156851" placeholder="DROP TABLE t..." />
-            <marker date="1432123545194" expanded="true" signature="161299:161334" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="161930:162010" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1432123545194" expanded="true" signature="162152:162212" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="163962:163974" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="164409:164434" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="164514:164539" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="166523:168546" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1432123545194" expanded="true" signature="170256:170357" placeholder="SELECT table..tables..." />
-            <marker date="1432123545194" expanded="true" signature="170512:170555" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="170733:170820" placeholder="SELECT colum..columns..." />
-            <marker date="1432123545194" expanded="true" signature="173218:173268" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="173717:173816" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="175240:175344" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="175366:175394" placeholder="UPDATE :_del..." />
-            <marker date="1432123545194" expanded="true" signature="175697:175728" placeholder="DROP TABLE I..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6666665" vertical-offset="0" max-vertical-offset="2645">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2300">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
@@ -809,11 +567,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4876325" vertical-offset="0" max-vertical-offset="849">
+        <state vertical-scroll-proportion="-12.857142" vertical-offset="0" max-vertical-offset="480">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complser.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6917293" vertical-offset="0" max-vertical-offset="665">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
   </component>
 </project>
+
