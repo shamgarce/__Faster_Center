@@ -1,19 +1,19 @@
 {
-	"name":        "Sham/Faster",
-	"description": "a smart micro php framework , 官方QQ群：42807575",
-	"homepage":    "http://microphp.us",
+	"name":        "sham/faster",
+	"description": "a faster micro php framework",
+	"homepage":    "https://github.com/shampeak/Faster_Center",
 	"license":     "Apache-2.0",
-	"keywords":    ["snail", "framework","microphp","php"],
+	"keywords":    ["framework","microphp","php"],
 	"authors": [
 		{
 			"name":     "MicroPHP Team",
 			"email":    "672308444@163.com",
-			"homepage": "http://www.host900.com/",
+			"homepage": "https://github.com/shampeak/Faster_Center",
 			"role":     "developer"
 		}
 	],
 	"support": {
-		"source":   "http://github.com/snail007/microphp"
+		"source":   "https://github.com/shampeak/Faster_Center"
 	},
 	"require": {
 		"php":        ">=5.2.0"
