@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css" media="screen">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.login-form{
+		width:400px;
+		margin:10px;
+		padding:5px;
+		font-size:14px;
+	}
+	li{
+		list-style-type: none;
+		line-height:20px;
+		width:250px;
+	}
+	li .label{
+		width:50px;
+		padding: 2px;
+	}
+	li .error{
+		width:200px;
+		margin-left: 50px;
+		padding: 2px;
+		color:red;
+	}
+	input{
+		border: 1px solid #666;
+		width:160px;
+	}
+</style>
+</head>
+<body>
+	<div class="login-form">
+		<form method="post">
+		<ul>
+			<li><span class="label">用户名</span><input type="text" name="username" value="{$loginForm->username}"/><span class="error">{$errors.username}</span></li>
+			<li><span class="label">密码</span><input type="password" name="password"  value="{$loginForm->password}"/><span class="error">{$errors.password}</span></li>
+			<li><span class="label">地址</span><input type="text" name="address"  value="{$loginForm->address}"/><span class="error">{$errors.address}</span></li>
+			<li><span class="label">邮箱</span><input type="text" name="email"  value="{$loginForm->email}"/><span class="error">{$errors.email}</span></li>
+			<li><span class="label">网址</span><input type="text" name="website"  value="{$loginForm->website}"/><span class="error">{$errors.website}</span></li>
+			<li><span></span><input type="submit" value="提交"/></li>
+		</ul>
+		</form>
+	</div>
+</body>
+</html>

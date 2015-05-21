@@ -2,11 +2,17 @@
 namespace Seter;
 //use Seter\RedBeanPHP;
 define(SHAM_PATH,__DIR__);
+!empty($_GET)   && define('ISGET',TRUE);
+!empty($_POST)  && define('ISPOST',TRUE);
+!defined('ISGET')   && define('ISGET',false);
+!defined('ISPOST')  && define('ISPOST',false);
+
 
 include(__DIR__.'\Fun.php');
 include(__DIR__.'\Sham\SeterBase.php');
 
 class Seter extends \Seter\Sham\SeterBase{
+    private static $instance = null;
     public function __construct($items = array())
     {
         // $this->replace($items);
@@ -22,9 +28,22 @@ class Seter extends \Seter\Sham\SeterBase{
 //        $this->singleton('PHPExcel', function ($c) {
 //            return new PHPExcel();
 //        });
+        $this->singleton('table', function ($c) {
+            return new \Seter\Library\Table();
+        });
         $this->singleton('db', function ($c) {
             return new \Seter\Library\SDb();
         });
+        $this->singleton('request', function ($c) {
+            return new \Seter\Library\Request();
+        });
+    }
+    public static function sterini()
+    {
+    }
+    public static function getInstance(){
+        !(self::$instance instanceof self)&&self::$instance = new \Seter\Seter();
+        return self::$instance;
     }
 
     public static function autoload($className)

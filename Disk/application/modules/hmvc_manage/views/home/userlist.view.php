@@ -13,7 +13,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"><?php echo $title ?></h1>
-          
+          <a class="btn btn-primary useradd">添加用户</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -251,8 +251,23 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/A/Jquery/jquery-1.11.1.min.js"></script>
     <script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+  <script src="/A/artDialog4.1.7/artDialog.js?skin=default"></script>
+  <script src="/A/CK.js"></script>    
+    
     <!-- script src="assets/js/docs.min.js"></script -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script language="javascript">
+$(document).ready(function(){
+	$('.useradd').click(function(){
+		$.CK({
+			ok:true,
+			title:'添加用户',
+			rel: '/manage/home.useradd'
+		});
+	})
+
+})
+</script>  
    
   </body>
 </html>

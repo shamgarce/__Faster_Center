@@ -465,8 +465,9 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
  * -------------------------数据库配置结束--------------------------
  */
 //Sham Seter
-include('Seter/Seter.php');
 
+include('Seter/Seter.php');
+//\Seter\Seter::sterini();
 
 /* End of file index.php */
 include('MicroPHP.min.php');

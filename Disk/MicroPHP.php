@@ -2503,7 +2503,9 @@ class WoniuController extends MpLoaderPlus {
 		}
 	}
 }
-class MpController extends WoniuController{}
+class MpController extends WoniuController{
+
+}
 /* End of file Controller.php */
 
 class WoniuModel extends MpLoaderPlus {
