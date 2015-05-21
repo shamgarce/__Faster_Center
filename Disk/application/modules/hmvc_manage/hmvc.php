@@ -24,8 +24,8 @@
  * 1.$system['my_loader']，$system['hmvc_folder']，$system['hmvc_modules']这三个配置项在HMVC配置中无效。
  * 2.HMVC模块共享主配置的：模型，helper和类库。当有重名时，优先使用HMVC模块的。
  */
-
-$system['autoload_db'] = true;
+$system['debug'] = false;
+$system['autoload_db'] = false;
 /**
  * --------------------系统配置-------------------------
  */
@@ -52,7 +52,6 @@ $system['library_file_autoload']    = array();
 $system['models_file_autoload']     = array();
 //$system['controller_method_ucfirst'] = TRUE;
 //$system['autoload_db'] = FALSE;
-$system['debug'] = true;
 //$system['error_manage'] = FALSE;
 //$system['log_error'] = FALSE;
 //$system['log_error_handle'] = array(

@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\ActiveQueryInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\QueryInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Interface\QueryTrait.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Config\mysql_N.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Library\Db.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\Library\Sham_Db.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\plus\RedBean\license.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\Seter\plus\RedBean\rb.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\application\controllers\welcome.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\controllers\login.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\login\index.view.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Fun.php" afterPath="$PROJECT_DIR$/Disk/Seter/Fun.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Seter.php" afterPath="$PROJECT_DIR$/Disk/Seter/Seter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/_/Seter.php" afterPath="$PROJECT_DIR$/Disk/Seter/_/Seter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" afterPath="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/index.php" afterPath="$PROJECT_DIR$/Disk/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/Seter/Config/mysql.php" afterPath="$PROJECT_DIR$/Disk/Seter/Config/mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disk/application/views/welcome.view.php" afterPath="$PROJECT_DIR$/Disk/application/views/welcome.view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\main\index.view.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/main_/index.view.php" />
+      <change type="MOVED" beforePath="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\main\userlist.view.php" afterPath="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/home/index.view.php" />
     </list>
     <ignored path="Faster_Center.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,103 +52,7 @@
     <favorites_list name="Faster_Center" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Seter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6666665" vertical-offset="0" max-vertical-offset="2645">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Disk/Seter/test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4876325" vertical-offset="0" max-vertical-offset="849">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rb.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5555556" vertical-offset="0" max-vertical-offset="281957">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <marker date="1432123545194" expanded="true" signature="127255:127382" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="127652:127693" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="130014:130045" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="130698:130715" placeholder="UPDATE :_tab..." />
-                <marker date="1432123545194" expanded="true" signature="132410:132465" placeholder="SELECT :_fie..." />
-                <marker date="1432123545194" expanded="true" signature="132472:132485" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="132893:132925" placeholder="SELECT :_tab..." />
-                <marker date="1432123545194" expanded="true" signature="133942:134369" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="134382:134395" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="134474:134708" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="134721:134734" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="135549:135702" placeholder="SELECT :_lin..." />
-                <marker date="1432123545194" expanded="true" signature="135703:135716" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="135832:135933" placeholder="SELECT :_lin..." />
-                <marker date="1432123545194" expanded="true" signature="135934:135947" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="136538:136794" placeholder="SELECT :_tab.._table_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="137339:137369" placeholder="SELECT COUNT..table_..." />
-                <marker date="1432123545194" expanded="true" signature="137376:137389" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="137878:138114" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="138127:138140" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="138238:138388" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-                <marker date="1432123545194" expanded="true" signature="138401:138414" placeholder="-- keep-cach..." />
-                <marker date="1432123545194" expanded="true" signature="138865:138886" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139250:139332" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139426:139477" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="139861:139903" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="143910:145135" placeholder="SELECT infor..." />
-                <marker date="1432123545194" expanded="true" signature="147262:147424" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="150285:150368" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="151959:152101" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="152162:152169" placeholder="UPDATE :_isD..." />
-                <marker date="1432123545194" expanded="true" signature="152897:152922" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="155492:155523" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="155763:155808" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="155786:155799" placeholder="SELECT * FRO..." />
-                <marker date="1432123545194" expanded="true" signature="155859:155878" placeholder="DROP TABLE `..." />
-                <marker date="1432123545194" expanded="true" signature="156771:156791" placeholder="INSERT INTO ..." />
-                <marker date="1432123545194" expanded="true" signature="156792:156816" placeholder="SELECT * FRO..tmp_backup..." />
-                <marker date="1432123545194" expanded="true" signature="156830:156851" placeholder="DROP TABLE t..." />
-                <marker date="1432123545194" expanded="true" signature="161299:161334" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="161930:162010" placeholder="SELECT name ..sqlite_master..." />
-                <marker date="1432123545194" expanded="true" signature="162152:162212" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="163962:163974" placeholder="DELETE FROM ..." />
-                <marker date="1432123545194" expanded="true" signature="164409:164434" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="164514:164539" placeholder="DROP TABLE I..." />
-                <marker date="1432123545194" expanded="true" signature="166523:168546" placeholder="SELECT infor..key_column_usage..." />
-                <marker date="1432123545194" expanded="true" signature="170256:170357" placeholder="SELECT table..tables..." />
-                <marker date="1432123545194" expanded="true" signature="170512:170555" placeholder="CREATE TABLE..." />
-                <marker date="1432123545194" expanded="true" signature="170733:170820" placeholder="SELECT colum..columns..." />
-                <marker date="1432123545194" expanded="true" signature="173218:173268" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="173717:173816" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="175240:175344" placeholder="ALTER TABLE ..." />
-                <marker date="1432123545194" expanded="true" signature="175366:175394" placeholder="UPDATE :_del..." />
-                <marker date="1432123545194" expanded="true" signature="175697:175728" placeholder="DROP TABLE I..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mysql_N.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.37037" vertical-offset="0" max-vertical-offset="874">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,24 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Disk/Mc/Fun.php" />
-        <option value="$PROJECT_DIR$/Disk/MicroPHP.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_sham/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/main/index.view.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/login/index.view.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/login.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_demo/controllers/home.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/seter.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Model/Set.php" />
-        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/Base_Fun.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/Base.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Base/B.php" />
-        <option value="$PROJECT_DIR$/Disk/index.php" />
-        <option value="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Base/BaseSeter.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Base/BaseFun.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Base/Model.php" />
@@ -178,20 +79,38 @@
         <option value="$PROJECT_DIR$/Disk/Seter/Model/User.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Base/ActiveRecord.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Sham.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Fun.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Db/DbUser.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Sham/DbBase.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Config/mysql.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Sham/Result.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Sham/Base.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Library/NewDb.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/Library/Db.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Library/Sham_Db.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php" />
-        <option value="$PROJECT_DIR$/Disk/Seter/Seter.php" />
         <option value="$PROJECT_DIR$/Disk/Seter/test.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Library/Sham_Db.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Library/SDb.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Config/mysql.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/_/Seter.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_login/views/login.view.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Seter.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_login/views/index.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_login/hmvc.php" />
+        <option value="$PROJECT_DIR$/Disk/Seter/Fun.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_login/controllers/home.php" />
+        <option value="$PROJECT_DIR$/Disk/application/views/welcome.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/common/header.php" />
+        <option value="$PROJECT_DIR$/Disk/application/views/common/manageheader.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/views/common/managenavtop.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/views/common/managenavleft.view.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/home/index.view.php" />
+        <option value="$PROJECT_DIR$/Disk/index.php" />
+        <option value="$PROJECT_DIR$/Disk/application/controllers/welcome.php" />
+        <option value="$PROJECT_DIR$/Disk/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php" />
       </list>
     </option>
   </component>
@@ -274,7 +193,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,15 +211,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RedBean" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -318,11 +233,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,11 +259,119 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Seter" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Disk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmvc_manage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Disk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmvc_manage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Disk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hmvc_manage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Faster_Center" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Disk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,21 +383,22 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\www\Faster_Center\Disk\Seter\Interface" />
-      <recent name="E:\www\Faster_Center\Disk\Seter\Base" />
-      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views" />
-      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\main" />
-      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\controllers" />
+      <recent name="E:\www\Faster_Center\Disk\application\views\common" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\common" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\home" />
+      <recent name="E:\www\Faster_Center\Disk\application\controllers" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_login\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\www\Faster_Center\Disk\application\views\common" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views" />
+      <recent name="E:\www\Faster_Center\Disk\application\modules\hmvc_manage\views\home" />
       <recent name="E:\www\Faster_Center\Disk\Seter" />
       <recent name="E:\www\Faster_Center\Disk\Seter\Sham" />
-      <recent name="E:\www\Faster_Center\Disk\Seter\Interface" />
-      <recent name="E:\www\Faster_Center\Disk\Mc" />
-      <recent name="E:\www\Faster_Center\Disk" />
     </key>
   </component>
   <component name="RunManager">
@@ -388,6 +416,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -396,12 +427,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="995039d0-4c7a-4d5a-9bf3-3f503a50fc24" name="Default" comment="" />
@@ -413,16 +444,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25985092" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25825346" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18051118" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18051118" sideWeight="0.49944505" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2630458" sideWeight="0.5005549" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2874584" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -433,9 +464,9 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40066594" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.77691454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -461,6 +492,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="2645">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="2001">
@@ -492,24 +539,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="759">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6854">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="782">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -590,45 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46162927" vertical-offset="0" max-vertical-offset="897">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_demo/hmvc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.703703" vertical-offset="3638" max-vertical-offset="5520">
           <caret line="197" column="46" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24381626" vertical-offset="0" max-vertical-offset="2024">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40400472" vertical-offset="3314" max-vertical-offset="4692">
-          <caret line="170" column="16" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.037037" vertical-offset="9951" max-vertical-offset="10787">
-          <caret line="469" column="3" selection-start-line="469" selection-start-column="3" selection-end-line="469" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16254418" vertical-offset="0" max-vertical-offset="849">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -646,35 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Fun.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13545348" vertical-offset="0" max-vertical-offset="4922">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Disk/Seter/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32508835" vertical-offset="0" max-vertical-offset="1495">
           <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Model/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9533492" vertical-offset="2024" max-vertical-offset="80385">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.481482" vertical-offset="0" max-vertical-offset="552">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,128 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59090906" vertical-offset="14594" max-vertical-offset="20677">
           <caret line="656" column="0" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Sham/Base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29799765" vertical-offset="0" max-vertical-offset="7475">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4605418" vertical-offset="0" max-vertical-offset="5543">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Library/Sham_Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5777512" vertical-offset="0" max-vertical-offset="12903">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122687977" expanded="true" signature="-1:-1" placeholder="SELECT COUNT.._table WHERE..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Library/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74282295" vertical-offset="0" max-vertical-offset="12903">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432122724936" expanded="true" signature="-1:-1" placeholder="SELECT COUNT.._table WHERE..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql_N.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.37037" vertical-offset="0" max-vertical-offset="874">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/plus/RedBean/rb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5555556" vertical-offset="0" max-vertical-offset="281957">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1432123545194" expanded="true" signature="127255:127382" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="127652:127693" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="130014:130045" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="130698:130715" placeholder="UPDATE :_tab..." />
-            <marker date="1432123545194" expanded="true" signature="132410:132465" placeholder="SELECT :_fie..." />
-            <marker date="1432123545194" expanded="true" signature="132472:132485" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="132893:132925" placeholder="SELECT :_tab..." />
-            <marker date="1432123545194" expanded="true" signature="133942:134369" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="134382:134395" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="134474:134708" placeholder="SELECT :_des.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="134721:134734" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="135549:135702" placeholder="SELECT :_lin..." />
-            <marker date="1432123545194" expanded="true" signature="135703:135716" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="135832:135933" placeholder="SELECT :_lin..." />
-            <marker date="1432123545194" expanded="true" signature="135934:135947" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="136538:136794" placeholder="SELECT :_tab.._table_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="137339:137369" placeholder="SELECT COUNT..table_..." />
-            <marker date="1432123545194" expanded="true" signature="137376:137389" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="137878:138114" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="138127:138140" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="138238:138388" placeholder="SELECT COUNT.._linkTable_&#10;&#9;&#9;&#9;INNER..." />
-            <marker date="1432123545194" expanded="true" signature="138401:138414" placeholder="-- keep-cach..." />
-            <marker date="1432123545194" expanded="true" signature="138865:138886" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139250:139332" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139426:139477" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="139861:139903" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="143910:145135" placeholder="SELECT infor..." />
-            <marker date="1432123545194" expanded="true" signature="147262:147424" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="150285:150368" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="151959:152101" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="152162:152169" placeholder="UPDATE :_isD..." />
-            <marker date="1432123545194" expanded="true" signature="152897:152922" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="155492:155523" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="155763:155808" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="155786:155799" placeholder="SELECT * FRO..." />
-            <marker date="1432123545194" expanded="true" signature="155859:155878" placeholder="DROP TABLE `..." />
-            <marker date="1432123545194" expanded="true" signature="156771:156791" placeholder="INSERT INTO ..." />
-            <marker date="1432123545194" expanded="true" signature="156792:156816" placeholder="SELECT * FRO..tmp_backup..." />
-            <marker date="1432123545194" expanded="true" signature="156830:156851" placeholder="DROP TABLE t..." />
-            <marker date="1432123545194" expanded="true" signature="161299:161334" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="161930:162010" placeholder="SELECT name ..sqlite_master..." />
-            <marker date="1432123545194" expanded="true" signature="162152:162212" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="163962:163974" placeholder="DELETE FROM ..." />
-            <marker date="1432123545194" expanded="true" signature="164409:164434" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="164514:164539" placeholder="DROP TABLE I..." />
-            <marker date="1432123545194" expanded="true" signature="166523:168546" placeholder="SELECT infor..key_column_usage..." />
-            <marker date="1432123545194" expanded="true" signature="170256:170357" placeholder="SELECT table..tables..." />
-            <marker date="1432123545194" expanded="true" signature="170512:170555" placeholder="CREATE TABLE..." />
-            <marker date="1432123545194" expanded="true" signature="170733:170820" placeholder="SELECT colum..columns..." />
-            <marker date="1432123545194" expanded="true" signature="173218:173268" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="173717:173816" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="175240:175344" placeholder="ALTER TABLE ..." />
-            <marker date="1432123545194" expanded="true" signature="175366:175394" placeholder="UPDATE :_del..." />
-            <marker date="1432123545194" expanded="true" signature="175697:175728" placeholder="DROP TABLE I..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6666665" vertical-offset="0" max-vertical-offset="2645">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,6 +662,195 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4876325" vertical-offset="0" max-vertical-offset="849">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Model/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333" vertical-offset="2024" max-vertical-offset="80385">
+          <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Library/SDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778" vertical-offset="1380" max-vertical-offset="12926">
+          <caret line="75" column="22" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="22" />
+          <folding>
+            <marker date="1432173897590" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432173897590" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432173897590" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432173897590" expanded="true" signature="-1:-1" placeholder="SELECT COUNT.._table WHERE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Config/mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="552">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/_/Seter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21672556" vertical-offset="0" max-vertical-offset="2898">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Sham/SeterBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5555556" vertical-offset="483" max-vertical-offset="5612">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Seter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.222222" vertical-offset="0" max-vertical-offset="1541">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Sham/Base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027090695" vertical-offset="368" max-vertical-offset="7475">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/Seter/Fun.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5974026" vertical-offset="0" max-vertical-offset="5313">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/hmvc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43447462" vertical-offset="0" max-vertical-offset="4669">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/main_/index.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6067146" vertical-offset="0" max-vertical-offset="13133">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/views/welcome.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38016528" vertical-offset="0" max-vertical-offset="1058">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/welcome.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="847">
+          <caret line="0" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/views/common/manageheader.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.518518" vertical-offset="0" max-vertical-offset="690">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/home/userlist.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4964029" vertical-offset="0" max-vertical-offset="7199">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/views/common/managenavtop.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62455726" vertical-offset="0" max-vertical-offset="847">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/common/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="874">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55155873" vertical-offset="0" max-vertical-offset="10856">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/views/common/managenavleft.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08146399" vertical-offset="0" max-vertical-offset="847">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2987013" vertical-offset="0" max-vertical-offset="847">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/views/home/index.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.481482" vertical-offset="0" max-vertical-offset="6049">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.592592" vertical-offset="0" max-vertical-offset="2024">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/modules/hmvc_manage/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51121604" vertical-offset="257" max-vertical-offset="1311">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disk/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35301062" vertical-offset="0" max-vertical-offset="847">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
       </provider>

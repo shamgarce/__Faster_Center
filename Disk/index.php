@@ -32,6 +32,17 @@
 
 define('IN_WONIU_APP', TRUE);
 define('WDS', DIRECTORY_SEPARATOR);
+
+/**
+ * 注册HMVC模块，这里填写模块名称关联数组,键是url中的模块别名，值是模块文件夹名称
+ */
+$system['hmvc_modules'] = array(
+	'demo' => 'hmvc_demo',
+	'manage' => 'hmvc_manage',
+);
+$system['debug'] = false;
+
+
 /**
  * --------------------系统配置-------------------------
  */
@@ -73,14 +84,7 @@ $system['table_cache_folder'] = $system['application_folder'] . '/cache';
  * 存放HMVC模块的文件夹路径名称
  */
 $system['hmvc_folder'] = $system['application_folder'] . '/modules';
-/**
- * 注册HMVC模块，这里填写模块名称关联数组,键是url中的模块别名，值是模块文件夹名称
- */
-$system['hmvc_modules'] = array(
-	'demo' => 'hmvc_demo',
-	'manage' => 'hmvc_manage'
 
-);
 /**
  * 404错误文件的路径,该文件会在系统找不到相关内容时显示,
  * 文件里面可以使用$msg变量获取出错提示内容
@@ -472,7 +476,6 @@ include('MicroPHP.min.php');
  * true：显示错误信息,
  * false：所有错误将不显示
  */
-$system['debug'] = false;
 
 MpRouter::setConfig($system);
 MpRouter::loadClass();

@@ -5,7 +5,7 @@
  *
  * @author Administrator
  */
-class Main extends MpController {
+class Main—— extends MpController {
 
     /*
      * //超级管理员管理系统的界面

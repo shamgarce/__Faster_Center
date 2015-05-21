@@ -8,6 +8,7 @@ include(__DIR__.'\Sham.php');
 include(__DIR__.'\Sham\SeterBase.php');
 
 class Seter extends \Seter\Sham\SeterBase{
+
     public function __construct($items = array())
     {
         // $this->replace($items);

@@ -30,12 +30,29 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-namespace Seter;
-
 
 class Sham
 {
-
+    public static function R($url, $time=0, $msg='') {
+        $url = str_replace(array("\n", "\r"), '', $url);
+        if (empty($msg))
+            $msg = "系统将在{$time}秒之后自动跳转到{$url}！";
+        if (!headers_sent()) {
+            // redirect
+            if (0 === $time) {
+                header('Location: ' . $url);
+            } else {
+                header("refresh:{$time};url={$url}");
+                echo($msg);
+            }
+            exit();
+        } else {
+            $str = "<meta http-equiv='Refresh' content='{$time};URL={$url}'>";
+            if ($time != 0)
+                $str .= $msg;
+            exit($str);
+        }
+    }
     //--------------------------------------------------------------------------------
     //函数群 public static
     /*

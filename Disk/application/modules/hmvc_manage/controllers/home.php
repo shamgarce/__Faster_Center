@@ -12,21 +12,39 @@ class Home extends MpController {
      * */
     public function doIndex($name = '') {
 
-
-        $this->view("welcome", array('msg' => $name, 'ver' => $this->config('myconfig', 'app')));
+        $data=array('title'=>'仪表盘');
+        $this->view("home/index",$data);
     }
-
-
-
-
-
 
     /*
      * 测试内容
      * */
-    public function doTest($name = '') {
-        $this->view("welcome", array('msg' => $name, 'ver' => $this->config('myconfig', 'app')));
+    public function doUserlist($name = '') {
+        $data=array('title'=>'用户列表');
+        $this->view("home/userlist",$data);
     }
+
+    /*
+     * 添加用户
+     * */
+    public function doUseradd($uid = '') {
+        $data=array('title'=>'添加用户');
+        $this->view("home/sp/userlist",$data);
+    }
+
+    /*
+     * 修改用户
+     * */
+    public function doUseredit($uid = '')
+    {
+
+        $data=array('title'=>'添加用户');
+         $this->view("home/sp/userlist",$data);
+    }
+
+
+
+
 
 
 }

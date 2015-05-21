@@ -6,7 +6,7 @@
 | the active record class
 */
 
-$sham_seter_config = array(
+$mysql_set = array(
     'default' =>array(
         "hostname"  =>  '127.0.0.1',
         "username"  =>  'ns',

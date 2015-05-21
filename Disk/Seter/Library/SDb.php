@@ -1,4 +1,5 @@
 <?php
+
 namespace Seter\Library;
 
 /*示例
@@ -28,7 +29,7 @@ $db->version();
 $db->setMaxCacheTime(0);
 $db->getMaxCacheTime();
 */
-class Db{
+class SDb{
     protected $properties;
     //private $settings = array();
     //下面是单例结构===================================================

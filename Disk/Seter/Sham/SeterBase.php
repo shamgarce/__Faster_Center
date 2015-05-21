@@ -225,10 +225,13 @@ class SeterBase  implements \ArrayAccess, \Countable, \IteratorAggregate
         };
     }
 
-    public static function ini()
+    function __call($function_name, $args)
     {
-
+        echo "function: $function_name (<br />";
+        var_dump($args);
+        echo ") not exist！";
     }
+
 }
 
 
