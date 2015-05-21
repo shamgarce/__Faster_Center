@@ -1,0 +1,21 @@
+{
+	"name":        "sham/faster",
+	"description": "a faster micro php framework",
+	"homepage":    "https://github.com/shampeak/Faster_Center",
+	"license":     "Apache-2.0",
+	"keywords":    ["framework","microphp","php"],
+	"authors": [
+		{
+			"name":     "MicroPHP Team",
+			"email":    "672308444@163.com",
+			"homepage": "https://github.com/shampeak/Faster_Center",
+			"role":     "developer"
+		}
+	],
+	"support": {
+		"source":   "https://github.com/shampeak/Faster_Center"
+	},
+	"require": {
+		"php":        ">=5.2.0"
+	}
+}
