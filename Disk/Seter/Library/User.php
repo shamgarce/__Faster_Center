@@ -1,15 +1,12 @@
 <?php
 
 namespace Seter\Library;
-
+//用户模型
 class User{
     private $db = null;
 
-
-
-
-
     public function __construct(){
+//        $this->
     }
 
 
@@ -24,6 +21,9 @@ class User{
 //    public function __get($tablename) {
 //    }
 
+    public function defaultconfig(){
+
+    }
 
     //用户表标准格式
     public function columns()
