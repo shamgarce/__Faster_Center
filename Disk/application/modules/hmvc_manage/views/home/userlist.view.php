@@ -18,229 +18,57 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th><a name="id14">#</a></th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>&nbsp;</th>
+                  <th>用户名</th>
+                  <th>真实姓名</th>
+                  <th>密码</th>
+                  <th>登陆时间</th>
+                  <th>登陆ip</th>
+                  <th width="100">有效?</th>
+                  <th width="100">操作</th>
                 </tr>
               </thead>
               <tbody>
+<?php
+foreach($userlist as $key=>$value)
+{
+?>
                 <tr>
-                  <td><a name="id15">1,001</a></td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                  <td><?php echo $value['uid']?></td>
+                  <td><?php echo $value['uname']?></td>
+                  <td><?php echo $value['tname']?></td>
+                  <td>********</td>
+                  <td><?php echo $value['logtime']?></td>
+                  <td><?php echo $value['logip']?></td>
+                  <td>
+<?php
+if($value['enable']){
+?>
+<a class="action_cflag" rel="1" uname="<?php echo $value['uname']?>" href="javascript:void(0)">
+<span class=" glyphicon glyphicon-ok red"></span>
+</a>
+<?php }else{?>
+<a class="action_cflag" rel="0" uname="<?php echo $value['uname']?>" href="javascript:void(0)">
+<span class=" glyphicon glyphicon-remove green"></span>
+</a>                  
+<?php
+}
+?>                  
+                  
+                  </td>
+                  <td> <a class="btn btn-danger btn-sm useredit">修改</a></td>
                 </tr>
+<?php
+}
+?>                
+                
+                
                 <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td colspan="5"><p>&nbsp;</p>
-                  <p>1 ： 完成 用户管理</p>
-                  <p>增加删除 </p>
-                  <p>修改</p>
-                  <p>&nbsp;</p>
-                  <p>&nbsp;</p></td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
+                  <td colspan="8">&nbsp;</td>
                 </tr>
               </tbody>
             </table>
-            <h1><a name="id131">六、需要慎重考虑的部分</a>         <a class="aredit" relid=131><span style="font-size:11px;background-color:#006600;color:#DFC5A4;">编辑</span></a>            </h1>
-<div >
-  1.Memcached单个key-value大小有限，一个value最大只支持1MB，而Redis最大支持512MB
-</div>
-<div >
- 2.Memcached只是个内存缓存，对可靠性无要求；而Redis更倾向于内存数据库，因此对对可靠性方面要求比较高
-</div>
-<div >
- 3.从本质上讲，Memcached只是一个单一key-value内存Cache；而Redis则是一个数据结构内存数据库，支持五种数据类型，因此Redis除单纯缓存作用外，还可以处理一些简单的逻辑运算，Redis不仅可以缓存，而且还可以作为数据库用
-</div>
-4.新版本（3.0）的Redis是指集群分布式，也就是说集群本身均衡客户端请求，各个节点可以交流，可拓展行、可维护性更强大。<br />
-<br />
-来自：http://blog.csdn.net/suifeng3051/article/details/23739295
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+           <hr>
           </div>
         </div>
       </div>
@@ -264,6 +92,31 @@ $(document).ready(function(){
 			title:'添加用户',
 			rel: '/manage/home.useradd'
 		});
+	})
+	
+	$('.useredit').click(function(){
+		$.CK({
+			ok:true,
+			title:'添加用户',
+			rel: '/manage/home.useredit'
+		});
+	})
+	
+
+	$('.action_cflag').click(function(){
+		
+		var res = $.ajax({
+				url : '/manage/home.userlist',
+				type: 'post',
+				data: {
+					email 		: 12,
+					password 	: 23,
+					},
+				dataType: "json",
+				async:false,
+				cache:false
+			});
+			console.log(res);
 	})
 
 })

@@ -10,8 +10,11 @@ class Home extends MpController {
     {
         parent::__construct();
         $this->Seter = new \Seter\Seter();
-        //$instance = MpController::getInstance();
-        //var_dump($instance->Seter);
+//        //$instance = MpController::getInstance();
+//        //var_dump($instance->Seter);
+
+
+
     }
     /*
      * 首页
@@ -26,14 +29,11 @@ class Home extends MpController {
     /*
      * 测试内容
      * */
-    public function doUserlist($flit = '',$a='') {
-//        echo $flit;
-//        echo $a;
-$ms = $this->Seter->table->dy_user;
-
-
-      var_dump($ms->test());
-        exit;
+    public function doUserlist($flit = '0') {
+        if(ISPOST){
+            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->cflag();
+            $this->gojson();
+        }
         $data=array(
             'userlist' => $this->model->user->getuserlist($flit),
             'title'=>'用户列表'
@@ -47,7 +47,7 @@ $ms = $this->Seter->table->dy_user;
     public function doUseradd() {
 
         if(ISPOST){
-            $this->model->formuser->load() && $this->model->formuser->add();
+            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->add();
             $this->gojson();
         }
 
@@ -63,11 +63,12 @@ $ms = $this->Seter->table->dy_user;
     public function doUseredit($uid = 0)
     {
         if(ISPOST){
-            $this->model->formuser->load() && $this->model->formuser->update();
+            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->add();
+//            $this->model->formuser->load() && $this->model->formuser->update();
             $this->gojson();
         }else{
             $data=array(
-                'user' => $this->model->user->getuserbyid($uid),
+                'user' => 0,//$this->model->user->getuserbyid($uid),
                 'title'=>'修改用户'
             );
             $this->view("home/dialog/useredit",$data);

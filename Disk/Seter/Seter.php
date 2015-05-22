@@ -13,6 +13,7 @@ include(__DIR__.'\Sham\SeterBase.php');
 
 class Seter extends \Seter\Sham\SeterBase{
     private static $instance = null;
+    public $identify = array();
     public function __construct($items = array())
     {
         // $this->replace($items);
@@ -36,6 +37,15 @@ class Seter extends \Seter\Sham\SeterBase{
         });
         $this->singleton('request', function ($c) {
             return new \Seter\Library\Request();
+        });
+
+        //是否登陆
+        $this->singleton('isguest', function () {
+            if(!empty($this->identify)){
+                return true;
+            }else{
+                return false;
+            }
         });
     }
     public static function sterini()

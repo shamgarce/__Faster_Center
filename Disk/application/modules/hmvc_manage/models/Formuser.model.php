@@ -7,6 +7,12 @@ class Formuser extends MpModel {
     /*
      * 获取post过来的信息
      * */
+
+    public function cflag()
+    {
+        return $this->Validator();
+    }
+
     public function load()
     {
         return $this->Validator();

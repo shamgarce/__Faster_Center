@@ -59,6 +59,7 @@ class SDb{
     public $base            = '';
 
     private $props = array();                   //单例结构
+    public $Config = array();                   //单例结构
     public static $instance;
 
     public function __construct($chr = 'default'){
@@ -72,6 +73,9 @@ class SDb{
         $this->base = dirname(__FILE__)."\\";
         $this->root_path = SHAM_PATH."\\".$this->root_path;
 //        $this->cls_mysql($config['dbhost'], $config['dbuser'], $config['dbpw'], $config['dbname'], $config['charset'], $config['pconnect'], $config['quiet']);
+
+        $this->Config = $mysql_set[$chr];
+
         $this->cls_mysql(
             $mysql_set[$chr]['hostname'],
             $mysql_set[$chr]['username'],
@@ -81,7 +85,6 @@ class SDb{
             $mysql_set[$chr]['pconnect'],
             $mysql_set[$chr]['quiet']);
     }
-
     public static function getInstance($config = 'default'){
         !(self::$instance instanceof self)&&self::$instance = new Db($config);
         return self::$instance;
