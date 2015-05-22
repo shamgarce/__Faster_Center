@@ -1,6 +1,8 @@
 <?php
 namespace Seter\Sham;
 
+//        \Sham::trace(__METHOD__);             //执行路径记录
+//        print_r(\Sham::gettrace());           //显示
 
 class Base  implements \ArrayAccess, \Countable, \IteratorAggregate
 {

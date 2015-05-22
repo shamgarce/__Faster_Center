@@ -35,6 +35,11 @@ class User extends MpModel
         return true;
     }
 
+    public function test()
+    {
+        return true;
+    }
+
 
 
 
@@ -42,7 +47,7 @@ class User extends MpModel
     public function columns()
     {
 /*
- * show columns from f_user
+ * show columns from f_user;
 +---------+-------------+------+-----+---------+----------------+
 | Field   | Type        | Null | Key | Default | Extra          |
 +---------+-------------+------+-----+---------+----------------+

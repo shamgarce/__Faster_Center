@@ -33,6 +33,17 @@
 
 class Sham
 {
+    //记录当前的信息
+    public static function trace($info='')
+    {
+        array_push(\Seter\Seter::$trace,$info);
+    }
+
+    public static function gettrace()
+    {
+        return \Seter\Seter::$trace;
+    }
+
     public static function R($url, $time=0, $msg='') {
         $url = str_replace(array("\n", "\r"), '', $url);
         if (empty($msg))

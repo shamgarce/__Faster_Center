@@ -18,6 +18,17 @@ class Request{
         return $_POST;
     }
 
+    public function get(){
+        return $_GET;
+    }
+
+    public function cookie(){
+        return $_COOKIE;
+    }
+    public function __get($name){
+        return $this->$name();
+    }
+
 
     //=======================================
     //=======================================

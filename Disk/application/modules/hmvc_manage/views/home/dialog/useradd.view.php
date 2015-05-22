@@ -1,11 +1,11 @@
 <form name="artadduser" action="" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    <input name="uname" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input name="pwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
 
 </form>
@@ -19,14 +19,13 @@ ob = this;
 				url : '/manage/home.useradd',
 				type: 'post',
 				data: {
-					email 		: $("input[name='email']").val(),
-					password 	: $("input[name='password']").val(),
+					uname 		: $("input[name='uname']").val(),
+					pwd 	: $("input[name='pwd']").val(),
 					},
 				dataType: "json",
 				async:false,
 				cache:false
-			});
-			console.log(res);
+			}).responseJSON
 			return res;
 		},
 		cancel:function(){},						//点击cancel按钮

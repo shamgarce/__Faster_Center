@@ -129,13 +129,13 @@ class TableObj
 
     public function getcount()
     {
+        $this->sqltype     = 'getcount';
         //读取
         $this->result = $this->buildsql();
         if($this->sql != $this->_sql){
-            $this->result   = $this->db->getcount($this->sql);
+            $this->result   = $this->db->getone($this->sql);
             $this->_sql     = $this->sql;
         }
-        $this->sqltype     = 'getcount';
         return $this->result;
     }
 
@@ -178,7 +178,11 @@ class TableObj
 
     public function buildsql()
     {
-        $sql = " select {$this->colm}";
+        if($this->sqltype == 'getcount'){
+            $sql = " select count(*)";
+        }else{
+            $sql = " select {$this->colm}";
+        }
         $sql .= " from {$this->tablename}";
         if(!empty($this->where)){
             $wheres = \Sham::getstr($this->where,0,' and ');

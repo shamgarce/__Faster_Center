@@ -12,20 +12,14 @@ include(__DIR__.'\Fun.php');
 include(__DIR__.'\Sham\SeterBase.php');
 
 class Seter extends \Seter\Sham\SeterBase{
-    private static $instance = null;
-    public $identify = array();
+    private static $instance    = null;         //单例调用
+    public static $trace        = array();      //trace记录
+    public  $dec        = 123;      //trace记录
+
+    private $identify = array();                //用户识别
+
     public function __construct($items = array())
     {
-        // $this->replace($items);
-//        $this->singleton('db', function ($c) {
-//            return new Sham_Db();
-//        });
-////        $this->singleton('mdb', function ($c) {
-////            return new Sham_Mdb();
-////        });
-//        $this->singleton('logmon', function ($c) {
-//            return new Sham_Logmon();
-//        });
 //        $this->singleton('PHPExcel', function ($c) {
 //            return new PHPExcel();
 //        });
@@ -38,7 +32,9 @@ class Seter extends \Seter\Sham\SeterBase{
         $this->singleton('request', function ($c) {
             return new \Seter\Library\Request();
         });
-
+        $this->singleton('user', function ($c) {
+            return new \Seter\Library\User();
+        });
         //是否登陆
         $this->singleton('isguest', function () {
             if(!empty($this->identify)){
@@ -51,6 +47,8 @@ class Seter extends \Seter\Sham\SeterBase{
     public static function sterini()
     {
     }
+
+
     public static function getInstance(){
         !(self::$instance instanceof self)&&self::$instance = new \Seter\Seter();
         return self::$instance;

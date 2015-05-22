@@ -56,7 +56,7 @@ if($value['enable']){
 ?>                  
                   
                   </td>
-                  <td> <a class="btn btn-danger btn-sm useredit">修改</a></td>
+                  <td> <a rel="<?php echo $value['uid']?>" class="btn btn-danger btn-sm useredit">修改</a></td>
                 </tr>
 <?php
 }
@@ -90,7 +90,10 @@ $(document).ready(function(){
 		$.CK({
 			ok:true,
 			title:'添加用户',
-			rel: '/manage/home.useradd'
+			rel: '/manage/home.useradd',
+			callback:function(){
+				location.reload() ;
+			}
 		});
 	})
 	
@@ -98,7 +101,10 @@ $(document).ready(function(){
 		$.CK({
 			ok:true,
 			title:'添加用户',
-			rel: '/manage/home.useredit'
+			rel: '/manage/home.useredit/'+ $(this).attr('rel'),
+			callback:function(){
+				location.reload() ;
+			}
 		});
 	})
 	
@@ -109,14 +115,15 @@ $(document).ready(function(){
 				url : '/manage/home.userlist',
 				type: 'post',
 				data: {
-					email 		: 12,
-					password 	: 23,
+					uname 		: $(this).attr('uname'),
+					enable  	: $(this).attr('rel'),
 					},
 				dataType: "json",
 				async:false,
 				cache:false
 			});
-			console.log(res);
+			location.reload() ;
+//			console.log(res);
 	})
 
 })

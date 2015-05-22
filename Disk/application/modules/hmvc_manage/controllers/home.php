@@ -12,9 +12,8 @@ class Home extends MpController {
         $this->Seter = new \Seter\Seter();
 //        //$instance = MpController::getInstance();
 //        //var_dump($instance->Seter);
-
-
-
+//        \Sham::trace(__METHOD__);             //执行路径记录
+//        print_r(\Sham::gettrace());           //显示
     }
     /*
      * 首页
@@ -50,7 +49,6 @@ class Home extends MpController {
             $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->add();
             $this->gojson();
         }
-
         $data=array(
             'title'=>'添加用户'
         );
@@ -63,12 +61,12 @@ class Home extends MpController {
     public function doUseredit($uid = 0)
     {
         if(ISPOST){
-            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->add();
+            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->update();
 //            $this->model->formuser->load() && $this->model->formuser->update();
             $this->gojson();
         }else{
             $data=array(
-                'user' => 0,//$this->model->user->getuserbyid($uid),
+                'user' => \Seter\Seter::getInstance()->table->f_user->where("uid = $uid")->getrow(),
                 'title'=>'修改用户'
             );
             $this->view("home/dialog/useredit",$data);
@@ -77,7 +75,7 @@ class Home extends MpController {
 
     public function doDialog()
     {
-
+        $this->model->user->test();
         $dialog = array();
         $dialog[] = array(
             'title' => '添加用户',
@@ -102,12 +100,14 @@ class Home extends MpController {
     public $jsondata = array();
 	public function gojson(){
 		$res = array(
-			'jsoncode'	=> $this->jsoncode,
-			'jsonmsg'	=> $this->jsonmsg,
-			'jsondata'	=> $this->jsondata
+			'code'	=> $this->jsoncode,
+			'msg'	=> $this->jsonmsg,
+			'data'	=> $this->jsondata
 		);
-		echo json_encode($res);
-		exit;
+		if($this->isjson){
+            echo json_encode($res);
+            exit;
+        }
 	}
 
 }
