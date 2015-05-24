@@ -24,7 +24,6 @@ class User extends MpModel
     {
     }
 
-
     public function json($code=0,$msg='')
     {
         \Home::getInstance()->isjson = true;
