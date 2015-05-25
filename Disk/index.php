@@ -13,7 +13,8 @@ include('MicroPHP.Fun.php');
 //include('MicroPHP.Db.Class.php');
 //include('MicroPHP.Session.Class.php');
 //include('MicroPHP.Fastercache.Class.php');
-include('MicroPHP.min.php');
+include('MicroPHP.php');
+include('MicroPHP.Controller.php');
 
 
 /**
@@ -22,6 +23,8 @@ include('MicroPHP.min.php');
 $system['hmvc_modules'] = array(
 	'demo' => 'hmvc_demo',
 	'manage' => 'hmvc_manage',
+	'man' => 'hmvc_man',
+
 );
 $system['debug'] = false;
 

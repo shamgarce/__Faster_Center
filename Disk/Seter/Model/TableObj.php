@@ -18,6 +18,8 @@ class TableObj
     private $limit = '';
     private $order = '';
     private $colm = '*';
+    private $group = '';
+
     private $sqltype = '';          //结果集类型
     private $sql = '';              //结果集的sql
     private $_sql = '';             //上个结果集的sql语句
@@ -56,6 +58,13 @@ class TableObj
         $this->order = $order;
         return $this;
     }
+
+    public function group($group)
+    {
+        $this->group = $group;
+        return $this;
+    }
+
 
     public function limit($bnum, $num = 0)
     {
@@ -183,14 +192,21 @@ class TableObj
         }else{
             $sql = " select {$this->colm}";
         }
+
         $sql .= " from {$this->tablename}";
         if(!empty($this->where)){
             $wheres = \Sham::getstr($this->where,0,' and ');
             $sql .= " where $wheres";
         }
+
+        if(!empty($this->group)){
+            $sql .= " group by {$this->group}";
+        }
+
         if(!empty($this->order)){
             $sql .= " order by {$this->order}";
         }
+
         if(!empty($this->limit)){
             $sql .= " limit {$this->limit}";
         }
