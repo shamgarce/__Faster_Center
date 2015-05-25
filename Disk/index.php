@@ -467,10 +467,14 @@ $system['db']['pdo_mysql']['stricton'] = FALSE;
 //Sham Seter
 
 include('Seter/Seter.php');
-//\Seter\Seter::sterini();
 
+//\Seter\Seter::sterini();
 /* End of file index.php */
-include('MicroPHP.min.php');
+include('MicroPHP.Fun.php');
+//include('MicroPHP.Db.Class.php');
+//include('MicroPHP.Session.Class.php');
+//include('MicroPHP.Fastercache.Class.php');
+include('MicroPHP.php');
 
 /**
  * 是否开启调试模式

@@ -1,7 +1,7 @@
 <form name="artadduser" action="" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">用户名</label>
-    <input name="" type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名" disabled="disabled">
+    <input name="" type="email" class="form-control" id="exampleInputEmail1" placeholder="<?php echo $user['uname']?>" disabled="disabled" value="<?php echo $user['uname']?>">
     <input name="uname" type="hidden" value="<?php echo $user['uname']?>">
   </div>
   <div class="form-group">

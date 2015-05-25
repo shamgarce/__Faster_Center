@@ -37,7 +37,11 @@ class Home extends MpController {
             'userlist' => $this->model->user->getuserlist($flit),
             'title'=>'用户列表'
         );
+
+
+
         $this->view("home/userlist",$data);
+        echo 1;
     }
 
     /*

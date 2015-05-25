@@ -32,7 +32,7 @@
     <div class="container" style="padding-top:150px;width:300px">
 
 
-        <h2 class="form-signin-heading">药品抽样单管理系统</h2>
+        <h2 class="form-signin-heading">管理系统</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input name="uname" type="text" id="inputEmail" class="form-control username" placeholder="用户名" required autofocus>
         <div class="checkbox">

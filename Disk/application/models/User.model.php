@@ -19,6 +19,23 @@ class User extends MpModel
         $this->args = $arg;
         return true;
     }
+    //添加信息
+    public function getuserlist($def = '')
+    {
+        switch($def){
+            case '9999':
+                return $this->Seter->table->f_user->where('enable = 0')->order('uid desc')->getall();
+                break;
+            case 1:
+                return $this->Seter->table->f_user->where('enable = 1')->order('uid desc')->getall();
+                break;
+            default:    //0 全部
+                return $this->Seter->table->f_user->order('uid desc')->getall();
+                break;
+        }
+
+    }
+
 
     public function test()
     {
@@ -30,6 +47,7 @@ class User extends MpModel
         \Home::getInstance()->jsoncode = $code;
         \Home::getInstance()->jsonmsg = $msg;
     }
+
 
 
 }
