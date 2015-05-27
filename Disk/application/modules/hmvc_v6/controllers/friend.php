@@ -21,7 +21,7 @@ class Friend extends MpController {
         $this->routerstr = $this->router['mpath'];
 //        $this->routerstr = 'docnav/hospitalguidelist';
         $this->row = $this->Seter->table->f_userapi->where("api='$this->routerstr'")->getrow();
-        if($this->row['debug'] == 0 ){            //调试模式
+        if($this->row['debug'] == 1 ){            //调试模式
             echo $this->row['response'];
             if(empty($this->row['response'])){
                 $res = array(
@@ -36,19 +36,22 @@ class Friend extends MpController {
     }
 
 
-    function search()
+    //搜索好友
+    function doSearch()
     {
-
+        $this->model->v6friend->load($this->Seter->request->post) && $this->model->v6friend->search();
     }
 
-    function add()
+    //搜索好友 添加好友
+    function doAdd()
     {
-
+        $this->model->v6friend->load($this->Seter->request->post) && $this->model->v6friend->add();
     }
 
-    function getfriends()
+    //获得好友列表
+    function doGetfriends()
     {
-
+        $this->model->v6friend->load($this->Seter->request->post) && $this->model->v6friend->getfriends();
     }
 
 

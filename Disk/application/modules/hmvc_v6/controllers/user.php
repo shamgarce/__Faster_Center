@@ -40,11 +40,6 @@ class User extends MpController {
         $tokon = $this->Seter->ry->getToken('asfd','22','33');
         echo $tokon;
     }
-    public function getmessage()
-    {
-
-    }
-
 
     //======================================================
     //输出json

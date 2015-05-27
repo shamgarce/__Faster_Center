@@ -3,7 +3,7 @@
 define('IN_WONIU_APP', TRUE);
 define('WDS', DIRECTORY_SEPARATOR);
 //Sham Seter
-define('SALT', 'ERTYUIOP[567890-');
+define('SALT', 'ccab8f440ff0825e');
 
 include('Seter/Seter.php');
 
