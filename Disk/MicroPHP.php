@@ -565,6 +565,8 @@ class WoniuRouter {
 	}
 	public static function parseURI() {
 		$pathinfo_query = self::getQueryStr();
+
+		//echo $pathinfo_query;
 		//路由hmvc模块名称信息检查
 		$router['module'] = self::getHmvcModuleName($pathinfo_query);
 		$pathinfo_query = self::checkHmvc($pathinfo_query);
@@ -630,6 +632,7 @@ class WoniuRouter {
 	}
 	private static function getQueryStr() {
 		$system = systemInfo();
+
 		//命令行运行检查
 		if (MpInput::isCli()) {
 			global $argv;
@@ -645,7 +648,8 @@ class WoniuRouter {
 			}
 			//pathinfo模式下有?,那么$pathinfo['query']也是非空的，这个时候查询字符串是PATH_INFO和query
 			$query_str = empty($pathinfo['query']) ? '' : $pathinfo['query'];
-			$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : (isset($_SERVER['REDIRECT_PATH_INFO']) ? $_SERVER['REDIRECT_PATH_INFO'] : '');
+			$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '');
+			//$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : (isset($_SERVER['REDIRECT_PATH_INFO']) ? $_SERVER['REDIRECT_PATH_INFO'] : '');
 			$pathinfo_query = empty($path_info) ? $query_str : $path_info . '&' . $query_str;
 		}
 		if ($pathinfo_query) {

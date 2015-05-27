@@ -36,5 +36,8 @@ $system['debug'] = false;
  * true：显示错误信息,
  * false：所有错误将不显示
  */
+$mp = WoniuRouter::parseURI();
+//print_r($mp);
+
 MpRouter::setConfig($system);
 MpRouter::loadClass();
