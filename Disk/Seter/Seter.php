@@ -24,6 +24,7 @@ include(__DIR__.'\Fun.php');
 include(__DIR__.'\Config.php');
 
 
+!defined('BTIME')  && define('BTIME', \Sham::T());
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 {
@@ -61,14 +62,25 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         include(__DIR__.'\Config.php');
         $this->Config = $Config;
 
+        $this->singleton('ry', function ($c) {
+            return new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');
+        });
+
+
+
         $this->singleton('db', function ($c) {
             return new \Seter\Library\SDb();
+        });
+
+        $this->singleton('mdb', function ($c) {
+            return new \Seter\Library\Mdb();
         });
 
 
         $this->singleton('request', function ($c) {
             return new \Seter\Library\Request();
         });
+
         $this->singleton('table', function ($c) {
             return new \Seter\Library\Table();
         });

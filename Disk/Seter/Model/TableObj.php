@@ -96,6 +96,7 @@ class TableObj
 
     public function insert($res=array())
     {
+        $res = \Sham::saddslashes($res);
         $this->db->autoExecute($this->tablename,$res,'INSERT');
         return $this->db->insert_id();
     }

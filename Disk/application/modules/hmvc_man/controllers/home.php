@@ -20,6 +20,8 @@ class Home extends MpController {
 //        \Sham::trace(__METHOD__);             //执行路径记录
 //        print_r(\Sham::gettrace());           //显示
     }
+
+
     /*
      * 首页
      * 列表显示
@@ -31,11 +33,11 @@ class Home extends MpController {
             $this->gojson();
         }else{
             $data=array(
-                'apiget'    => $this->Seter->table->f_userapi->where(" TYPE = 'GET'")->order("sort desc")->group('api')->getall(),
-                'apipost'   => $this->Seter->table->f_userapi->where(" TYPE = 'POST'")->getall(),
-                'apiput'    => $this->Seter->table->f_userapi->where(" TYPE = 'PUT'")->getall(),
-                'apidelete' => $this->Seter->table->f_userapi->where(" TYPE = 'DELETE'")->getall(),
-                'apiother'  => $this->Seter->table->f_userapi->where(" TYPE = 'OTHER'")->getall(),
+                'apiget'    => $this->Seter->table->f_userapi->where(" TYPE = 'GET'")->order("sort desc")->getall(),
+                'apipost'   => $this->Seter->table->f_userapi->where(" TYPE = 'POST'")->order("sort desc")->getall(),
+                'apiput'    => $this->Seter->table->f_userapi->where(" TYPE = 'PUT'")->order("sort desc")->getall(),
+                'apidelete' => $this->Seter->table->f_userapi->where(" TYPE = 'DELETE'")->order("sort desc")->getall(),
+                'apiother'  => $this->Seter->table->f_userapi->where(" TYPE = 'OTHER'")->order("sort desc")->getall(),
                 'title'=>'列表'
             );
             //print_r($data['apiget']);
@@ -45,42 +47,59 @@ class Home extends MpController {
 
     }
 
-    //查看
-    public function doView($name = '') {
-        echo 'shouye';
-//        $data=array(
-//            'title'=>'仪表盘'
-//        );
-//        $this->view("home/index",$data);
+    //查看模拟
+    public function doView($id = '') {
+        $data=array(
+            'row' => $this->Seter->table->f_userapi->where(" id = '$id'")->getrow(),
+            'title'=>'查看接口'
+        );
+        $this->view("home/dialog/apiview",$data);
     }
 
     //查看
-    public function doViewlog($name = '') {
-        echo 'shouye';
-//        $data=array(
-//            'title'=>'仪表盘'
-//        );
-//        $this->view("home/index",$data);
+    public function doViewlog($id = '') {
+       $row = $this->Seter->table->f_userapi->where(" id = '$id'")->getrow();
+        $ar_ = \Sham::getarr($row['api'],0,'.');
+        $ar['router.module'] = $row['v'];
+        $ar['router.c'] = $ar_[0];
+        $ar['router.m'] =$ar_[1];
+
+        $data=array(
+            'loglist' =>$this->Seter->mdb->find("dy_log",$ar,array("sort"=>array("time.timecu"=>-1),"limit"=>5)),
+            'title'=>'查看接口'
+        );
+
+        $this->view("home/dialog/apilogview",$data);
     }
 
 
 
     //添加
-    public function doapiadd($name = '') {
-        echo 'shouye';
-//        $data=array(
-//            'title'=>'仪表盘'
-//        );
-//        $this->view("home/index",$data);
+    public function doapiadd() {
+        if(ISPOST){
+            $this->model->formapi->load($this->Seter->request->post) && $this->model->formapi->addnew();
+            $this->gojson();
+        }else {
+            $data=array(
+                'title'=>'添加api'
+            );
+            $this->view("home/dialog/apiadd",$data);
+        }
     }
 
     //编辑
-    public function doApiedit($name = '') {
-        echo 'shouye';
-//        $data=array(
-//            'title'=>'仪表盘'
-//        );
-//        $this->view("home/index",$data);
+    public function doApiedit($id = '') {
+        if(ISPOST){
+
+            $this->model->formapi->load($this->Seter->request->post) && $this->model->formapi->edit();
+            $this->gojson();
+        }else{
+            $data=array(
+                'row' => $this->Seter->table->f_userapi->where(" id = '$id'")->getrow(),
+                'title'=>'修改接口'
+            );
+            $this->view("home/dialog/apiedit",$data);
+        }
     }
 
 

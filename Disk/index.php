@@ -3,6 +3,7 @@
 define('IN_WONIU_APP', TRUE);
 define('WDS', DIRECTORY_SEPARATOR);
 //Sham Seter
+define(SALT, 'ERTYUIOP[567890-');
 
 include('Seter/Seter.php');
 
@@ -24,7 +25,7 @@ $system['hmvc_modules'] = array(
 	'demo' => 'hmvc_demo',
 	'manage' => 'hmvc_manage',
 	'man' => 'hmvc_man',
-
+	'v6' => 'hmvc_v6',
 );
 $system['debug'] = false;
 

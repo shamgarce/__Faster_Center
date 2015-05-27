@@ -383,52 +383,52 @@ $system['db']['active_group'] = 'default';
 /**
  * mysql数据库配置示例,如果用mysqli，把下面的dbdriver驱动由mysql改成mysqli即可
  */
-$system['db']['default']['dbdriver'] = "mysql";
-$system['db']['default']['hostname'] = '127.0.0.1';
-$system['db']['default']['port'] = '3306';
-$system['db']['default']['username'] = 'root';
-$system['db']['default']['password'] = 'admin';
-$system['db']['default']['database'] = 'test';
-$system['db']['default']['dbprefix'] = '';
-$system['db']['default']['pconnect'] = FALSE;
-$system['db']['default']['db_debug'] = TRUE;
-$system['db']['default']['char_set'] = 'utf8';
-$system['db']['default']['dbcollat'] = 'utf8_general_ci';
-$system['db']['default']['swap_pre'] = '';
-$system['db']['default']['autoinit'] = TRUE;
-$system['db']['default']['stricton'] = FALSE;
+//$system['db']['default']['dbdriver'] = "mysql";
+//$system['db']['default']['hostname'] = '127.0.0.1';
+//$system['db']['default']['port'] = '3306';
+//$system['db']['default']['username'] = 'root';
+//$system['db']['default']['password'] = 'admin';
+//$system['db']['default']['database'] = 'test';
+//$system['db']['default']['dbprefix'] = '';
+//$system['db']['default']['pconnect'] = FALSE;
+//$system['db']['default']['db_debug'] = TRUE;
+//$system['db']['default']['char_set'] = 'utf8';
+//$system['db']['default']['dbcollat'] = 'utf8_general_ci';
+//$system['db']['default']['swap_pre'] = '';
+//$system['db']['default']['autoinit'] = TRUE;
+//$system['db']['default']['stricton'] = FALSE;
 /*
  * PDO database config demo
  * 1.pdo sqlite3
  * */
 /**
  * sqlite3数据库配置示例
- */
-$system['db']['sqlite3']['dbdriver'] = "sqlite3";
-$system['db']['sqlite3']['database'] = 'sqlite:d:/wwwroot/sdb.db';
-$system['db']['sqlite3']['dbprefix'] = '';
-$system['db']['sqlite3']['db_debug'] = TRUE;
-$system['db']['sqlite3']['char_set'] = 'utf8';
-$system['db']['sqlite3']['dbcollat'] = 'utf8_general_ci';
-$system['db']['sqlite3']['swap_pre'] = '';
-$system['db']['sqlite3']['autoinit'] = TRUE;
-$system['db']['sqlite3']['stricton'] = FALSE;
+// */
+//$system['db']['sqlite3']['dbdriver'] = "sqlite3";
+//$system['db']['sqlite3']['database'] = 'sqlite:d:/wwwroot/sdb.db';
+//$system['db']['sqlite3']['dbprefix'] = '';
+//$system['db']['sqlite3']['db_debug'] = TRUE;
+//$system['db']['sqlite3']['char_set'] = 'utf8';
+//$system['db']['sqlite3']['dbcollat'] = 'utf8_general_ci';
+//$system['db']['sqlite3']['swap_pre'] = '';
+//$system['db']['sqlite3']['autoinit'] = TRUE;
+//$system['db']['sqlite3']['stricton'] = FALSE;
 /**
  * PDO mysql数据库配置示例，hostname 其实就是pdo的dsn部分，
  * 如果连接其它数据库按着pdo的dsn写法连接即可
- */
-$system['db']['pdo_mysql']['dbdriver'] = "pdo";
-$system['db']['pdo_mysql']['hostname'] = 'mysql:host=localhost;port=3306';
-$system['db']['pdo_mysql']['username'] = 'root';
-$system['db']['pdo_mysql']['password'] = 'admin';
-$system['db']['pdo_mysql']['database'] = 'test';
-$system['db']['pdo_mysql']['dbprefix'] = '';
-$system['db']['pdo_mysql']['db_debug'] = TRUE;
-$system['db']['pdo_mysql']['char_set'] = 'utf8';
-$system['db']['pdo_mysql']['dbcollat'] = 'utf8_general_ci';
-$system['db']['pdo_mysql']['swap_pre'] = '';
-$system['db']['pdo_mysql']['autoinit'] = TRUE;
-$system['db']['pdo_mysql']['stricton'] = FALSE;
-/**
- * -------------------------数据库配置结束--------------------------
- */
+// */
+//$system['db']['pdo_mysql']['dbdriver'] = "pdo";
+//$system['db']['pdo_mysql']['hostname'] = 'mysql:host=localhost;port=3306';
+//$system['db']['pdo_mysql']['username'] = 'root';
+//$system['db']['pdo_mysql']['password'] = 'admin';
+//$system['db']['pdo_mysql']['database'] = 'test';
+//$system['db']['pdo_mysql']['dbprefix'] = '';
+//$system['db']['pdo_mysql']['db_debug'] = TRUE;
+//$system['db']['pdo_mysql']['char_set'] = 'utf8';
+//$system['db']['pdo_mysql']['dbcollat'] = 'utf8_general_ci';
+//$system['db']['pdo_mysql']['swap_pre'] = '';
+//$system['db']['pdo_mysql']['autoinit'] = TRUE;
+//$system['db']['pdo_mysql']['stricton'] = FALSE;
+///**
+// * -------------------------数据库配置结束--------------------------
+// */

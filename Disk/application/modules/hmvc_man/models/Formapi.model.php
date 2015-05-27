@@ -21,11 +21,50 @@ class Formapi extends MpModel
 
 	public function addValidator()
 	{
+		//根据id监测是否有重复的api
+		if(empty($this->args['id'])) {
+			//监测该api是否有重复的
+			if(\Seter\Seter::getInstance()->table->f_userapi->where("api='{$this->args['api']}'")->getcount()>0){
+				$this->json(-200,'该api已经存在');
+				return false;
+			};
+		}
 
-		return true;
+
+		if(!empty($this->args['api']) && !empty($this->args['name'])){
+			$this->json(200,'add successed');
+			return true;
+		}else{
+			$this->json(-200,'api and name must not empty');
+			return false;
+		}
 	}
 
-	///manage/home.userlist
+	public function edit()
+	{
+		if($this->addValidator()){
+			\Seter\Seter::getInstance()->table->f_userapi->where("id='{$this->args['id']}'")->update($this->args);
+			$this->json(200,'add successed');
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	//添加一条新记录
+	public function addnew()
+	{
+		//print_r($this->args);
+		if($this->addValidator()){
+			\Seter\Seter::getInstance()->table->f_userapi->insert($this->args);
+			$this->json(200,'add successed');
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+		///manage/home.userlist
 	public function cflag()
 	{
 

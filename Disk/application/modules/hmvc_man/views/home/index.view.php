@@ -63,7 +63,7 @@
 foreach($apiget as $key=>$value){
 ?>
         <tr>
-        <td><a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
+        <td><?php echo $value['v']?> <a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
         <td><?php echo $value['name']?></td>
         <td><?php echo $value['sort']?></td>
         <td>
@@ -108,33 +108,39 @@ foreach($apiget as $key=>$value){
 <a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample32" data-toggle="collapse" class="collapsed"> POST [新加]</a>
 <div id="collapseExample32" class="collapse" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
+ 
+<?php
+foreach($apipost as $key=>$value){
+?>
         <tr>
-        <td width="40">
+        <td><?php echo $value['v']?> <a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
+        <td><?php echo $value['name']?></td>
+        <td><?php echo $value['sort']?></td>
+        <td>
+
+          <a class="apiviewlog" sid="<?php echo $value['id']?>" rid=55><span class="glyphicon glyphicon-barcode"></span></a>
+
+
+          <?php if($value['debug'] ==1){?>
+|            <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-ok red"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-remove green"></span></a>
+          <?php }?>
+
+          <?php if($value['enable'] ==1){?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-ok-sign green"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-remove-sign red"></span></a>
+          <?php }?>
+
+          |  <a class="apiedit" sid="<?php echo $value['id']?>" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
+
         </td>
-        <td><a class="apiaddnew">添加新的</a></td>
-        <td width="350">映射</td>
-        <td width="100">调试</td>
         </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>GET</td>
-        <td>[v1]enter/inlandmodification</td>
-        <td> 
-        <a class="changedebug" rel=1 rid=54><span class="glyphicon glyphicon-remove-circle green" ></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="54"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>[v1]-</td>
-        <td> 
-        <a class="changedebug" rel=0 rid=55><span class="glyphicon glyphicon-ok red"></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
+<?php
+}
+?> 
+ 
     </table>
 
 </div>
@@ -154,33 +160,43 @@ foreach($apiget as $key=>$value){
 <a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample33" data-toggle="collapse" class="collapsed"> PUT [更新]</a>
 <div id="collapseExample33" class="collapse" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
+      
+      
+<?php
+foreach($apiput as $key=>$value){
+?>
         <tr>
-        <td width="40">
+        <td><?php echo $value['v']?> <a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
+        <td><?php echo $value['name']?></td>
+        <td><?php echo $value['sort']?></td>
+        <td>
+
+          <a class="apiviewlog" sid="<?php echo $value['id']?>" rid=55><span class="glyphicon glyphicon-barcode"></span></a>
+
+
+          <?php if($value['debug'] ==1){?>
+|            <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-ok red"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-remove green"></span></a>
+          <?php }?>
+
+          <?php if($value['enable'] ==1){?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-ok-sign green"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-remove-sign red"></span></a>
+          <?php }?>
+
+          |  <a class="apiedit" sid="<?php echo $value['id']?>" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
+
         </td>
-        <td><a class="apiaddnew">添加新的</a></td>
-        <td width="350">映射</td>
-        <td width="100">调试</td>
         </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>GET</td>
-        <td>[v1]enter/inlandmodification</td>
-        <td> 
-        <a class="changedebug" rel=1 rid=54><span class="glyphicon glyphicon-remove-circle green" ></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="54"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>[v1]-</td>
-        <td> 
-        <a class="changedebug" rel=0 rid=55><span class="glyphicon glyphicon-ok red"></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
+<?php
+}
+?> 
+      
+      
+      
+      
     </table>
 
 </div>
@@ -198,33 +214,38 @@ foreach($apiget as $key=>$value){
 <a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample34" data-toggle="collapse" class="collapsed"> DELETE [删除]</a>
 <div id="collapseExample34" class="collapse" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
+       <?php
+foreach($apidelete as $key=>$value){
+?>
         <tr>
-        <td width="40">
+        <td><?php echo $value['v']?> <a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
+        <td><?php echo $value['name']?></td>
+        <td><?php echo $value['sort']?></td>
+        <td>
+
+          <a class="apiviewlog" sid="<?php echo $value['id']?>" rid=55><span class="glyphicon glyphicon-barcode"></span></a>
+
+
+          <?php if($value['debug'] ==1){?>
+|            <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-ok red"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-remove green"></span></a>
+          <?php }?>
+
+          <?php if($value['enable'] ==1){?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-ok-sign green"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-remove-sign red"></span></a>
+          <?php }?>
+
+          |  <a class="apiedit" sid="<?php echo $value['id']?>" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
+
         </td>
-        <td><a class="apiaddnew">添加新的</a></td>
-        <td width="350">映射</td>
-        <td width="100">调试</td>
         </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>GET</td>
-        <td>[v1]enter/inlandmodification</td>
-        <td> 
-        <a class="changedebug" rel=1 rid=54><span class="glyphicon glyphicon-remove-circle green" ></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="54"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>[v1]-</td>
-        <td> 
-        <a class="changedebug" rel=0 rid=55><span class="glyphicon glyphicon-ok red"></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
+<?php
+}
+?> 
+
     </table>
 
 </div>
@@ -242,33 +263,38 @@ foreach($apiget as $key=>$value){
 <a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample35" data-toggle="collapse" class="collapsed"> OTHER [其他]</a>
 <div id="collapseExample35" class="collapse" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
+       <?php
+foreach($apiother as $key=>$value){
+?>
         <tr>
-        <td width="40">
+        <td><a class="apiview" sid="<?php echo $value['id']?>"><?php echo $value['api']?></a></td>
+        <td><?php echo $value['name']?></td>
+        <td><?php echo $value['sort']?></td>
+        <td>
+
+          <a class="apiviewlog" sid="<?php echo $value['id']?>" rid=55><span class="glyphicon glyphicon-barcode"></span></a>
+
+
+          <?php if($value['debug'] ==1){?>
+|            <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-ok red"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" debug=<?php echo $value['debug']?>><span class="glyphicon glyphicon-remove green"></span></a>
+          <?php }?>
+
+          <?php if($value['enable'] ==1){?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-ok-sign green"></span></a>
+          <?php }else{?>
+            | <a class="apicenable" sid="<?php echo $value['id']?>" enable=<?php echo $value['enable']?>><span class="glyphicon glyphicon-remove-sign red"></span></a>
+          <?php }?>
+
+          |  <a class="apiedit" sid="<?php echo $value['id']?>" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
+
         </td>
-        <td><a class="apiaddnew">添加新的</a></td>
-        <td width="350">映射</td>
-        <td width="100">调试</td>
         </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>GET</td>
-        <td>[v1]enter/inlandmodification</td>
-        <td> 
-        <a class="changedebug" rel=1 rid=54><span class="glyphicon glyphicon-remove-circle green" ></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="54"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
-        <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>[v1]-</td>
-        <td> 
-        <a class="changedebug" rel=0 rid=55><span class="glyphicon glyphicon-ok red"></span></a>
-        &nbsp; 
-        <a class="apiedit" rel="55"><span class="glyphicon glyphicon-wrench yellow"></span></a>
-        0            </td>
-        </tr>
+<?php
+}
+?> 
+
     </table>
 
 </div>
@@ -317,7 +343,7 @@ foreach($apiget as $key=>$value){
 		$.CK({
 			ok:true,
 			title:'接口查看模拟',
-            rel: '/man/home.view',
+            rel: '/man/home.view/'+$(this).attr('sid'),
 			callback:function(){
 				location.reload() ;
 			}
@@ -329,9 +355,9 @@ foreach($apiget as $key=>$value){
 		$.CK({
 			ok:true,
 			title:'接口编辑',
-            rel: '/man/home.Apiedit',
+            rel: '/man/home.Apiedit/'+$(this).attr('sid'),
 			callback:function(){
-				location.reload() ;
+				//location.reload() ;
 			}
 		});
 	})
@@ -340,10 +366,11 @@ foreach($apiget as $key=>$value){
         $('.apiviewlog').click(function(){
             $.CK({
                 ok:true,
+				top 	: '500px',
                 title:'查看日志',
-                rel: '/man/home.Viewlog',
+                rel: '/man/home.Viewlog/'+$(this).attr('sid'),
                 callback:function(){
-                    location.reload() ;
+                   // location.reload() ;
                 }
             });
         })
@@ -354,7 +381,7 @@ foreach($apiget as $key=>$value){
                 title:'添加接口',
 			    rel: '/man/home.apiadd',
                 callback:function(){
-                    location.reload() ;
+                   // location.reload() ;
                 }
             });
         })

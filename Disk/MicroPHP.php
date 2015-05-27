@@ -563,7 +563,7 @@ class WoniuRouter {
 			}
 		}
 	}
-	private static function parseURI() {
+	public static function parseURI() {
 		$pathinfo_query = self::getQueryStr();
 		//路由hmvc模块名称信息检查
 		$router['module'] = self::getHmvcModuleName($pathinfo_query);
@@ -799,13 +799,16 @@ class WoniuLoader {
 		 * 错误处理函数可以调用 error_reporting()处理 @ 的情况。
 		 */
 		//只有设置了报告所有错误，handle才能捕捉所有错误
-		error_reporting(E_ALL);
+
+		error_reporting(E_ALL & ~E_NOTICE);
+		error_reporting(E_ERROR | E_WARNING | E_PARSE);
 		//是否显示错误
 		if ($system['debug']) {
 			ini_set('display_errors', true);
 		} else {
 			ini_set('display_errors', FALSE);
 		}
+
 		if ($system['error_manage'] || $system['log_error']) {
 			set_exception_handler('woniu_exception_handler');
 			set_error_handler('woniu_error_handler');
