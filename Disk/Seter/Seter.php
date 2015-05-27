@@ -10,7 +10,7 @@ namespace Seter;
 //use Seter\RedBeanPHP;
 
 
-define(SHAM_PATH,__DIR__);
+define('SHAM_PATH',__DIR__);
 
 !empty($_GET)   && define('ISGET',TRUE);
 !empty($_POST)  && define('ISPOST',TRUE);

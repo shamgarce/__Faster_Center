@@ -1,4 +1,5 @@
 <?php
+namespace Seter\Library;
 
 /**
  * 融云server API 接口 新版 1.0

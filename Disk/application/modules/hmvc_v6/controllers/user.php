@@ -35,9 +35,9 @@ class User extends MpController {
         }
     }
 
-    public function gettoken()
+    public function doGettoken()
     {
-        $tokon = $this->Seter->ry->getToken('asfd');
+        $tokon = $this->Seter->ry->getToken('asfd','22','33');
         echo $tokon;
     }
     public function getmessage()

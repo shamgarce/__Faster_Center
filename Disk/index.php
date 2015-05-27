@@ -3,7 +3,7 @@
 define('IN_WONIU_APP', TRUE);
 define('WDS', DIRECTORY_SEPARATOR);
 //Sham Seter
-define(SALT, 'ERTYUIOP[567890-');
+define('SALT', 'ERTYUIOP[567890-');
 
 include('Seter/Seter.php');
 
@@ -36,6 +36,5 @@ $system['debug'] = false;
  * true：显示错误信息,
  * false：所有错误将不显示
  */
-
 MpRouter::setConfig($system);
 MpRouter::loadClass();
