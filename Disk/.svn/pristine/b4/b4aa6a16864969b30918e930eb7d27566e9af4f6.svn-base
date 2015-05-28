@@ -1,0 +1,69 @@
+<ul class="unstyled three-columns color-stack selectcolor_pop">
+    <li><a rel="bg-black"><span class="square10 inline-block bg-black on-left"></span>*-black</a></li>
+    <li><a rel="bg-white"><span class="square10 inline-block bg-white on-left"></span>*-white</a></li>
+    <li><a rel="bg-lime"><span class="square10 inline-block bg-lime on-left"></span>*-lime</a></li>
+    <li><a rel="bg-green"><span class="square10 inline-block bg-green on-left"></span>*-green</a></li>
+    <li><a rel="bg-emerald"><span class="square10 inline-block bg-emerald on-left"></span>*-emerald</a></li>
+    <li><a rel="bg-teal"><span class="square10 inline-block bg-teal on-left"></span>*-teal</a></li>
+    <li><a rel="bg-cyan"><span class="square10 inline-block bg-cyan on-left"></span>*-cyan</a></li>
+    <li><a rel="bg-cobalt"><span class="square10 inline-block bg-cobalt on-left"></span>*-cobalt</a></li>
+    <li><a rel="bg-indigo"><span class="square10 inline-block bg-indigo on-left"></span>*-indigo</a></li>
+    <li><a rel="bg-violet"><span class="square10 inline-block bg-violet on-left"></span>*-violet</a></li>
+    <li><a rel="bg-pink"><span class="square10 inline-block bg-pink on-left"></span>*-pink</a></li>
+    <li><a rel="bg-magenta"><span class="square10 inline-block bg-magenta on-left"></span>*-magenta</a></li>
+    <li><a rel="bg-crimson"><span class="square10 inline-block bg-crimson on-left"></span>*-crimson</a></li>
+    <li><a rel="bg-red"><span class="square10 inline-block bg-red on-left"></span>*-red</a></li>
+    <li><a rel="bg-orange"><span class="square10 inline-block bg-orange on-left"></span>*-orange</a></li>
+    <li><a rel="bg-amber"><span class="square10 inline-block bg-amber on-left"></span>*-amber</a></li>
+    <li><a rel="bg-yellow"><span class="square10 inline-block bg-yellow on-left"></span>*-yellow</a></li>
+    <li><a rel="bg-brown"><span class="square10 inline-block bg-brown on-left"></span>*-brown</a></li>
+    <li><a rel="bg-olive"><span class="square10 inline-block bg-olive on-left"></span>*-olive</a></li>
+    <li><a rel="bg-steel"><span class="square10 inline-block bg-steel on-left"></span>*-steel</a></li>
+    <li><a rel="bg-mauve"><span class="square10 inline-block bg-mauve on-left"></span>*-mauve</a></li>
+    <li><a rel="bg-taupe"><span class="square10 inline-block bg-taupe on-left"></span>*-taupe</a></li>
+    <li><a rel="bg-gray"><span class="square10 inline-block bg-gray on-left"></span>*-gray</a></li>
+    <li><a rel="bg-dark"><span class="square10 inline-block bg-dark on-left"></span>*-dark</a></li>
+    <li><a rel="bg-darker"><span class="square10 inline-block bg-darker on-left"></span>*-darker</a></li>
+    <li><a rel="bg-transparent"><span class="square10 inline-block bg-transparent on-left"></span>*-transparent</a></li>
+    <li><a rel="bg-darkBrown"><span class="square10 inline-block bg-darkBrown on-left"></span>*-darkBrown</a></li>
+    <li><a rel="bg-darkCrimson"><span class="square10 inline-block bg-darkCrimson on-left"></span>*-darkCrimson</a></li>
+    <li><a rel="bg-darkMagenta"><span class="square10 inline-block bg-darkMagenta on-left"></span>*-darkMagenta</a></li>
+    <li><a rel="bg-darkIndigo"><span class="square10 inline-block bg-darkIndigo on-left"></span>*-darkIndigo</a></li>
+    <li><a rel="bg-darkCyan"><span class="square10 inline-block bg-darkCyan on-left"></span>*-darkCyan</a></li>
+    <li><a rel="bg-darkCobalt"><span class="square10 inline-block bg-darkCobalt on-left"></span>*-darkCobalt</a></li>
+    <li><a rel="bg-darkTeal"><span class="square10 inline-block bg-darkTeal on-left"></span>*-darkTeal</a></li>
+    
+    <li><a rel="bg-darkEmerald"><span class="square10 inline-block bg-darkEmerald on-left"></span>*-darkEmerald</a></li>
+    <li><a rel="bg-darkGreen"><span class="square10 inline-block bg-darkGreen on-left"></span>*-darkGreen</a></li>
+    <li><a rel="bg-darkOrange"><span class="square10 inline-block bg-darkOrange on-left"></span>*-darkOrange</a></li>
+    <li><a rel="bg-darkRed"><span class="square10 inline-block bg-darkRed on-left"></span>*-darkRed</a></li>
+    <li><a rel="bg-darkPink"><span class="square10 inline-block bg-darkPink on-left"></span>*-darkPink</a></li>
+    
+    <li><a rel="bg-darkViolet"><span class="square10 inline-block bg-darkViolet on-left"></span>*-darkViolet</a></li>
+    <li><a rel="bg-darkBlue"><span class="square10 inline-block bg-darkBlue on-left"></span>*-darkBlue</a></li>
+    <li><a rel="bg-lightBlue"><span class="square10 inline-block bg-lightBlue on-left"></span>*-lightBlue</a></li>
+    <li><a rel="bg-lightTeal"><span class="square10 inline-block bg-lightTeal on-left"></span>*-lightTeal</a></li>
+    <li><a rel="bg-lightOlive"><span class="square10 inline-block bg-lightOlive on-left"></span>*-lightOlive</a></li>
+    
+    <li><a rel="bg-lightOrange"><span class="square10 inline-block bg-lightOrange on-left"></span>*-lightOrange</a></li>
+    <li><a rel="bg-lightPink"><span class="square10 inline-block bg-lightPink on-left"></span>*-lightPink</a></li>
+    <li><a rel="bg-lightRed"><span class="square10 inline-block bg-lightRed on-left"></span>*-lightRed</a></li>
+    <li><a rel="bg-lightGreen"><span class="square10 inline-block bg-lightGreen on-left"></span>*-lightGreen</a></li>
+</ul>
+  
+<script type="text/dialog">
+
+ob = this;
+$('.selectcolor_pop a').click(function(){					//鍏抽棴
+	//=====================================================		//閲嶅啓纭畾鎸夐挳鏂规硶
+	//thisobjselect.attr('result',$(this).attr("rel"));
+	
+	$('#tempyanshi').remove();	
+	$(_option.rel).before('<i id="tempyanshi" class="icon-stop '+$(this).attr("rel")+'"></i>');
+	$(_option.rel).val($(this).attr("rel"));
+	ob.close();
+});
+
+
+</script>
+ 

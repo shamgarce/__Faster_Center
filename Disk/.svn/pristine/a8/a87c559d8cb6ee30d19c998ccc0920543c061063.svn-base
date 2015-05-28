@@ -1,0 +1,102 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td><a class="aa button" rel="testb">极简</td>
+    <td>$('.aa').click(function(){ <span id="line74"> </span> $.W({rel:'test'}); <span id="line75"> </span> }); <span id="line76"> </span></td>
+  </tr>
+  <tr>
+    <td><a class="bb button" rel="testb">js同步加载</a></td>
+    <td>$('.bb').click(function(){ <span id="line77"> </span> $.W({rel:'test',js:true}); <span id="line78"> </span> }); <span id="line79"> </span></td>
+  </tr>
+  <tr>
+    <td><a class="cc button" rel="testb">更换js 和页面地址</a></td>
+    <td>$('.cc').click(function(){ <span id="line80"> </span> $.W({rel:'test',js:true,url:'a.htm',js:'b.js'}); <span id="line81"> </span> }); <span id="line82"> </span></td>
+  </tr>
+  <tr>
+    <td><a class="dd button" rel="testb">callback</a></td>
+    <td><p>$('.dd').click(function(){ <span id="line83"> </span> <br />
+      var callback = function(){ <span id="line84"> </span> alert('callback'); <span id="line85"> </span> }; <br />
+    <span id="line86"> </span> $.W({rel:'test',js:true,_this:$(this)},callback); <br />
+    <span id="line87"> </span> }); <span id="line88"> </span> <span id="line89"> </span></p></td>
+  </tr>
+  <tr>
+    <td><a class="ee button" rel="testb">数据返回 result变更</a></td>
+    <td>$('.ee').click(function(){ <span id="line90"> </span> $.W({rel:'test',js:'/app/W/testb.js',_this:$(this)}); <span id="line91"> </span> }); <span id="line92"> </span></td>
+  </tr>
+  <tr>
+    <td><a class="ff button" rel="testb">数据填充填充#btu</a></td>
+    <td><pre id="line1">
+$('.ff').click(function(){  <span id="line93"> </span>		
+       $.W({rel:'test',js:true,fill:'#btu',_this:$(this)});  <span id="line94"> </span>	
+});  <span id="line95"> </span></pre></td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p></td>
+    <td><div id="btu">wez</div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+    <pre>
+$(document).ready(function() {
+//console.log(thisobj);
+
+//=====================================================//重写确定按钮方法
+if(thisdialog){		//对话框模式的时候
+    art.dialog.list[thisdialog].opt = {			//确定按钮的点击
+        ok:function(){		//确定按钮点击
+            thisobj.attr('resultid',123);
+            //alert(123);
+            //==========================1
+            //return true;
+            //==========================2
+            var res = {
+                code: 100,	
+                msg : '错误'
+            }
+            return res;					//这里也可以返回true false
+        },
+        cancel:function(){},				//点击cancel按钮
+        close:function(){},				//关闭对话框 不是回调
+    }
+}
+
+$('#dia_close').click(function(){			//关闭
+    art.dialog.list[thisdialog].close();
+});
+
+});
+    </pre>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/app/mvc/I.php?c=Wpopup.test&amp;_=1400743877055">参考</a></td>
+    <td>/app/mvc/I.php?c=Wpopup.test</td>
+  </tr>
+  </table>
+  <script type="text/dialog">
+$(document).ready(function() {
+
+    $('.aa').click(function(){
+		$.W({rel:'test'});
+	});
+	$('.bb').click(function(){
+		$.W({rel:'test',js:true});
+	});
+    $('.cc').click(function(){
+		$.W({rel:'test',js:true,url:'a.htm',js:'b.js'});
+	});
+	$('.dd').click(function(){
+		var callback = function(){
+			alert('callback');
+		};
+		$.W({rel:'test',js:true,_this:$(this)},callback);
+	});
+
+    $('.ee').click(function(){
+		$.W({rel:'test',js:'/app/W/testb.js',_this:$(this)});
+	});
+	$('.ff').click(function(){
+		$.W({rel:'test',js:true,fill:'#btu',_this:$(this)});
+	});
+});
+  </script>

@@ -1,0 +1,1402 @@
+<table class="table table-striped table-hover table-condensed">
+<tr>
+    <td valign="top">
+		<ul class="uk-tab uk-tab-left" data-uk-tab="{connect:'#ms-id'}">
+            <li><a>sy_user</a></li>
+            <li><a>sy_log</a></li>
+            <li><a>tokon</a></li>
+            <li><a>vhome_new</a></li>
+            <li><a>vhome_biaoqian</a></li>
+            <li><a>vhome_opdzypatient</a></li>
+            <li><a>sy_dic_activity</a></li>
+            <li><a>sy_dic_bingzhong</a></li>
+            <li><a>sy_dic_bm</a></li>
+            <li><a>sy_dic_trace</a></li>
+            <li><a>city</a></li>
+            <li><a>li_user</a></li>
+            <li><a>li_kh</a></li>
+            <li><a>sy_hz_bz</a></li>
+            
+           
+           
+           
+		</ul>
+	</td>
+    <td>
+		<div id="selectcity">
+		<ul id="ms-id" class="uk-switcher uk-margin">
+            <li>
+           <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+             <thead>
+               <tr>
+                 <th id="th2">#</th>
+                 <th id="th3">名字</th>
+                 <th id="th4">类型</th>
+                 <th id="th7">空</th>
+                 <th id="th8">默认</th>
+                </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td align="right"> 1 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_1"><u>id</u></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">mediumint(8)</bdo></td>
+                 <td>否</td>
+                 <td nowrap="nowrap"><em>无</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 2 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_2"><span title="用户名">u_login</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(20)</bdo></td>
+                 <td>否</td>
+                 <td nowrap="nowrap"><em>无</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 3 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_3"><span title="密码">u_password</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                 <td>否</td>
+                 <td nowrap="nowrap"><em>无</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 4 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_4"><span title="姓名">u_name</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(30)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 5 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_5"><span title="部门">u_department</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(10)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 6 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_6"><span title="用户联系方式">u_tel</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(20)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 7 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_7"><span title="授权协同">u_purview</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(512)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 8 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_8">last_logtm</label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(15)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 9 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_9"><span title="修改密码的时间">last_chgpwd</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(15)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr>
+               <tr>
+                 <td align="right"> 10 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_10">last_logip</label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap"><em>NULL</em></td>
+                </tr> 
+               <tr>
+                 <td align="right"> 11 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_11"><span title="账号状态 1 正常 0 锁定">u_delete</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(2)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap">0</td>
+                </tr>
+               <tr>
+                 <td align="right"> 12 </td>
+                 <th nowrap="nowrap"><label for="checkbox_row_12"><span title="是否部门主管">u_lead</span></label></th>
+                 <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(5)</bdo></td>
+                 <td>是</td>
+                 <td nowrap="nowrap">0</td>
+                </tr>
+             </tbody>
+           </table>
+            </li>
+            <li>
+              <table id="tablestructure">
+                <thead>
+                  <tr>
+                    <th id="th5">#</th>
+                    <th id="th6">名字</th>
+                    <th id="th9">类型</th>
+                    <th id="th12">空</th>
+                    <th id="th13">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_1"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_2">uid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(20)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_3">code</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(20)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_4">url</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(300)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_5">ca</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(20)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_6">cookies</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_7">sessions</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 8 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_8">gets</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 9 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_9">posts</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 10 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_10">hash</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(128)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 11 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_11">nr</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 12 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_12">msg</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 13 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_13">PHP_SELF</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 14 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_14">QUERY_STRING</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 15 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_15">HTTP_HOST</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 16 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_16">HTTP_REFERER</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 17 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_17">REMOTE_ADDR</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 18 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_18">tm</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 19 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_19">state</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure2">
+                <thead>
+                  <tr>
+                    <th id="th10">#</th>
+                    <th id="th11">名字</th>
+                    <th id="th14">类型</th>
+                    <th id="th15">整理</th>
+                    <th id="th16">属性</th>
+                    <th id="th17">空</th>
+                    <th id="th18">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_1"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td></td>
+                    <td nowrap="nowrap"></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_2">uid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>utf8_general_ci</td>
+                    <td nowrap="nowrap"></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_3">tokon</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>utf8_general_ci</td>
+                    <td nowrap="nowrap"></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_4">tm</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td></td>
+                    <td nowrap="nowrap"></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure3">
+                <thead>
+                  <tr>
+                    <th id="th22">#</th>
+                    <th id="th23">名字</th>
+                    <th id="th24">类型</th>
+                    <th id="th27">空</th>
+                    <th id="th28">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_5"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_6">iRegisterID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_7">iMainID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_8">iFadeRegisterID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_9">bSecondFlag</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_10">iDeptID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_11">iDoctorID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 8 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_12">iPatientTypeID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 9 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_13">cPatientCode</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 10 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_14">cPatientName</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 11 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_15">iGetRateOPID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 12 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_16">dGetRateDate</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 13 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_17">iPatientID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 14 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_18">bFadeRateFlag</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 15 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_19">iGetRateNo</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 16 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_20">iWorkPlanID</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 17 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_21">nDiagnoseNum</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 18 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_22">dfnksendid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 19 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_23">dfnksenddate</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 20 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_24">iInHosInforId</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 21 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_25">iOldDeptId</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 22 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_26">iOldDoctorId</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(100)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 23 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_27">tag</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(500)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 24 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_28"><span title="最后回访时间">tmlast</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 25 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_29"><span title="标记时间">tmre</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 26 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_30">cSex</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(16)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 27 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_31">cRelationType</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 28 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_32">iYearsOld</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <th nowrap="nowrap">zy_flag</th>
+                    <td nowrap="nowrap">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td nowrap="nowrap">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <th nowrap="nowrap">zy_date</th>
+                    <td nowrap="nowrap">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td nowrap="nowrap">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <th nowrap="nowrap">zh_date2</th>
+                    <td nowrap="nowrap">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td nowrap="nowrap">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <th nowrap="nowrap">zy_diag</th>
+                    <td nowrap="nowrap">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td nowrap="nowrap">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 29 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_33">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure4">
+                <thead>
+                  <tr>
+                    <th id="th32">#</th>
+                    <th id="th33">名字</th>
+                    <th id="th34">类型</th>
+                    <th id="th37">空</th>
+                    <th id="th38">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_34"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_35">dname</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(50)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_36">state</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure5">
+                <thead>
+                  <tr>
+                    <th id="th42">#</th>
+                    <th id="th43">名字</th>
+                    <th id="th44">类型</th>
+                    <th id="th47">空</th>
+                    <th id="th48">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_37"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_38">iPatientId</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_39">cPatientCode</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_40">cName</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_41">dInputDate</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_42">dOutDate</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_43">iPatientTypeId</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(64)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 8 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_44">cMainDiag</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(512)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 9 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_45">cRelationPerson</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(16)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure6">
+                <thead>
+                  <tr>
+                    <th id="th20">#</th>
+                    <th id="th25">名字</th>
+                    <th id="th26">类型</th>
+                    <th id="th35">空</th>
+                    <th id="th36">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_46"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_47">acid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_48">acname</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(30)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_49">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure7">
+                <thead>
+                  <tr>
+                    <th id="th46">#</th>
+                    <th id="th49">名字</th>
+                    <th id="th50">类型</th>
+                    <th id="th53">空</th>
+                    <th id="th54">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_50"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_51">bzid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_52">bzname</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(30)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_53">preid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_54">indexer</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_55"><span title="使用计数">count</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_56">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure8">
+                <thead>
+                  <tr>
+                    <th id="th58">#</th>
+                    <th id="th59">名字</th>
+                    <th id="th60">类型</th>
+                    <th id="th63">空</th>
+                    <th id="th64">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_57"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_58">bmid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_59">bmname</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(30)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_60">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure9">
+                <thead>
+                  <tr>
+                    <th id="th68">#</th>
+                    <th id="th69">名字</th>
+                    <th id="th70">类型</th>
+                    <th id="th73">空</th>
+                    <th id="th74">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_61"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_62">trname</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(30)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_63">pre_id</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_64">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure10">
+                <thead>
+                  <tr>
+                    <th id="th78">#</th>
+                    <th id="th79">名字</th>
+                    <th id="th80">类型</th>
+                    <th id="th83">空</th>
+                    <th id="th84">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_65"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(6)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_66">name</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_67">parentid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(6)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_68">tree</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_69">zipcode</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(6)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_70">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure11">
+                <thead>
+                  <tr>
+                    <th id="th88">#</th>
+                    <th id="th89">名字</th>
+                    <th id="th90">类型</th>
+                    <th id="th93">空</th>
+                    <th id="th94">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_71"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_72">hash</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(128)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_73">hz_name</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_74"><span title="性别 0是空 1男2女">hz_gender</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_75"><span title="年龄">hz_age</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_76">hz_addr</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(256)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_77"><span title="联系方式">hz_tel</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 8 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_78">hz_qq</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 9 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_79"><span title="地区 0初始">hz_area</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 10 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_80"><span title="科室">ks</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 11 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_81"><span title="预约号">yy_hao</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(56)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 12 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_82"><span title="预约时间">yy_tm</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 13 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_83"><span title="预约医生">yy_dr</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(56)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 14 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_84">yy_bz</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 15 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_85"><span title="来源">tr_ly</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 16 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_86"><span title="轨迹">tr_gj</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(256)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 17 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_87"><span title="关键词">tr_key</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(256)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 18 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_88"><span title="参加的活动">lhd</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 19 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_89"><span title="体检卡号">tj_kahao</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(128)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 20 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_90"><span title="体检医生">tj_dr</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(56)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 21 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_91"><span title="体检时间">tj_tm</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 22 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_92"><span title="是否预约">st_yy</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 23 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_93"><span title="是否到院">st_dy</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 24 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_94"><span title="到院时间">st_dy_tm</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 25 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_95"><span title="预约/体检/资料输入 yy/tj/yyw/wx">type</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 26 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_96">addid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 27 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_97">addtm</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 28 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_98">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 29 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_99">yid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 30 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_100">yns</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure12">
+                <thead>
+                  <tr>
+                    <th id="th98">#</th>
+                    <th id="th99">名字</th>
+                    <th id="th100">类型</th>
+                    <th id="th103">空</th>
+                    <th id="th104">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_101"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_102">hash</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(128)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_103">dy_name</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_104"><span title="性别 0是空 1男2女">dy_gender</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_105"><span title="年龄">dy_age</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_106">dy_addr</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(256)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_107"><span title="联系方式">dy_tel</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 8 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_108">dy_qq</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 9 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_109"><span title="地区 0初始">dy_area</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 10 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_110">dy_ks</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 11 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_111"><span title="到院时间">dy_time</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 12 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_112"><span title="出院时间">dy_time_ok</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 13 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_113"><span title="0正常,1关闭">dy_dy</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 14 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_114"><span title="是否手术">dy_ss</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 15 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_115"><span title="是否输液">dy_sy</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 16 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_116"><span title="是否治疗">dy_zl</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 17 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_117"><span title="是否住院">dy_zy</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 18 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_118"><span title="来源">tr_ly</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 19 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_119"><span title="指派医生">zp_dr</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 20 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_120">addid</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 21 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_121">addtm</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 22 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_122">states</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <table id="tablestructure13">
+                <thead>
+                  <tr>
+                    <th id="th19">#</th>
+                    <th id="th21">名字</th>
+                    <th id="th29">类型</th>
+                    <th id="th39">空</th>
+                    <th id="th40">默认</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="right"> 1 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_1"><u>id</u></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 2 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_2">hash</label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(128)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap"><em>无</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 3 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_3"><span title="关怀类型 tj/bz/qq/wx/tel/zixun">bz_type</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(32)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 4 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_4"><span title="内容">bz_nr</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">text</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 5 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_5"><span title="添加人id">bz_addid</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 6 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_6"><span title="添加时间">bz_addtm</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>是</td>
+                    <td nowrap="nowrap"><em>NULL</em></td>
+                  </tr>
+                  <tr>
+                    <td align="right"> 7 </td>
+                    <th nowrap="nowrap"><label for="checkbox_row_7"><span title="0正常 1到院 2未到院">bz_states</span></label></th>
+                    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+                    <td>否</td>
+                    <td nowrap="nowrap">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            
+            
+		</ul>
+		</div>
+	</td>
+</tr>
+</table>

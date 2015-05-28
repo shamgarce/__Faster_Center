@@ -1,0 +1,124 @@
+<script type="text/javascript" src="/A/CKdebug.js"></script>
+
+<div class="clear"></div> 
+<style type="text/css">
+/* rightNav */
+.leftNavFloat{position:fixed;bottom:0;right:0;z-index:9999;width:40px;cursor:pointer;margin:10px 0 0 0;}
+.rightNavFloat{position:fixed;top:0;right:0;z-index:9999;width:140px;cursor:pointer;margin:50px 0 0 0;}
+*html .rightNavFloat{position:absolute;top:expression(eval(document.documentElement.scrollTop));}
+.rightNavFloat a{display:block;position:relative;height:30px;line-height:30px;margin-bottom:2px;background:#eee;padding-right:10px;width:130px;overflow:hidden;cursor:pointer;right:-110px;}
+.rightNavFloat a:hover{text-decoration:none;color:#1974A1;}
+.rightNavFloat a:hover em{background:#00b700}
+.leftNavFloat a{COLOR:gray}
+.rightNavFloat a em{display:block;float:left;width:30px;background:black;color:#fff;font-size:16px;text-align:center;margin-right:10px;font-style:normal;}
+/*
+.rightNavFloat a em{display:block;float:left;width:30px;background:#1974A1;color:#fff;font-size:16px;text-align:center;margin-right:10px;font-style:normal;}
+*/
+</style>
+
+<div class="leftNavFloat">
+<a class="fullscr"><span class="glyphicon glyphicon-plus"></span></a>
+<a class="levelshow"><i class="glyphicon glyphicon-ok"></i></a> 
+<!--a class="levelshow" style="display:none"><i class="glyphicon glyphicon-ok"></i></a --> 
+</div>
+
+<!-- span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span -->
+
+<div class="rightNavFloat" style="display:none">
+    <a class="v0" rel="zindex"><em>Z</em>框架</a>
+
+    <a class="v0" rel="fun"><em>A</em> <span class="label label-default">R</span> <span>函数</span></a>
+    <a class="v0" rel="smarty"><em>B</em> <span class="label label-default">R</span> <span>smarty</span></a>
+    
+    <a class="v0" rel="font"><em>C</em>font</a>
+    <a class="v0" rel="bootstrap"><em>D</em>bootstrap</a>
+    <a class="v0" rel="bootstrapplus"><em>D</em>bootstrap_</a>
+    <a class="v0" rel="artdialog"><em>E</em>artdialog</a>
+    <a class="v0" rel="mysql"><em>F</em>mysql</a>
+    <a class="v0" rel="jquery"><em>G</em>jquery</a>
+    <a class="v0" rel="js"><em>H</em>js</a>
+    <a class="v0" rel="ck"><em>I</em>ck</a>
+
+    <a class="v0" rel="trimpath"><em>J</em>trimpath</a>
+    <a class="v0" rel="zzujian"><em>K</em>JS组件</a>
+    <a class="v0" rel="zdulizujian"><em>L</em>独立组件</a>
+    <a class="v0" rel="jqueryui"><em>M</em>JqueryUi</a>
+    
+    <a class="v0" rel="info"><em>N</em>系统信息</a>
+
+    <a class="levelhidden"><em>B</em> 关闭</a>
+</div>
+<script type="text/javascript">
+$(".v0").click(function(){
+	var rel = $(this).attr("rel");
+	$.CKd({rel:rel})
+});
+
+
+//===================================
+$(".levelhidden").click(function(){
+	$(".rightNavFloat").hide();
+	$(".levelshow").show();
+	setc('hidedebugnav');
+});
+$(".levelshow").click(function(){
+	$(".levelshow").hide();
+	$(".rightNavFloat").show();
+	setc('hidedebugnav');
+});
+$(".fullscr").click(function(){
+	var html = Wr0.htmlget({url:'/A/debug/LB/indexinfo.htm'});
+	var vdia = art.dialog({
+			id:'00000000001',
+			title: '描述',
+			width: '80%', 
+			height: '100%',
+			left: '10%',
+			top: '0%',
+			lock:true,
+			//fixed: true,
+			resize: false,
+			drag: false
+		});
+	vdia.content(html);
+});
+
+var btb=$(".rightNavFloat");
+var tempS;
+$(".rightNavFloat").hover(function(){
+	var thisObj = $(this);
+	tempS = setTimeout(function(){
+		thisObj.find("a").each(function(i){
+			var tA=$(this);
+			setTimeout(function(){
+				tA.animate({right:"-5"},200);
+			},50*i);
+		});
+	},200);
+},function(){
+	if(tempS){
+		clearTimeout(tempS);
+	}
+	$(this).find("a").each(function(i){
+		var tA=$(this);
+		setTimeout(function(){
+			tA.animate({right:"-110"},200,function(){
+			});
+		},50*i);
+	});
+});
+
+
+if(getcookie('hidedebugnav') == 1){
+	$(".levelshow").show();
+}else{
+	$(".rightNavFloat").show();
+}
+
+</script>
+

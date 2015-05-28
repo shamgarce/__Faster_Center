@@ -1,0 +1,12 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>{var yihui = '一回'}<br />
+${yihui} // 一回</td>
+    <td><p>1）<strong>变量声明</strong></p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td><a href="http://v3.bootcss.com/getting-started/" target="_blank">参考</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>

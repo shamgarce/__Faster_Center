@@ -1,0 +1,344 @@
+<table width="600" class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>serialize(); </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> unserialize();				</td>
+    <td>//常用数组函数 </td>
+  </tr>
+  <tr>
+    <td> $keys 	= array_merge($keys,$task);</td>
+    <td> //数组合并 </td>
+  </tr>
+  <tr>
+    <td> $result = array_unique($result);</td>
+    <td> //排重 </td>
+  </tr>
+  <tr>
+    <td> $task_ok= array_diff($task,$tasko);	</td>
+    <td>//想减 </td>
+  </tr>
+  <tr>
+    <td> $string = implode(',',$arr); </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> $result = explode(',',$string); </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> shuffle($rc);				</td>
+    <td>//打乱数组 </td>
+  </tr>
+  <tr>
+    <td> array_flip()				</td>
+    <td>//键值反转 </td>
+  </tr>
+  <tr>
+    <td> $arr 	= !empty($urllist)?array_unique($urllist):'';</td>
+    <td>//排重 </td>
+  </tr>
+  </table>
+<table width="600" class="table table-striped table-hover table-condensed">
+  <tr>
+    <td> array_diff() 		</td>
+    <td>返回两个数组的差集数组。 </td>
+  </tr>
+  <tr>
+    <td> array_unique() 		</td>
+    <td>删除数组中重复的值。 </td>
+  </tr>
+  <tr>
+    <td> array_count_values() 	</td>
+    <td>用于统计数组中所有值出现的次数。 </td>
+  </tr>
+  <tr>
+    <td> array_intersect() 	</td>
+    <td>计算数组的交集。 </td>
+  </tr>
+  <tr>
+    <td> array_rand() 		</td>
+    <td>从数组中随机选出一个或多个元素，并返回。 </td>
+  </tr>
+  <tr>
+    <td> in_array() 		</td>
+    <td>检查数组中是否存在指定的值。 </td>
+  </tr>
+  <tr>
+    <td> array_search() 		</td>
+    <td>在数组中搜索给定的值，如果成功则返回相应的键名。 </td>
+  </tr>
+  <tr>
+    <td> arsort() 		</td>
+    <td>对数组进行逆向排序并保持索引关系。 </td>
+  </tr>
+  <tr>
+    <td> asort() 		</td>
+    <td>对数组进行排序并保持索引关系。 </td>
+  </tr>
+  <tr>
+    <td> krsort() 		</td>
+    <td>对数组按照键名逆向排序。 </td>
+  </tr>
+  <tr>
+    <td> ksort() 		 </td>
+    <td>对数组按照键名排序。</td>
+  </tr>
+  <tr>
+    <td> rsort() 		 </td>
+    <td>对数组逆向排序。</td>
+  </tr>
+  <tr>
+    <td> sort() 			</td>
+    <td>对数组排序。 </td>
+  </tr>
+</table>
+<table width="600" class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>array() 		创建数组。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> array_change_key_case() </td>
+    <td>返回其键均为大写或小写的数组。</td>
+  </tr>
+  <tr>
+    <td> array_chunk() 		</td>
+    <td>把一个数组分割为新的数组块。 </td>
+  </tr>
+  <tr>
+    <td> array_combine() 	</td>
+    <td>通过合并两个数组来创建一个新数组。 </td>
+  </tr>
+  <tr>
+    <td> array_diff_assoc() 	</td>
+    <td>比较键名和键值，并返回两个数组的差集数组。 </td>
+  </tr>
+  <tr>
+    <td> array_diff_key() 	</td>
+    <td>比较键名，并返回两个数组的差集数组。 </td>
+  </tr>
+  <tr>
+    <td> array_diff_uassoc() 	</td>
+    <td>通过用户提供的回调函数做索引检查来计算数组的差集。 </td>
+  </tr>
+  <tr>
+    <td> array_diff_ukey() 	</td>
+    <td>用回调函数对键名比较计算数组的差集。 </td>
+  </tr>
+  <tr>
+    <td> array_fill() 		</td>
+    <td>用给定的值填充数组。 </td>
+  </tr>
+  <tr>
+    <td> array_filter() 		</td>
+    <td>用回调函数过滤数组中的元素。 </td>
+  </tr>
+  <tr>
+    <td> array_flip() 		</td>
+    <td>交换数组中的键和值。 </td>
+  </tr>
+  <tr>
+    <td> array_intersect_assoc() </td>
+    <td>比较键名和键值，并返回两个数组的交集数组。 </td>
+  </tr>
+  <tr>
+    <td> array_intersect_key() 	</td>
+    <td>使用键名比较计算数组的交集。 </td>
+  </tr>
+  <tr>
+    <td> array_intersect_uassoc()</td>
+    <td>带索引检查计算数组的交集，用回调函数比较索引。 </td>
+  </tr>
+  <tr>
+    <td> array_intersect_ukey() 	</td>
+    <td>用回调函数比较键名来计算数组的交集。 </td>
+  </tr>
+  <tr>
+    <td> array_key_exists() 	</td>
+    <td>检查给定的键名或索引是否存在于数组中。 </td>
+  </tr>
+  <tr>
+    <td> array_keys() 		</td>
+    <td>返回数组中所有的键名。 </td>
+  </tr>
+  <tr>
+    <td> array_map() 		</td>
+    <td>将回调函数作用到给定数组的单元上。 </td>
+  </tr>
+  <tr>
+    <td> array_merge() 		</td>
+    <td>把一个或多个数组合并为一个数组。 </td>
+  </tr>
+  <tr>
+    <td> array_merge_recursive() </td>
+    <td>递归地合并一个或多个数组。 </td>
+  </tr>
+  <tr>
+    <td> array_multisort() 	</td>
+    <td>对多个数组或多维数组进行排序。 </td>
+  </tr>
+  <tr>
+    <td> array_pad() 		</td>
+    <td>用值将数组填补到指定长度。 </td>
+  </tr>
+  <tr>
+    <td> array_pop() 		</td>
+    <td>将数组最后一个单元弹出（出栈）。 </td>
+  </tr>
+  <tr>
+    <td> array_product() 	</td>
+    <td>计算数组中所有值的乘积。 </td>
+  </tr>
+  <tr>
+    <td> array_push() 		</td>
+    <td>将一个或多个单元（元素）压入数组的末尾（入栈）。 </td>
+  </tr>
+  <tr>
+    <td> array_reduce() 		</td>
+    <td>用回调函数迭代地将数组简化为单一的值。 </td>
+  </tr>
+  <tr>
+    <td> array_reverse()</td>
+    <td> 将原数组中的元素顺序翻转，创建新的数组并返回。 </td>
+  </tr>
+  <tr>
+    <td> array_shift() 		</td>
+    <td>删除数组中的第一个元素，并返回被删除元素的值。 </td>
+  </tr>
+  <tr>
+    <td> array_slice() 		</td>
+    <td>在数组中根据条件取出一段值，并返回。 </td>
+  </tr>
+  <tr>
+    <td> array_splice() 		</td>
+    <td>把数组中的一部分去掉并用其它值取代。 </td>
+  </tr>
+  <tr>
+    <td> array_sum()</td>
+    <td> 计算数组中所有值的和。 </td>
+  </tr>
+  <tr>
+    <td> array_udiff() 		</td>
+    <td>用回调函数比较数据来计算数组的差集。 </td>
+  </tr>
+  <tr>
+    <td> array_udiff_assoc() 	</td>
+    <td>带索引检查计算数组的差集，用回调函数比较数据。 </td>
+  </tr>
+  <tr>
+    <td> array_udiff_uassoc() 	</td>
+    <td>带索引检查计算数组的差集，用回调函数比较数据和索引。 </td>
+  </tr>
+  <tr>
+    <td> array_uintersect() 	</td>
+    <td>计算数组的交集，用回调函数比较数据。 </td>
+  </tr>
+  <tr>
+    <td> array_uintersect_assoc() </td>
+    <td>带索引检查计算数组的交集，用回调函数比较数据。 </td>
+  </tr>
+  <tr>
+    <td> array_uintersect_uassoc()</td>
+    <td>带索引检查计算数组的交集，用回调函数比较数据和索引。</td>
+  </tr>
+  <tr>
+    <td> array_unshift() 	</td>
+    <td>在数组开头插入一个或多个元素。 </td>
+  </tr>
+  <tr>
+    <td> array_values() 		</td>
+    <td>返回数组中所有的值。 </td>
+  </tr>
+  <tr>
+    <td> array_walk() 		</td>
+    <td>对数组中的每个成员应用用户函数。 </td>
+  </tr>
+  <tr>
+    <td>    array_walk_recursive()	</td>
+    <td>对数组中的每个成员递归地应用用户函数。</td>
+  </tr>
+</table>
+<table width="600" class="table table-striped table-hover table-condensed">
+  <tr>
+    <td> compact()</td>
+    <td> 建立一个数组，包括变量名和它们的值。 </td>
+  </tr>
+  <tr>
+    <td> count() 	</td>
+    <td>计算数组中的元素数目或对象中的属性个数。 </td>
+  </tr>
+  <tr>
+    <td> current() 	</td>
+    <td>返回数组中的当前元素。 </td>
+  </tr>
+  <tr>
+    <td> each() 		</td>
+    <td>返回数组中当前的键／值对并将数组指针向前移动一步。 </td>
+  </tr>
+  <tr>
+    <td> end() 		</td>
+    <td>将数组的内部指针指向最后一个元素。 </td>
+  </tr>
+  <tr>
+    <td> extract() 	</td>
+    <td>从数组中将变量导入到当前的符号表。 </td>
+  </tr>
+  <tr>
+    <td> key() 		</td>
+    <td>从关联数组中取得键名。 </td>
+  </tr>
+  <tr>
+    <td> list() 		</td>
+    <td>把数组中的值赋给一些变量。 </td>
+  </tr>
+  <tr>
+    <td> natcasesort()	</td>
+    <td>用“自然排序”算法对数组进行不区分大小写字母的排序。 </td>
+  </tr>
+  <tr>
+    <td> natsort() 	</td>
+    <td>用“自然排序”算法对数组排序。 </td>
+  </tr>
+  <tr>
+    <td> next() 		</td>
+    <td>将数组中的内部指针向前移动一位。 </td>
+  </tr>
+  <tr>
+    <td> pos() 		</td>
+    <td>current()的别名。 </td>
+  </tr>
+  <tr>
+    <td> prev() 		</td>
+    <td>将数组的内部指针倒回一位。 </td>
+  </tr>
+  <tr>
+    <td> range() 	</td>
+    <td>建立一个包含指定范围的元素的数组。 </td>
+  </tr>
+  <tr>
+    <td> reset() 	</td>
+    <td>将数组的内部指针指向第一个元素。 </td>
+  </tr>
+  <tr>
+    <td> shuffle() 	</td>
+    <td>把数组中的元素按随机顺序重新排列。 </td>
+  </tr>
+  <tr>
+    <td> sizeof() 	</td>
+    <td>count() 的别名。 </td>
+  </tr>
+  <tr>
+    <td> uasort() 	</td>
+    <td>使用用户自定义的比较函数对数组中的值进行排序并保持索引关联。</td>
+  </tr>
+  <tr>
+    <td> uksort() 	 </td>
+    <td>使用用户自定义的比较函数对数组中的键名进行排序。</td>
+  </tr>
+  <tr>
+    <td> usort() 	</td>
+    <td>使用用户自定义的比较函数对数组中的值进行排序</td>
+  </tr>
+</table>

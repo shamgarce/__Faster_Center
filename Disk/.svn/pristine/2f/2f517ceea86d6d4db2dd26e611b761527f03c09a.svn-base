@@ -1,0 +1,18 @@
+常用数据
+<p>&lt;script type=&quot;text/dialog&quot;&gt;<br />
+  var editor1;</p>
+<p> $.getScript('/app/kindeditor-4.1.10/kindeditor-min.js', function() {<br />
+  KindEditor.basePath = '/app/kindeditor-4.1.10/';<br />
+  editor1 = KindEditor.create('#bz1',{<br />
+  resizeType : 1,<br />
+  allowPreviewEmoticons : false,<br />
+  allowImageUpload : false,<br />
+  items : [<br />
+  'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',<br />
+  'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',<br />
+  'insertunorderedlist', '|', 'emoticons', 'image', 'link']<br />
+  });<br />
+  });</p>
+<p>&lt;/script&gt;<br />
+</p>
+<pre>&nbsp;</pre>

@@ -1,0 +1,472 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td><p>ASCII(str) <br />
+      ORD(str) <br />
+      CONV(N,from_base,to_base) <br />
+      BIN(N) <br />
+      OCT(N) <br />
+      HEX(N) <br />
+      CHAR(N,...) <br />
+      CONCAT(str1,str2,...) <br />
+      LENGTH(str) <br />
+      OCTET_LENGTH(str) <br />
+      CHAR_LENGTH(str) <br />
+      CHARACTER_LENGTH(str) <br />
+      LOCATE(substr,str) <br />
+      POSITION(substr IN str) <br />
+      LOCATE(substr,str,pos) <br />
+      INSTR(str,substr) <br />
+      LPAD(str,len,padstr) <br />
+      RPAD(str,len,padstr) <br />
+      LEFT(str,len) <br />
+      RIGHT(str,len) <br />
+      SUBSTRING(str,pos,len) <br />
+      SUBSTRING(str FROM pos FOR len) <br />
+      MID(str,pos,len) <br />
+      SUBSTRING(str,pos) <br />
+      SUBSTRING(str FROM pos) <br />
+      SUBSTRING_INDEX(str,delim,count) <br />
+      LTRIM(str) <br />
+      RTRIM(str) <br />
+      TRIM([[BOTH | LEA<br />
+      DING | TRAILING] [remstr] FROM] str) <br />
+      SOUNDEX(str) <br />
+      SPACE(N) <br />
+      REPLACE(str,from_str,to_str) <br />
+      REPEAT(str,count) <br />
+      REVERSE(str) <br />
+      INSERT(str,pos,len,newstr) <br />
+      ELT(N,str1,str2,str3,...) <br />
+      FIELD(str,str1,str2,str3,...) <br />
+      FIND_IN_SET(str,strlist) <br />
+      MAKE_SET(bits,str1,str2,...) <br />
+      EXPORT_SET(bits,on,off,[separator,[number_of_bits]]) <br />
+      LCASE(str) <br />
+      LOWER(str) <br />
+      UCASE(str) <br />
+      UPPER(str) <br />
+      LOAD_FILE(file_name) </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>对于针对字符串位置的操作，第一个位置被标记为1。 <br />
+      ASCII(str) <br />
+      返回字符串str的最左面字符的ASCII代码值。如果str是空字符串，返回0。如果str是NULL，返回NULL。 <br />
+      mysql&gt; select ASCII('2');<br />
+      -&gt; 50<br />
+      mysql&gt; select ASCII(2);<br />
+      -&gt; 50<br />
+      mysql&gt; select ASCII('dx');<br />
+      -&gt; 100<br />
+      也可参见ORD()函数。 <br />
+      ORD(str) <br />
+      如果字符串str最左面字符是一个多字节字符，通过以格式((first byte ASCII code)*256+(second byte ASCII code))[*256+third byte ASCII code...]返回字符的ASCII代码值来返回多字节字符代码。如果最左面的字符不是一个多字节字符。返回与ASCII()函数返回的相同值。<br />
+      mysql&gt; select ORD('2');<br />
+      -&gt; 50</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CONV(N,from_base,to_base) <br />
+      在不同的数字基之间变换数字。返回数字N的字符串数字，从from_base基变换为to_base基，如果任何参数是NULL，返回NULL。参数N解释为一个整数，但是可以指定为一个整数或一个字符串。最小基是2且最大的基是36。如果to_base是一个负数，N被认为是一个有符号数，否则，N被当作无符号数。 CONV以64位点精度工作。 <br />
+      mysql&gt; select CONV(&quot;a&quot;,16,2);<br />
+      -&gt; '1010'<br />
+      mysql&gt; select CONV(&quot;6E&quot;,18,8);<br />
+      -&gt; '172'<br />
+      mysql&gt; select CONV(-17,10,-18);<br />
+      -&gt; '-H'<br />
+      mysql&gt; select CONV(10+&quot;10&quot;+'10'+0xa,10,10);<br />
+      -&gt; '40'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>BIN(N) <br />
+      返回二进制值N的一个字符串表示，在此N是一个长整数(BIGINT)数字，这等价于CONV(N,10,2)。如果N是NULL，返回NULL。 <br />
+      mysql&gt; select BIN(12);<br />
+      -&gt; '1100'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>OCT(N) <br />
+      返回八进制值N的一个字符串的表示，在此N是一个长整型数字，这等价于CONV(N,10,8)。如果N是NULL，返回NULL。 <br />
+      mysql&gt; select OCT(12);<br />
+      -&gt; '14'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>HEX(N) <br />
+      返回十六进制值N一个字符串的表示，在此N是一个长整型(BIGINT)数字，这等价于CONV(N,10,16)。如果N是NULL，返回NULL。 <br />
+      mysql&gt; select HEX(255);<br />
+      -&gt; 'FF'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CHAR(N,...) <br />
+      CHAR()将参数解释为整数并且返回由这些整数的ASCII代码字符组成的一个字符串。NULL值被跳过。 <br />
+      mysql&gt; select CHAR(77,121,83,81,'76');<br />
+      -&gt; 'MySQL'<br />
+      mysql&gt; select CHAR(77,77.3,'77.3');<br />
+      -&gt; 'MMM'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>CONCAT(str1,str2,...) <br />
+      返回来自于参数连结的字符串。如果任何参数是NULL，返回NULL。可以有超过2个的参数。一个数字参数被变换为等价的字符串形式。 <br />
+      mysql&gt; select CONCAT('My', 'S', 'QL');<br />
+      -&gt; 'MySQL'<br />
+      mysql&gt; select CONCAT('My', NULL, 'QL');<br />
+      -&gt; NULL<br />
+      mysql&gt; select CONCAT(14.3);<br />
+      -&gt; '14.3'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><br />
+      LENGTH(str) <br />
+      <br />
+      OCTET_LENGTH(str) <br />
+      <br />
+      CHAR_LENGTH(str) <br />
+      <br />
+      CHARACTER_LENGTH(str) <br />
+      返回字符串str的长度。 <br />
+      mysql&gt; select LENGTH('text');<br />
+      -&gt; 4<br />
+      mysql&gt; select OCTET_LENGTH('text');<br />
+      -&gt; 4<br />
+      注意，对于多字节字符，其CHAR_LENGTH()仅计算一次。</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LOCATE(substr,str) <br />
+      <br />
+      POSITION(substr IN str) <br />
+      返回子串substr在字符串str第一个出现的位置，如果substr不是在str里面，返回0. <br />
+      mysql&gt; select LOCATE('bar', 'foobarbar');<br />
+      -&gt; 4<br />
+      mysql&gt; select LOCATE('xbar', 'foobar');<br />
+      -&gt; 0<br />
+      该函数是多字节可靠的。 <br />
+      LOCATE(substr,str,pos) <br />
+      返回子串substr在字符串str第一个出现的位置，从位置pos开始。如果substr不是在str里面，返回0。<br />
+      mysql&gt; select LOCATE('bar', 'foobarbar',5);<br />
+      -&gt; 7<br />
+      这函数是多字节可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>INSTR(str,substr) <br />
+      返回子串substr在字符串str中的第一个出现的位置。这与有2个参数形式的LOCATE()相同，除了参数被颠倒。 <br />
+      mysql&gt; select INSTR('foobarbar', 'bar');<br />
+      -&gt; 4<br />
+      mysql&gt; select INSTR('xbar', 'foobar');<br />
+      -&gt; 0<br />
+      这函数是多字节可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LPAD(str,len,padstr) <br />
+      返回字符串str，左面用字符串padstr填补直到str是len个字符长。 <br />
+      mysql&gt; select LPAD('hi',4,'??');<br />
+      -&gt; '??hi'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>RPAD(str,len,padstr) <br />
+      返回字符串str，右面用字符串padstr填补直到str是len个字符长。 <br />
+      mysql&gt; select RPAD('hi',5,'?');<br />
+      -&gt; 'hi???'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LEFT(str,len) <br />
+      返回字符串str的最左面len个字符。<br />
+      mysql&gt; select LEFT('foobarbar', 5);<br />
+      -&gt; 'fooba'<br />
+      该函数是多字节可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>RIGHT(str,len) <br />
+      返回字符串str的最右面len个字符。 <br />
+      mysql&gt; select RIGHT('foobarbar', 4);<br />
+      -&gt; 'rbar'<br />
+      该函数是多字节可靠的。</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>SUBSTRING(str,pos,len) <br />
+      <br />
+      SUBSTRING(str FROM pos FOR len) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>MID(str,pos,len) <br />
+      从字符串str返回一个len个字符的子串，从位置pos开始。使用FROM的变种形式是ANSI SQL92语法。 <br />
+      mysql&gt; select SUBSTRING('Quadratically',5,6);<br />
+      -&gt; 'ratica'<br />
+      该函数是多字节可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>SUBSTRING(str,pos) <br />
+      <br />
+      SUBSTRING(str FROM pos) <br />
+      从字符串str的起始位置pos返回一个子串。 <br />
+      mysql&gt; select SUBSTRING('Quadratically',5);<br />
+      -&gt; 'ratically'<br />
+      mysql&gt; select SUBSTRING('foobarbar' FROM 4);<br />
+      -&gt; 'barbar'<br />
+      该函数是多字节可靠的。 <br />
+      SUBSTRING_INDEX(str,delim,count) <br />
+      返回从字符串str的第count个出现的分隔符delim之后的子串。如果count是正数，返回最后的分隔符到左边(从左边数) 的所有字符。如果count是负数，返回最后的分隔符到右边的所有字符(从右边数)。 <br />
+      mysql&gt; select SUBSTRING_INDEX('<a href="http://www.mysql.com/" target="_blank">www.mysql.com</a>', '.', 2);<br />
+      -&gt; '<a href="http://www.mysql/" target="_blank">www.mysql</a>'<br />
+      mysql&gt; select SUBSTRING_INDEX('<a href="http://www.mysql.com/" target="_blank">www.mysql.com</a>', '.', -2);<br />
+      -&gt; 'mysql.com'<br />
+      该函数对多字节是可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LTRIM(str) <br />
+      返回删除了其前置空格字符的字符串str。 <br />
+      mysql&gt; select LTRIM(' barbar');<br />
+      -&gt; 'barbar'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><br />
+      RTRIM(str) <br />
+      返回删除了其拖后空格字符的字符串str。 <br />
+      mysql&gt; select RTRIM('barbar   ');<br />
+      -&gt; 'barbar'<br />
+      该函数对多字节是可靠的。 <br />
+      TRIM([[BOTH | LEA</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>DING | TRAILING] [remstr] FROM] str) <br />
+      返回字符串str，其所有remstr前缀或后缀被删除了。如果没有修饰符BOTH、LEADING或TRAILING给出，BOTH被假定。如果remstr没被指定，空格被删除。 <br />
+      mysql&gt; select TRIM(' bar   ');<br />
+      -&gt; 'bar'<br />
+      mysql&gt; select TRIM(LEADING 'x' FROM 'xxxbarxxx');<br />
+      -&gt; 'barxxx'<br />
+      mysql&gt; select TRIM(BOTH 'x' FROM 'xxxbarxxx');<br />
+      -&gt; 'bar'<br />
+      mysql&gt; select TRIM(TRAILING 'xyz' FROM 'barxxyz');<br />
+      -&gt; 'barx'<br />
+      该函数对多字节是可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>SOUNDEX(str) <br />
+      返回str的一个同音字符串。听起来&ldquo;大致相同&rdquo;的2个字符串应该有相同的同音字符串。一个&ldquo;标准&rdquo;的同音字符串长是4个字符，但是SOUNDEX()函数返回一个任意长的字符串。你可以在结果上使用SUBSTRING()得到一个&ldquo;标准&rdquo;的 同音串。所有非数字字母字符在给定的字符串中被忽略。所有在A-Z之外的字符国际字母被当作元音。 <br />
+      mysql&gt; select SOUNDEX('Hello');<br />
+      -&gt; 'H400'<br />
+      mysql&gt; select SOUNDEX('Quadratically');<br />
+      -&gt; 'Q36324'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>SPACE(N) <br />
+      返回由N个空格字符组成的一个字符串。 <br />
+      mysql&gt; select SPACE(6);<br />
+      -&gt; '     '</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>REPLACE(str,from_str,to_str) <br />
+      返回字符串str，其字符串from_str的所有出现由字符串to_str代替。 <br />
+      mysql&gt; select REPLACE('<a href="http://www.mysql.com/" target="_blank">www.mysql.com</a>', 'w', 'Ww');<br />
+      -&gt; 'WwWwWw.mysql.com'<br />
+      该函数对多字节是可靠的。 <br />
+      REPEAT(str,count) <br />
+      返回由重复countTimes次的字符串str组成的一个字符串。如果count &lt;= 0，返回一个空字符串。如果str或count是NULL，返回NULL。 <br />
+      mysql&gt; select REPEAT('MySQL', 3);<br />
+      -&gt; 'MySQLMySQLMySQL'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>REVERSE(str) <br />
+      返回颠倒字符顺序的字符串str。 <br />
+      mysql&gt; select REVERSE('abc');<br />
+      -&gt; 'cba'<br />
+      该函数对多字节可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>INSERT(str,pos,len,newstr) <br />
+      返回字符串str，在位置pos起始的子串且len个字符长得子串由字符串newstr代替。 <br />
+      mysql&gt; select INSERT('Quadratic', 3, 4, 'What');<br />
+      -&gt; 'QuWhattic'<br />
+      该函数对多字节是可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>ELT(N,str1,str2,str3,...) <br />
+      如果N= 1，返回str1，如果N= 2，返回str2，等等。如果N小于1或大于参数个数，返回NULL。ELT()是FIELD()反运算。 <br />
+      mysql&gt; select ELT(1, 'ej', 'Heja', 'hej', 'foo');<br />
+      -&gt; 'ej'<br />
+      mysql&gt; select ELT(4, 'ej', 'Heja', 'hej', 'foo');<br />
+      -&gt; 'foo'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>FIELD(str,str1,str2,str3,...) <br />
+      返回str在str1, str2, str3, ...清单的索引。如果str没找到，返回0。FIELD()是ELT()反运算。 <br />
+      mysql&gt; select FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo');<br />
+      -&gt; 2<br />
+      mysql&gt; select FIELD('fo', 'Hej', 'ej', 'Heja', 'hej', 'foo');<br />
+      -&gt; 0</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>FIND_IN_SET(str,strlist) <br />
+      如果字符串str在由N子串组成的表strlist之中，返回一个1到N的值。一个字符串表是被&ldquo;,&rdquo;分隔的子串组成的一个字符串。如果第一个参数是一个常数字符串并且第二个参数是一种类型为SET的列，FIND_IN_SET()函数被优化而使用位运算！如果str不是在strlist里面或如果strlist是空字符串，返回0。如果任何一个参数是NULL，返回NULL。如果第一个参数包含一个&ldquo;,&rdquo;，该函数将工作不正常。 <br />
+      mysql&gt; SELECT FIND_IN_SET('b','a,b,c,d');<br />
+      -&gt; 2</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>MAKE_SET(bits,str1,str2,...) <br />
+      返回一个集合 (包含由&ldquo;,&rdquo;字符分隔的子串组成的一个字符串)，由相应的位在bits集合中的的字符串组成。str1对应于位0，str2对应位1，等等。在str1, str2, ...中的NULL串不添加到结果中。 <br />
+      mysql&gt; SELECT MAKE_SET(1,'a','b','c');<br />
+      -&gt; 'a'<br />
+      mysql&gt; SELECT MAKE_SET(1 | 4,'hello','nice','world');<br />
+      -&gt; 'hello,world'<br />
+      mysql&gt; SELECT MAKE_SET(0,'a','b','c');<br />
+      -&gt; ''</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>EXPORT_SET(bits,on,off,[separator,[number_of_bits]]) <br />
+      返回一个字符串，在这里对于在&ldquo;bits&rdquo;中设定每一位，你得到一个&ldquo;on&rdquo;字符串，并且对于每个复位(reset)的位，你得到一个&ldquo;off&rdquo;字符串。每个字符串用&ldquo;separator&rdquo;分隔(缺省&ldquo;,&rdquo;)，并且只有&ldquo;bits&rdquo;的&ldquo;number_of_bits&rdquo; (缺省64)位被使用。 <br />
+      mysql&gt; select EXPORT_SET(5,'Y','N',',',4)<br />
+      -&gt; Y,N,Y,N </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LCASE(str) <br />
+      <br />
+      LOWER(str) <br />
+      返回字符串str，根据当前字符集映射(缺省是ISO-8859-1 Latin1)把所有的字符改变成小写。该函数对多字节是可靠的。 <br />
+      mysql&gt; select LCASE('QUADRATICALLY');<br />
+      -&gt; 'quadratically'</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>UCASE(str) <br />
+      <br />
+      UPPER(str) <br />
+      返回字符串str，根据当前字符集映射(缺省是ISO-8859-1 Latin1)把所有的字符改变成大写。该函数对多字节是可靠的。 <br />
+      mysql&gt; select UCASE('Hej');<br />
+      -&gt; 'HEJ'<br />
+      该函数对多字节是可靠的。 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>LOAD_FILE(file_name) <br />
+      读入文件并且作为一个字符串返回文件内容。文件必须在服务器上，你必须指定到文件的完整路径名，而且你必须有file权限。文件必须所有内容都是可读的并且小于max_allowed_packet。如果文件不存在或由于上面原因之一不能被读出，函数返回NULL。 <br />
+      mysql&gt; UPDATE table_name<br />
+      SET blob_column=LOAD_FILE(&quot;/tmp/picture&quot;)<br />
+      WHERE id=1;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>MySQL必要时自动变换数字为字符串，并且反过来也如此： <br />
+      mysql&gt; SELECT 1+&quot;1&quot;;<br />
+      -&gt; 2<br />
+      mysql&gt; SELECT CONCAT(2,' test');<br />
+      -&gt; '2 test'<br />
+      如果你想要明确地变换一个数字到一个字符串，把它作为参数传递到CONCAT()。 <br />
+      如果字符串函数提供一个二进制字符串作为参数，结果字符串也是一个二进制字符串。被变换到一个字符串的数字被当作是一个二进制字符串。这仅影响比较</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>autoExecute($table, $field_values, $mode = 'INSERT', $where = '', $querymode = '') <br />
+      autoReplace($table, $field_values, $update_values, $where = '', $querymode = '') <br />
+      gsql($sql,$type='all',$str='')		str all参数用到 <br />
+      getOne($sql, $limited = false) <br />
+      getAll($sql,$str='') <br />
+      getMap($sql) <br />
+      getRow($sql, $limited = false) <br />
+      getCol($sql) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td> //连接数据库 <br />
+      $_host = $GLOBALS['cfg']['system']['HOST']; <br />
+      $_user = $GLOBALS['cfg']['system']['USER']; <br />
+      $_pwd = $GLOBALS['cfg']['system']['PWD']; <br />
+      $_db = $GLOBALS['cfg']['system']['NAME']; <br />
+      $_chr = $GLOBALS['cfg']['system']['CHAR']; <br />
+      <br />
+      mysql_connect($_host,$_user,$_pwd); <br />
+      mysql_select_db($_db); <br />
+      mysql_query('set character_set_connection = utf8'); <br />
+      mysql_query('set names utf8'); <br />
+      $query=&quot;select * from `&quot;.$this-&gt;authtable.&quot;` where `&quot;.$this-&gt;col_username.&quot;`='$username';&quot;; <br />
+      $result=mysql_query($query); <br />
+      if(mysql_num_rows($result)==1) //找到此用户 <br />
+      { <br />
+      $row=mysql_fetch_assoc($result); <br />
+      if($row['u_delete']==0) //此用户被封禁 <br />
+      { <br />
+      $this-&gt;errReport($this-&gt;err_user); <br />
+      $this-&gt;err=$this-&gt;err_user; <br />
+      return false; <br />
+      } <br />
+      elseif(md5($userpass)==$row[$this-&gt;col_password]) //密码匹配 <br />
+      { <br />
+      //-------------------------------------- <br />
+      $this-&gt;userinfo=$row; <br />
+      return true; <br />
+      } <br />
+      else //密码不匹配 <br />
+      { <br />
+      $this-&gt;errReport($this-&gt;err_auth); <br />
+      $this-&gt;err=$this-&gt;err_auth; <br />
+      return false; <br />
+      } <br />
+      } </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><p>//检查数据库连接 <br />
+      $db = mysql_connect(&quot;localhost&quot;, &quot;root&quot;,&quot;123&quot;)	or die(&quot;Could not connect: &quot; . mysql_error()); <br />
+      mysql_select_db(&quot;spider&quot;,$db); <br />
+      $currConnEncode = mysql_client_encoding($db);	echo $currConnEncode; <br />
+      $q = &quot;SET NAMES 'utf8' &quot;; <br />
+      $result = mysql_query($q,$db); <br />
+      $q = &quot;show tables&quot;; <br />
+      $result = mysql_query($q,$db) or die(&quot;Could not query: &quot;. mysql_error()); <br />
+      $numrows=mysql_num_rows($result); <br />
+      if ($myrow = mysql_fetch_array($result)) { <br />
+      echo(&quot;&lt;table border=1&gt;/n&quot;); <br />
+      while ($myrow = mysql_fetch_array($result)) <br />
+      {printf(&quot;&lt;tr&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;/n&quot;, $myrow[0], $myrow[1], $myrow[2]);}echo &quot;&lt;/table&gt;/n&quot;;} <br />
+      else <br />
+      {echo(&quot;sorry no record was found&quot;);} <br />
+      echo (&quot;the affected rows was $numrows&quot;); </p>
+      <p> //表是否存在 <br />
+        if(mysql_num_rows(mysql_query(&quot;SHOW TABLES LIKE '&quot;.$table.&quot;'&quot;)==1)){ <br />
+        echo &quot;Table exists&quot;; <br />
+        } else { <br />
+        echo &quot;Table does not exist&quot;; <br />
+        } </p></td>
+    <td></td>
+  </tr>
+</table>

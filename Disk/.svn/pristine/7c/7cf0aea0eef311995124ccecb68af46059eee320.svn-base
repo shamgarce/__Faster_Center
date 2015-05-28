@@ -1,0 +1,74 @@
+<div class="example">
+<table>
+  <tr>
+    <td width="150">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>  
+<div class="tile bg-cyan">
+<div class="tile-content icon">
+<i class="icon-rocket"></i>
+</div>
+</div>
+
+    </td>
+    <td width="650" valign="top">
+<blockquote>&lt;div class=&quot;tile-content icon&quot;&gt;<br />
+  &lt;i class=&quot;icon-rocket&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;</blockquote>
+</td>
+  </tr>
+  <tr>
+    <td>
+<div class="tile bg-green">
+<div class="tile-content icon">
+<img src="/A/M/images/excel2013icon.png">
+</div>
+</div>    
+    </td>
+    <td valign="top"><blockquote>&lt;div class=&quot;tile-content icon&quot;&gt;<br />
+      &lt;img src=&quot;images/excel2013icon.png&quot;&gt;<br />
+      &lt;/div&gt;    </blockquote></td>
+  </tr>
+  <tr>
+    <td>
+<div class="tile double">
+<div class="tile-content image">
+<img src="/A/M/images/1.jpg">
+</div>
+</div>
+	</td>
+    <td valign="top"><blockquote>&lt;div class=&quot;tile-content image&quot;&gt;<br />
+      &lt;img src=&quot;images/1.jpg&quot;&gt;<br />
+      &lt;/div&gt;</blockquote></td>
+  </tr>
+  <tr>
+    <td>
+<div class="tile double">
+<div class="tile-content image-set">
+<img src="/A/M/images/1.jpg">
+<img src="/A/M/images/2.jpg">
+<img src="/A/M/images/3.jpg">
+<img src="/A/M/images/4.jpg">
+<img src="/A/M/images/5.jpg">
+</div>
+</div>
+      </td>
+    <td valign="top"><blockquote>&lt;div class=&quot;tile-content image-set&quot;&gt;<br />
+      &lt;img src=&quot;images/1.jpg&quot;&gt;<br />
+      &lt;img src=&quot;images/2.jpg&quot;&gt;<br />
+      &lt;img src=&quot;images/3.jpg&quot;&gt;<br />
+      &lt;img src=&quot;images/4.jpg&quot;&gt;<br />
+      &lt;img src=&quot;images/5.jpg&quot;&gt;<br />
+      &lt;/div&gt;</blockquote></td>
+  </tr>
+  <tr>
+    <td colspan="2">      <p>&nbsp;</p></td>
+  </tr>
+
+
+  </table>
+<hr>
+</div>
+

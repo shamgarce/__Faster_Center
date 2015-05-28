@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/A/Font-Awesome-3.2.1/css/font-awesome.css">
+<style>
+ .bs-glyphicons{margin:0 -10px 20px;overflow:hidden}
+ .bs-glyphicons-list{padding-left:0;list-style:none}
+ .bs-glyphicons li{font-size:14px;float:left;width:95px;height:55px;padding:10px;line-height:1.4;text-align:center;background-color:#f9f9f9;border:1px solid #fff}
+ 
+ .bs-color-list{padding-left:0;list-style:none}
+ .bs-color a{font-size:14px;float:left;width:95px;height:55px;padding:10px;line-height:1.4;text-align:center;border:1px solid #fff}
+ 
+ .bs-glyphicons .glyphicon{margin-top:5px;margin-bottom:10px;font-size:24px}
+ .bs-glyphicons .glyphicon-class{display:block;text-align:center;word-wrap:break-word}
+/* .bs-glyphicons li:hover{color:#fff;background-color:#563d7c}*/
+ .bs-glyphicons li:hover{background-color:#563d7c}
+ .bs-glyphicons li a:hover{color:#fff;}
+ .bs-glyphicons li a{color:#000;}
+</style>
+<div class="panel panel-default" style="width:800px">
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+<li class="active"><a data-toggle="tab" role="tab" href="#vsbootstrap1">常用</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap2">Icheck</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap3">switch</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap4">edit</a></li>
+
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap5">-</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap6">-</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap7">-</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap8">-</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vsbootstrap9">-</a></li>
+
+
+
+
+</ul>  
+<div id="myTabContent" class="tab-content panel-body">
+<div id="vsbootstrap1" class="tab-pane fade active in">
+    <p>常用</p>
+</div>
+
+<div id="vsbootstrap2" class="tab-pane fade">
+  <p>
+    自适应说明 : 
+</p>
+</div>
+<div id="vsbootstrap3" class="tab-pane fade">
+  <p>表格
+</p>
+  <br />
+</div>
+<div id="vsbootstrap4" class="tab-pane fade">
+  <p>pancel</p>
+</div>
+<div id="vsbootstrap5" class="tab-pane fade">
+  <p>5自适应</p>
+</div>
+
+<div id="vsbootstrap6" class="tab-pane fade">
+  <p>6自适应</p>
+</div>
+
+<div id="vsbootstrap7" class="tab-pane fade">
+  <p>7自适应</p>
+</div>
+
+<div id="vsbootstrap8" class="tab-pane fade">
+  <p>8自适应</p>
+</div>
+
+<div id="vsbootstrap9" class="tab-pane fade">
+  <p>9自适应</p>
+</div>
+
+
+
+
+</div>  
+</div>
+<script type="text/dialog">
+
+
+$(document).ready(function() {
+
+
+});
+</script>

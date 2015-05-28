@@ -1,0 +1,27 @@
+<div class="panel panel-default" style="width:700px">
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+<li class="active"><a data-toggle="tab" role="tab" href="#vfun1">常用</a></li>
+<li class=""><a data-toggle="tab" role="tab" href="#vfun2">kindeditor</a></li>
+
+
+</ul>  
+<div id="myTabContent" class="tab-content panel-body">
+<div id="vfun1" class="tab-pane fade active in">
+  <p>1</p>
+  <p>&nbsp;</p>
+</div>
+<div id="vfun2" class="tab-pane fade">
+  <p>2</p>
+</div>
+<div id="vfun3" class="tab-pane fade">33
+  
+</div>
+<div id="vfun4" class="tab-pane fade">4</div>
+
+</div>  
+</div>
+<script type="text/dialog">
+$(document).ready(function() {
+
+});
+</script>

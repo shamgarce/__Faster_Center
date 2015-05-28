@@ -1,0 +1,23 @@
+
+<a class="testrefresh">刷新</a>
+<a class="testclose">关闭</a>
+<a class="testview">查看</a>
+
+  <script type="text/dialog">
+$(document).ready(function(e) {
+    $('.testrefresh').click(function(){
+		Wr.dorefresh(_option);
+	});
+    $('.testclose').click(function(){
+		art.dialog.list[_option.id].close();
+	});
+    $('.testview').click(function(){
+		console.log(_option);
+	});
+
+
+
+
+
+})
+</script>

@@ -1,0 +1,34 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&lt;script charset=&quot;utf-8&quot; src=&quot;/app/kindeditor-4.1.10/kindeditor-min.js&quot;&gt;&lt;/script&gt;<br />
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/app/kindeditor-4.1.10/themes/default/default.css&quot; /&gt;<br /></td>
+    <td><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>
+    <textarea name="bz1" id="bz1" cols="30" rows="4"></textarea>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="http://kindeditor.net/doc.php" target="_blank">参考</a></td>
+    <td>参考</td>
+  </tr>
+  </table>
+<script type="text/dialog">
+	var editor1;
+
+	$.getScript('/app/kindeditor-4.1.10/kindeditor-min.js', function() {
+		KindEditor.basePath = '/app/kindeditor-4.1.10/';
+		editor1 = KindEditor.create('#bz1',{
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : false,
+			items : [
+			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+			'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	});
+
+</script>

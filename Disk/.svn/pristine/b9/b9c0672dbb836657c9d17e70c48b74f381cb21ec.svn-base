@@ -1,0 +1,31 @@
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <td>&lt;script charset=&quot;utf-8&quot; src=&quot;/app/DatePicker/WdatePicker.js&quot;&gt; &lt;/script&gt; 
+   </td>
+    <td>
+     加载</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="Wdate" id="d4321" onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4322\',{d:-3});}'})"/>
+<input type="text" class="Wdate" id="d4322" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d4321\',{d:3});}'})"/></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input type="text" class="Wdate" id="d4325" onFocus="WdatePicker({})"/></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4322&quot; onFocus=&quot;WdatePicker({})&quot;/&gt;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><pre>&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4321&quot; onFocus=&quot;WdatePicker({maxDate:'#F{$dp.$D(\'d4322\',{d:-3});}'})&quot;/&gt;
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4322&quot; onFocus=&quot;WdatePicker({minDate:'#F{$dp.$D(\'d4321\',{d:3});}'})&quot;/&gt;</pre></td>
+    <td>联动</td>
+  </tr>
+    <tr>
+    <td> <a href="http://www.my97.net/dp/demo/resource/2.1.asp" target="_blank">参考</a></td>
+    <td>&nbsp;</td>
+  </tr>
+
+  </table>

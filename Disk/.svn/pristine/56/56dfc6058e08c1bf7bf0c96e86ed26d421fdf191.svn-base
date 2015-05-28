@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover table-condensed">
+<tr>
+<td>
+  <p> PageClick = function(pageclickednumber) {<br />
+    //解析pager内容<br />
+    $(&quot;#pager&quot;).pager({ pagenumber: pageclickednumber, pagecount: 15, buttonClickCallback: PageClick });<br />
+    //填充page<br />
+    //var vs = $('.sx .uk-active').attr(&quot;re&quot;);			//全部 有效 无效<br />
+    //console.log(vs+pageclickednumber);<br />
+    $(&quot;#result&quot;).html(&quot;Clicked Page2 &quot; + pageclickednumber);<br />
+    }</p>
+  <p>$(document).ready(function() {<br />
+    //	//初始解析page<br />
+    $(&quot;#pager&quot;).pager({ pagenumber: 1, pagecount: 15, buttonClickCallback: PageClick });<br />
+  });</p></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a href="/te.html" target="_blank">参考</a></td>
+<td>&nbsp;</td>
+</tr>
+</table>
