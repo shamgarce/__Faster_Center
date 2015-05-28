@@ -322,6 +322,12 @@ foreach($apiother as $key=>$value){
     </td>
   </tr>
 </table>
+
+
+       
+          
+       
+ 执行时间 <strong>0.0500</strong> 秒
       </div>
 
     </div><!-- /.container -->

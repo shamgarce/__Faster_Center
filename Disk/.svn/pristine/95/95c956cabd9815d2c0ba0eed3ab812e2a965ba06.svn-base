@@ -35,7 +35,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/man/get">路由</a></li>
+            <li class="active"><a href="/Man/index">路由</a></li>
+            <li><a href="/Man/doc">文档</a></li>
+            <li><a href="/Man/model">模块</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -322,6 +324,12 @@ foreach($apiother as $key=>$value){
     </td>
   </tr>
 </table>
+
+
+       
+          
+       
+ 执行时间 <strong>0.0500</strong> 秒
       </div>
 
     </div><!-- /.container -->
