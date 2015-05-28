@@ -26,8 +26,6 @@ class Logintest extends MpModel
         $this->S = \Seter\Seter::getInstance();
     }
 
-
-
     public function login()
     {
         if($this->Isnotempty('uname') && $this->Isnotempty('pwd')){
@@ -91,8 +89,9 @@ class Logintest extends MpModel
     public function Isnotempty($key)
     {
         if(empty($this->args[$key])){
-            $this->res['code'] = -200;
-            $this->res['msg'] = "$key is empty";
+//            $this->res['code'] = -200;
+//            $this->res['msg'] = "$key is empty";
+            $this->json(-200,"$key 不能为空");
             return false;
         }
         return true;

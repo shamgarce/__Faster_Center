@@ -3,6 +3,8 @@
 /*
  * 调用
  * include('Seter/Seter.php');
+ * $this->Seter = new \Seter\Seter();
+ * \Seter\Seter::getInstance()
  * */
 
 namespace Seter;

@@ -2,39 +2,43 @@
 
 namespace Seter\Library;
 //用户模型
-
+/*
+ * 暂时的功能局限到获取自己的信息
+ * 调用
+ * \Seter\Seter::getInstance()->user->isguest()
+ * \Seter\Seter::getInstance()->user->myinfo()
+ * \Seter\Seter::getInstance()->user->mygroup()
+ * */
 class User{
     public function __construct(){
     }
 
-    public function getusergroup(){
 
-    }
+//    public function getusergroup(){
+//    }
+//    public function getuserlist($page=1,$pagesize=30){
+//    }
+//    //
+//    public function getuserinfo($uid=0){
+//    }
 
-    public function getuserlist($page=1,$pagesize=30){
 
-    }
-
-    public function getuserinfo($uid=0){
-
-    }
-
-    /*
-     * =============================================================
-     * flit enable/groupid
-     * =============================================================
-     * */
-    public function enable(){
-        return $this;
-    }
-
-    public function group(){
-        return $this;
-    }
+//    /*
+//     * =============================================================
+//     * flit enable/groupid
+//     * =============================================================
+//     * */
+//    public function enable(){
+//        return $this;
+//    }
+//
+//    public function group(){
+//        return $this;
+//    }
 
     /*
      * =============================================================
-     *     //针对向前用户
+     *     //针对当前用户
      * =============================================================
      * */
     public function mygroup()

@@ -9,7 +9,7 @@ class Home extends MpController {
     function __construct()
     {
         parent::__construct();
-        $this->Seter = new \Seter\Seter();
+        $this->Seter = \Seter\Seter::getInstance();
 //        //$instance = MpController::getInstance();
 //        //var_dump($instance->Seter);
 //        \Sham::trace(__METHOD__);             //执行路径记录
@@ -43,7 +43,6 @@ class Home extends MpController {
     public function doUserlist($flit = '0') {
         if(ISPOST){
             $this->model->formuser->load($this->Seter->request->post)->cflag();
-            $this->gojson();
         }
         $data=array(
             'userlist' => $this->model->user->getuserlist($flit),
@@ -60,7 +59,6 @@ class Home extends MpController {
 
         if(ISPOST){
             $this->model->formuser->load($this->Seter->request->post)->add();
-            $this->gojson();
         }
         $data=array(
             'title'=>'添加用户'
@@ -79,7 +77,7 @@ class Home extends MpController {
             $this->gojson();
         }else{
             $data=array(
-                'user' => \Seter\Seter::getInstance()->table->f_user->where("uid = $uid")->getrow(),
+                'user' => $this->Seter->table->f_user->where("uid = $uid")->getrow(),
                 'title'=>'修改用户'
             );
             $this->view("home/dialog/useredit",$data);
