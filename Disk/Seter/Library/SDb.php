@@ -122,10 +122,12 @@ class SDb{
         $this->version = mysql_get_server_info($this->link_id);
         mysql_query("SET character_set_connection=$charset, character_set_results=$charset, character_set_client=binary", $this->link_id);
         mysql_query("SET sql_mode=''", $this->link_id);
+        $this->starttime = microtime(true);//time();
+
+/*
         $sqlcache_config_file = $this->root_path . $this->cache_data_dir . 'sqlcache_config_file_' . $this->dbhash . '.php';
         //echo $sqlcache_config_file;
         @include($sqlcache_config_file);
-        $this->starttime = microtime(true);//time();
         if ($this->max_cache_time && $this->starttime > $this->mysql_config_cache_file_time + $this->max_cache_time){
             //开始跳缓存-------------------------------------
             if ($dbhost != '.'){
@@ -164,6 +166,7 @@ class SDb{
             @file_put_contents($sqlcache_config_file, $content);
             //跳缓存结束-------------------------------------
         }
+*/
         /* 选择数据库 */
         if ($dbname){
             if (mysql_select_db($dbname, $this->link_id) === false ){
