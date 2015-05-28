@@ -26,8 +26,7 @@ class Home extends MpController {
      * 首页
      * 列表显示
      * */
-    public function doIndex() {
-
+    public function doIndex($fi='') {
         if(ISPOST){
             $this->model->formapi->load($this->Seter->request->post) && $this->model->formapi->cflag();
             $this->gojson();
@@ -38,7 +37,8 @@ class Home extends MpController {
                 'apiput'    => $this->Seter->table->f_userapi->where(" TYPE = 'PUT'")->order("sort desc")->getall(),
                 'apidelete' => $this->Seter->table->f_userapi->where(" TYPE = 'DELETE'")->order("sort desc")->getall(),
                 'apiother'  => $this->Seter->table->f_userapi->where(" TYPE = 'OTHER'")->order("sort desc")->getall(),
-                'title'=>'列表'
+                'title'=>'列表',
+                'fi'=>$fi
             );
             //print_r($data['apiget']);
             $this->view("home/index",$data);
