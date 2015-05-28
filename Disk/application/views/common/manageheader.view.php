@@ -10,6 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/A/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="/A/CSS/font.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/A/U/u1/dashboard.css" rel="stylesheet">
 

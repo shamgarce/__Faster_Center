@@ -22,10 +22,10 @@ include('MicroPHP.Controller.php');
  * 注册HMVC模块，这里填写模块名称关联数组,键是url中的模块别名，值是模块文件夹名称
  */
 $system['hmvc_modules'] = array(
-	'demo' => 'hmvc_demo',
+	'demo' 	=> 'hmvc_demo',
 	'manage' => 'hmvc_manage',
-	'man' => 'hmvc_man',
-	'v6' => 'hmvc_v6',
+	'man' 	=> 'hmvc_man',
+	'v6' 	=> 'hmvc_v6',
 );
 $system['debug'] = false;
 
@@ -39,4 +39,5 @@ $system['debug'] = false;
 //$mp = WoniuRouter::parseURI();
 //print_r($mp);
 MpRouter::setConfig($system);
+
 MpRouter::loadClass();

@@ -103,6 +103,17 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
     {
     }
 
+    /*hash函数
+     * */
+    public static function hash($str='')
+    {
+        if(empty($str)){
+            return '';
+        }else{
+            return md5($str);
+        }
+    }
+
     public static function getInstance(){
         !(self::$instance instanceof self)&&self::$instance = new self();
         return self::$instance;

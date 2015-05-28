@@ -39,3 +39,5 @@ $system['debug'] = false;
 //$mp = WoniuRouter::parseURI();
 //print_r($mp);
 MpRouter::setConfig($system);
+
+MpRouter::loadClass();

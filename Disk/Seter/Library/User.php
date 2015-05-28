@@ -2,34 +2,63 @@
 
 namespace Seter\Library;
 //用户模型
-class User{
-    private $db = null;
 
+class User{
     public function __construct(){
-//        $this->
     }
 
+    public function getusergroup(){
 
+    }
 
+    public function getuserlist($page=1,$pagesize=30){
 
-    public function test(){
+    }
+
+    public function getuserinfo($uid=0){
+
+    }
+
+    /*
+     * =============================================================
+     * flit enable/groupid
+     * =============================================================
+     * */
+    public function enable(){
+        return $this;
+    }
+
+    public function group(){
+        return $this;
+    }
+
+    /*
+     * =============================================================
+     *     //针对向前用户
+     * =============================================================
+     * */
+    public function mygroup()
+    {
+    }
+
+    public function myinfo()
+    {
+    }
+
+    public function isguest()
+    {
     }
 
 //    public function __set($a, $b) {
 //    }
-//
 //    public function __get($tablename) {
 //    }
-
-    public function defaultconfig(){
-
-    }
 
     //用户表标准格式
     public function columns()
     {
         /*
-         * show columns from f_user;
+         *
 mysql> show columns from f_user;
 +-------------+-------------+------+-----+---------+----------------+
 | Field       | Type        | Null | Key | Default | Extra          |
@@ -38,13 +67,14 @@ mysql> show columns from f_user;
 | uname       | varchar(32) | NO   | UNI | NULL    |                |
 | tname       | varchar(32) | YES  |     | NULL    |                |
 | pwd         | varchar(64) | NO   |     | NULL    |                |
+| groupid     | int(11)     | YES  |     | NULL    |                |
 | authKey     | varchar(64) | YES  |     | NULL    |                |
 | accessToken | varchar(64) | YES  |     | NULL    |                |
 | logtime     | int(11)     | YES  |     | NULL    |                |
 | logip       | varchar(64) | YES  |     | NULL    |                |
 | enable      | tinyint(1)  | NO   |     | 0       |                |
 +-------------+-------------+------+-----+---------+----------------+
-9 rows in set (0.00 sec)
+10 rows in set (0.00 sec)
         */
     }
 

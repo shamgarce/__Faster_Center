@@ -25,21 +25,30 @@ class Home extends MpController {
         $this->view("home/index",$data);
     }
 
+    public function doLogintest() {
+        if(ISPOST){
+            //登陆动作
+            $this->model->logintest->load($this->Seter->request->post)->login();
+        }
+        $data=array(
+            'title'=>'测试登陆'
+        );
+        $this->view("home/logintest",$data);
+    }
+
+
     /*
      * 测试内容
      * */
     public function doUserlist($flit = '0') {
         if(ISPOST){
-            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->cflag();
+            $this->model->formuser->load($this->Seter->request->post)->cflag();
             $this->gojson();
         }
         $data=array(
             'userlist' => $this->model->user->getuserlist($flit),
             'title'=>'用户列表'
         );
-
-
-
         $this->view("home/userlist",$data);
         echo 1;
     }
@@ -50,7 +59,7 @@ class Home extends MpController {
     public function doUseradd() {
 
         if(ISPOST){
-            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->add();
+            $this->model->formuser->load($this->Seter->request->post)->add();
             $this->gojson();
         }
         $data=array(
@@ -65,7 +74,7 @@ class Home extends MpController {
     public function doUseredit($uid = 0)
     {
         if(ISPOST){
-            $this->model->formuser->load($this->Seter->request->post) && $this->model->formuser->update();
+            $this->model->formuser->load($this->Seter->request->post)->update();
 //            $this->model->formuser->load() && $this->model->formuser->update();
             $this->gojson();
         }else{

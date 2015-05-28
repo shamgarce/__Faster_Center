@@ -6,6 +6,34 @@
 
 class Sham
 {
+
+    /*
+     * 签名计算
+     * */
+    public static function signnature($str)
+    {
+        return MD5(MD5(MD5(MD5($str))));
+    }
+
+    //setcookie
+    //设置cookie
+    //7*24*60*60 = 604800
+    public static function setcookie($cookiename,$cookievalue='',$cookietime=604800)
+    {
+        $cookiename = "Seter_$cookiename";
+        setcookie($cookiename,$cookievalue,time()+$cookietime);
+        return true;
+    }
+
+    //getcookie
+    //获取cookie
+    public static function getcookie($cookiename)
+    {
+        $cookiename = "Seter_$cookiename";
+        return $_COOKIE[$cookiename];
+    }
+
+
     //记录当前的信息
     public static function trace($info='')
     {

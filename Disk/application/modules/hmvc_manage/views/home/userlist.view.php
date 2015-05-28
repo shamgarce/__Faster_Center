@@ -13,14 +13,16 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"><?php echo $title ?></h1>
+          登陆界面
           <a class="btn btn-primary useradd">添加用户</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>&nbsp;</th>
+                  <th width="50">&nbsp;</th>
                   <th>用户名</th>
                   <th>真实姓名</th>
+                  <th>groupid</th>
                   <th>密码</th>
                   <th>登陆时间</th>
                   <th>登陆ip</th>
@@ -37,6 +39,7 @@ foreach($userlist as $key=>$value)
                   <td><?php echo $value['uid']?></td>
                   <td><?php echo $value['uname']?></td>
                   <td><?php echo $value['tname']?></td>
+                  <td><?php echo $value['groupid']?></td>
                   <td>********</td>
                   <td><?php echo $value['logtime']?></td>
                   <td><?php echo $value['logip']?></td>
@@ -45,11 +48,11 @@ foreach($userlist as $key=>$value)
 if($value['enable']){
 ?>
 <a class="action_cflag" rel="1" uname="<?php echo $value['uname']?>" href="javascript:void(0)">
-<span class=" glyphicon glyphicon-ok red"></span>
+<span class=" glyphicon glyphicon-ok green"></span>
 </a>
 <?php }else{?>
 <a class="action_cflag" rel="0" uname="<?php echo $value['uname']?>" href="javascript:void(0)">
-<span class=" glyphicon glyphicon-remove green"></span>
+<span class=" glyphicon glyphicon-remove red"></span>
 </a>                  
 <?php
 }
@@ -64,7 +67,7 @@ if($value['enable']){
                 
                 
                 <tr>
-                  <td colspan="8">&nbsp;</td>
+                  <td colspan="9">&nbsp;</td>
                 </tr>
               </tbody>
             </table>

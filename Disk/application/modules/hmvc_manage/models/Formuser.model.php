@@ -9,14 +9,6 @@ class Formuser extends MpModel
         parent::__construct();
     }
 
-    /*
-     * 获取post过来的信息
-     * */
-    public function load($arg)
-    {
-        $this->args = $arg;
-        return true;
-    }
 
 
     public function addValidator()
@@ -37,6 +29,9 @@ class Formuser extends MpModel
     public function add()
     {
         if($this->addValidator()){
+            $this->args['groupid'] = 9;
+            $this->args['authKey'] = md5(time().$this->args['uname']);
+            $this->args['pwd'] = \Seter\Seter::hash($this->args['pwd']);
             \Seter\Seter::getInstance()->table->f_user->insert($this->args);
             return true;
         }else{
@@ -70,6 +65,18 @@ class Formuser extends MpModel
         }
         return true;
     }
+
+
+
+
+
+
+
+
+
+
+
+
     /*更改用户
      * */
     public function update()
@@ -80,6 +87,28 @@ class Formuser extends MpModel
         }else{
             return false;
         }
+    }
+
+
+    /*
+     * 获取post过来的信息
+     * 用户链式操作
+     * */
+    public function load($arg)
+    {
+        $this->args = $arg;
+        return $this;
+    }
+
+    //是否空
+    public function Isnotempty($key)
+    {
+        if(empty($this->args[$key])){
+            $this->res['code'] = -200;
+            $this->res['msg'] = "$key is empty";
+            return false;
+        }
+        return true;
     }
 
     public function json($code=0,$msg='')
