@@ -53,7 +53,7 @@ $(document).ready(function(){
 			return false;
 		}else{
 			//location.reload();
-			 window.location.href="/manage/";
+			// window.location.href="/manage/";
 			return true;
 		}		
 		

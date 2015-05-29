@@ -28,47 +28,12 @@ class Logintest extends MpModel
 
     public function login()
     {
-        if($this->Isnotempty('uname') && $this->Isnotempty('pwd')){
-            //do
-            $this->args['uname'] = \Sham::saddslashes($this->args['uname']);
-            $row = $this->S->table->f_user->where("uname = '{$this->args['uname']}'")->getrow();
-            if(empty($row)){
-                $this->json(-200,'用户不存在')->gojson();
-            }else{
-                if($row['pwd'] == $this->S->hash($this->args['pwd'])){
-                    //禁用的用户
-                    if($row['enable']!=1){
-                        $this->json(-200,'无效用户')->gojson();
-                    }
-                    //更改登陆信息
-                    $ar = array(
-                        'logip'=>\Sham::GetIP(),
-                        'logtime'=>\Sham::T(),
-                    );
-                    //更改数据库激励
-                    $this->S->table->f_user->where("uname = '{$this->args['uname']}'")->update($ar);
-                    //日志记录
-
-
-                    //dolog
-                    //算法验证保证COOKIE安全
-                    $tm = time();
-                    $signnature = \Sham::signnature($row['uname'].$row['tname'].$row['authkey'].$tm);;
-                    \Sham::setcookie('uname',$row['uname']);
-                    \Sham::setcookie('tname',$row['tname']);
-                    \Sham::setcookie('authkey',$row['authkey']);
-                    \Sham::setcookie('tm',$tm);
-                    \Sham::setcookie('signature',$signnature);             //签名算法
-
-                    $this->json(200,'登陆成功')->gojson();
-                }else{
-                    $this->json(-200,'密码错')->gojson();
-                }
-            }
+        //调用seter登陆模块       //自动记录了cookie
+        if($this->S->user->login($this->args['uname'],$this->args['pwd'])){
+            $this->json(200,'登陆成功')->gojson();
         }else{
-            $this->json(-200,'用户名密码不能为空')->gojson();
+            $this->S->jsonout();
         }
-        return $this;
     }
 
     /*

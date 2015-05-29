@@ -8,24 +8,14 @@
  * */
 
 namespace Seter;
-
 //use Seter\RedBeanPHP;
-
-
 define('SHAM_PATH',__DIR__);
-
 !empty($_GET)   && define('ISGET',TRUE);
 !empty($_POST)  && define('ISPOST',TRUE);
-
 !defined('ISGET')   && define('ISGET',false);
 !defined('ISPOST')  && define('ISPOST',false);
-
-
 include(__DIR__.'\Fun.php');
-
 include(__DIR__.'\Config.php');
-
-
 !defined('BTIME')  && define('BTIME', \Sham::T());
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
@@ -54,6 +44,23 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
      * @var array
      */
     public $data = array();
+
+    /*
+     * 部分验证失败之后
+     * 设置json = true
+     * 输出jsonarr
+     * //用json拦截器输出
+     * */
+    public $json        = false;
+    public $jsonarr     = array();
+
+    public function jsonout()
+    {
+        if($this->json){
+            echo json_encode($this->jsonarr);
+            exit;
+        }
+    }
 
     public function __construct($items = array())
     {
@@ -91,13 +98,13 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
             return new \Seter\Library\User();
         });
         //是否登陆
-        $this->singleton('isguest', function () {
-            if(!empty($this->identify)){
-                return true;
-            }else{
-                return false;
-            }
-        });
+//        $this->singleton('isguest', function () {
+//            if(!empty($this->identify)){
+//                return true;
+//            }else{
+//                return false;
+//            }
+//        });
     }
 
 
