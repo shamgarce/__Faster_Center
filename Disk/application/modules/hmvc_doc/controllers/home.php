@@ -1,5 +1,7 @@
 <?php
 
+use \Seter\Sham;
+
 /**
  * Description of index
  *
@@ -17,17 +19,34 @@ class Home extends MpController {
         $this->Seter = \Seter\Seter::getInstance();
         //文档系统
 
-//        if($this->Seter)
+//        //判断是否登陆
+//        if($this->Seter->user->isguest){
+//            \Sham::R('/manage/home.logintest/?re='.\Sham::shtmlspecialchars($_SERVER['REQUEST_URI']));
+//        }
     }
 
 
     public function doIndex() {
         echo 123;
-
-
-
     }
 
+    public function doDis() {
+        echo 'dis';
+    }
+
+    public function doDisplay() {
+        setcookie('sdf',123);
+        print_r($_COOKIE);
+        $this->Seter->user->display();
+
+//        echo $this->Seter->user->islogin();
+//        echo $this->Seter->user->isguest();
+        exit;
+        var_dump($this->input);
+        print_r($this->input->cookie());
+        print_r($_COOKIE);
+        $this->Seter->user->display();
+    }
 
 }
 

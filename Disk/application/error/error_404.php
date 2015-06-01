@@ -5,7 +5,7 @@
         <title>404</title>
     </head>
     <body><h1>
-        <?php
+        404 <?php
         echo $msg;
         ?></h1>
     </body>

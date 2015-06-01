@@ -5,7 +5,7 @@
         <title>50x</title>
     </head>
     <body>
-        <?php
+        50x <?php
         echo $msg;
         ?>
     </body>

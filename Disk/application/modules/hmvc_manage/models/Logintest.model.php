@@ -30,6 +30,7 @@ class Logintest extends MpModel
     {
         //调用seter登陆模块       //自动记录了cookie
         if($this->S->user->login($this->args['uname'],$this->args['pwd'])){
+            $this->res['url'] = $get['re'];
             $this->json(200,'登陆成功')->gojson();
         }else{
             $this->S->jsonout();

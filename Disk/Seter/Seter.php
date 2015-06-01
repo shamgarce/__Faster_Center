@@ -20,6 +20,8 @@ include(__DIR__.'\Config.php');
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 {
+    private static $loginurl    = '';         //登陆地址
+
     /*
      * 单例调用
      * */

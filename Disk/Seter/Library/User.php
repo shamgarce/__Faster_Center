@@ -28,10 +28,40 @@ namespace Seter\Library;
  * */
 class User
 {
+
+    public $loginurl    = '/manage/home.logintest';
+    public $logout      = '';
+    public $logingo     = '/manage/';
+
+    /*
+     * =============================================================
+     *     //针对当前用户
+     * =============================================================
+     * */
+    public $tablename   = 'f_user';
+    public $uid         = 'uid';
+    public $fileduname  = 'uname';
+    public $filedtname  = 'tname';
+    public $filedpwd    = 'pwd';
+    public $filedauthkey= 'authkey';
+
+    public $filedgroupid= 'groupid';
+    public $filedenable = 'enable';
+
+    public $fileloginip = 'logip';
+    public $filelogintm = 'logtime';
+    //* =============================================================
+    public $identity = array();
+    public $isguest = true;
+
+
     public function __construct()
     {
         $this->S = \Seter\Seter::getInstance();
+        $this->isguest = $this->isguest();
     }
+
+
 
 //    public function getusergroup(){
 //    }
@@ -58,26 +88,6 @@ class User
 //    public $isguest= true;
 //    public $isguest= true;
 
-    /*
-     * =============================================================
-     *     //针对当前用户
-     * =============================================================
-     * */
-    public $tablename   = 'f_user';
-    public $uid         = 'uid';
-    public $fileduname  = 'uname';
-    public $filedtname  = 'tname';
-    public $filedpwd    = 'pwd';
-    public $filedauthkey= 'authkey';
-
-    public $filedgroupid= 'groupid';
-    public $filedenable = 'enable';
-
-    public $fileloginip = 'logip';
-    public $filelogintm = 'logtime';
-    //* =============================================================
-    public $identity = array();
-    public $isguest = true;
 
 //    public $uname = '';
 //    public $tname = '';
@@ -125,14 +135,14 @@ class User
                     //算法验证保证COOKIE安全
                     //$filedauthkey  $filedgroupid
                     $tm = time();
-                    $signnature = \Sham::signnature($row[$this->fileduname].$row[$this->filedtname].$row[$this->filedauthkey].$row[$this->filedgroupid].$tm);;
+                    $signature = \Sham::signnature($row[$this->fileduname].$row[$this->filedtname].$row[$this->filedauthkey].$row[$this->filedgroupid].$tm);;
                     \Sham::setcookie('uname',$row[$this->fileduname]);
                     \Sham::setcookie('tname',$row[$this->filedtname]);
                     \Sham::setcookie('authkey',$row[$this->filedauthkey]);
                     \Sham::setcookie('groupid',$row[$this->filedgroupid]);
 
                     \Sham::setcookie('tm',$tm);                     //记录时间
-                    \Sham::setcookie('signature',$signnature);      //签名算法
+                    \Sham::setcookie('signature',$signature);      //签名算法
                     return true;
                 }else{
                     $this->S->json = true;
@@ -182,8 +192,39 @@ class User
     {
     }
 
+    public function display()
+    {
+        echo '<br>uname:' . \Sham::getcookie('uname');
+        echo '<br>tname:' . \Sham::getcookie('tname');
+        echo '<br>authkey:' . \Sham::getcookie('authkey');
+        echo '<br>groupid:' . \Sham::getcookie('groupid');
+
+        echo '<br>tm:' . \Sham::getcookie('tm');             //记录时间
+        echo '<br>signature:' . \Sham::getcookie('signature');      //签名算法
+
+        echo '<br>' . \Sham::signnature(\Sham::getcookie('uname').\Sham::getcookie('tname').\Sham::getcookie('authkey').\Sham::getcookie('groupid').\Sham::getcookie('tm'));
+        echo '<hr>';
+    }
+
+    public function islogin()
+    {
+        $uname      = \Sham::getcookie('uname');
+        $tname      = \Sham::getcookie('tname');
+        $authkey    = \Sham::getcookie('authkey');
+        $groupid    = \Sham::getcookie('groupid');
+
+        $tm         = \Sham::getcookie('tm');             //记录时间
+        $signature  = \Sham::getcookie('signature');      //签名算法
+        if($signature == \Sham::signnature($uname.$tname.$authkey.$groupid.$tm)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function isguest()
     {
+        return !$this->islogin();
     }
 
 //    public function __set($a, $b) {

@@ -5,7 +5,7 @@
         <title>db</title>
     </head>
     <body><h1>
-        <?php
+        DB <?php
         echo $msg;
         ?></h1>
     </body>

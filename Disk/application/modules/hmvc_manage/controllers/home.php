@@ -1,4 +1,5 @@
 <?php
+use \Seter\Sham;
 
 /**
  * Description of index
@@ -25,13 +26,45 @@ class Home extends MpController {
         $this->view("home/index",$data);
     }
 
+    public function doDisplay() {
+        setcookie('sdf',123);
+        print_r($_COOKIE);
+        $this->Seter->user->display();
+
+//        echo $this->Seter->user->islogin();
+//        echo $this->Seter->user->isguest();
+        exit;
+        var_dump($this->input);
+        print_r($this->input->cookie());
+        print_r($_COOKIE);
+        $this->Seter->user->display();
+    }
+//
+//    public function doDisplay() {
+//        var_dump($this->input);
+//        print_r($this->input->cookie());
+//        print_r($_COOKIE);
+//        $this->Seter->user->display();
+//        echo '<hr>';
+//        $this->Seter->user->isguest();
+//        echo         $this->Seter->user->isguest;
+//        echo         $this->Seter->user->islogin();
+//
+//
+//
+//    }
+
+
+
     public function doLogintest() {
         if(ISPOST){
             //登陆动作
             $this->model->logintest->load($this->Seter->request->post)->login();
         }
         $data=array(
-            'title'=>'测试登陆'
+            'title'=>'测试登陆',
+//            'url' => $this->Seter->user->logingo,             //默认地址
+            're' => $this->Seter->request->get['re'],           //登陆之后的地址
         );
         $this->view("home/logintest",$data);
     }

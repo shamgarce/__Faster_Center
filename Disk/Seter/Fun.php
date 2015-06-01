@@ -14,19 +14,20 @@ class Sham
     {
         return MD5(MD5(MD5(MD5($str))));
     }
-
+//
     //setcookie
     //设置cookie
     //7*24*60*60 = 604800
     public static function setcookie($cookiename,$cookievalue='',$cookietime=604800)
     {
         $cookiename = "Seter_$cookiename";
-        setcookie($cookiename,$cookievalue,time()+$cookietime);
+        $tm = time()+$cookietime;
+        setcookie($cookiename,$cookievalue,$tm);
         return true;
     }
-
-    //getcookie
-    //获取cookie
+//
+//    //getcookie
+//    //获取cookie
     public static function getcookie($cookiename)
     {
         $cookiename = "Seter_$cookiename";
@@ -191,10 +192,10 @@ class Sham
     public static function shtmlspecialchars($string) {
         if (is_array($string)) {
             foreach ($string as $key => $val) {
-                $string[$key] = shtmlspecialchars($val);
+                $string[$key] = \Sham::shtmlspecialchars($val);
             }
         } else {
-            $string = htmlspecialchars(strip_sql($string), ENT_QUOTES);
+            $string = htmlspecialchars($string);
         }
         return $string;
     }

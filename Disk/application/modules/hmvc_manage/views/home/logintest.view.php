@@ -1,6 +1,4 @@
 <?php include($this->view_path('common/manageheader',1));?>
-
-
   <body>
 
     <div class="container" style="padding-top:150px;width:300px">
@@ -41,7 +39,7 @@ $(document).ready(function(){
 			data: {
 				uname 	: $("input[name='uname']").val(),
 				pwd 	: $("input[name='pwd']").val(),
-				},
+        },
 			dataType: "json",
 			async:false,
 			cache:false
@@ -52,8 +50,8 @@ $(document).ready(function(){
 			alert(res.msg);
 			return false;
 		}else{
-			//location.reload();
-			// window.location.href="/manage/";
+//			location.reload();
+			window.location.href="<?php echo $re?>";
 			return true;
 		}		
 		
