@@ -26,6 +26,8 @@ $system['hmvc_modules'] = array(
 	'manage' => 'hmvc_manage',
 	'man' 	=> 'hmvc_man',
 	'v6' 	=> 'hmvc_v6',
+	'doc' 	=> 'hmvc_doc',
+
 );
 $system['debug'] = false;
 
