@@ -99,6 +99,12 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         $this->singleton('user', function ($c) {
             return new \Seter\Library\User();
         });
+
+        $this->singleton('doc', function ($c) {
+            return new \Seter\Library\Doc();
+        });
+
+
         //是否登陆
 //        $this->singleton('isguest', function () {
 //            if(!empty($this->identify)){
@@ -112,6 +118,17 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 
     public static function sterini()
     {
+    }
+
+
+    //用于密码hash
+    public static function pwdhash($str='')
+    {
+        if(empty($str)){
+            return '';
+        }else{
+            return md5($str);
+        }
     }
 
     /*hash函数

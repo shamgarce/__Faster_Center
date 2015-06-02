@@ -1,4 +1,4 @@
-<?php include($this->view_path('common/manageheader',1));?>
+<?php include($this->view_path('./common/manageheader',1));?>
 
 
   <body>
@@ -27,11 +27,11 @@ foreach($dialog as $key=>$value){
   
   
   
-    <script src="/A/Jquery/jquery-1.11.1.js"></script>
+<script src="/A/Jquery/jquery-1.11.1.js"></script>
+<script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script src="/A/artDialog4.1.7/artDialog.js?skin=default"></script>
+<script src="/A/CK.js"></script>
 
-  <script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-  <script src="/A/artDialog4.1.7/artDialog.js?skin=default"></script>
-  <script src="/A/CK.js"></script>
     
 <script language="javascript">
 $(document).ready(function(){

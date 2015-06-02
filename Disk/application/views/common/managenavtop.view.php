@@ -14,7 +14,10 @@
                 <li><a href="/manage">首页</a></li>
                 <li><a href="/manage/sys.set">设置</a></li>
                 <li><a href="/manage/help.index">帮助</a></li>
-                <li><a href="/login.logout">退出</a></li>
+
+                <li><a href="/doc/home.index" target="_blank">DOC</a></li>
+                
+                <li><a href="/manage/home.logout">退出</a></li>
             </ul>
             <!-- form class="navbar-form navbar-right">
               <input type="text" class="form-control" placeholder="Search...">

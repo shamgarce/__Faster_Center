@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN"><head>
+    <title>Cross PHP Framework</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="php, php框架, composer, HMVC, Layer, 路由别名, PSR, 注释配置, 轻量php开发框架, Cross Framework, PHP Framework">
+    <meta name="Description" content="Cross PHP Framework 是一个简单, 轻量, 易扩展的PHP5开发框架, 遵循PSR标准,
+                      支持composer, HMVC, 支持注释配置, Layer布局, 路由别名, 全局的异常处理, 简单的Mysql查询, 欢迎各种性能对比测试">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/A/U/U2/jquery-ui-1.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/A/U/U2/sons-of-obsidian.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/A/U/U2/pure-min.css">
+    <link rel="stylesheet" rev="stylesheet" href="/A/U/U2/style.css" media="all">
+
+    <script src="/A/U/U2/hm.js"></script>
+    <script src="/A/Jquery/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="/A/U/U2/jquery-ui-1.js" type="text/javascript"></script>
+    <script src="/A/U/U2/marked.js" type="text/javascript"></script>
+    <script src="/A/U/U2/base.js" type="text/javascript"></script>
+    <script src="/A/U/U2/prettify.js" type="text/javascript"></script>
+
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://document.crossphp.com/static/ lib/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/A/U/U2/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://document.crossphp.com/static/ css/layouts/blog-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/A/U/U2/blog.css">
+    <!--<![endif]-->
+    <style>
+        .doc-nav-ul{clean:both;}
+    </style>
+
+</head>
+<body class="pure-skin-mine">
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header" style="text-align: left;margin:10% 10px">
+            <div style="text-align: left">
+                <img src="/A/U/U2/logo.png" style="width:200px;" alt="Cross PHP Framework">
+            </div>
+
+            <nav class="nav" style="padding-bottom: 20px;">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="pure-button" href="http://www.crossphp.com/">主页</a></li>
+                    <li class="nav-item"><a class="pure-button" href="http://document.crossphp.com/">文档</a></li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://document.crossphp.com/main/login.html">登录</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="nav" style="float:left;">
+
+                <ul class="nav-list">
+
+
+                    <ul class="">
+
+                        <ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">框架文档</span><ul class="doc-nav-ul"><ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">1.概览</span>
+                                    <ul class="doc-nav-ul"><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/1.%E6%A6%82%E8%A7%88/1.%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.md.html">1.项目结构.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/1.%E6%A6%82%E8%A7%88/2.APP%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.md.html">2.APP配置文件.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/1.%E6%A6%82%E8%A7%88/3.%E6%A1%86%E6%9E%B6%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F.md.html">3.框架启动方式.md</a></li></ul></ul>
+
+
+                                <ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">2.控制器</span><ul class="doc-nav-ul"><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/1.%E5%88%9B%E5%BB%BA%E6%8E%A7%E5%88%B6%E5%99%A8.md.html">1.创建控制器.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/2.%E4%BD%BF%E7%94%A8app%E9%85%8D%E7%BD%AE.md.html">2.使用app配置.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/3.%E6%8E%A5%E6%94%B6url%E5%8F%82%E6%95%B0.md.html">3.接收url参数.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/4.%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8modules.md.html">4.在控制器中使用modules.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/5.%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A%E9%85%8D%E7%BD%AE.md.html">5.使用注释配置.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/2.%E6%8E%A7%E5%88%B6%E5%99%A8/6.%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8view.md.html">6.在控制器中使用view.md</a></li></ul>
+
+
+                                </ul><ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">3.Module</span><ul class="doc-nav-ul"><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/3.Module/1.%E7%AE%80%E4%BB%8B.md.html">1.简介.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/3.Module/2.%E5%88%9B%E5%BB%BAmodule%E5%B9%B6%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.md.html">2.创建module并连接数据库.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/3.Module/3.MySQL%E6%9F%A5%E8%AF%A2.md.html">3.MySQL查询.md</a></li></ul></ul><ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">4.视图</span>
+
+                                    <ul class="doc-nav-ul"><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.%E8%A7%86%E5%9B%BE/1.%E6%A6%82%E8%BF%B0.md.html">1.概述.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.%E8%A7%86%E5%9B%BE/2.%E6%A8%A1%E6%9D%BF%E7%BB%93%E6%9E%84.md.html">2.模板结构.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.%E8%A7%86%E5%9B%BE/3.%E8%A7%86%E5%9B%BE%E6%8E%A7%E5%88%B6%E5%99%A8.md.html">3.视图控制器.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.%E8%A7%86%E5%9B%BE/4.%E4%BD%BF%E7%94%A8%E5%B8%83%E5%B1%80.md.html">4.使用布局.md</a></li><li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.%E8%A7%86%E5%9B%BE/5.%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8.md.html">5.模板的使用.md</a></li></ul></ul>
+
+                                <ul class=""><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">5.扩展框架</span>
+
+                                    <ul class="doc-nav-ul">
+                                        <li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/5.%E6%89%A9%E5%B1%95%E6%A1%86%E6%9E%B6/1.%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9model.md.html">1.使用第三方model.md</a></li>
+                                        <li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/5.%E6%89%A9%E5%B1%95%E6%A1%86%E6%9E%B6/2.%E6%89%A9%E5%B1%95%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F.md.html">2.扩展模板系统.md</a></li>
+                                        <li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/5.%E6%89%A9%E5%B1%95%E6%A1%86%E6%9E%B6/3.%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E7%A8%8B%E5%BA%8F%E4%BA%A4%E4%BA%92.md.html">3.与第三方程序交互.md</a></li>
+                                        <li style="padding-left:30px;"><a href="http://document.crossphp.com/read/%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/5.%E6%89%A9%E5%B1%95%E6%A1%86%E6%9E%B6/3.%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E7%A8%8B%E5%BA%8F%E4%BA%A4%E4%BA%92.md.html">3.与第三方程序交互.md</a></li>
+                                       
+
+
+                                    </ul>
+
+
+
+                                </ul>
+
+
+
+
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <!-- A single blog post -->
+                <section class="post">
+                    <div id="main" style="position: relative;padding-bottom: 70px;">
+                        <!--[if lte IE 8]>
+                        <pre class="markdown-body" id="markdown-preview"></pre>
+                        <![endif]-->
+                        <!--[if gt IE 8]><!-->
+                        <div class="markdown-body" id="markdown-preview">
+                        
+                        
+                        </div>
+                        <!--<![endif]-->
+                    </div>
+                    <div style="display:none">
+                        <textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
+##CrossPHP一个简洁高效，轻量易扩展的PHP5.3+开发框架。
+
+### 一. 需求
+PHP5.3以上版本，mysql需要PDO支持。
+
+### 二. 简介
+
+支持PSR标准，支持composer。HMVC，支持注释配置（支持自定义，只有想不到，没有做不到）。
+Layer布局支持，更换模板更简单。路由别名（先写代码，后定义，比如rul：/Controoooooller/Actiooooon/5，可以通过
+别名指定为：/d/5）。
+全局的异常处理系统及错误展示，在开发中可以快速定位到具体的代码行数。简单的Mysql查询。欢迎各种性能对比测试。
+
+### 三. 下载安装
+1. 从[http://www.crossphp.com/download](http://www.crossphp.com/download 
+"crossphp.com")下载框架完整版并解压到本地目录（默认情况下skeleton和crossphp要保持在同级目录）。
+2. 通过 `http://localhost/skeleton/htdocs/web` 来访问默认的web页面
+
+
+&gt;正常访问 `http://localhost/skeleton/htdocs/admin`, 
+需要修改你的数据库配置`skeleton/config/db.config.php`,并导入`skeleton/sql/admin
+/back.sql`文件。
+
+
+### 四. 使用Composer安装
+单独下载最新版skeleton，并解压到web目录，在skeleton根目录下新建一个名为 `composer.json` 文件，输入如下内容
+
+    {
+        "require": {
+            "ideaa/cross": "dev-master"
+        }
+    }
+
+进入进入系统的命令行模式并切换到skeleton目录，在命令行中输入 `composer install` , 
+等待安装完后，编辑skeleton目录下的 `crossboot.php` 文件，修改文件的最后两行为：
+
+    require PROJECT_PATH.'vendor/autoload.php';
+    class_alias('Cross\Core\Delegate', 'Cross');
+
+加载`vendor`提供的autoload文件， 为 `Cross\Core\Delegate` 指定一个别名，至此安装结束。
+&gt;正常访问 `http://localhost/skeleton/htdocs/admin`, 
+需要修改你的数据库配置`skeleton/config/db.config.php`,并导入`skeleton/sql/admin
+/back.sql`文件。
+</textarea>
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//    var cpf = {
+//        "url_dot": "/",
+//        "site_url": "http://document.crossphp.com/",
+//        "res_base_url": "./static",
+//        "url_link": function (s) {
+//            var url = s.split(":");
+//            return url[1] ? this.site_url + url[0] + this.url_dot + url[1] : this.site_url + url[0];
+//        }
+//    };
+
+    $(function () {
+        var $markdown_preview = $("#markdown-preview"), aid = hashData.read("id");
+        if (aid.id) {
+            var id = aid.id, doc = $("#" + id), doc_id = doc.attr("doc-id");
+            if (doc_id) {
+                $("#menu").scrollTop(doc.offset().top - 50);
+                getDocAndMarked(doc_id);
+            } else {
+               // window.location.href = cpf.site_url;
+            }
+        } else {
+            $markdown_preview.html(marked(document.getElementById('content').value));
+        }
+
+        $("#markdown-preview pre").addClass("prettyprint").attr('style',
+            'background:#333;' +
+            'padding: 9.5px;' +
+            'font-size: 13px;' +
+            'line-height: 20px; ' +
+            'border-radius: 10px;'
+        );
+
+        prettyPrint();
+
+//        $("#menu").resizable({
+//            handles: "e",
+//            resize: function (event, ui) {
+//                $markdown_preview.width($('body').width() - ui.size.width - 10); //10 is padding value
+//            }
+//        });
+
+        $(".doc-nav-menu").click(function () {
+            $(this).next("ul").toggle();
+        });
+
+//        $("#editDOC").click(function () {
+//            var doc = $(this).attr("doc")
+//            if (doc) {
+//               // window.location.href = cpf.url_link("doc:edit") + cpf.url_dot + doc;
+//            }
+//            console.log(doc);
+//        });
+
+//        var isOut = false;
+//        var doc_menu = $("#doc-menu");
+//        var other = document.getElementsByTagName('body')[0];
+
+//        $("#doc-m").hover(function () {
+//            doc_menu.slideDown('fast').show(200);
+//            isOut = true;
+//        }, function () {
+//            other.onclick = function () {
+//                if (isOut) {
+//                    doc_menu.hide(1);
+//                }
+//            };
+//        });
+    });
+
+//    function getContent(t) {
+//        var doc_id = $(t).attr("doc-id");
+//        getDocAndMarked(doc_id);
+//        hashData.write("id", $(t).attr("id"));
+//    }
+
+//    function getDocAndMarked(id) {
+//        $.get(cpf.url_link("read") + cpf.url_dot + id, function (d) {
+//            var dd = $.parseJSON(d);
+//            if (dd.content) {
+//                $("#editDOC").attr("doc", dd.path).show();
+//                $("#markdown-preview").html(marked(dd.content));
+//                $("#markdown-preview pre").addClass("prettyprint").attr('style',
+//                    'background:#333;' +
+//                    'padding: 9.5px;' +
+//                    'font-size: 13px;' +
+//                    'line-height: 20px; ' +
+//                    'border-radius: 10px;'
+//                );
+//                prettyPrint();
+//            } else {
+//                $("#markdown-preview").html("暂无内容");
+//            }
+//        })
+    //}
+</script>
+
+
+</body></html>

@@ -15,10 +15,10 @@ namespace Seter\Library;
  * //========================================
  * login
  * logout
- *
- *
- *
  * isguest
+ * islogin
+
+ *
  * uname
  * tnamne
  * groupid
@@ -29,8 +29,8 @@ namespace Seter\Library;
 class User
 {
 
-    public $loginurl    = '/manage/home.logintest';
-    public $logout      = '';
+    public $loginurl    = '/manage/home.login';
+    public $logout      = '/manage/home.loginout';
     public $logingo     = '/manage/';
 
     /*
@@ -85,17 +85,6 @@ class User
 //        return $this;
 //    }
 
-//    public $isguest= true;
-//    public $isguest= true;
-
-
-//    public $uname = '';
-//    public $tname = '';
-//    public $authKey = '';
-//    public $groupid = '';
-//    public $authKey = '';
-//    public $accessToken = '';
-
     //登陆
     public function login($uname,$pwd)
     {
@@ -112,7 +101,7 @@ class User
                 return false;
             }else{
 
-                if($row[$this->filedpwd] == $this->S->hash($pwd)){
+                if($row[$this->filedpwd] == $this->S->pwdhash($pwd)){
                     //禁用的用户
                     if($row[$this->filedenable]!=1){
                         $this->S->json = true;
@@ -134,15 +123,17 @@ class User
                     //dolog
                     //算法验证保证COOKIE安全
                     //$filedauthkey  $filedgroupid
+                    // 604800 = 7*24*60*60
+                    //路径 //可以通用
                     $tm = time();
                     $signature = \Sham::signnature($row[$this->fileduname].$row[$this->filedtname].$row[$this->filedauthkey].$row[$this->filedgroupid].$tm);;
-                    \Sham::setcookie('uname',$row[$this->fileduname]);
-                    \Sham::setcookie('tname',$row[$this->filedtname]);
-                    \Sham::setcookie('authkey',$row[$this->filedauthkey]);
-                    \Sham::setcookie('groupid',$row[$this->filedgroupid]);
+                    setCookie('user_uname',$row[$this->fileduname],$tm+604800,'/');
+                    setCookie('user_tname',$row[$this->filedtname],$tm+604800,'/');
+                    setCookie('user_authkey',$row[$this->filedauthkey],$tm+604800,'/');
+                    setCookie('user_groupid',$row[$this->filedgroupid],$tm+604800,'/');
 
-                    \Sham::setcookie('tm',$tm);                     //记录时间
-                    \Sham::setcookie('signature',$signature);      //签名算法
+                    setCookie('user_tm',$tm,$tm+604800,'/');                     //记录时间
+                    setCookie('user_signature',$signature,$tm+604800,'/');      //签名算法
                     return true;
                 }else{
                     $this->S->json = true;
@@ -168,6 +159,13 @@ class User
     //登出
     public function logout()
     {
+        setCookie('user_uname',$row[$this->fileduname],$tm-1,'/');
+        setCookie('user_tname',$row[$this->filedtname],$tm-1,'/');
+        setCookie('user_authkey',$row[$this->filedauthkey],$tm-1,'/');
+        setCookie('user_groupid',$row[$this->filedgroupid],$tm-1,'/');
+
+        setCookie('user_tm',$tm,$tm-1,'/');                     //记录时间
+        setCookie('user_signature',$signature,$tm-1,'/');      //签名算法
         return true;
     }
 
@@ -192,29 +190,16 @@ class User
     {
     }
 
-    public function display()
-    {
-        echo '<br>uname:' . \Sham::getcookie('uname');
-        echo '<br>tname:' . \Sham::getcookie('tname');
-        echo '<br>authkey:' . \Sham::getcookie('authkey');
-        echo '<br>groupid:' . \Sham::getcookie('groupid');
 
-        echo '<br>tm:' . \Sham::getcookie('tm');             //记录时间
-        echo '<br>signature:' . \Sham::getcookie('signature');      //签名算法
-
-        echo '<br>' . \Sham::signnature(\Sham::getcookie('uname').\Sham::getcookie('tname').\Sham::getcookie('authkey').\Sham::getcookie('groupid').\Sham::getcookie('tm'));
-        echo '<hr>';
-    }
 
     public function islogin()
     {
-        $uname      = \Sham::getcookie('uname');
-        $tname      = \Sham::getcookie('tname');
-        $authkey    = \Sham::getcookie('authkey');
-        $groupid    = \Sham::getcookie('groupid');
-
-        $tm         = \Sham::getcookie('tm');             //记录时间
-        $signature  = \Sham::getcookie('signature');      //签名算法
+        $uname      = cookie('user_uname');
+        $tname      = cookie('user_tname');
+        $authkey    = cookie('user_authkey');
+        $groupid    = cookie('user_groupid');
+        $tm         = cookie('user_tm');             //记录时间
+        $signature  = cookie('user_signature');      //签名算法
         if($signature == \Sham::signnature($uname.$tname.$authkey.$groupid.$tm)){
             return true;
         }else{
@@ -266,6 +251,45 @@ mysql> show columns from f_user;
 10 rows in set (0.00 sec)
         */
     }
+
+    /*
+     * 调试用
+     * */
+    public function display()
+    {
+        echo '<hr>';
+        echo 'cookie';
+        echo '<br>uname:' . cookie('user_uname');
+        echo '<br>tname:' . cookie('user_tname');
+        echo '<br>authkey:' . cookie('user_authkey');
+        echo '<br>groupid:' . cookie('user_groupid');
+
+        echo '<br>tm:' . cookie('tm');             //记录时间
+        echo '<br>signature:' . cookie('user_signature');      //签名算法
+
+        echo '<hr>';
+        echo 'signnature';
+        echo '<br>' . \Sham::signnature(
+                cookie('user_uname')
+                .cookie('user_tname')
+                .cookie('user_authkey')
+                .cookie('user_groupid')
+                .cookie('user_tm')
+            );
+        echo '<hr>';
+        echo 'islogin';
+        echo $this->islogin();;
+        echo '<hr>';
+        echo 'isguest';
+        echo $this->isguest();;
+        echo '<hr>';
+        echo ' var isguest';
+        echo $this->isguest;;
+
+
+
+    }
+
 
 
 }

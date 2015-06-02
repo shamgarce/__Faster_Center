@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 
 		var res = $.ajax({
-			url : '/manage/home.logintest',
+			url : '/manage/home.login',
 			type: 'post',
 			data: {
 				uname 	: $("input[name='uname']").val(),

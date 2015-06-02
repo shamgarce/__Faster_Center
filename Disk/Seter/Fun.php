@@ -263,6 +263,26 @@ class Sham
         return $cip;
     }
 
-
+    function delDirAndFile( $dirName )
+    {
+        if ( $handle = opendir( "$dirName" ) ) {
+            while ( false !== ( $item = readdir( $handle ) ) ) {
+                if ( $item != "." && $item != ".." ) {
+                    if ( is_dir( "$dirName/$item" ) ) {
+                        \Sham::delDirAndFile( "$dirName/$item" );
+                    } else {
+                        unlink( "$dirName/$item" );
+                        //if( unlink( "$dirName/$item" ) )    echo "成功删除文件： $dirName/$item<br />\n";
+                    }
+                }
+            }
+            closedir( $handle );
+            rmdir( $dirName ) ;
+            //if( rmdir( $dirName ) ) echo "成功删除目录： $dirName<br />\n";
+        }
+    }
 
 }
+
+
+
