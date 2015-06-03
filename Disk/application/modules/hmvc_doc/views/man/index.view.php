@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="/A/U/U2/pure-min.css">
     <link rel="stylesheet" rev="stylesheet" href="/A/U/U2/style.css" media="all">
 
-    <link href="/A/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
-    <link href="/A/CSS/font.css" rel="stylesheet">
-    
     <script src="/A/U/U2/hm.js"></script>
     <script src="/A/Jquery/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="/A/U/U2/jquery-ui-1.js" type="text/javascript"></script>
@@ -52,7 +49,7 @@
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">主页</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.man">管理</a></li>
+                    <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
                 </ul>
             </nav>
@@ -61,8 +58,8 @@
                 <ul class="nav-list">
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
-                                    <li style="padding-left:30px;"><a href="/doc/home.manbook">1.book管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/home.manset">2.配置</a></li>
+                                    <li style="padding-left:30px;"><a href="/doc/man.book">1.book管理</a></li>
+                                    <li style="padding-left:30px;"><a href="/doc/man.set">2.配置</a></li>
                                     </ul>
                        </ul>
                 </ul>
@@ -81,32 +78,56 @@
                         <pre class="markdown-body" id="markdown-preview"></pre>
                         <![endif]-->
                         <!--[if gt IE 8]><!-->
-                      <div class="markdown-body" id="markdown-preview">
-                        首页 > book管理 > 添加<br />
-                       
-                        
-                        <form method="post" action="/doc/home.manbookedit">
-  <div class="form-group">
-    <label for="exampleInputEmail1">book</label>
-    <input name="book" type="" class="form-control" placeholder="book" value="<?php echo $book;?>">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">note</label>
-    <input name="node" type="" class="form-control" placeholder="node" value="<?php echo $node;?>">
-  </div> 
-  <div class="form-group">
-    <label for="exampleInputPassword1">note</label>
-    <textarea name="nr" class="form-control" rows="3"><?php echo $nr;?></textarea>
-  </div>
-  <input type="submit" name="button" id="button" value="提交" />
-                        </form>
+                        <div class="markdown-body" id="markdown-preview">
                         
                         
                         </div>
                         <!--<![endif]-->
                     </div>
                     <div style="display:none">
-<textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
+                        <textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
+##CrossPHP一个简洁高效，轻量易扩展的PHP5.3+开发框架。
+
+### 一. 需求
+PHP5.3以上版本，mysql需要PDO支持。
+
+### 二. 简介
+
+支持PSR标准，支持composer。HMVC，支持注释配置（支持自定义，只有想不到，没有做不到）。
+Layer布局支持，更换模板更简单。路由别名（先写代码，后定义，比如rul：/Controoooooller/Actiooooon/5，可以通过
+别名指定为：/d/5）。
+全局的异常处理系统及错误展示，在开发中可以快速定位到具体的代码行数。简单的Mysql查询。欢迎各种性能对比测试。
+
+### 三. 下载安装
+1. 从[http://www.crossphp.com/download](http://www.crossphp.com/download 
+"crossphp.com")下载框架完整版并解压到本地目录（默认情况下skeleton和crossphp要保持在同级目录）。
+2. 通过 `http://localhost/skeleton/htdocs/web` 来访问默认的web页面
+
+
+&gt;正常访问 `http://localhost/skeleton/htdocs/admin`, 
+需要修改你的数据库配置`skeleton/config/db.config.php`,并导入`skeleton/sql/admin
+/back.sql`文件。
+
+
+### 四. 使用Composer安装
+单独下载最新版skeleton，并解压到web目录，在skeleton根目录下新建一个名为 `composer.json` 文件，输入如下内容
+
+    {
+        "require": {
+            "ideaa/cross": "dev-master"
+        }
+    }
+
+进入进入系统的命令行模式并切换到skeleton目录，在命令行中输入 `composer install` , 
+等待安装完后，编辑skeleton目录下的 `crossboot.php` 文件，修改文件的最后两行为：
+
+    require PROJECT_PATH.'vendor/autoload.php';
+    class_alias('Cross\Core\Delegate', 'Cross');
+
+加载`vendor`提供的autoload文件， 为 `Cross\Core\Delegate` 指定一个别名，至此安装结束。
+&gt;正常访问 `http://localhost/skeleton/htdocs/admin`, 
+需要修改你的数据库配置`skeleton/config/db.config.php`,并导入`skeleton/sql/admin
+/back.sql`文件。
 </textarea>
                     </div>
                 </section>
@@ -121,13 +142,6 @@
     </div>
 </div>
 
-
-
-    <!-- ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/A/jquery/jquery-1.11.1.min.js"></script>
-    <script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-
 <script type="text/javascript">
 //    var cpf = {
 //        "url_dot": "/",
@@ -140,7 +154,18 @@
 //    };
 
     $(function () {
-
+        var $markdown_preview = $("#markdown-preview"), aid = hashData.read("id");
+        if (aid.id) {
+            var id = aid.id, doc = $("#" + id), doc_id = doc.attr("doc-id");
+            if (doc_id) {
+                $("#menu").scrollTop(doc.offset().top - 50);
+                getDocAndMarked(doc_id);
+            } else {
+               // window.location.href = cpf.site_url;
+            }
+        } else {
+            $markdown_preview.html(marked(document.getElementById('content').value));
+        }
 
         $("#markdown-preview pre").addClass("prettyprint").attr('style',
             'background:#333;' +
@@ -150,7 +175,7 @@
             'border-radius: 10px;'
         );
 
-        //prettyPrint();
+        prettyPrint();
 
 //        $("#menu").resizable({
 //            handles: "e",

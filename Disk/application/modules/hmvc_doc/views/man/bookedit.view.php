@@ -52,7 +52,7 @@
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">主页</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.man">管理</a></li>
+                    <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
                 </ul>
             </nav>
@@ -61,8 +61,8 @@
                 <ul class="nav-list">
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
-                                    <li style="padding-left:30px;"><a href="/doc/home.manbook">1.book管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/home.manset">2.配置</a></li>
+                                    <li style="padding-left:30px;"><a href="/doc/man.book">1.book管理</a></li>
+                                    <li style="padding-left:30px;"><a href="/doc/man.set">2.配置</a></li>
                                     </ul>
                        </ul>
                 </ul>
@@ -81,36 +81,25 @@
                         <pre class="markdown-body" id="markdown-preview"></pre>
                         <![endif]-->
                         <!--[if gt IE 8]><!-->
-                        <div class="markdown-body" id="markdown-preview">
-                       首页 > book管理<br />
-
-                       <a href="/doc/home.manbookadd">添加</a> 
+                      <div class="markdown-body" id="markdown-preview">
+                        首页 > book管理 > 添加<br />
+                       
                         
-<table class="table table-striped">
-<thead>
-<tr>
-    <th width="50">&nbsp;</th>
-    <th>book</th>
-    <th>wz</th>
-    <th>ver</th>
-    <th>操作</th>
-</tr>
-</thead>
-
-<tr>
-    <td width="50">&nbsp;</td>
-    <td>用户名</td>
-    <td>真实姓名</td>
-    <td>groupid</td>
-    <td>密码</td>
-</tr>
-
-</tbody>  
-                      
-</table>           
-                                   
-                        
-                        
+                        <form method="post" action="/doc/home.manbookedit">
+  <div class="form-group">
+    <label for="exampleInputEmail1">book</label>
+    <input name="book" type="" class="form-control" placeholder="book" value="<?php echo $book;?>">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">note</label>
+    <input name="node" type="" class="form-control" placeholder="node" value="<?php echo $node;?>">
+  </div> 
+  <div class="form-group">
+    <label for="exampleInputPassword1">note</label>
+    <textarea name="nr" class="form-control" rows="3"><?php echo $nr;?></textarea>
+  </div>
+  <input type="submit" name="button" id="button" value="提交" />
+                        </form>
                         
                         
                         </div>

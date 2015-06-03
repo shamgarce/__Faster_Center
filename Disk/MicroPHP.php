@@ -543,6 +543,7 @@ class WoniuRouter {
 			$class = new $methodInfo['class']();
 			if (method_exists($class, $methodInfo['method'])) {
 				$methodInfo['parameters'] = is_array($methodInfo['parameters']) ? $methodInfo['parameters'] : array();
+				//echo 'action before';
 				if (method_exists($class, '__output')) {
 					ob_start();
 					call_user_func_array(array($class, $methodInfo['method']), $methodInfo['parameters']);
@@ -552,6 +553,7 @@ class WoniuRouter {
 				} else {
 					call_user_func_array(array($class, $methodInfo['method']), $methodInfo['parameters']);
 				}
+				//echo 'action after';
 			} else {
 				trigger404($methodInfo['class'] . ':' . $methodInfo['method'] . ' not found.');
 			}
