@@ -48,7 +48,9 @@
 
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.index">主页</a></li>
+                    <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
+                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexflow">流程图</a></li>
+                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexsequence">时序图</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
                 </ul>

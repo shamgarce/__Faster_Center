@@ -22,9 +22,10 @@ namespace Seter\Library;
 
 class Doc
 {
-    public $base= '';
+    public $base    = '';
+    public $dtype   = 'Document';
     public $indexlist  = array();
-    public $wz  = array();
+    public $wz      = array();
 
 
 
@@ -33,6 +34,18 @@ class Doc
         $this->S = \Seter\Seter::getInstance();
         $this->base = SHAM_PATH . '\Document';
         $this->indexlist = $this->getindexlist_();       //获得所有的book
+    }
+
+    public function set($chr ='')
+    {
+        $arr = array('Document','Flow','Sequence');
+        if(in_array($chr,$arr)){
+            $this->dtype = $chr;
+        }else{
+            $this->dtype = 'Document';
+        }
+        $this->indexlist = $this->getindexlist_();       //获得所有的book
+        return $this;
     }
 
     public function getindexlist()
@@ -50,7 +63,7 @@ class Doc
             return array();
         }
         //=========================================================
-        $PA = $this->base.'\Document_'.$path;
+        $PA = $this->base.'\\'.$this->dtype.'_'.$path;
         $dirHandle = @opendir($PA) or die("打开目录不成功");
         $list = array();
         while (($pname = readdir($dirHandle)) !== false) {
@@ -82,7 +95,7 @@ class Doc
         }
 
         //获得文件名
-        $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$ver.ME";
+        $filename  =$this->base.'\\'.$this->dtype.'_'.$path.'\wz_'.$wzchr."_$ver.ME";
 
         //获取内容
         $nr = \Sham::Fr($filename);
@@ -99,7 +112,7 @@ class Doc
     //首先删除所有文件，然后删除目录
     public function deletebook($path='')
     {
-        $filepath = $this->base.'\Document_'.$path;
+        $filepath = $this->base.'\\'.$this->dtype.'_'.$path;
         is_dir($filepath) && \Sham::delDirAndFile($filepath);
         return true;
     }
@@ -115,13 +128,13 @@ class Doc
             //删除所有文件
             if(!empty($verlist)){
                 foreach($verlist as $key=>$value){
-                    $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$value.ME";
+                    $filename  =$this->base.'\\'.$this->dtype.'_'.$path.'\wz_'.$wzchr."_$value.ME";
                     @unlink($filename);
                 }
             }
         }else{
             //删除本文件
-            $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$ver.ME";
+            $filename  =$this->base.'\\'.$this->dtype.'_'.$path.'\wz_'.$wzchr."_$ver.ME";
             @unlink($filename);
         }
         return true;
@@ -133,7 +146,7 @@ class Doc
         if(empty($path) || empty($wzchr) || EMPTY($nr)) return array();
 
         //目录露监测
-        $filepath = $this->base.'\Document_'.$path;
+        $filepath = $this->base.'\\'.$this->dtype.'_'.$path;
         !is_dir($filepath) && mkdir($filepath);
 
         //计算版本id
@@ -142,7 +155,7 @@ class Doc
         $nver = !empty($verlist)?max($verlist)+1:1;         //获取到了新的版本id
 
         //获得文件名
-        $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$nver.ME";
+        $filename  =$this->base.'\\'.$this->dtype.'_'.$path.'\wz_'.$wzchr."_$nver.ME";
 
         //写文件
         \Sham::Fs($filename,$nr);
@@ -162,7 +175,7 @@ class Doc
                 if (is_dir($file)) {
                     $len = strlen($pname);
                     if ($len > 10) {
-                        if (substr($pname, 0, 9) == 'Document_') {
+                        if (substr($pname, 0, 9) == $this->dtype.'_') {
                             array_push($list, substr($pname, 9));
                         }
                     }

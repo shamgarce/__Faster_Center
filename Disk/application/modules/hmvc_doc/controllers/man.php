@@ -92,6 +92,32 @@ class Man extends MpController {
         $this->view("man/book",$data);
     }
 
+    //book管理
+    public function doFlow() {
+        /*
+         * 管理
+         * */
+        $list_ = $this->Seter->doc->set('Flow')->getindexlist();
+        print_r($list_);
+        //加上每个下面的文章
+        if(!empty($list_)){
+            foreach($list_ as $key=>$value){
+                $li_ = $this->Seter->doc->set('Flow')->wzlist($value);
+                print_r($li_);
+//                foreach($li_ as $key2=>$value2){
+//                    rsort($value2);
+//                    $list[$value][$key2] =$value2;
+//                }
+            }
+        }
+echo 123;
+        $data['list'] = $list;
+        $data['debug'] =true;
+        $this->view("man/book",$data);
+    }
+
+
+
     public function doSet() {
         echo 'doset';
     }
