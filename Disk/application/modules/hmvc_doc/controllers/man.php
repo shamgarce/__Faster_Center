@@ -18,11 +18,11 @@ class Man extends MpController {
         parent::__construct();
         $this->Seter = \Seter\Seter::getInstance();
         //文档系统
-
-//        //判断是否登陆
-//        if($this->Seter->user->isguest){
-//            \Sham::R('/manage/home.login/?re='.\Sham::shtmlspecialchars($_SERVER['REQUEST_URI']));
-//        }
+        if($this->Seter->user->isguest){
+            if($this->router['mpath'] !='man.bookedit'){
+                \Sham::R('/manage/home.login/?re='.\Sham::shtmlspecialchars($_SERVER['REQUEST_URI']));
+            }
+        }
     }
 
 
@@ -31,6 +31,7 @@ class Man extends MpController {
          * 不带管理功能的
          * */
         $this->view("man/index",$data);
+
     }
 
 
@@ -45,7 +46,9 @@ class Man extends MpController {
                 exit;
             }
             $this->Seter->doc->save($post['book'],$post['node'],$post['nr']);
-            \Sham::R('/doc/home.manbook');
+            $url ="/doc/home.view/{$post['book']}/{$post['node']}";
+            $url2 = '/doc/man.book';
+            \Sham::R($url);
         }
 
         $bnr = array();
@@ -61,6 +64,12 @@ class Man extends MpController {
         $this->view("man/bookedit",$data);
     }
 
+    public function doBookdelete($book = '')
+    {
+        //$this->Seter->doc->deletebook($book);
+        \Sham::R('/doc/man.book');
+    }
+
     //book管理
     public function doBook() {
         /*
@@ -70,17 +79,16 @@ class Man extends MpController {
         //加上每个下面的文章
         if(!empty($list_)){
             foreach($list_ as $key=>$value){
-
-                //$list[$value] = $this->Seter->doc->wzlist($value);
                 $li_ = $this->Seter->doc->wzlist($value);
-                $list[$value] = $li_[$value];
-
+                foreach($li_ as $key2=>$value2){
+                    rsort($value2);
+                    $list[$value][$key2] =$value2;
+                }
             }
         }
 
-        print_r($list);
-
         $data['list'] = $list;
+        $data['debug'] =true;
         $this->view("man/book",$data);
     }
 

@@ -85,7 +85,7 @@
                         首页 > book管理 > 添加<br />
                        
                         
-                        <form method="post" action="/doc/home.manbookedit">
+                        <form method="post" action="/doc/man.bookedit">
   <div class="form-group">
     <label for="exampleInputEmail1">book</label>
     <input name="book" type="" class="form-control" placeholder="book" value="<?php echo $book;?>">
@@ -96,7 +96,7 @@
   </div> 
   <div class="form-group">
     <label for="exampleInputPassword1">note</label>
-    <textarea name="nr" class="form-control" rows="3"><?php echo $nr;?></textarea>
+    <textarea name="nr" class="form-control" rows="20"><?php echo $nr;?></textarea>
   </div>
   <input type="submit" name="button" id="button" value="提交" />
                         </form>

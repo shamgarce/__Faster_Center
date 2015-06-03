@@ -18,28 +18,43 @@ class Home extends MpController {
         parent::__construct();
         $this->Seter = \Seter\Seter::getInstance();
         //文档系统
-
-//        //判断是否登陆
-//        if($this->Seter->user->isguest){
-//            \Sham::R('/manage/home.login/?re='.\Sham::shtmlspecialchars($_SERVER['REQUEST_URI']));
-//        }
     }
 
+    public function doView($book='',$node='',$ver='')
+    {
+        $data = array(
+            'book'  => $book,
+            'node'  => $node,
+            'list'  => $this->Seter->doc->wzlist($book),
+            'wz'    => $this->Seter->doc->getnr($book,$node,$ver),
+            'debug' =>'1'
+        );
+        $this->view("home/view",$data);
+    }
 
-    public function doIndex() {
-        /*
-         * 不带管理功能的
-         * */
+    public function doIndex($book='') {
+        $data = array(
+            'book' => $book,
+
+            'booklist' => $this->Seter->doc->getindexlist(),              //左侧用
+            'list'  => $this->Seter->doc->wzlist($book),
+            'debug'=>'1'
+        );
+
         $this->view("home/index",$data);
     }
 
 
 
 
-
+    public function doAbout()
+    {
+        $this->view("home/about",$data);
+    }
 
 
     public function doDisplay() {
+
 //echo 123;
 //        //$this->input->setCookie()和$this->input->cookie()
 //        print_r($_COOKIE);

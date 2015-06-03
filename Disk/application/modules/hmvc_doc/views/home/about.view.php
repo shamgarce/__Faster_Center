@@ -55,11 +55,9 @@
             </nav>
             <nav class="nav" style="float:left;">
                 <ul class="nav-list">
-                    <span class="doc-nav-menu" style="cursor:pointer;font-weight:700">框架文档</span>
+                    <span class="doc-nav-menu" style="cursor:pointer;font-weight:700"><?php echo $book;?></span>
                     <ul class="doc-nav-ul">
-						<?php foreach($booklist as $key=>$value){?>
-                        <li style="padding-left:30px;"><a href="/doc/home.index/<?php echo $value;?>"><?php echo ($key+1).'.'.$value;?></a></li>
-                        <?php }?>
+						
                     </ul>
                 </ul>
             </nav>
@@ -85,19 +83,7 @@
                     </div>
                     <div style="display:none">
 <textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
-##<?php echo $book;?>
-
-<?php 
-$i = 1;
-foreach($list as $key=>$value){
-?>
-
-### <?php echo $i.' : ';?> <a href="/doc/home.view/<?php echo $book?>/<?php echo $key?>"><?php echo $key;?></a> [ <?php foreach($value as $key2=>$value2){?><a href="/doc/home.view/<?php echo $book?>/<?php echo $key?>/<?php echo $value2;?>"><?php echo $value2;?></a> <?php }?> ]
-
-<?php 
-$i++;
-}
-?>
+##关于
 </textarea>
 
                     </div>

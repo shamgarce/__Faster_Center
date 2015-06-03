@@ -91,29 +91,54 @@
 <thead>
 <tr>
     <th width="50">&nbsp;</th>
-    <th>book</th>
+    <th width="150">book</th>
     <th>wz</th>
-    <th>ver</th>
-    <th>操作</th>
+    <th width="100">操作</th>
 </tr>
 </thead>
-
+<tbody>
+<?php 
+if(!empty($list)){
+foreach($list as $key=>$value){?>
 <tr>
     <td width="50">&nbsp;</td>
-    <td>用户名</td>
-    <td>真实姓名</td>
-    <td>groupid</td>
-    <td>密码</td>
+    <td><?php echo "<a href='/doc/man.bookedit/$key'>$key</a>"	;?></td>
+    <td>
+      
+      
+      <table class="table table-striped">
+    
+        
+  <?php 
+  if(!empty($value)){
+  foreach($value as $key2=>$value2){?>
+        <tr>
+          <td width="250">
+            <?php echo "<a href='/doc/man.bookedit/$key/$key2'>$key2</a>";	?>
+            </td>
+          <td>
+            <?php 
+			foreach($value2 as $value3){
+				echo " <a href='/doc/man.bookedit/$key/$key2/$value3'>$value3</a> ";
+			}
+		  ?>
+            </td>
+          <td width="100">删除</td>
+          </tr>
+  <?php }
+  }
+  ?>        
+        </table>
+      
+      
+    </td>
+    <td><a href=/doc/man.bookdelete/<?php echo $key?>>删除</a></td>
 </tr>
-
-</tbody>  
-                      
-</table>           
-                                   
-                        
-                        
-                        
-                        
+<?php }
+}
+?>
+</tbody>
+</table>
                         </div>
                         <!--<![endif]-->
                     </div>
@@ -142,7 +167,6 @@
     
     <script src="/A/artDialog4.1.7/artDialog.js?skin=default"></script>
     <script src="/A/CommonIni.js" type="text/javascript"></script>
-    <script src="/A/debug/debug.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 //    var cpf = {
@@ -228,6 +252,7 @@
 //        })
     //}
 </script>
-
-
+<?php if($debug) @include($this->view_path('debug'));?>
 </body></html>
+
+
