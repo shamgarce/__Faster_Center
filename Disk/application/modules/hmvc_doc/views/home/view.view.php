@@ -17,7 +17,7 @@
     <script src="/A/U/U2/marked.js" type="text/javascript"></script>
     <script src="/A/U/U2/base.js" type="text/javascript"></script>
     <script src="/A/U/U2/prettify.js" type="text/javascript"></script>
-
+    
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://document.crossphp.com/static/ lib/pure/0.5.0/grids-responsive-old-ie-min.css">
@@ -49,8 +49,6 @@
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexflow">流程图</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexsequence">时序图</a></li>
 
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
@@ -86,18 +84,103 @@
                         <![endif]-->
                         <!--[if gt IE 8]><!-->
                         <div class="markdown-body" id="markdown-preview">
-                        
-                        
                         </div>
+
+<!-- 流程图 -->
+<?php if($wz['lc']){ ?>
+<hr>
+<!-- script src="/A/Jquery/jquery-1.11.1.js" type="text/javascript"></script -->
+<script src="/A/raphael-min.js"></script>
+<script src="/A/flowchart-1.4.0.min.js"></script>
+
+<div><textarea id="code" style="display:none; width: 100%;" rows="11">
+<?php echo $wz['lc'];?>
+</textarea></div>
+        <div><button id="run" type="button" style="display:none;">Run</button></div>
+        <div id="canvas"></div>
+<script>
+
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                    cd = document.getElementById("code"),
+                    chart;
+
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      // 'x': 30,
+                      // 'y': 50,
+                      'line-width': 3,
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font': 'normal',
+                      'font-family': 'Helvetica',
+                      'font-weight': 'normal',
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no',
+                      'arrow-end': 'block',
+                      'scale': 1,
+                      'symbols': {
+                        'start': {
+                          'font-color': 'red',
+                          'element-color': 'green',
+                          'fill': 'yellow'
+                        },
+                        'end':{
+                          'class': 'end-element'
+                        }
+                      },
+                      'flowstate' : {
+                        'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                        'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                        'future' : { 'fill' : '#FFFF99'},
+                        'request' : { 'fill' : 'blue'},
+                        'invalid': {'fill' : '#444444'},
+                        'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                        'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                      }
+                    });
+
+                    //$('[id^=sub1]').click(function(){
+                    //  alert('info here');
+                    //});
+                })();
+
+            };
+        </script>
+<?php }?>
+<!-- 流程图end -->
+
+
+
+
+
+
+
+
+
                         <!--<![endif]-->
                     </div>
                     <div style="display:none">
 <textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
-##<?php echo $wz['path'];?> / <?php echo $wz['wzchr'];?> / <?php echo $wz['ver'];?> / <a href="/doc/man.bookedit/<?php echo $book?>/<?php echo $node?>/re">编辑</a>
+##<?php echo $book;?> / <?php echo $node;?> / <?php echo $ver;?> / <a href="/doc/man.bookedit/<?php echo $book?>/<?php echo $node?>/<?php echo $ver?>">编辑</a>
 
 ######历史版本 <?php 
-foreach($list[$node] as $value2){
-	echo " <a href='/doc/home.view/$book/$node/$value2'>$value2</a>";
+if(!empty($list)){
+	foreach($list[$node] as $value2){
+		echo " <a href='/doc/home.view/$book/$node/$value2'>$value2</a>";
+	}
 }
 ?> 
 <?php echo $wz['nr'];?>
@@ -115,6 +198,8 @@ foreach($list[$node] as $value2){
         </div>
     </div>
 </div>
+
+
 
 <script type="text/javascript">
 //    var cpf = {

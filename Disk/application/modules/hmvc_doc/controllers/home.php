@@ -22,22 +22,26 @@ class Home extends MpController {
 
     public function doView($book='',$node='',$ver='')
     {
+//        dump($this->Seter->doc->getnr($book,$node,$ver));
+
         $data = array(
             'book'  => $book,
             'node'  => $node,
-            'list'  => $this->Seter->doc->wzlist($book),
-            'wz'    => $this->Seter->doc->getnr($book,$node,$ver),
+            'ver'  => $ver,
+            'list'  => $this->Seter->doc->book($book)->getnodelist(),
+            'wz'    => $this->Seter->doc->book($book)->node($node)->ver($ver)->getnode(),         //$this->Seter->doc->getnr($book,$node,$ver),
             'debug' =>'1'
         );
+       //print_r($data);
         $this->view("home/view",$data);
     }
+
 
     public function doIndex($book='') {
         $data = array(
             'book' => $book,
-
-            'booklist' => $this->Seter->doc->getindexlist(),              //左侧用
-            'list'  => $this->Seter->doc->wzlist($book),
+            'booklist' => $this->Seter->doc->getbooklist(),              //左侧用
+            'list'  => $this->Seter->doc->book($book)->getnodelist(),
             'debug'=>'1'
         );
 

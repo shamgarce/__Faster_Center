@@ -53,8 +53,6 @@
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexflow">流程图</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexsequence">时序图</a></li>
 
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
@@ -66,8 +64,6 @@
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
                                     <li style="padding-left:30px;"><a href="/doc/man.book">1 . 文档管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.flow">2 . 流程图管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.sequence">3 . 时序图管理</a></li>
                                     <li style="padding-left:30px;"><a href="/doc/man.set">4 . 配置</a></li>
                                     </ul>
                        </ul>

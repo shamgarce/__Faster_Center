@@ -52,8 +52,6 @@
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexflow">流程图</a></li>
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.indexsequence">时序图</a></li>
 
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
@@ -65,8 +63,6 @@
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
                                     <li style="padding-left:30px;"><a href="/doc/man.book">1 . 文档管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.flow">2 . 流程图管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.sequence">3 . 时序图管理</a></li>
                                     <li style="padding-left:30px;"><a href="/doc/man.set">4 . 配置</a></li>
                                     </ul>
                        </ul>
@@ -83,7 +79,6 @@
                 <section class="post">
                     <div id="main" style="position: relative;padding-bottom: 70px;">
                         <!--[if lte IE 8]>
-                        <pre class="markdown-body" id="markdown-preview"></pre>
                         <![endif]-->
                         <!--[if gt IE 8]><!-->
                       <div class="markdown-body" id="markdown-preview">
@@ -99,10 +94,136 @@
     <label for="exampleInputPassword1">note</label>
     <input name="node" type="" class="form-control" placeholder="node" value="<?php echo $node;?>">
   </div> 
-  <div class="form-group">
-    <label for="exampleInputPassword1">note</label>
-    <textarea name="nr" class="form-control" rows="20"><?php echo $nr;?></textarea>
-  </div>
+
+  <table width="100%" border="1">
+    <tr>
+      <td width="50%" valign="top"><span class="form-group">
+        文档 ： 
+            <textarea name="nr" id="content" class="form-control" rows="20"><?php echo $nr;?></textarea>
+      </span></td>
+      <td valign="top">
+<div class="markdown-body_v" id="markdown-preview_v">
+123
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        var $markdown_preview = $("#markdown-preview_v"), aid = hashData.read("id");
+        if (aid.id) {
+            var id = aid.id, doc = $("#" + id), doc_id = doc.attr("doc-id");
+            if (doc_id) {
+                $("#menu").scrollTop(doc.offset().top - 50);
+                getDocAndMarked(doc_id);
+            } else {
+               // window.location.href = cpf.site_url;
+            }
+        } else {
+            $markdown_preview.html(marked(document.getElementById('content').value));
+        }
+
+        $("#markdown-preview pre").addClass("prettyprint").attr('style',
+            'background:#333;' +
+            'padding: 9.5px;' +
+            'font-size: 13px;' +
+            'line-height: 20px; ' +
+            'border-radius: 10px;'
+        );
+
+        prettyPrint();
+
+        $(".doc-nav-menu").click(function () {
+            $(this).next("ul").toggle();
+        });
+
+    });
+
+</script>     
+      
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><span class="form-group">
+        流程图
+            <textarea id="code" name="lc" class="form-control" rows="20"><?php echo $lc;?></textarea>
+      </span></td>
+      <td valign="top">
+<?php if(!empty($lc)){?>      
+
+<!-- script src="/A/Jquery/jquery-1.11.1.js" type="text/javascript"></script -->
+<script src="/A/raphael-min.js"></script>
+<script src="/A/flowchart-1.4.0.min.js"></script>
+        <div><button id="run" type="button" style="display:none;">Run</button></div>
+        <div id="canvas"></div>
+<script>
+
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                    cd = document.getElementById("code"),
+                    chart;
+
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      // 'x': 30,
+                      // 'y': 50,
+                      'line-width': 3,
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font': 'normal',
+                      'font-family': 'Helvetica',
+                      'font-weight': 'normal',
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no',
+                      'arrow-end': 'block',
+                      'scale': 1,
+                      'symbols': {
+                        'start': {
+                          'font-color': 'red',
+                          'element-color': 'green',
+                          'fill': 'yellow'
+                        },
+                        'end':{
+                          'class': 'end-element'
+                        }
+                      },
+                      'flowstate' : {
+                        'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                        'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                        'future' : { 'fill' : '#FFFF99'},
+                        'request' : { 'fill' : 'blue'},
+                        'invalid': {'fill' : '#444444'},
+                        'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                        'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                      }
+                    });
+
+                    //$('[id^=sub1]').click(function(){
+                    //  alert('info here');
+                    //});
+                })();
+
+            };
+        </script>
+
+<?php }?>      
+      
+      
+      </td>
+    </tr>
+    
+  </table>
   <input type="submit" name="button" id="button" value="提交" />
                         </form>
                         
@@ -111,8 +232,6 @@
                         <!--<![endif]-->
                     </div>
                     <div style="display:none">
-<textarea name="" id="content" style="display:none;width:100%;min-height:800px;">
-</textarea>
                     </div>
                 </section>
             </div>
