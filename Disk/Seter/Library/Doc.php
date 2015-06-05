@@ -177,14 +177,36 @@ class Doc
         return $this;
     }
 
+    public function refresh(){
+
+        $bookpath = $this->base.'\Doc_'.$this->book;
+        $this->ver = $this->getver();               //版本号修正
+
+        //值留下最新的，其他删除
+        $mlist =   $this->getnodelist();
+        $vlist = $mlist[$this->node];
+        //ok 最大的留下，其他全部删掉
+        if(!empty($vlist)){
+            foreach($vlist as $key=>$value){
+                if($value != $this->ver){
+                    $filename       = $bookpath.'\Doc_'.$this->node."_$value.ME";   //文档
+                    $filenamesx     = $bookpath.'\Flo_'.$this->node."_$value.ME";   //流程
+                    $filenamelc     = $bookpath.'\Seq_'.$this->node."_$value.ME";   //时序
+                    @unlink($filename);
+                    @unlink($filenamesx);
+                    @unlink($filenamelc);
+                }
+            }
+        }
+    }
 
 //    //首先删除所有文件，然后删除目录
-//    public function deletebook($path='')
-//    {
+    public function deletebook($path='')
+    {
 //        $filepath = $this->base.'\Doc_'.$path;
 //        is_dir($filepath) && \Sham::delDirAndFile($filepath);
-//        return true;
-//    }
+        return true;
+    }
 
 
 //    public function deletebookwz($path='',$wzchr='',$ver='')

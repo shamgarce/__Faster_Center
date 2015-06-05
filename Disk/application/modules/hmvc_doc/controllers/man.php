@@ -99,9 +99,15 @@ $this->Seter->doc->book($post['book'])->node($post['node'])->put($ar);
         $this->view("man/bookedit",$data);
     }
 
+    public function doRefreshbook($book = '',$node='')
+    {
+        $this->Seter->doc->book($book)->node($node)->refresh();
+        \Sham::R('/doc/man.book');
+    }
+
     public function doBookdelete($book = '')
     {
-        //$this->Seter->doc->deletebook($book);
+//        $this->Seter->doc->deletebook($book);
         \Sham::R('/doc/man.book');
     }
 

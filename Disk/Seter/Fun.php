@@ -66,7 +66,8 @@ class Sham
             exit($str);
         }
     }
-    //--------------------------------------------------------------------------------
+
+    //----------------------------------------------------------
     //函数群 public static
     /*
     +----------------------------------------------------------
@@ -98,7 +99,7 @@ class Sham
     public static function getarr($str,$flit='0',$bl = "\r\n"){
         $arr = array();
         if(empty($str)) return $arr;
-        //================================================
+        //+----------------------------------------------------------
         $arr_ = explode($bl,$str);
         if($flit) $arr_ = array_unique($arr_);
         foreach($arr_ as $key=>$value){
@@ -116,7 +117,7 @@ class Sham
     */
     public static function getstr($arr,$flit='0',$bl = "\r\n"){
         if(empty($arr)) return '';
-        //================================================
+        //+----------------------------------------------------------
         foreach($arr as $key=>$value){
             if(!empty($value)) $arr_[] = trim($value);
         }
@@ -201,14 +202,14 @@ class Sham
     }
 
     /**
-    +----------------------------------------------------------
-     * // 内容截取
-    +----------------------------------------------------------
-     * 参数
-    +----------------------------------------------------------
+     * 剪切字符串
+     * @param $startstr
+     * @param $endstr
+     * @param $str
+     * @return string
      */
     public static function cut($startstr="",$endstr="",$str){
-        if(empty($startstr) || empty($endstr))return false;
+        if(empty($startstr) || empty($endstr))return '';
         $outstr="";
         if(!empty($str) && strpos($str,$startstr)!==false && strpos($str,$endstr)!==false){
             $startpos	= strpos($str,$startstr);
@@ -220,16 +221,20 @@ class Sham
     }
 
     /**
-    +----------------------------------------------------------
-     * //判断字符串是否存在
-    +----------------------------------------------------------
+     * 判断字符串是否存在
+     * @param type $haystack    字符
+     * @param type $needle      字符组
+     * @return bool
      */
     public static function strexists($haystack, $needle) {
         return !(strpos($haystack, $needle) === FALSE);
     }
-    //--------------------------------------------------------------------------------
 
-    //对象转成数组
+    /**
+    * 对象转成数组
+     * @param type $obj 一个对象
+     * @return array
+    */
     public static function ob2ar($obj) {
         if(is_object($obj)) {
             $obj = (array)$obj;
@@ -242,11 +247,22 @@ class Sham
         return $obj;
     }
 
-    public static function uri($uri)
+    /**
+     * 对资源进行编码 /\的变换
+     * @param type $url 资源地址
+     * @return mix
+     */
+    public static function uri( $uri = '')
     {
+        if(empty($uri))return '';
         return str_replace('/', DIRECTORY_SEPARATOR, $uri);
     }
 
+    /**
+     * 获取IP地址
+     * @param type null
+     * @return string like '12.70.0.1'
+     */
     public static function GetIP(){
         if(!empty($_SERVER["HTTP_CLIENT_IP"])){
             $cip = $_SERVER["HTTP_CLIENT_IP"];
@@ -263,13 +279,18 @@ class Sham
         return $cip;
     }
 
-    function delDirAndFile( $dirName )
+    /**
+     * 删除目录和目录里面的所有文件
+     * @param type $dirName 目录名
+     * @return type
+     */
+    function DeleteDirandfile( $dirName ='.' )
     {
         if ( $handle = opendir( "$dirName" ) ) {
             while ( false !== ( $item = readdir( $handle ) ) ) {
                 if ( $item != "." && $item != ".." ) {
                     if ( is_dir( "$dirName/$item" ) ) {
-                        \Sham::delDirAndFile( "$dirName/$item" );
+                        \Sham::DeleteDirandfile( "$dirName/$item" );
                     } else {
                         unlink( "$dirName/$item" );
                         //if( unlink( "$dirName/$item" ) )    echo "成功删除文件： $dirName/$item<br />\n";

@@ -63,7 +63,6 @@
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
                                     <li style="padding-left:30px;"><a href="/doc/man.book">1 . 文档管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.set">4 . 配置</a></li>
                                     </ul>
                        </ul>
                 </ul>
@@ -85,9 +84,9 @@
                         首页 > book管理 > 添加<br />
                        
                         
-                        <form method="post" action="/doc/man.bookedit">
+<form method="post" action="/doc/man.bookedit">
   <div class="form-group">
-    <label for="exampleInputEmail1">book</label>
+    <label for="exampleInputEmail1">book</label> -> <a href="/doc/man.bookedit/示例/示例" target="_blank">示例</a>
     <input name="book" type="" class="form-control" placeholder="book" value="<?php echo $book;?>">
   </div>
   <div class="form-group">

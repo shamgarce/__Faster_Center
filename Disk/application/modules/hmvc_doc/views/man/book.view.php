@@ -64,7 +64,6 @@
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
                                     <li style="padding-left:30px;"><a href="/doc/man.book">1 . 文档管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.set">4 . 配置</a></li>
                                     </ul>
                        </ul>
                 </ul>
@@ -124,7 +123,7 @@ foreach($list as $key=>$value){?>
 			}
 		  ?>
             </td>
-          <td width="100">删除</td>
+          <td width="100"><a href="/doc/man.refreshbook/<?php echo "$key/$key2/";?>">REFRESH</a></td>
           </tr>
   <?php }
   }
