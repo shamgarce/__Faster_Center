@@ -48,12 +48,8 @@
 
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
-<<<<<<< HEAD
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
 
-=======
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.index">主页</a></li>
->>>>>>> parent of 9b6004a... 0.039
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
                 </ul>
@@ -63,12 +59,7 @@
                 <ul class="nav-list">
                        <ul class="doc-nav-ul"><span class="doc-nav-menu" style="cursor:pointer;font-weight:700">概览</span>
                                     <ul class="doc-nav-ul">
-<<<<<<< HEAD
                                     <li style="padding-left:30px;"><a href="/doc/man.book">1 . 文档管理</a></li>
-=======
-                                    <li style="padding-left:30px;"><a href="/doc/man.book">1.book管理</a></li>
-                                    <li style="padding-left:30px;"><a href="/doc/man.set">2.配置</a></li>
->>>>>>> parent of 9b6004a... 0.039
                                     </ul>
                        </ul>
                 </ul>

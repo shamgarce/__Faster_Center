@@ -48,12 +48,8 @@
 
             <nav class="nav" style="padding-bottom: 20px;">
                 <ul class="nav-list">
-<<<<<<< HEAD
                     <li class="nav-item"><a class="pure-button" href="/doc/home.index">文档</a></li>
 
-=======
-                    <li class="nav-item"><a class="pure-button" href="/doc/home.index">主页</a></li>
->>>>>>> parent of 9b6004a... 0.039
                     <li class="nav-item"><a class="pure-button" href="/doc/man.index">管理</a></li>
                     <li class="nav-item"><a class="pure-button" href="/doc/home.about">关于</a></li>
                 </ul>

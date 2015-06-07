@@ -22,18 +22,11 @@ namespace Seter\Library;
  * */
 class Doc
 {
-<<<<<<< HEAD
     public $base = '';              //默认的根目录
     public $book = 'default';
     public $node = 'default';
     public $ver = 0;
     public $booklist = array();
-=======
-    public $base= '';
-    public $indexlist  = array();
-    public $wz  = array();
-
->>>>>>> parent of 9b6004a... 0.039
 
 
     public function __construct()
@@ -43,7 +36,6 @@ class Doc
         $this->booklist = $this->getbooklist_();            //获取book列表
     }
 
-<<<<<<< HEAD
     public function getver()
     {
         if($this->ver == 0){
@@ -60,9 +52,6 @@ class Doc
     }
 
     public function getputver()
-=======
-    public function getindexlist()
->>>>>>> parent of 9b6004a... 0.039
     {
         //根据book node 计算出ver
         $nodelist = $this->getnodelist();
@@ -76,7 +65,6 @@ class Doc
 
     public function put($ar = array())
     {
-<<<<<<< HEAD
         $bookpath = $this->base.'\Doc_'.$this->book;
         $newver = $this->getputver();
         //根据book node ver 获取node内容
@@ -88,30 +76,6 @@ class Doc
         !empty($ar['sx']) && \Sham::Fs($filenamesx,$ar['sx']);
         !empty($ar['lc']) && \Sham::Fs($filenamelc,$ar['lc']);
         return true;
-=======
-        $list = $this->indexlist;
-        if(empty($list) || empty($list)) return array();
-        if(!in_array($path,$list)){
-            return array();
-        }
-        //=========================================================
-        $PA = $this->base.'\Document_'.$path;
-        $dirHandle = @opendir($PA) or die("打开目录不成功");
-        $list = array();
-        while (($pname = readdir($dirHandle)) !== false) {
-            if ($pname != '.' && $pname != '..') {
-                $pname = substr($pname,3,-3);
-                $pn = \Sham::getarr($pname,0,'_');
-                $list[$pn[0]][] = $pn[1];
-            }
-        }
-        foreach($list as $key=>$value){
-            $ar = $value;
-            rsort($ar);
-            $list[$key] =  $ar;
-        }
-        return $list;
->>>>>>> parent of 9b6004a... 0.039
     }
 
     public function getnode()
@@ -119,11 +83,6 @@ class Doc
         $bookpath = $this->base.'\Doc_'.$this->book;
         $this->ver = $this->getver();               //版本号修正
 
-<<<<<<< HEAD
-=======
-        //获得文件名
-        $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$ver.ME";
->>>>>>> parent of 9b6004a... 0.039
 
         //根据book node ver 获取node内容
         $filename       = $bookpath.'\Doc_'.$this->node."_$this->ver.ME";   //文档
@@ -147,7 +106,6 @@ class Doc
         return $wznr;
     }
 
-<<<<<<< HEAD
     public function getnodelist()
     {
         $path = $this->base.'\Doc_'.$this->book;
@@ -160,39 +118,9 @@ class Doc
                     $pname = substr($pname,4,-3);
                     $pn = \Sham::getarr($pname,0,'_');
                     $list[$pn[0]][] = $pn[1];
-=======
-    //首先删除所有文件，然后删除目录
-    public function deletebook($path='')
-    {
-        $filepath = $this->base.'\Document_'.$path;
-        is_dir($filepath) && \Sham::delDirAndFile($filepath);
-        return true;
-    }
-
-
-    public function deletebookwz($path='',$wzchr='',$ver='')
-    {
-        if(empty($path) || empty($wzchr)) return array();
-        $wzlist = $this->wzlist($path);
-
-        $verlist = $wzlist[$wzchr];
-        if(empty($ver)){
-            //删除所有文件
-            if(!empty($verlist)){
-                foreach($verlist as $key=>$value){
-                    $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$value.ME";
-                    @unlink($filename);
->>>>>>> parent of 9b6004a... 0.039
                 }
 
             }
-<<<<<<< HEAD
-=======
-        }else{
-            //删除本文件
-            $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$ver.ME";
-            @unlink($filename);
->>>>>>> parent of 9b6004a... 0.039
         }
         foreach($list as $key=>$value){
             $ar = $value;
@@ -204,27 +132,7 @@ class Doc
 
     public function getbooklist()
     {
-<<<<<<< HEAD
         return $this->booklist;
-=======
-        if(empty($path) || empty($wzchr) || EMPTY($nr)) return array();
-
-        //目录露监测
-        $filepath = $this->base.'\Document_'.$path;
-        !is_dir($filepath) && mkdir($filepath);
-
-        //计算版本id
-        $list = $this->wzlist($path);
-        $verlist = $list[$wzchr];                           //获取到了所有的版本
-        $nver = !empty($verlist)?max($verlist)+1:1;         //获取到了新的版本id
-
-        //获得文件名
-        $filename  =$this->base.'\Document_'.$path.'\wz_'.$wzchr."_$nver.ME";
-
-        //写文件
-        \Sham::Fs($filename,$nr);
-        return true;
->>>>>>> parent of 9b6004a... 0.039
     }
 
     public function getbooklist_()
@@ -236,15 +144,9 @@ class Doc
                 $file = $this->base . '\\' . $pname;
                 if (is_dir($file)) {
                     $len = strlen($pname);
-<<<<<<< HEAD
                     if ($len > 4) {
                         if (substr($pname, 0, 4) == 'Doc_') {
                             array_push($list, substr($pname, 4));
-=======
-                    if ($len > 10) {
-                        if (substr($pname, 0, 9) == 'Document_') {
-                            array_push($list, substr($pname, 9));
->>>>>>> parent of 9b6004a... 0.039
                         }
                     }
                 }
