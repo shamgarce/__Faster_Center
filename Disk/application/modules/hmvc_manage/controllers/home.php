@@ -189,17 +189,17 @@ class Home extends MpController {
      * */
     public function doIndex($name = '') {
         $ms = $this->behaviors();
-        print_r($ms);
-        print_r($this->router);
-        echo '----------------------';
-
-        $class = strtolower(__CLASS__);
-        $mothed_ = strtolower(__METHOD__);
-        //'::do'
-
-        echo $mothed;
-
-exit;
+//        print_r($ms);
+//        print_r($this->router);
+//        echo '----------------------';
+//
+//        $class = strtolower(__CLASS__);
+//        $mothed_ = strtolower(__METHOD__);
+//        //'::do'
+//
+//        echo $mothed;
+//
+//exit;
         $data=array(
             'title'=>'仪表盘'
         );

@@ -1,5 +1,6 @@
 <?php
-print_r($_COOKIE);
+
+
 
 //include('plugin.php');
 //
