@@ -129,8 +129,12 @@ $this->Seter->doc->book($post['book'])->node($post['node'])->put($ar);
                 }
             }
         }
+<<<<<<< HEAD
 //print_r($list_);
 //        exit;
+=======
+
+>>>>>>> parent of 9b6004a... 0.039
         $data['list'] = $list;
         $data['debug'] =true;
         $this->view("man/book",$data);
