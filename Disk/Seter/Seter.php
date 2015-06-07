@@ -5,10 +5,6 @@
  * include('Seter/Seter.php');
  * $this->Seter = new \Seter\Seter();
  * \Seter\Seter::getInstance()
- *
- * 调用: \Sham\trace($info='')    //trace
- * \Sham\gettrace()
-
  * */
 
 namespace Seter;
@@ -24,44 +20,49 @@ include(__DIR__.'\Config.php');
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 {
-    /*
-     * 登陆界面
-     * 跳转界面
-     * 还有一个什么来着
-     * */
     private static $loginurl    = '';         //登陆地址
-
-    /**
-     * Key-value array of arbitrary data
-     * @var array
-     * 这个要改成private
-     */
-    public $data = array();
 
     /*
      * 单例调用
-     * @return $obj
      * */
     private static $instance    = null;         //单例调用
-
     /*
      * trace记录
-     * 规划删除
+     * 调用: \Sham\trace($info='')
+     * \Sham\gettrace()
      * */
     public static $trace        = array();      //trace记录
     public  $dec        = 123;      //trace记录
-
     /*
      * 用户信息
-     * 规划删除
      * */
     private $identify = array();                //用户识别
     /*
      * 配置
      * */
     public $Config = array();
+    /**
+     * Key-value array of arbitrary data
+     * @var array
+     */
+    public $data = array();
 
+    /*
+     * 部分验证失败之后
+     * 设置json = true
+     * 输出jsonarr
+     * //用json拦截器输出
+     * */
+    public $json        = false;
+    public $jsonarr     = array();
 
+    public function jsonout()
+    {
+        if($this->json){
+            echo json_encode($this->jsonarr);
+            exit;
+        }
+    }
 
     public function __construct($items = array())
     {
@@ -71,7 +72,7 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 
         include(__DIR__.'\Config.php');
         $this->Config = $Config;
-//
+
         $this->singleton('ry', function ($c) {
             return new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');
         });
@@ -114,23 +115,11 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 //        });
     }
 
-    /*
-     * 部分验证失败之后
-     * 设置json = true
-     * 输出jsonarr
-     * //用json拦截器输出
-     * //规划删除
-     * */
-    public $json        = false;
-    public $jsonarr     = array();
 
-    public function jsonout()
+    public static function sterini()
     {
-        if($this->json){
-            echo json_encode($this->jsonarr);
-            exit;
-        }
     }
+
 
     //用于密码hash
     public static function pwdhash($str='')
@@ -142,9 +131,7 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         }
     }
 
-    /*
-     * hash函数
-     * 用于其他hash
+    /*hash函数
      * */
     public static function hash($str='')
     {
@@ -155,9 +142,6 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         }
     }
 
-    /*
-     * 返回单例的实例
-     * */
     public static function getInstance(){
         !(self::$instance instanceof self)&&self::$instance = new self();
         return self::$instance;
