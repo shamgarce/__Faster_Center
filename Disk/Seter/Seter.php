@@ -10,17 +10,17 @@
 namespace Seter;
 //use Seter\RedBeanPHP;
 define('SHAM_PATH',__DIR__);
+include(__DIR__.'\Fun.php');
+
 !empty($_GET)   && define('ISGET',TRUE);
 !empty($_POST)  && define('ISPOST',TRUE);
 !defined('ISGET')   && define('ISGET',false);
 !defined('ISPOST')  && define('ISPOST',false);
-include(__DIR__.'\Fun.php');
-include(__DIR__.'\Config.php');
 !defined('BTIME')  && define('BTIME', \Sham::T());
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 {
-    private static $loginurl    = '';         //登陆地址
+    private static $loginurl    = '';           //登陆地址
 
     /*
      * 单例调用
@@ -32,7 +32,7 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
      * \Sham\gettrace()
      * */
     public static $trace        = array();      //trace记录
-    public  $dec        = 123;      //trace记录
+    public  $dec        = 123;                  //trace记录
     /*
      * 用户信息
      * */
@@ -66,12 +66,16 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 
     public function __construct($items = array())
     {
+        //iniaction
+
+
 //        $this->singleton('PHPExcel', function ($c) {
 //            return new PHPExcel();
 //        });
 
-        include(__DIR__.'\Config.php');
-        $this->Config = $Config;
+
+        $this->Config = require(__DIR__ . '/config/default.php');
+
 
         $this->singleton('ry', function ($c) {
             return new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');

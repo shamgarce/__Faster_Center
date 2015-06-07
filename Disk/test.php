@@ -1,5 +1,17 @@
 <?php
-print_r($_COOKIE);
+
+
+include('Seter/Seter.php');
+$Seter = new \Seter\Seter();
+$Seter['btr'] = 123;
+$Seter->btr2 = 345;
+echo count($Seter);
+echo $Seter['btr'];
+echo $Seter->btr2;
+var_dump($Seter->data);
+
+
+
 
 //include('plugin.php');
 //

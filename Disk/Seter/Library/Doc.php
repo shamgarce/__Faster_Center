@@ -36,7 +36,7 @@ class Doc
         $this->booklist = $this->getbooklist_();            //获取book列表
     }
 
-    public function getver()
+        public function getver()
     {
         if($this->ver == 0){
             $nodelist = $this->getnodelist();

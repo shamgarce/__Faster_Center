@@ -3,11 +3,11 @@ e=>end: return
 
 rdb=>subroutine: 获取参数
 postaction=>subroutine: POSTaction
-moni=>subroutine: 模拟
+nullaction=>subroutine: nullaction
 zhixing=>subroutine: 执行
 cond=>condition: ISPOST?
 io=>inputoutput: 输入输出...
 
 st->rdb->cond
 cond(yes)->postaction->e
-cond(no)->e
+cond(no)->nullaction->e

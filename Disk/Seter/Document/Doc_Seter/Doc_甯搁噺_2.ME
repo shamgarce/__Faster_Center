@@ -1,0 +1,8 @@
+
+
+    define('SHAM_PATH',__DIR__);
+    !empty($_GET)   && define('ISGET',TRUE);
+    !empty($_POST)  && define('ISPOST',TRUE);
+    !defined('ISGET')   && define('ISGET',false);
+    !defined('ISPOST')  && define('ISPOST',false);
+    !defined('BTIME')  && define('BTIME', \Sham::T());
