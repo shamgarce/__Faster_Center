@@ -9,7 +9,7 @@ print_r($ms);
 */
 
 
-namespace Seter\Model;
+namespace Seter\Library;
 
 class TableObj
 {

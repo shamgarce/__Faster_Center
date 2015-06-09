@@ -211,5 +211,42 @@ mysql> show columns from f_user;
         */
     }
 
+    /*
+     * 调试用
+     * */
+    public function display()
+    {
+        echo '<hr>';
+        echo 'cookie';
+        echo '<br>uname:' . cookie('user_uname');
+        echo '<br>tname:' . cookie('user_tname');
+        echo '<br>authkey:' . cookie('user_authkey');
+        echo '<br>groupid:' . cookie('user_groupid');
+
+        echo '<br>tm:' . cookie('tm');             //记录时间
+        echo '<br>signature:' . cookie('user_signature');      //签名算法
+
+        echo '<hr>';
+        echo 'signnature';
+        echo '<br>' . \Sham::signnature(
+                cookie('user_uname')
+                .cookie('user_tname')
+                .cookie('user_authkey')
+                .cookie('user_groupid')
+                .cookie('user_tm')
+            );
+        echo '<hr>';
+        echo 'islogin';
+        echo $this->islogin();;
+        echo '<hr>';
+        echo 'isguest';
+        echo $this->isguest();;
+        echo '<hr>';
+        echo ' var isguest';
+        echo $this->isguest;;
+    }
+
+
+
 }
 

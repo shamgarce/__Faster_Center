@@ -21,7 +21,7 @@ class Table{
 
     public function __get($tablename) {
         //获得表明，根据表明生成一个对象返回
-        return new \Seter\Model\TableObj($tablename);
+        return new \Seter\Library\TableObj($tablename);
     }
 
 }
