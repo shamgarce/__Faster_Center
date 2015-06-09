@@ -20,12 +20,13 @@ include(__DIR__.'\Fun.php');
 
 class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
 {
-    private static $loginurl    = '';           //登陆地址
-
     /*
+     * $mysqltime=date('Y-m-d H:i:s',$phptime);
+     * $phptime=strtotime($mysqldate);
      * 单例调用
      * */
     private static $instance    = null;         //单例调用
+
     /*
      * trace记录
      * 调用: \Sham\trace($info='')
@@ -33,10 +34,12 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
      * */
     public static $trace        = array();      //trace记录
     public  $dec        = 123;                  //trace记录
-    /*
-     * 用户信息
-     * */
-    private $identify = array();                //用户识别
+
+//    /*
+//     * 用户信息
+//     * */
+//    private $identify = array();                //用户识别
+
     /*
      * 配置
      * */
@@ -47,41 +50,19 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public $data = array();
 
-    /*
-     * 部分验证失败之后
-     * 设置json = true
-     * 输出jsonarr
-     * //用json拦截器输出
-     * */
-    public $json        = false;
-    public $jsonarr     = array();
-
-    public function jsonout()
-    {
-        if($this->json){
-            echo json_encode($this->jsonarr);
-            exit;
-        }
-    }
 
     public function __construct($items = array())
     {
         //iniaction
-
+        $this->Config = require(__DIR__ . '/config/default.php');
 
 //        $this->singleton('PHPExcel', function ($c) {
 //            return new PHPExcel();
 //        });
 
-
-        $this->Config = require(__DIR__ . '/config/default.php');
-
-
         $this->singleton('ry', function ($c) {
             return new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');
         });
-
-
 
         $this->singleton('db', function ($c) {
             return new \Seter\Library\SDb();
@@ -90,7 +71,6 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         $this->singleton('mdb', function ($c) {
             return new \Seter\Library\Mdb();
         });
-
 
         $this->singleton('request', function ($c) {
             return new \Seter\Library\Request();
@@ -105,7 +85,7 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         });
 
         $this->singleton('user', function ($c) {
-            return new \Seter\Library\User();
+            return new \Seter\Library\User('f_user');
         });
 
         $this->singleton('vuser', function ($c) {
@@ -153,8 +133,6 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
         !(self::$instance instanceof self)&&self::$instance = new self();
         return self::$instance;
     }
-
-
 
     /**
      * Normalize data key
@@ -385,6 +363,7 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
             require $fileName;
         }
     }
+
     /**
      * Register Slim's PSR-0 autoloader
      */
@@ -392,6 +371,29 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
     {
         spl_autoload_register(__NAMESPACE__ . "\\Seter::autoload");
     }
+
+    /*
+     * 判断失败之后，失败消息存放到这里面
+     * 格式 code / msg / data 可以用jsong输出
+     * 这里是json失败消息机制，判断操作失败的数据存放到这里，用统一的函数进行输出
+     * 也可以采用模型本身的消息，二选一，只选一
+     * */
+    public $jsoninfo        = array();
+    public function setjsoninfo($ar = array())
+    {
+        $this->jsoninfo = $ar;
+    }
+
+    public function getjsoninfo()
+    {
+        echo json_encode($this->$json);
+        exit;
+    }
+
+
 }
 
 \Seter\Seter::registerAutoloader();     //PSR-0
+
+
+

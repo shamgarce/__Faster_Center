@@ -29,7 +29,7 @@ class TableObj
 
     public function __construct($tablename = '')
     {
-        $this->tablename = $tablename;
+        $this->tablename = trim($tablename);
         $this->db = \Seter\Seter::getInstance()->db;
         //获取所有的表明
         $sql = "select table_name

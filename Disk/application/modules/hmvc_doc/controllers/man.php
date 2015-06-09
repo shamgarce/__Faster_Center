@@ -18,7 +18,7 @@ class Man extends MpController {
         parent::__construct();
         $this->Seter = \Seter\Seter::getInstance();
         //文档系统
-        if($this->Seter->user->isguest){
+        if(!$this->Seter->user->islogin()){
             if($this->router['mpath'] !='man.bookedit'){
                 \Sham::R('/manage/home.login/?re='.\Sham::shtmlspecialchars($_SERVER['REQUEST_URI']));
             }

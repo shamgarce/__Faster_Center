@@ -33,7 +33,7 @@ class Logintest extends MpModel
             $this->res['url'] = $get['re'];
             $this->json(200,'登陆成功')->gojson();
         }else{
-            $this->S->jsonout();
+            $this->S->user->go();   //输出json
         }
     }
 

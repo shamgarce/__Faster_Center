@@ -11,7 +11,6 @@ class Request{
     public static $instance;
 
     public function __construct($chr = 'default'){
-
     }
 
     public function post(){
