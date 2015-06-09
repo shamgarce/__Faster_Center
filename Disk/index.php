@@ -27,6 +27,8 @@
 		'man' 	=> 'hmvc_man',
 		'v6' 	=> 'hmvc_v6',
 		'doc' 	=> 'hmvc_doc',
+		'u' 	=> 'hmvc_u',
+
 	);
 	$system['debug'] = false;
 

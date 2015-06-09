@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+<body>    默认首页 <a href="/welcome.index">/welcome.index</a><br>
+
+    登陆 <a href="/login">login</a><br>
+    登出 <a href="/login">login</a><br>
+
+
+
+
+
+    <div></div>
+<h2>欢迎使用</h2>
+<hr style="border-bottom-color:black;border-width: 0 0 2px 0;"/>
+<p>原子操作</p>
+<p>&nbsp;</p>
+<p>： 404php</p>
+<p>505php</p>
+<p>R（）；</p>
+<p>tips；</p>
+<p>//requese===============================================</p>
+<p>get</p>
+<p>post</p>
+<p>session</p>
+<p>cookie</p>
+<p>file</p>
+<p>//===============================================</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>控制器位于:application/controllers/welcome.php</p>
+<p>视图位于:application/views/welcome.view.php</p>
+<p>你可以通过修改index.php里面的配置改变默认控制器</p>
+
+<p>
+
+系统改造： 
+
+0 ： 引入autoload
+
+1 ： 引入表对象
+
+2 ： 因对表单对象
+
+3 ： 引入seter对象
+
+4 ： 引入登陆对象
+
+5 :  引入前段资源对象
+
+6 ： 引入前端动作对象
+
+
+
+
+</p>
+
+<hr style="border-bottom-color:gray;border-style:dashed;border-width: 0 0 2px 0;"/>
+<p style="text-align: center;">
+    <a href="http://microphp.us/plugins/microphp.php?manual.index" target="_blank">参考手册</a>
+    | <a href="http://microphp.us/plugins/microphp.php?in.action/8" target="_blank">快速入门</a>
+    | <a href="?demo/">HMVC</a>
+</p>
+<p style="text-align: center;"></p>
+</body>
+</html>

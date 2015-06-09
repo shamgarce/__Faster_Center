@@ -100,14 +100,17 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
             return new \Seter\Library\Table();
         });
 
-        $this->singleton('user', function ($c) {
-            return new \Seter\Library\User();
-        });
-
         $this->singleton('doc', function ($c) {
             return new \Seter\Library\Doc();
         });
 
+        $this->singleton('user', function ($c) {
+            return new \Seter\Library\User();
+        });
+
+        $this->singleton('vuser', function ($c) {
+            return new \Seter\Library\VUser();
+        });
 
         //是否登陆
 //        $this->singleton('isguest', function () {

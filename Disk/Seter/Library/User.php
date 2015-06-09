@@ -1,5 +1,4 @@
 <?php
-
 namespace Seter\Library;
 //用户模型
 /*
@@ -17,13 +16,11 @@ namespace Seter\Library;
  * logout
  * isguest
  * islogin
-
  *
  * uname
  * tnamne
  * groupid
  * myinfo
- *
  *
  * */
 class User
@@ -54,14 +51,11 @@ class User
     public $identity = array();
     public $isguest = true;
 
-
     public function __construct()
     {
         $this->S = \Seter\Seter::getInstance();
         $this->isguest = $this->isguest();
     }
-
-
 
 //    public function getusergroup(){
 //    }

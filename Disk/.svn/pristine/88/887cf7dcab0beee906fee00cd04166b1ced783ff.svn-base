@@ -26,4 +26,6 @@
         }
     }
 
+>调用
+
     \Seter\Seter::registerAutoloader();     //PSR-0

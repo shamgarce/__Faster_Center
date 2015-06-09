@@ -1,61 +1,88 @@
-<?php include($this->view_path('common/header'));?>
-    默认首页 <a href="/welcome.index">/welcome.index</a><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>超管理 - <?php echo $title;?></title>
 
-    登陆 <a href="/login">login</a><br>
-    登出 <a href="/login">login</a><br>
+    <!-- Bootstrap core CSS -->
+    <link href="/A/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="/A/CSS/font.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/A/U/u1/dashboard.css" rel="stylesheet">
 
-
-
-
-
-    <div><?php echo $ver;?></div>
-<h2>欢迎使用</h2>
-<hr style="border-bottom-color:black;border-width: 0 0 2px 0;"/>
-<p>原子操作</p>
-<p>&nbsp;</p>
-<p>： 404php</p>
-<p>505php</p>
-<p>R（）；</p>
-<p>tips；</p>
-<p>//requese===============================================</p>
-<p>get</p>
-<p>post</p>
-<p>session</p>
-<p>cookie</p>
-<p>file</p>
-<p>//===============================================</p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>控制器位于:application/controllers/welcome.php</p>
-<p>视图位于:application/views/welcome.view.php</p>
-<p>你可以通过修改index.php里面的配置改变默认控制器</p>
-
-<p>
-
-系统改造： 
-
-0 ： 引入autoload
-
-1 ： 引入表对象
-
-2 ： 因对表单对象
-
-3 ： 引入seter对象
-
-4 ： 引入登陆对象
-
-5 :  引入前段资源对象
-
-6 ： 引入前端动作对象
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>  <body>
+
+    <div class="container" style="padding-top:150px;width:300px">
 
 
-</p>
+        <h2 class="form-signin-heading">管理系统</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input name="uname" type="text" id="inputEmail" class="form-control username" placeholder="用户名" required autofocus>
+        <div class="checkbox">
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="pwd" type="password" id="inputPassword" class="form-control password" placeholder="密码" required>
+        <div class="checkbox">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block login_submit" type="submit">登陆</button>
+   
 
-<?php include($this->view_path('common/footer'));?>
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/A/jquery/jquery-1.11.1.min.js"></script>
+    <script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- script src="assets/js/docs.min.js"></script -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    
+<script language="javascript"> 
+$(document).ready(function(){
+	
+	$(".login_submit").click(function(){
+
+
+		var res = $.ajax({
+			url : '/manage/home.login',
+			type: 'post',
+			data: {
+				uname 	: $("input[name='uname']").val(),
+				pwd 	: $("input[name='pwd']").val(),
+        },
+			dataType: "json",
+			async:false,
+			cache:false
+		}).responseJSON;
+		//console.log(res);
+		//==========================1
+		if(res.code<0){
+			alert(res.msg);
+			return false;
+		}else{
+//			location.reload();
+			window.location.href="<?php echo $re?>";
+			return true;
+		}		
+		
+	});	
+	
+}) 
+</script> 
+   
+  </body>
+</html>

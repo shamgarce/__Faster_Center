@@ -21,4 +21,4 @@
     $this->singleton('doc', function ($c) {
         return new \Seter\Library\Doc();
     });
-    var_dump($this->doc)
+    var_dump($this->doc)；

@@ -6,10 +6,11 @@
 class welcome extends MpController {
 
     public function doIndex() {
-        //welcome
-        //$this->Seter = \Seter\Seter::getInstance();
-		
-		$this->view("welcome",$data);
-
+//        $data=array(
+//            'title'=>'测试登陆',
+//            're' => '/u',           //登陆之后的地址
+//        );
+//        $this->view("welcome",$data);
+        \Sham::R("/u/home.index");
     }
 }
