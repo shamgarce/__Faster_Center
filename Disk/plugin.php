@@ -17,7 +17,6 @@ include('MicroPHP.Fun.php');
 include('MicroPHP.php');
 include('MicroPHP.Controller.php');
 
-
 /**
  * 注册HMVC模块，这里填写模块名称关联数组,键是url中的模块别名，值是模块文件夹名称
  */
@@ -28,7 +27,6 @@ $system['hmvc_modules'] = array(
 	'v6' => 'hmvc_v6',
 );
 $system['debug'] = false;
-
 
 
 /**
