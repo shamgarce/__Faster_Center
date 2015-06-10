@@ -38,23 +38,21 @@
 <tbody>
 	<tr>
         <td width="100" align="right">组名 :</th>
-        <td width="300"><input type="text" class="form-control" placeholder="Enter email"></td>
-        <td align="left">说明</td>
-    </tr>
-	<tr>
-        <td align="right">组chr : </th>
-        <td><input type="text" class="form-control" placeholder="Enter email"></td>
-        <td align="left">说明</td>
+        <td width="300"><input type="text" class="form-control" placeholder="分组名"></td>
+        <td align="left">分组名称</td>
     </tr>
 	<tr>
         <td align="right">sort : </th>
-        <td><input type="text" class="form-control" placeholder="Enter email"></td>
-        <td align="left">说明</td>
+        <td><input type="text" class="form-control" placeholder="排序" value="0"></td>
+        <td align="left">填写数字</td>
     </tr>
 	<tr>
-        <td align="right">组名</th>
-:        <td><input type="text" class="form-control" placeholder="Enter email"></td>
-        <td align="left">说明</td>
+        <td align="right">是否有效</th>
+:        <td>
+ <input name="optionsRadios" type="radio" id="optionsRadios3" value="option3" checked="CHECKED"> 有效
+<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> 无效 
+</td>
+        <td align="left">是否有效</td>
     </tr>
 </tbody>           
 </table>    
@@ -73,7 +71,6 @@
                 <tr>
                   <th width="100">groupid</th>
                   <th>组名</th>
-                  <th>组chr</th>
                   <th width="150">sort</th>
                   <th width="150">有效</th>
                   <th width="150">操作</th>
@@ -84,7 +81,6 @@
                 <tr>
                   <td width="100"><?php echo $value['groupid']?></th>
                   <td><?php echo $value['groupname']?></td>
-                  <td><?php echo $value['groupchr']?></td>
                   <td><?php echo $value['sort']?></td>
                   <td>
                   
@@ -102,7 +98,10 @@ if($value['enable']){
 }
 ?>  				  
                   </td>
-                  <td><a class="btn btn-danger btn-sm useredit" rel="19">修改</a></td>
+                  <td>
+                  <a class="btn btn-primary btn-sm useredit" rel="19">修改</a>
+                  <a class="btn btn-danger btn-sm useredit" rel="19">删除</a>
+                  </td>
                 </tr>
 <?php }?>
 
