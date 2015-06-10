@@ -52,6 +52,7 @@ class Formuser extends MpModel
     {
         if($this->addValidator()){
             $this->args['groupid'] = 9;
+            $this->args['creattime'] = time();
             $this->args['authKey'] = md5(time().$this->args['uname']);
             $this->args['pwd'] = \Seter\Seter::hash($this->args['pwd']);
             $this->S->table->f_user->insert($this->args);

@@ -25,18 +25,13 @@
     <div class="container" style="padding-top:150px;width:300px">
 
 
-        <h2 class="form-signin-heading">管理系统</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input name="uname" type="text" id="inputEmail" class="form-control username" placeholder="用户名" required autofocus>
-        <div class="checkbox">
-        </div>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input name="pwd" type="password" id="inputPassword" class="form-control password" placeholder="密码" required>
-        <div class="checkbox">
-        <a href="/login/home.reg">注册</a> </div>
-        <button class="btn btn-lg btn-primary btn-block login_submit" type="submit">登陆</button>
-   
-
+      <p><a href="/login">登陆界面</a> [ <a href="/login/home.logout">登出</a> ] </p>
+      <hr>
+      <p><a href="/u">用户后台</a></p>
+      
+      <p><a href="/doc">文档</a></p>
+      <p><a href="/man">API管理</a> 管理后台 </p>
+      <p><a href="/manage">超级管理后台</a></p>
     </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
@@ -51,32 +46,6 @@
 <script language="javascript"> 
 $(document).ready(function(){
 	
-	$(".login_submit").click(function(){
-
-
-		var res = $.ajax({
-			url : '/login',
-			type: 'post',
-			data: {
-				uname 	: $("input[name='uname']").val(),
-				pwd 	: $("input[name='pwd']").val(),
-        },
-			dataType: "json",
-			async:false,
-			cache:false
-		}).responseJSON;
-		//console.log(res);
-		//==========================1
-		if(res.code<0){
-			alert(res.msg);
-			return false;
-		}else{
-//			location.reload();
-			window.location.href="/login/home.r";
-			return true;
-		}		
-		
-	});	
 	
 }) 
 </script> 

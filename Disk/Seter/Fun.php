@@ -7,6 +7,19 @@
 class Sham
 {
 
+    public static function timetodate($time = 0,$bo = true)
+    {
+        if(empty($time)){
+            return '';
+        }else{
+            $time = intval($time);
+            if($bo){
+                return date('y-m-d H:i:s',$time);
+            }else{
+                return date('y-m-d',$time);
+            }
+        }
+    }
     /*
      * 签名计算
      * */

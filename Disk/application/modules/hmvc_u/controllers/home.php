@@ -2,17 +2,16 @@
 use \Seter\Sham;
 
 /**
+ * 用户后台，所有用户都可以访问
  */
 class Home extends MpController {
     function __construct()
     {
         parent::__construct();
+
+        //登陆之后才可以访问
         $this->Seter = \Seter\Seter::getInstance();
-        if($this->router['mpath'] !='home.login') {        //文档系统
-            if ($this->Seter->vuser->isguest) {
-                \Sham::R('/u/home.login');
-            }
-        }
+        if (!$this->Seter->user->islogin()) \Sham::R('/login');
     }
 
     /*
@@ -24,43 +23,6 @@ class Home extends MpController {
         );
         $this->view("home/index",$data);
     }
-
-
-
-
-    public function doLogin() {
-
-        if(ISPOST){
-            $this->model->login->load($this->Seter->request->post)->login();
-        }
-
-
-
-        $data = array(
-            'title'=>'仪表盘',
-            're' => '/u/home.index',           //登陆之后的地址
-        );
-        $this->view("home/login",$data);
-
-//        $data=array(
-//            'title'=>'测试登陆',
-//            're' => '/u',           //登陆之后的地址
-//        );
-//        $this->view("welcome",$data);
-
-
-    }
-
-    //登出
-    public function doLogout() {
-        $this->Seter->vuser->logout();
-        \Sham::R('/');
-    }
-
-
-
-
-
 
 }
 

@@ -88,9 +88,9 @@ class Seter implements \ArrayAccess, \Countable, \IteratorAggregate
             return new \Seter\Library\User('f_user');
         });
 
-        $this->singleton('vuser', function ($c) {
-            return new \Seter\Library\VUser();
-        });
+//        $this->singleton('vuser', function ($c) {
+//            return new \Seter\Library\VUser();
+//        });
 
         //是否登陆
 //        $this->singleton('isguest', function () {

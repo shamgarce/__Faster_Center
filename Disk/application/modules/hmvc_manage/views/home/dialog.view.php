@@ -1,4 +1,4 @@
-<?php include($this->view_path('./common/manageheader',1));?>
+<?php include($this->view_path('./common/manageheader'));?>
 
 
   <body>

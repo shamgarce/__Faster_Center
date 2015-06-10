@@ -44,7 +44,7 @@
                 <li><a href="/u">首页</a></li>
                 <li><a href="/u/home.set">修改资料</a></li>
                 <li><a href="/u/home.set">修改密码</a></li>
-                <li><a href="/u/home.logout">退出</a></li>
+                <li><a href="/login/home.logout">退出</a></li>
             </ul>
             <!-- form class="navbar-form navbar-right">
               <input type="text" class="form-control" placeholder="Search...">

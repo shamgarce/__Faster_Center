@@ -1,19 +1,18 @@
-<?php include($this->view_path('common/manageheader',1));?>
+<?php include($this->view_path('common/manageheader'));?>
 
 
   <body>
 
-  <?php include($this->view_path('common/managenavtop',1));?>
+  <?php include($this->view_path('common/managenavtop'));?>
 
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <?php include($this->view_path('common/managenavleft',1));?>
+          <?php include($this->view_path('common/managenavleft'));?>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"><?php echo $title ?></h1>
-          登陆界面
           <a class="btn btn-primary useradd">添加用户</a>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -23,11 +22,11 @@
                   <th>用户名</th>
                   <th>真实姓名</th>
                   <th>groupid</th>
-                  <th>密码</th>
-                  <th>登陆时间</th>
-                  <th>登陆ip</th>
-                  <th width="100">有效?</th>
-                  <th width="100">操作</th>
+                  <th width="120">注册时间</th>
+                  <th width="200">登陆时间</th>
+                  <th width="200">登陆ip</th>
+                  <th width="80">有效?</th>
+                  <th width="80">操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -40,8 +39,8 @@ foreach($userlist as $key=>$value)
                   <td><?php echo $value['uname']?></td>
                   <td><?php echo $value['tname']?></td>
                   <td><?php echo $value['groupid']?></td>
-                  <td>********</td>
-                  <td><?php echo $value['logtime']?></td>
+                  <td><?php echo \Sham::timetodate($value['creattime'],false);?></td>
+                  <td><?php echo \Sham::timetodate($value['logtime']);?></td>
                   <td><?php echo $value['logip']?></td>
                   <td>
 <?php
