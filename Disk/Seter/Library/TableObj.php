@@ -85,7 +85,7 @@ class TableObj
     {
         if(!empty($this->where)){
             $wheres = \Sham::getstr($this->where,0,' and ');
-            $wheres = " where $wheres";
+            $wheres = " $wheres";
         }ELSE{
             DIE('where missing');
         }

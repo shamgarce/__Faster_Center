@@ -7,5 +7,6 @@ foreach($menu['list'] as $key=>$value){
 <?php
 }    
 ?>
+    <li ><a href="http://192.168.1.200:89/pm/" target="_blank">pm</a></li>
     
 </ul>

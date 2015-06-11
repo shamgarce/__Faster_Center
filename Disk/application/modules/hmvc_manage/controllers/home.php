@@ -20,8 +20,9 @@ class Home extends MpController {
 //        mpath
         $data=array(
             'title'=>'仪表盘',
-            'menu' => $this->menu()
+            'menu' => $this->menu(),
         );
+
         $this->view("home/index",$data);
     }
 
@@ -33,28 +34,20 @@ class Home extends MpController {
             $this->model->formuser->load($this->Seter->request->post)->cflag();
         }
         $data=array(
-            'title'=>'用户列表',
-            'menu' => $this->menu(),
-            'userlist' => $this->model->user->getuserlist($flit),
+            'title'         =>'用户列表',
+            'menu'          => $this->menu(),
+            'userlist'      => $this->model->user->getuserlist($flit),
+//            'grouplist'     => $this->model->Sysgroup->getgrouplist(1),     //enable = 1的数据
+            'groupysid2name'=> $this->model->Sysgroup->groupysid2name(),
+
         );
         $this->view("home/userlist",$data);
     }
 
-    public function doGroup()
-    {
-        $data = array(
-            'mt' => \Sham::T() - BTIME,
-            'title' => '用户组管理',
-            'menu'  => $this->menu(),
-            'list'  => $this->model->group->getgrouplist(),
-        );
-        $this->view("home/group",$data);
-    }
-
     /*
-     * Dialog
-     * 添加用户
-     * */
+      * Dialog
+      * 添加用户
+      * */
     public function doUseradd() {
 
         if(ISPOST){
@@ -79,10 +72,61 @@ class Home extends MpController {
         }else{
             $data=array(
                 'user' => $this->Seter->table->f_user->where("uid = $uid")->getrow(),
-                'title'=>'修改用户'
+                'title'=>'修改用户',
+                'groupysid2name'=> $this->model->Sysgroup->groupysid2name(),
             );
             $this->view("home/dialog/useredit",$data);
         }
+    }
+
+
+    public function doGroupadd()
+    {
+        if(ISPOST){
+            //添加
+            $this->model->group->load($this->Seter->request->post)->add()->go();
+        }
+    }
+    public function doGroupcflag()
+    {
+        if(ISPOST){
+            //更改flag
+            $this->model->group->load($this->Seter->request->post)->cflag()->go();
+        }
+    }
+    public function doGroupdelete()
+    {
+        if(ISPOST){
+            //删除数据
+            $this->model->group->load($this->Seter->request->post)->delete()->go();
+        }
+    }
+
+    //
+    public function doGroup()
+    {
+        $data = array(
+            'mt' => \Sham::T() - BTIME,
+            'title' => '用户组管理',
+            'menu'  => $this->menu(),
+            'list'  => $this->model->group->getgrouplist(),
+        );
+        $this->view("home/group",$data);
+    }
+
+    public function doGroupedit($groupid = 0)
+    {
+
+        if(ISPOST){
+            $this->model->group->load($this->Seter->request->post)->update()->go();
+        }
+        $data = array(
+            'mt' => \Sham::T() - BTIME,
+            'title' => '修改用户组',
+            'row'  => $this->model->group->getgrouprow($groupid),
+        );
+        //print_r($data);
+        $this->view("home/dialog/groupedit",$data);
     }
 
 

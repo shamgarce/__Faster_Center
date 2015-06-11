@@ -38,22 +38,33 @@
 <tbody>
 	<tr>
         <td width="100" align="right">组名 :</th>
-        <td width="300"><input type="text" class="form-control" placeholder="分组名"></td>
+        <td width="300"><input name="groupname" type="text" class="form-control" placeholder="分组名"></td>
         <td align="left">分组名称</td>
     </tr>
 	<tr>
+        <td align="right">chr : </th>
+        <td><input name="groupchr" type="text" class="form-control" placeholder="标识字符" value="0"></td>
+        <td align="left">填写不重复字符</td>
+    </tr>
+	<tr>
         <td align="right">sort : </th>
-        <td><input type="text" class="form-control" placeholder="排序" value="0"></td>
+        <td><input name="sort" type="text" class="form-control" placeholder="排序" value="0"></td>
         <td align="left">填写数字</td>
     </tr>
 	<tr>
         <td align="right">是否有效</th>
 :        <td>
- <input name="optionsRadios" type="radio" id="optionsRadios3" value="option3" checked="CHECKED"> 有效
-<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> 无效 
+ <input name="enable" type="radio" id="optionsRadios3" value="1" checked="CHECKED"> 有效
+<input type="radio" name="enable" id="optionsRadios3" value="0"> 无效 
 </td>
         <td align="left">是否有效</td>
     </tr>
+	<tr>
+        <td align="right">
+        <td><input class="submitform" type="submit" name="button" id="button" value="提交"></td>
+        <td align="left">&nbsp;</td>
+    </tr>
+    
 </tbody>           
 </table>    
            
@@ -71,6 +82,7 @@
                 <tr>
                   <th width="100">groupid</th>
                   <th>组名</th>
+                  <th>标识</th>
                   <th width="150">sort</th>
                   <th width="150">有效</th>
                   <th width="150">操作</th>
@@ -81,6 +93,7 @@
                 <tr>
                   <td width="100"><?php echo $value['groupid']?></th>
                   <td><?php echo $value['groupname']?></td>
+                  <td><?php echo $value['groupchr']?></td>
                   <td><?php echo $value['sort']?></td>
                   <td>
                   
@@ -99,8 +112,8 @@ if($value['enable']){
 ?>  				  
                   </td>
                   <td>
-                  <a class="btn btn-primary btn-sm useredit" rel="19">修改</a>
-                  <a class="btn btn-danger btn-sm useredit" rel="19">删除</a>
+                  <a class="btn btn-primary btn-sm action_edit" groupid="<?php echo $value['groupid']?>">修改</a>
+                  <a class="btn btn-danger btn-sm deleteone" groupid="<?php echo $value['groupid']?>">删除</a>
                   </td>
                 </tr>
 <?php }?>
@@ -132,6 +145,52 @@ if($value['enable']){
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script language="javascript">
 $(document).ready(function(){
+	$('.submitform').click(function(){
+		
+		var res = $.ajax({
+			url : '/manage/home.groupadd',
+			type: 'post',
+			data: {
+				groupname 	: $("input[name='groupname']").val(),
+				groupchr 	: $("input[name='groupchr']").val(),
+				sort 	: $("input[name='sort']").val(),
+				enable 	: $("input[name='enable']:checked").val(),
+				
+        },
+			dataType: "json",
+			async:false,
+			cache:false
+		}).responseJSON;
+		//console.log(res);
+		//==========================1
+		if(res.code<0){
+			alert(res.msg);
+			return false;
+		}else{
+			location.reload();
+			return true;
+		}	
+	})
+
+	$('.deleteone').click(function(){
+		if(confirm("确定要删除该条记录?"))
+		{
+			var res = $.ajax({
+					url : '/manage/home.groupdelete',
+					type: 'post',
+					data: {
+						groupid 		: $(this).attr('groupid'),
+						},
+					dataType: "json",
+					async:false,
+					cache:false
+				});
+				location.reload() ;
+		}	 
+	})
+
+
+
 //	$('.useradd').click(function(){
 //		$.CK({
 //			ok:true,
@@ -143,34 +202,32 @@ $(document).ready(function(){
 //		});
 //	})
 	
-//	$('.useredit').click(function(){
-//		$.CK({
-//			ok:true,
-//			title:'添加用户',
-//			rel: '/manage/home.useredit/'+ $(this).attr('rel'),
-//			callback:function(){
-//				location.reload() ;
-//			}
-//		});
-//	})
+	$('.action_edit').click(function(){
+		$.CK({
+			ok:true,
+			title:'修改用户组',
+			rel: '/manage/home.groupedit/'+ $(this).attr('groupid'),
+			callback:function(){
+				location.reload() ;
+			}
+		});
+	})
 	
 
-	//$('.action_cflag').click(function(){
-		
-//		var res = $.ajax({
-//				url : '/manage/home.userlist',
-//				type: 'post',
-//				data: {
-//					uname 		: $(this).attr('uname'),
-//					enable  	: $(this).attr('rel'),
-//					},
-//				dataType: "json",
-//				async:false,
-//				cache:false
-//			});
-//			location.reload() ;
-////			console.log(res);
-	//})
+	$('.action_cflag').click(function(){
+		var res = $.ajax({
+				url : '/manage/home.groupcflag',
+				type: 'post',
+				data: {
+					groupid 		: $(this).attr('groupid'),
+					enable  	: $(this).attr('rel'),
+					},
+				dataType: "json",
+				async:false,
+				cache:false
+			});
+			location.reload() ;
+	})
 
 })
 </script>  

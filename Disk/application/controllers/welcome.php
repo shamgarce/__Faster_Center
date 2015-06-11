@@ -11,6 +11,19 @@ class welcome extends MpController {
 //            're' => '/u',           //登陆之后的地址
 //        );
 //        $this->view("welcome",$data);
+
+        $md = $this->accessRules();
+print_r($md);
+        echo 1;
+//        print_r($this->router);
+        exit;
         \Sham::R("/u/home.index");
     }
+
+
+
+
+
+
+
 }

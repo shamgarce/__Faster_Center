@@ -40,6 +40,7 @@ if($this->model->formuser->load($this->Seter->request->post)->update()){
     <script src="/A/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <!-- script src="assets/js/docs.min.js"></script -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-   
+   <?php include($this->view_path('debug',1));?>
+
   </body>
 </html>

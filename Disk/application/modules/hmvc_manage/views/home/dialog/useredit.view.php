@@ -1,7 +1,7 @@
 <form name="artadduser" action="" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">用户名</label>
-    <input name="" type="email" class="form-control" id="exampleInputEmail1" placeholder="<?php echo $user['uname']?>" disabled="disabled" value="<?php echo $user['uname']?>">
+    <input name="" type="email" class="form-control" placeholder="<?php echo $user['uname']?>" disabled="disabled" value="<?php echo $user['uname']?>">
     <input name="uname" type="hidden" value="<?php echo $user['uname']?>">
   </div>
   <div class="form-group">
@@ -9,8 +9,21 @@
     <input name="tname" type="text" class="form-control" placeholder="真实姓名" value="<?php echo $user['tname']?>">
   </div>
   <div class="form-group">
+    <label for="exampleInputEmail1">用户组</label>
+    <select name="groupid" class="form-control groupid">
+		<?php
+		 foreach($groupysid2name as $key=>$value){
+        ?>
+        <option value=<?php echo $key;?> <?php if($user['groupid'] == $key){?>selected="selected"<?php }?>><?php echo $value;?></option>
+		<?php 
+        }
+        ?>
+    </select>
+  </div>
+  
+  <div class="form-group">
     <label for="exampleInputPassword1">密码</label>
-    <input name="pwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" value="">
+    <input name="pwd" type="password" class="form-control" placeholder="密码" value="">
   </div>
 
 </form>
@@ -26,6 +39,7 @@ ob = this;
 				data: {
 					uname 	: $("input[name='uname']").val(),
 					tname 	: $("input[name='tname']").val(),
+					groupid : $(".groupid").val(),
 					pwd 	: $("input[name='pwd']").val(),
 					},
 				dataType: "json",

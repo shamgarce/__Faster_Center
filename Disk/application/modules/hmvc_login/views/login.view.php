@@ -74,7 +74,7 @@ $(document).ready(function(){
 //			location.reload();
 			window.location.href="/login/home.r";
 			return true;
-		}		
+		}
 		
 	});	
 	

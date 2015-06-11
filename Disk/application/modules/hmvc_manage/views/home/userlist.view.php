@@ -38,7 +38,7 @@ foreach($userlist as $key=>$value)
                   <td><?php echo $value['uid']?></td>
                   <td><?php echo $value['uname']?></td>
                   <td><?php echo $value['tname']?></td>
-                  <td><?php echo $value['groupid']?></td>
+                  <td><?php echo $groupysid2name[$value['groupid']]?></td>
                   <td><?php echo \Sham::timetodate($value['creattime'],false);?></td>
                   <td><?php echo \Sham::timetodate($value['logtime']);?></td>
                   <td><?php echo $value['logip']?></td>
@@ -130,6 +130,6 @@ $(document).ready(function(){
 
 })
 </script>  
-   
+    <?php include($this->view_path('debug',1));?>
   </body>
 </html>
