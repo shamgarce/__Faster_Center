@@ -24,9 +24,9 @@
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>  <body>
-
     <div class="container" style="padding-top:150px;width:300px">
-
+<?=123;?>    
+<?php phpinfo();?>
 
         <h2 class="form-signin-heading">管理系统</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
