@@ -14,6 +14,13 @@
     <link href="/A/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
     <link href="/A/CSS/font.css" rel="stylesheet">
     
+
+    <link rel="stylesheet" href="/A/kindeditor-4.1.10/themes/default/default.css" />
+    <script src="/A/kindeditor-4.1.10/kindeditor-min.js"></script>
+    <script src="/A/kindeditor-4.1.10/lang/zh_CN.js"></script>
+    
+
+    
     <script src="/A/U/U2/hm.js"></script>
     <script src="/A/Jquery/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="/A/U/U2/jquery-ui-1.js" type="text/javascript"></script>
@@ -93,7 +100,28 @@
     <label for="exampleInputPassword1">note</label>
     <input name="node" type="" class="form-control" placeholder="node" value="<?php echo $node;?>">
   </div> 
-
+  
+		<p><input type="text" id="url1" value="" /> 
+        <input type="button" id="image1" value="上传图片" />（网络图片 + 本地上传）</p>
+        示例 ： ![123](/A/kindeditor-4.1.10/attached/image/20150213/20150213150810_82119.png)
+<script>
+			KindEditor.ready(function(K) {
+				var editor = K.editor({
+					allowFileManager : true
+				});
+				K('#image1').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#url1').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#url1').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+			});
+		</script>
   <table width="100%" border="1">
     <tr>
       <td width="50%" valign="top"><span class="form-group">
