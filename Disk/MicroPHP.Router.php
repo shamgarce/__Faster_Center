@@ -1,18 +1,20 @@
+<?php
 class WoniuRouter {
+
 	public static function loadClass() {
 		$system = systemInfo();
 		$methodInfo = self::parseURI();
 
-		print_r($methodInfo);
-		//ÔÚ½âÎöÂ·ÓÉÖ®ºó£¬¾Í×¢²á×Ô¶¯¼ÓÔØ£¬ÕâÑù¿ØÖÆÆ÷¿ÉÒÔ¼Ì³ĞÀà¿âÎÄ¼ş¼ĞÀïÃæµÄ×Ô¶¨Òå¸¸¿ØÖÆÆ÷,ÊµÏÖhook¹¦ÄÜ£¬´ïµ½ÍØÕ¹¿ØÖÆÆ÷µÄ¹¦ÄÜ
-		//µ«ÊÇpluginÄ£Ê½ÏÂ£¬Â·ÓÉÆ÷²»ÔÙÊ¹ÓÃ£¬ÄÇÃ´ÕâÀï¾Í²»»á±»Ö´ĞĞ£¬×Ô¶¯¼ÓÔØ¹¦ÄÜ»áÊ§Ğ§£¬ËùÒÔÔÚÃ¿¸öinstance·½·¨ÀïÃæÔÙ³¢ÊÔ¼ÓÔØÒ»´Î¼´¿É£¬
-		//Èç´ËÒ»À´¾ÍÄÜÂú×ãÁ½ÖÖÄ£Ê½
+		//print_r($methodInfo);
+		//åœ¨è§£æè·¯ç”±ä¹‹åï¼Œå°±æ³¨å†Œè‡ªåŠ¨åŠ è½½ï¼Œè¿™æ ·æ§åˆ¶å™¨å¯ä»¥ç»§æ‰¿ç±»åº“æ–‡ä»¶å¤¹é‡Œé¢çš„è‡ªå®šä¹‰çˆ¶æ§åˆ¶å™¨,å®ç°hookåŠŸèƒ½ï¼Œè¾¾åˆ°æ‹“å±•æ§åˆ¶å™¨çš„åŠŸèƒ½
+		//ä½†æ˜¯pluginæ¨¡å¼ä¸‹ï¼Œè·¯ç”±å™¨ä¸å†ä½¿ç”¨ï¼Œé‚£ä¹ˆè¿™é‡Œå°±ä¸ä¼šè¢«æ‰§è¡Œï¼Œè‡ªåŠ¨åŠ è½½åŠŸèƒ½ä¼šå¤±æ•ˆï¼Œæ‰€ä»¥åœ¨æ¯ä¸ªinstanceæ–¹æ³•é‡Œé¢å†å°è¯•åŠ è½½ä¸€æ¬¡å³å¯ï¼Œ
+		//å¦‚æ­¤ä¸€æ¥å°±èƒ½æ»¡è¶³ä¸¤ç§æ¨¡å¼
 		MpLoader::classAutoloadRegister();
 		if (file_exists($methodInfo['file'])) {
 			include $methodInfo['file'];
 			MpInput::$router = $methodInfo;
 			if (!MpInput::isCli()) {
-				//session×Ô¶¨ÒåÅäÖÃ¼ì²é,Ö»ÔÚ·ÇÃüÁîĞĞÄ£Ê½ÏÂÆôÓÃ
+				//sessionè‡ªå®šä¹‰é…ç½®æ£€æŸ¥,åªåœ¨éå‘½ä»¤è¡Œæ¨¡å¼ä¸‹å¯ç”¨
 				self::checkSession();
 			}
 			$class = new $methodInfo['class']();
@@ -40,41 +42,42 @@ class WoniuRouter {
 			}
 		}
 	}
+
 	public static function parseURI() {
 		$pathinfo_query = self::getQueryStr();
 		//echo $pathinfo_query;
-		//Â·ÓÉhmvcÄ£¿éÃû³ÆĞÅÏ¢¼ì²é
+		//è·¯ç”±hmvcæ¨¡å—åç§°ä¿¡æ¯æ£€æŸ¥
 		$router['module'] = self::getHmvcModuleName($pathinfo_query);
 		$pathinfo_query = self::checkHmvc($pathinfo_query);
 		$pathinfo_query = self::checkRouter($pathinfo_query);
-		//±ê¼ÇÏµÍ³×îÖÕÊ¹ÓÃµÄÂ·ÓÉ×Ö·û´®
+		//æ ‡è®°ç³»ç»Ÿæœ€ç»ˆä½¿ç”¨çš„è·¯ç”±å­—ç¬¦ä¸²
 		$router['query'] = $pathinfo_query;
 
 		//print_r($router['query']);
 
 		$system = systemInfo();
 		$class_method = $system['default_controller'] . '.' . $system['default_controller_method'];
-		//¿´¿´ÊÇ·ñÒª´¦Àí²éÑ¯×Ö·û´®
+		//çœ‹çœ‹æ˜¯å¦è¦å¤„ç†æŸ¥è¯¢å­—ç¬¦ä¸²
 		if (!empty($pathinfo_query)) {
-			//²éÑ¯×Ö·û´®È¥³ıÍ·²¿µÄ/
+			//æŸ¥è¯¢å­—ç¬¦ä¸²å»é™¤å¤´éƒ¨çš„/
 			$pathinfo_query = ltrim($pathinfo_query, '/');
 			$requests = explode("/", $pathinfo_query);
-			//¿´¿´ÊÇ·ñÖ¸¶¨ÁËÀàºÍ·½·¨Ãû,×îºó¿ÉÒÔÓĞµÈºÅ£¬¼æÈİget±íµ¥Ä£Ê½
+			//çœ‹çœ‹æ˜¯å¦æŒ‡å®šäº†ç±»å’Œæ–¹æ³•å,æœ€åå¯ä»¥æœ‰ç­‰å·ï¼Œå…¼å®¹getè¡¨å•æ¨¡å¼
 			preg_match('/[^&]+(?:\.[^&]+)+=?/', $requests[0]) ? $class_method = $requests[0] : null;
 			if (strstr($class_method, '&') !== false) {
 				$cm = explode('&', $class_method);
 				$class_method = trim($cm[0], "=");
 			}
 		}
-		//È¥µô×îºóÃæµÄµÈºÅ£¨Èç¹ûÓĞ£©
+		//å»æ‰æœ€åé¢çš„ç­‰å·ï¼ˆå¦‚æœæœ‰ï¼‰
 		$class_method = trim($class_method, "=");
-		//È¥µô²éÑ¯×Ö·û´®ÖĞµÄÀà·½·¨²¿·Ö£¬Ö»ÁôÏÂ²ÎÊı
+		//å»æ‰æŸ¥è¯¢å­—ç¬¦ä¸²ä¸­çš„ç±»æ–¹æ³•éƒ¨åˆ†ï¼Œåªç•™ä¸‹å‚æ•°
 		$pathinfo_query = str_replace($class_method, '', $pathinfo_query);
 		$pathinfo_query_parameters = explode("&", $pathinfo_query);
 		$pathinfo_query_parameters_str = !empty($pathinfo_query_parameters[0]) ? $pathinfo_query_parameters[0] : '';
-		//È¥µô²ÎÊı¿ªÍ·µÄ/£¬Ö»ÁôÏÂ²ÎÊı
+		//å»æ‰å‚æ•°å¼€å¤´çš„/ï¼Œåªç•™ä¸‹å‚æ•°
 		$pathinfo_query_parameters_str && $pathinfo_query_parameters_str{0} === '/' ? $pathinfo_query_parameters_str = substr($pathinfo_query_parameters_str, 1) : '';
-		//ÏÖÔÚÒÑ¾­½âÎö³öÁË£¬$class_methodÀà·½·¨Ãû³Æ×Ö·û´®(main.index£©£¬$pathinfo_query_parameters_str²ÎÊı×Ö·û´®(1/2)£¬½øÒ»²½½âÎöÎªÕæÊµÂ·¾¶
+		//ç°åœ¨å·²ç»è§£æå‡ºäº†ï¼Œ$class_methodç±»æ–¹æ³•åç§°å­—ç¬¦ä¸²(main.indexï¼‰ï¼Œ$pathinfo_query_parameters_strå‚æ•°å­—ç¬¦ä¸²(1/2)ï¼Œè¿›ä¸€æ­¥è§£æä¸ºçœŸå®è·¯å¾„
 		$origin_class_method = $class_method;
 		$class_method = explode(".", $class_method);
 		$method = end($class_method);
@@ -86,12 +89,12 @@ class WoniuRouter {
 		if (count($parameters) === 1 && empty($parameters[0])) {
 			$parameters = array();
 		}
-		//¶Ô²ÎÊı½øĞĞurldecode½âÂëÒ»ÏÂ
+		//å¯¹å‚æ•°è¿›è¡Œurldecodeè§£ç ä¸€ä¸‹
 		foreach ($parameters as $key => $value) {
 			$parameters[$key] = urldecode($value);
 		}
 		$info = array('file' => $file, 'class' => ucfirst($class), 'method' => str_replace('.', '/', $method), 'parameters' => $parameters);
-		#¿ªÊ¼×¼±¸routerĞÅÏ¢
+		#å¼€å§‹å‡†å¤‡routerä¿¡æ¯
 		$path = explode('.', $origin_class_method);
 		$router['mpath'] = $origin_class_method;
 		$router['m'] = $path[count($path) - 1];
@@ -109,9 +112,10 @@ class WoniuRouter {
 		}
 		return $router + $info;
 	}
+
 	private static function getQueryStr() {
 		$system = systemInfo();
-		//ÃüÁîĞĞÔËĞĞ¼ì²é
+		//å‘½ä»¤è¡Œè¿è¡Œæ£€æŸ¥
 		if (MpInput::isCli()) {
 			global $argv;
 			$pathinfo_query = isset($argv[1]) ? $argv[1] : '';
@@ -125,7 +129,7 @@ class WoniuRouter {
 					trigger404();
 				}
 			}
-			//pathinfoÄ£Ê½ÏÂÓĞ?,ÄÇÃ´$pathinfo['query']Ò²ÊÇ·Ç¿ÕµÄ£¬Õâ¸öÊ±ºò²éÑ¯×Ö·û´®ÊÇPATH_INFOºÍquery
+			//pathinfoæ¨¡å¼ä¸‹æœ‰?,é‚£ä¹ˆ$pathinfo['query']ä¹Ÿæ˜¯éç©ºçš„ï¼Œè¿™ä¸ªæ—¶å€™æŸ¥è¯¢å­—ç¬¦ä¸²æ˜¯PATH_INFOå’Œquery
 			$query_str = empty($pathinfo['query']) ? '' : $pathinfo['query'];
 			//print_r($query_str);
 			$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '');
@@ -141,7 +145,7 @@ class WoniuRouter {
 //add by sham
 
 
-		//urldecode ½âÂëËùÓĞµÄ²ÎÊıÃû£¬½â¾öget±íµ¥»á±àÂë²ÎÊıÃû³ÆµÄÎÊÌâ
+		//urldecode è§£ç æ‰€æœ‰çš„å‚æ•°åï¼Œè§£å†³getè¡¨å•ä¼šç¼–ç å‚æ•°åç§°çš„é—®é¢˜
 		$pq = $_pq = array();
 		$_pq = explode('&', $pathinfo_query);
 		foreach ($_pq as $value) {
@@ -154,6 +158,7 @@ class WoniuRouter {
 		$pathinfo_query = implode('&', $pq);
 		return $pathinfo_query;
 	}
+
 	private static function checkSession() {
 		$system = systemInfo();
 		$common_config = $system['session_handle']['common'];
@@ -179,7 +184,7 @@ class WoniuRouter {
 		// name the session
 		session_name($common_config['session_name']);
 		register_shutdown_function('session_write_close');
-		//session×Ô¶¨ÒåÅäÖÃ¼ì²â
+		//sessionè‡ªå®šä¹‰é…ç½®æ£€æµ‹
 		if (!empty($system['session_handle']['handle']) && isset($system['session_handle'][$system['session_handle']['handle']])) {
 			$driver = $system['session_handle']['handle'];
 			$config = $system['session_handle'];
@@ -194,6 +199,7 @@ class WoniuRouter {
 			sessionStart();
 		}
 	}
+
 	private static function checkRouter($pathinfo_query) {
 		$system = systemInfo();
 		if (is_array($system['route'])) {
@@ -206,6 +212,7 @@ class WoniuRouter {
 		}
 		return $pathinfo_query;
 	}
+
 	private static function checkHmvc($pathinfo_query) {
 		if ($_module = self::getHmvcModuleName($pathinfo_query)) {
 			$_system = systemInfo();
@@ -214,6 +221,7 @@ class WoniuRouter {
 		}
 		return $pathinfo_query;
 	}
+
 	private static function getHmvcModuleName($pathinfo_query) {
 		$_module = current(explode('&', $pathinfo_query));
 		$_module = current(explode('/', $_module));
@@ -224,12 +232,13 @@ class WoniuRouter {
 			return '';
 		}
 	}
+
 	public static function switchHmvcConfig($hmvc_folder) {
 		$_system = $system = systemInfo();
 		$module = $_system['hmvc_folder'] . '/' . $hmvc_folder . '/hmvc.php';
-		//$system±»hmvcÄ£¿éÅäÖÃÖØĞ´
+		//$systemè¢«hmvcæ¨¡å—é…ç½®é‡å†™
 		include($module);
-		//¹²ÏíÖ÷ÅäÖÃ£ºÄ£ĞÍ£¬ÊÓÍ¼£¬Àà¿â£¬helper,Í¬Ê±±£Áô×Ô¶¯¼ÓÔØµÄ¶«Î÷
+		//å…±äº«ä¸»é…ç½®ï¼šæ¨¡å‹ï¼Œè§†å›¾ï¼Œç±»åº“ï¼Œhelper,åŒæ—¶ä¿ç•™è‡ªåŠ¨åŠ è½½çš„ä¸œè¥¿
 		foreach (array('model_folder', 'view_folder', 'library_folder', 'helper_folder', 'helper_file_autoload', 'library_file_autoload', 'models_file_autoload') as $folder) {
 			if (!is_array($_system[$folder])) {
 				$_system[$folder] = array($_system[$folder]);
@@ -239,13 +248,18 @@ class WoniuRouter {
 			}
 			$system[$folder] = array_merge($system[$folder], $_system[$folder]);
 		}
-		//ÇĞ»»ºËĞÄÅäÖÃ
+		//åˆ‡æ¢æ ¸å¿ƒé…ç½®
 		self::setConfig($system);
 	}
+
 	public static function setConfig($system) {
 		MpLoader::$system = $system;
 	}
+
 }
+
+
 class MpRouter extends WoniuRouter {
-	
+
 }
+/* End of file Router.php */

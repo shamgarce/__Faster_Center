@@ -9,13 +9,21 @@
 
 	//\Seter\Seter::sterini();
 	/* End of file index.php */
-	include('MicroPHP.Config.php');
-	include('MicroPHP.Fun.php');
+	include('MicroPHP.Config.php');				//会生成一个$System的变量存放配置文件	//改成一个新的类文件来专门处理config
+	include('MicroPHP.Fun.Pre.php');			//新的函数重写
+	include('MicroPHP.Fun.php');				//函数库
+
 	//include('MicroPHP.Db.Class.php');
 	//include('MicroPHP.Session.Class.php');
 	//include('MicroPHP.Fastercache.Class.php');
-	include('MicroPHP.php');
+
+	include('MicroPHP.Router.php');				//路由对象，并且入口在这里			//需要更改入口
+	include('MicroPHP.Input.php');
+	include('MicroPHP.Loader.php');
+	//include('MicroPHP.Formrule.php');
 	include('MicroPHP.Controller.php');
+	include('MicroPHP.Model.php');
+	include('MicroPHP.Fast.php');
 
 
 	/**
@@ -30,7 +38,7 @@
 		'u' 	=> 'hmvc_u',
 		'login' => 'hmvc_login',
 	);
-	$system['debug'] = false;
+	$system['debug'] = true;
 
 
 
@@ -42,5 +50,4 @@
 //$mp = WoniuRouter::parseURI();
 //print_r($mp);
 MpRouter::setConfig($system);
-
 MpRouter::loadClass();

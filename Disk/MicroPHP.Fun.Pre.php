@@ -1,175 +1,9 @@
 <?php
 /**
  * 系统函数
- * 可以在整个系统中进行调用
- * 但是，为了系统升级，这部分原则上少调用，或者不调用，慢慢简化整个函数库
- * 需要手册，《->系统函数》来对这部分内容进行说明
+ * 函数库的整理和升级 这里写的函数会覆盖掉fun中的函数
  */
 
-
-if (!function_exists('args')) {
-    function args($key = null) {
-        return MpInput::parameters($key);
-    }
-}
-if (!function_exists('xss_clean')) {
-    function xss_clean($val) {
-        return MpInput::xss_clean($val);
-    }
-}
-foreach (array('set_cookie'=>'setCookie', 'set_cookie_raw'=>'setCookieRaw') as $func=>$true) {
-    if (!function_exists($func)) {
-        eval('function ' . $func . '($key, $value, $life = null, $path = "/", $domian = null, $http_only = false) {
-					 return MpLoader::' . $true . '($key, $value, $life, $path, $domian, $http_only);
-		 }');
-    }
-}
-foreach (array('server', 'session') as $func) {
-    if (!function_exists($func)) {
-        eval('function ' . $func . '($key = null, $default = null) {
-					 return MpInput::' . $func . '($key, $default);
-		 }');
-    }
-}
-foreach (array('get_rule', 'post_rule', 'get_post_rule', 'post_get_rule') as $func) {
-    if (!function_exists($func)) {
-        eval('function ' . $func . '($rule, $key, $default = null) {
-					 return MpInput::' . $func . '($rule, $key, $default);
-		 }');
-    }
-}
-foreach (array('get', 'post', 'cookie', 'cookie_raw', 'get_post', 'post_get') as $func) {
-    if (!function_exists($func)) {
-        if ($func == 'cookie_raw') {
-            $func = 'cookiRaw';
-        }
-        eval('function ' . $func . '($key = null, $default = null, $xss_clean = false) {
-					 return MpInput::' . $func . '($key, $default, $xss_clean);
-		 }');
-    }
-}
-foreach (array('get_int', 'post_int', 'get_post_int', 'post_get_int',
-             'get_time', 'post_time', 'get_post_time', 'post_get_time',
-             'get_date', 'post_date', 'get_post_date', 'post_get_date',
-             'get_datetime', 'post_datetime', 'get_post_datetime', 'post_get_datetime') as $func) {
-    if (!function_exists($func)) {
-        eval('function ' . $func . '($key, $min = null, $max = null, $default = null) {
-					 return MpInput::' . $func . '($key, $min, $max, $default);
-		 }');
-    }
-}
-if (!function_exists('dump')) {
-    /**
-     * 打印变量内容，参数和var_dump一样
-     * @param type $arg
-     * @param type $_
-     */
-    function dump($arg, $_ = null) {
-        $args = func_get_args();
-        if (MpInput::isCli()) {
-            call_user_func_array('var_dump', $args);
-        } else {
-            echo '<pre>';
-            call_user_func_array('var_dump', $args);
-            echo '</pre>';
-        }
-    }
-}
-if (!function_exists('table')) {
-    /**
-     * 实例化一个表模型
-     * @param string $table_name    不带表前缀的表名称
-     * @param CI_DB_active_record $db 使用的数据库连接对象，默认留空是当前数据库连接
-     * @return MpTableModel
-     */
-    function table($table_name, $db = null) {
-        return MpTableModel::M($table_name, $db);
-    }
-}
-if (!function_exists('url')) {
-    /**
-     * 生成url链接<br>
-     * 使用示例：<br>
-     * url(),<br>
-     * url('welcome.index'),<br>
-     * url('welcome.index','aa','bb'),<br>
-     * url('welcome.index',array('a'=>'bb','b'=>'ccc'),'dd','ee'),<br>
-     * url('welcome.index','dd','ee',array('a'=>'bb')),<br>
-     * url('welcome.index',array('a'=>'bb','b'=>'ccc')),<br>
-     * url('','aa','bb'),<br>
-     * url('',array('a'=>'bb','b'=>'ccc'),'dd','ee'),<br>
-     * url('',array('a'=>'bb','b'=>'ccc')),<br>
-     * 另外可以在第一个参数开始加上:<br>
-     * #和?用来控制url中显示入口文件名称和使用相对路经<br>
-     * 默认不显示入口文件名称，使用绝对路经<br>
-     * 使用示例：<br>
-     * url('#welcome.index'),<br>
-     * url('?welcome.index'),<br>
-     * url('#?welcome.index'),<br>
-     * url('?#welcome.index'),<br>
-     * @return string
-     */
-    function url() {
-        $action = null;
-        $argc = func_num_args();
-        if ($argc > 0) {
-            $action = func_get_arg(0);
-        }
-        $args = array();
-        $get_str_arr = array();
-        if ($argc > 1) {
-            for ($i = 1; $i < $argc; $i++) {
-                if (is_array($arg = func_get_arg($i))) {
-                    foreach ($arg as $k => $v) {
-                        $get_str_arr[] = $k . '=' . urlencode($v);
-                    }
-                } else {
-                    $args[] = $arg;
-                }
-            }
-        }
-        if (!systemInfo('url_rewrite')) {
-            $self_name = stripos($action, '#') === 0 || stripos($action, '#') === 1 ? pathinfo(MpInput::server('php_self'), PATHINFO_BASENAME) : '';
-            $app_start = '?';
-            $get_start = '&';
-        } else {
-            $self_name = '';
-            $app_start = '';
-            $get_start = '?';
-        }
-        //是否使用相对路经检查
-        $path = (stripos($action, '?') === 0 || stripos($action, '?') === 1 ? '' : urlPath() . '/' );
-        $action = ltrim($action, '#?');
-        $url_app = $path . $self_name .
-            (empty($args) && empty($get_str_arr) && empty($action) ? '' : $app_start) .
-            ($action . (empty($args) || empty($action) ? '' : '/' ) . implode('/', $args)) .
-            (empty($get_str_arr) ? '' : $get_start . implode('&', $get_str_arr));
-        return str_replace('?&', '?', $url_app);
-    }
-}
-if (!function_exists('urlPath')) {
-    /**
-     * 获取入口文件所在目录url路径。
-     * 只能在web访问时使用，在命令行下面会抛出异常。
-     * @param type $subpath  子路径或者文件路径，如果非空就会被附加在入口文件所在目录的后面
-     * @return type
-     * @throws Exception
-     */
-    function urlPath($subpath = null) {
-        if (MpInput::isCli()) {
-            throw new Exception('function urlPath() can not be used in cli mode');
-        } else {
-            $old_path = getcwd();
-            $root = str_replace(array("/", "\\"), '/', MpInput::server('DOCUMENT_ROOT'));
-            chdir($root);
-            $root = getcwd();
-            $root = str_replace(array("/", "\\"), '/', $root);
-            chdir($old_path);
-            $path = path($subpath);
-            return str_replace($root, '', $path);
-        }
-    }
-}
 if (!function_exists('path')) {
     /**
      * 获取入口文件所在目录绝对路径。
@@ -181,22 +15,7 @@ if (!function_exists('path')) {
         return truepath($path);
     }
 }
-/**
- * 获取系统配置信息,也就是MpLoader::$system里面的信息
- * @param type $key  MpLoader::$system的键
- * @return null
- */
-if (!function_exists('systemInfo')) {
-    function systemInfo($key = NULL) {
-        if (is_null($key)) {
-            return MpLoader::$system;
-        } elseif (isset(MpLoader::$system[$key])) {
-            return MpLoader::$system[$key];
-        } else {
-            return null;
-        }
-    }
-}
+
 /**
  * 获取系统数据库配置信息
  * @param type $group  数据库组名称，即MpLoader::$system['db']的键.
@@ -226,6 +45,7 @@ if (!function_exists('dbInfo')) {
         }
     }
 }
+
 if (!function_exists('sessionStart')) {
     function sessionStart() {
         if (!isset($_SESSION)) {
@@ -233,11 +53,7 @@ if (!function_exists('sessionStart')) {
         }
     }
 }
-if (!function_exists('getInstance')) {
-    function &getInstance() {
-        return WoniuController::getInstance();
-    }
-}
+
 if (!function_exists('trigger404')) {
     function trigger404($msg = '<h1>Not Found</h1>') {
         $system = systemInfo();
@@ -252,6 +68,7 @@ if (!function_exists('trigger404')) {
         exit();
     }
 }
+
 if (!function_exists('truepath')) {
     /**
      * This function is to replace PHP's extremely buggy realpath().
@@ -287,11 +104,13 @@ if (!function_exists('truepath')) {
         return $path;
     }
 }
+
 if (!function_exists('convertPath')) {
     function convertPath($path) {
         return str_replace(array("\\", "/"), '/', $path);
     }
 }
+
 if (!function_exists('trigger500')) {
     function trigger500($msg = '<h1>Server Error</h1>') {
         $system =  systemInfo();
@@ -306,6 +125,7 @@ if (!function_exists('trigger500')) {
         exit();
     }
 }
+
 if (!function_exists('woniu_exception_handler')) {
     function woniu_exception_handler($exception) {
         $errno = $exception->getCode();
@@ -338,6 +158,7 @@ if (!function_exists('woniu_exception_handler')) {
         exit;
     }
 }
+
 if (!function_exists('woniu_error_handler')) {
     /**
      * 非致命错误处理函数。
@@ -381,6 +202,7 @@ if (!function_exists('woniu_error_handler')) {
         }
     }
 }
+
 if (!function_exists('woniu_fatal_handler')) {
     /**
      * 致命错误处理函数。
@@ -430,6 +252,7 @@ if (!function_exists('woniu_fatal_handler')) {
         }
     }
 }
+
 if (!function_exists('woniu_db_error_handler')) {
     function woniu_db_error_handler($error) {
         $msg = '';
@@ -470,6 +293,7 @@ if (!function_exists('woniu_db_error_handler')) {
         }
     }
 }
+
 if (!function_exists('format_error')) {
     function format_error($errno, $errstr, $errfile, $errline) {
         $path = truepath(systemInfo('application_folder'));
@@ -488,6 +312,7 @@ if (!function_exists('format_error')) {
         return $content;
     }
 }
+
 if (!function_exists('get_strace')) {
     function get_strace($is_db = false) {
         $trace = debug_backtrace(false);
@@ -517,6 +342,7 @@ if (!function_exists('get_strace')) {
         return $str;
     }
 }
+
 if (!function_exists('stripslashes_all')) {
     function stripslashes_all() {
         if (!get_magic_quotes_gpc()) {
@@ -529,6 +355,7 @@ if (!function_exists('stripslashes_all')) {
         }
     }
 }
+
 if (!function_exists('stripslashes2')) {
 #过滤魔法转义，参数可以是字符串或者数组，支持嵌套数组
     function stripslashes2($var) {
@@ -549,6 +376,7 @@ if (!function_exists('stripslashes2')) {
         return $var;
     }
 }
+
 if (!function_exists('is_php')) {
     function is_php($version = '5.0.0') {
         static $_is_php;
@@ -559,6 +387,7 @@ if (!function_exists('is_php')) {
         return $_is_php[$version];
     }
 }
+
 if (!function_exists('forceDownload')) {
     /**
      * 强制下载
@@ -608,6 +437,7 @@ if (!function_exists('forceDownload')) {
         exit($data);
     }
 }
+
 if (!function_exists('getRsCol')) {
     /**
      * 获取结果集中的一个字段的数组
@@ -623,6 +453,7 @@ if (!function_exists('getRsCol')) {
         return $ret;
     }
 }
+
 if (!function_exists('chRsKey')) {
     /**
      * 改变结果集数组key
@@ -638,6 +469,7 @@ if (!function_exists('chRsKey')) {
         return $_rs;
     }
 }
+
 if (!function_exists('sortRs')) {
     /**
      * 按字段对结果集进行排序
@@ -659,6 +491,7 @@ if (!function_exists('sortRs')) {
         return $ret;
     }
 }
+
 if (!function_exists('mergeRs')) {
     /**
      * 合并多个结果集，参数是多个：array($rs,$column_name)，$column_name是该结果集和其它结果集关联的字段
@@ -700,8 +533,4 @@ if (!function_exists('mergeRs')) {
         }
         return $ret;
     }
-}
-
-
-function log_message($level, $msg) {/* just suppress logging */
 }
