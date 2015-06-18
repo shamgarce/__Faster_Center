@@ -5,14 +5,7 @@
 	//Sham Seter
 	define('SALT', 'ccab8f440ff0825e');
 
-
-/**
- * 拟框架
- */
-	include('Seter/I.php');			//入口代码
-
-
-
+	include('Seter/Seter.php');
 
 	//\Seter\Seter::sterini();
 	/* End of file index.php */
