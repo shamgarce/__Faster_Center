@@ -55,7 +55,7 @@
 <!-- GET -->
 <!--a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample31" data-toggle="collapse" class="collapsed"> GET [获取]</a -->
 <a aria-controls="collapseExample" aria-expanded="false" href="/man/get"  class="collapsed"> GET [获取]</a>
-<div id="collapseExample31" class="collapse <?php if($fi=='get'){?>in<?}?>" style=""><br>
+<div id="collapseExample31" class="collapse <?php if($fi=='get'){?>in<?php }?>" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
     
 <?php
@@ -106,7 +106,7 @@ foreach($apiget as $key=>$value){
 <!-- POST -->
 <!--a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample32" data-toggle="collapse" class="collapsed"> POST [新加]</a-->
             <a aria-controls="collapseExample" aria-expanded="false" href="/man/post"  class="collapsed"> POST [新加]</a>
-<div id="collapseExample32" class="collapse <?php if($fi=='post'){?>in<?}?>" style=""><br>
+<div id="collapseExample32" class="collapse <?php if($fi=='post'){?>in<?php }?>" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
  
 <?php
@@ -160,7 +160,7 @@ foreach($apipost as $key=>$value){
 <!--a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample33" data-toggle="collapse" class="collapsed"> PUT [更新]</a -->
     <a aria-controls="collapseExample" aria-expanded="false" href="/man/put"  class="collapsed"> PUT [更新]</a>
 
-    <div id="collapseExample33" class="collapse <?php if($fi=='put'){?>in<?}?>" style=""><br>
+    <div id="collapseExample33" class="collapse <?php if($fi=='put'){?>in<?php }?>" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
       
       
@@ -215,7 +215,7 @@ foreach($apiput as $key=>$value){
 <!-- DELETE -->
 <!--a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample34" data-toggle="collapse" class="collapsed"> DELETE [删除]</a-->
     <a aria-controls="collapseExample" aria-expanded="false" href="/man/delete"  class="collapsed"> DELETE [删除]</a>
-<div id="collapseExample34" class="collapse <?php if($fi=='delete'){?>in<?}?>" style=""><br>
+<div id="collapseExample34" class="collapse <?php if($fi=='delete'){?>in<?php }?>" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
        <?php
 foreach($apidelete as $key=>$value){
@@ -265,7 +265,7 @@ foreach($apidelete as $key=>$value){
 <!-- OTHER -->
 <!--a aria-controls="collapseExample" aria-expanded="false" href="#collapseExample35" data-toggle="collapse" class="collapsed"> OTHER [其他]</a-->
     <a aria-controls="collapseExample" aria-expanded="false" href="/man/other"  class="collapsed"> OTHER [其他]</a>
-<div id="collapseExample35" class="collapse <?php if($fi=='other'){?>in<?}?>" style=""><br>
+<div id="collapseExample35" class="collapse <?php if($fi=='other'){?>in<?php }?>" style=""><br>
     <table class="table table-hover table-condensed table-striped table-bordered" >
        <?php
 foreach($apiother as $key=>$value){
@@ -406,18 +406,6 @@ foreach($apiother as $key=>$value){
 
     });
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

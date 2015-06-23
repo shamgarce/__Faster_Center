@@ -33,13 +33,3 @@ include 'Seter.php';                        //基类
  * 解决问题的模型
  * 5 modules模块
  */
-
-
-
-
-
-
-
-
-
-

@@ -7,6 +7,28 @@ class Router {
 
 
 
+	/**
+	 * 计算解析数组
+	 */
+	public function urianal($uri = '')
+	{
+		if(!empty($uri)){
+			$p_ = explode('?', $uri);
+			$router['path'] = $p_[0];
+			if(isset($p_[1])){
+				$p2 = explode('&', $p_[1]);
+				foreach($p2 as $key=>$value){
+					$pp_ = explode('=', $value);
+					if(!empty($pp_[0]) && !empty($pp_[1])){
+//						if($pp_[0]) $pp[$pp_[0]] = $pp_[1];
+						if(\Seter\Seter::getInstance()->sys->is_zm($pp_[0])) $pp[$pp_[0]] = $pp_[1];
+					}
+				}
+				$router['parm'] = $pp;
+			}
+		}
+
+}
 
 
 }

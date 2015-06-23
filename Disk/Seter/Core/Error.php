@@ -17,7 +17,8 @@ error自定义输出
  */
 
 class Error{
-    public function __construct(){}
+    public function __construct(){
+    }
     public static function E($body='')
     {
         echo static::generateTemplateMarkup('错误', "<p>$body</a>");

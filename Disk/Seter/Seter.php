@@ -1,5 +1,4 @@
 <?php
-
 /*
  * 调用
  * include('Seter/I.php');			//入口代码
@@ -7,11 +6,9 @@
  * $this->Seter = new \Seter\Seter();
  * \Seter\Seter::getInstance()
  * */
-
 namespace Seter;
 !defined('FAST_PATH') && die('out of app');
-
-class Seter extends \Seter\Fast\Base
+class Seter extends \Seter\Core\Base
 {
     /*
      * $mysqltime=date('Y-m-d H:i:s',$phptime);
@@ -49,58 +46,36 @@ class Seter extends \Seter\Fast\Base
     public function __construct($items = array())
     {
         //iniaction
-        $this->Config = require(__DIR__ . '/config/default.php');
 
-//        $this->singleton('PHPExcel', function ($c) {
-//            return new PHPExcel();
+        $this->Config = include(FAST_PATH.'\\Config\\Default.php');
+
+//        $this->singleton('config', function ($c) {
+//            return new \Seter\Core\Config();
 //        });
 
+
+        $this->singleton('sys', function ($c) {
+            return new \Seter\Core\Sys();
+        });
+        $this->singleton('error', function ($c) {
+            return new \Seter\Core\Error();
+        });
+        /**
+         * 系统函数和参数
+         */
         $this->singleton('ry', function ($c) {
             return new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');
         });
 
-        $this->singleton('db', function ($c) {
-            return new \Seter\Library\SDb();
-        });
-
-        $this->singleton('mdb', function ($c) {
-            return new \Seter\Library\Mdb();
-        });
-
-        $this->singleton('request', function ($c) {
-            return new \Seter\Library\Request();
-        });
-
-        $this->singleton('table', function ($c) {
-            return new \Seter\Library\Table();
-        });
-
-        $this->singleton('doc', function ($c) {
-            return new \Seter\Library\Doc();
-        });
-
-        $this->singleton('user', function ($c) {
-            return new \Seter\Library\User('f_user');
-        });
-
-        $this->singleton('error', function ($c) {
-            return new \Seter\Core\Error();
-        });
-
-
-
-//        $this->singleton('vuser', function ($c) {
-//            return new \Seter\Library\VUser();
-//        });
-
-        //是否登陆
-//        $this->singleton('isguest', function () {
-//            if(!empty($this->identify)){
-//                return true;
-//            }else{
-//                return false;
-//            }
-//        });
+        //=================================================
+        /**
+         * 注入对象
+         */
+        foreach($this->Config['obj'] as $key=>$value){
+            $this->singleton($value['classname'], function () use ($key,$value){
+                return new $this->Config['obj'][$key]['class'];
+            });
+        }
     }
 
     public static function run()

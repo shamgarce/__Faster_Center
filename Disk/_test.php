@@ -1,18 +1,31 @@
 <?php
 
 
-include('Seter/Seter.php');
-$Seter = new \Seter\Seter();
-$Seter['btr'] = 123;
-$Seter->btr2 = 345;
-echo count($Seter);
-echo $Seter['btr'];
-echo $Seter->btr2;
-var_dump($Seter->data);
+define('IN_WONIU_APP', TRUE);
+define('WDS', DIRECTORY_SEPARATOR);
+//Sham Seter
+define('SALT', 'ccab8f440ff0825e');
 
 
+/**
+ * 拟框架
+ */
+include('Seter/I.php');			//入口代码
+$s = new \Seter\Seter();
+//echo $s->sys->pathinfo_query.'<br>';
+//$s->sys->pathinfo_query = 'asdf/afsd/asdf/asdf/index.php?r=s123.asdf.afd';
 
+$ms = $s->config->get();
+exit;
+$ms = $s->router->urianal('asdf/afsd/asdf/asdf/index.php?&m=123.asdf.a&&1=123.asdf.a&&m=123.asdf.a&&m=123.asdf.a&c=234&&&&&&&fd');
+print_r($ms);
+//$s->router->test();
+echo 'mark';
 
+//$m = $s->sys->pathinfo_query.'___';
+//echo $m;
+
+exit;
 //include('plugin.php');
 //
 ////

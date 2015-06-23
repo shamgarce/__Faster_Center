@@ -7,6 +7,51 @@ class MpLoaderPlus extends MpLoader {
     
 }
 
+class Seter
+{
+    public function __construct($items = array())
+    {
+
+        $this->sys = new \Seter\Core\Sys();
+
+        $this->error= new \Seter\Core\Error();
+
+        $this->ry= new \Seter\Library\ServerAPI('8luwapkvufd1l','428XgqSUvxeAzr');
+//
+//        $this->singleton('db', function ($c) {
+//            return new \Seter\Library\SDb();
+//        });
+//
+//        $this->singleton('mdb', function ($c) {
+//            return new \Seter\Library\Mdb();
+//        });
+//
+//        $this->singleton('request', function ($c) {
+//            return new \Seter\Library\Request();
+//        });
+//
+//        $this->singleton('table', function ($c) {
+//            return new \Seter\Library\Table();
+//        });
+//
+//        $this->singleton('doc', function ($c) {
+//            return new \Seter\Library\Doc();
+//        });
+//
+//        $this->singleton('user', function ($c) {
+//            return new \Seter\Library\User('f_user');
+//        });
+//
+//        $this->singleton('router', function ($c) {
+//            return new \Seter\Library\router();
+//        });
+
+
+    }
+
+
+}
+
 class CI_DB_active_record {
 
     /**

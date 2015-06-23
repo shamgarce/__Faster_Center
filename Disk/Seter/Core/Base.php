@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Seter\Fast;
+namespace Seter\Core;
 
 
 
