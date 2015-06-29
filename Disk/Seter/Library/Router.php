@@ -27,9 +27,8 @@ class Router {
 				$router['parm'] = $pp;
 			}
 		}
-
-}
-
+		return $router;
+	}
 
 }
 

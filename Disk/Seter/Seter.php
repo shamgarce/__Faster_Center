@@ -49,11 +49,6 @@ class Seter extends \Seter\Core\Base
 
         $this->Config = include(FAST_PATH.'\\Config\\Default.php');
 
-//        $this->singleton('config', function ($c) {
-//            return new \Seter\Core\Config();
-//        });
-
-
         $this->singleton('sys', function ($c) {
             return new \Seter\Core\Sys();
         });

@@ -7,19 +7,33 @@
 */
 
 $config = [
-
+    'RDBC'=>'',
+    'debug'=>true,
     'route' =>[
         'style' => 'mix',       //混合模式  //path //query
     ],
-    'default' =>[
-        "hostname"  =>  '127.0.0.1',
-        "username"  =>  'ns',
-        "password"  =>  'nsgd012003',
-        "database"  =>  'ns',
-        "charset"   =>  'utf8',
-        "pconnect"  =>  '0',
-        "quiet"     =>  '0'
+
+    'mysql'=>[
+        'default' =>[
+            "hostname"  =>  '127.0.0.1',
+            "username"  =>  'ns',
+            "password"  =>  'nsgd012003',
+            "database"  =>  'ns',
+            "charset"   =>  'utf8',
+            "pconnect"  =>  '0',
+            "quiet"     =>  '0'
+        ],
     ],
+
+    'mongodb'=>[
+        'user'		=> 'sa',
+        'pwd'		=> 'sa012003',
+        'host'		=> '127.0.0.1',
+        'port'		=> '27017',
+        'database'	=> 'v1',
+    ],
+
+    //依赖注入的组件
     'obj'=>[
         [
             'classname'=>'db',
@@ -51,6 +65,12 @@ $config = [
             'class'=>'\Seter\Library\Table',
             'parm'=>'',
         ],
+        [
+            'classname'=>'router',
+            'class'=>'\Seter\Library\Router',
+            'parm'=>'',
+        ],
+
     ]
 ];
 

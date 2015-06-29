@@ -15,11 +15,10 @@ $s = new \Seter\Seter();
 //echo $s->sys->pathinfo_query.'<br>';
 //$s->sys->pathinfo_query = 'asdf/afsd/asdf/asdf/index.php?r=s123.asdf.afd';
 
-$ms = $s->config->get();
-exit;
 $ms = $s->router->urianal('asdf/afsd/asdf/asdf/index.php?&m=123.asdf.a&&1=123.asdf.a&&m=123.asdf.a&&m=123.asdf.a&c=234&&&&&&&fd');
 print_r($ms);
 //$s->router->test();
+echo 1;
 echo 'mark';
 
 //$m = $s->sys->pathinfo_query.'___';
